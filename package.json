@@ -24,12 +24,14 @@
   },
   "homepage": "https://github.com/vigour-io/directv-fl",
   "dependencies": {
+    "through2":"*",
     "lodash": "3.2.0",
     "monotonic-timestamp": "0.0.9",
     "promise": "^7.0.1",
     "vigour-js": "git+ssh://git@github.com:vigour-io/vigour-js.git#directv"
   },
   "devDependencies": {
+    "gaston": "git+ssh://git@github.com:vigour-io/gaston.git#dev",
     "vigour-native-statusBar": "git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git",
     "vigour-packer-server": "git+ssh://git@github.com:vigour-io/vigour-packer-server.git",
     "vigour-hub": "git+ssh://git@github.com:vigour-io/vigour-hub.git#directv"
@@ -45,8 +47,8 @@
       }
     },
     "pointers": {
-      "img": "http://178.62.193.141/assets/",
-      "assets": "http://178.62.193.141/assets/"
+      "img": "http://devassets.vigour.io/",
+      "assets": "http://devassets.vigour.io/"
     },
     "packer": {
       "web": "index.html",
