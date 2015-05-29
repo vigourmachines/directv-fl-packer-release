@@ -36,7 +36,7 @@
     "vigour-hub": "git+ssh://git@github.com:vigour-io/vigour-hub.git#directv"
   },
   "vigour": {
-    "cloud": "domain",
+    "cloud": "http://directv.dev.vigour.io:80",
     "branches": {
       "marcus-dev": {
         "cloud": "http://10.0.1.199:10001"
