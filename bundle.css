@@ -156,6 +156,22 @@ body {
 .app-switcher > div {
   position: absolute;
 }
+/* /Users/shawn/Work/directv-fl/src/components/inactive/style.less */
+.second-state {
+  height: 100%;
+  width: 100%;
+  color: white;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  -moz-transition: -moz-transform 0.4s ease-out;
+  -ms-transition: -ms-transform 0.4s ease-out;
+  -o-transition: -o-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+}
+.second-state > .switcher {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
 /* /Users/shawn/Work/directv-fl/src/components/active/style.less */
 .first-state {
   height: 100%;
@@ -247,195 +263,6 @@ body {
 }
 .first-state .open.holder {
   box-shadow: -5px 0px 10px #000000;
-}
-/* /Users/shawn/Work/directv-fl/src/components/inactive/style.less */
-.second-state {
-  height: 100%;
-  width: 100%;
-  color: white;
-  -webkit-transition: -webkit-transform 0.4s ease-out;
-  -moz-transition: -moz-transform 0.4s ease-out;
-  -ms-transition: -ms-transform 0.4s ease-out;
-  -o-transition: -o-transform 0.4s ease-out;
-  transition: transform 0.4s ease-out;
-}
-.second-state > .switcher {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/topbar/style.less */
-.topbar {
-  height: 44px;
-  background-color: #0081cf;
-  color: #ffffff;
-  display: table;
-  width: 100%;
-  overflow: hidden;
-}
-.topbar .ui-icon.left {
-  display: table-cell;
-  vertical-align: middle;
-  height: 44px;
-  width: calc(100% / 3);
-  padding-left: 15px;
-  text-align: left;
-}
-.topbar .middle {
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-  width: calc(100% / 3);
-  font: 20px dinBold;
-  padding-top: 4px;
-  white-space: nowrap;
-  text-transform: capitalize;
-}
-.topbar .ui-icon.right {
-  display: table-cell;
-  text-align: right;
-  padding-right: 15px;
-  vertical-align: middle;
-  width: calc(100% / 3);
-}
-.hasReceiver .holder .topbar .ui-icon.right {
-  color: #ffeb00;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/remote/style.less */
-.mini-remote {
-  display: table;
-  color: white;
-  width: 100%;
-  height: 50px;
-  bottom: 0px;
-  background-color: #232323;
-  border-top: 1px solid #000000;
-  position: absolute;
-}
-.mini-remote .left {
-  vertical-align: top;
-  display: table-cell;
-  background-color: #000;
-  width: 67px;
-  height: 50px;
-  background-size: contain;
-}
-.mini-remote .middle {
-  padding-left: 15px;
-  vertical-align: middle;
-  display: table-cell;
-  margin-top: 4px;
-}
-.mini-remote .middle .title {
-  font: 14px/10px dinRegular;
-}
-.mini-remote .middle .info {
-  font: 14px dinLight;
-  color: #8e8e8e;
-}
-.mini-remote .right {
-  vertical-align: middle;
-  display: table-cell;
-  padding-right: 15px;
-  text-align: right;
-  font-size: 32px;
-  width: 50px;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/popup/style.less */
-.popup {
-  background: #181818;
-  color: white;
-}
-.popup .topbar {
-  background-color: #181818;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/menu/style.less */
-.menu {
-  font-family: 'dinLight';
-  background-color: #000000;
-  color: white;
-  background-image: url('../../../assets/img/app/bg_menu.png');
-  background-size: cover;
-}
-.menu .logo {
-  margin-left: 75px;
-  width: 150px;
-  height: 26px;
-  margin-top: 38px;
-  margin-bottom: 60px;
-  background-image: url('../../../assets/img/app/logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.menu .menu-item {
-  display: table;
-  padding: 15px 0px 15px 0px;
-}
-.menu .menu-item .ui-icon {
-  margin-left: 30px;
-  margin-top: 5px;
-  color: #8e8e8e;
-}
-.menu .menu-item .title {
-  padding-left: 15px;
-  display: table-cell;
-  font-size: 22px;
-  line-height: 0px;
-  font-weight: bold;
-  text-transform: capitalize;
-  vertical-align: middle;
-  color: #8e8e8e;
-}
-.menu-item.focused {
-  border-left: 5px solid #ff0072;
-}
-.menu-item.focused .ui-icon {
-  margin-left: 25px;
-  color: #fff;
-}
-.menu-item.focused .title {
-  color: #fff;
-}
-.menu .footer {
-  bottom: 0;
-  position: absolute;
-  width: 325px;
-  padding: 0px 30px 15px 30px;
-}
-.menu .footer .profile {
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  border-radius: 50%;
-  border: 1px solid #fff;
-  display: table-cell;
-  vertical-align: middle;
-  background-image: url('../../../assets/img/app/avatar.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.5;
-}
-.menu .footer .title {
-  display: table-cell;
-  vertical-align: middle;
-  width: 195px;
-  padding-left: 10px;
-  color: #8e8e8e;
-}
-.menu .footer .settings {
-  display: table-cell;
-  vertical-align: middle;
-  color: #8e8e8e;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/switcher/style.less */
-.first-switcher {
-  position: absolute;
-  overflow: hidden;
-}
-.first-switcher > div {
-  position: absolute;
-  background-color: #181818;
-  width: 100%;
 }
 /* /Users/shawn/Work/directv-fl/src/components/inactive/discover/style.less */
 .second-discover {
@@ -607,6 +434,81 @@ body {
 .second-statusbar .sender .icon {
   font-size: 60px;
 }
+/* /Users/shawn/Work/directv-fl/src/components/inactive/navigation/style.less */
+.second-navigation {
+  position: absolute;
+  width: 100%;
+  height: 460px;
+  bottom: 80px;
+  color: #ffffff;
+  overflow: hidden;
+}
+.second-navigation .container {
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  -o-transition: -o-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  margin-top: 40px;
+  height: 100%;
+  background: #181818;
+  border-top: 1px solid #000000;
+}
+.second-navigation .progress {
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -ms-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  margin-top: -40px;
+}
+.second-navigation .percentage {
+  padding: 0 5px;
+  font-family: dinRegular;
+  text-align: right;
+  margin-top: -40px;
+  font-size: 28px;
+}
+.second-navigation .bar {
+  padding: 15px 30px;
+}
+.second-navigation .bar > div {
+  vertical-align: middle;
+  display: inline-block;
+}
+.second-navigation .arrows .ui-icon {
+  font-size: 48px;
+}
+.second-navigation .bar .title {
+  font-family: dinRegular;
+  font-size: 36px;
+  width: 430px;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.second-navigation .bar .title > div {
+  position: absolute;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  -o-transition: -o-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+}
+.second-navigation .lists {
+  position: relative;
+  overflow: hidden;
+  height: calc(100% - 80px);
+}
+.second-navigation .lists > div {
+  position: absolute;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -ms-transition: -ms-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
 /* /Users/shawn/Work/directv-fl/src/components/inactive/player/style.less */
 .second-player {
   position: relative;
@@ -691,80 +593,178 @@ body {
   height: 264px;
   width: 186px;
 }
-/* /Users/shawn/Work/directv-fl/src/components/inactive/navigation/style.less */
-.second-navigation {
-  position: absolute;
-  width: 100%;
-  height: 460px;
-  bottom: 80px;
+/* /Users/shawn/Work/directv-fl/src/components/active/topbar/style.less */
+.topbar {
+  height: 44px;
+  background-color: #0081cf;
   color: #ffffff;
+  display: table;
+  width: 100%;
   overflow: hidden;
 }
-.second-navigation .container {
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  -moz-transition: -moz-transform 0.2s ease-out;
-  -ms-transition: -ms-transform 0.2s ease-out;
-  -o-transition: -o-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
-  margin-top: 40px;
-  height: 100%;
-  background: #181818;
-  border-top: 1px solid #000000;
-}
-.second-navigation .progress {
-  -webkit-transition: all 0.4s ease-out;
-  -moz-transition: all 0.4s ease-out;
-  -ms-transition: all 0.4s ease-out;
-  -o-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
-  margin-top: -40px;
-}
-.second-navigation .percentage {
-  padding: 0 5px;
-  font-family: dinRegular;
-  text-align: right;
-  margin-top: -40px;
-  font-size: 28px;
-}
-.second-navigation .bar {
-  padding: 15px 30px;
-}
-.second-navigation .bar > div {
+.topbar .ui-icon.left {
+  display: table-cell;
   vertical-align: middle;
+  height: 44px;
+  width: calc(100% / 3);
+  padding-left: 15px;
+  text-align: left;
+}
+.topbar .middle {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: calc(100% / 3);
+  font: 20px dinBold;
+  padding-top: 4px;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+.topbar .ui-icon.right {
+  display: table-cell;
+  text-align: right;
+  padding-right: 15px;
+  vertical-align: middle;
+  width: calc(100% / 3);
+}
+.hasReceiver .holder .topbar .ui-icon.right {
+  color: #ffeb00;
+}
+/* /Users/shawn/Work/directv-fl/src/components/active/menu/style.less */
+.menu {
+  font-family: 'dinLight';
+  background-color: #000000;
+  color: white;
+  background-image: url('../../../assets/img/app/bg_menu.png');
+  background-size: cover;
+}
+.menu .logo {
+  margin-left: 75px;
+  width: 150px;
+  height: 26px;
+  margin-top: 38px;
+  margin-bottom: 60px;
+  background-image: url('../../../assets/img/app/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.menu .menu-item {
+  display: table;
+  padding: 15px 0px 15px 0px;
+}
+.menu .menu-item .ui-icon {
+  margin-left: 30px;
+  margin-top: 5px;
+  color: #8e8e8e;
+}
+.menu .menu-item .title {
+  padding-left: 15px;
+  display: table-cell;
+  font-size: 22px;
+  line-height: 0px;
+  font-weight: bold;
+  text-transform: capitalize;
+  vertical-align: middle;
+  color: #8e8e8e;
+}
+.menu-item.focused {
+  border-left: 5px solid #ff0072;
+}
+.menu-item.focused .ui-icon {
+  margin-left: 25px;
+  color: #fff;
+}
+.menu-item.focused .title {
+  color: #fff;
+}
+.menu .footer {
+  bottom: 0;
+  position: absolute;
+  width: 325px;
+  padding: 0px 30px 15px 30px;
+}
+.menu .footer .profile {
+  width: 30px;
+  height: 30px;
   display: inline-block;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  display: table-cell;
+  vertical-align: middle;
+  background-image: url('../../../assets/img/app/avatar.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.5;
 }
-.second-navigation .arrows .ui-icon {
-  font-size: 48px;
+.menu .footer .title {
+  display: table-cell;
+  vertical-align: middle;
+  width: 195px;
+  padding-left: 10px;
+  color: #8e8e8e;
 }
-.second-navigation .bar .title {
-  font-family: dinRegular;
-  font-size: 36px;
-  width: 430px;
-  height: 40px;
-  line-height: 40px;
-  position: relative;
+.menu .footer .settings {
+  display: table-cell;
+  vertical-align: middle;
+  color: #8e8e8e;
+}
+/* /Users/shawn/Work/directv-fl/src/components/active/remote/style.less */
+.mini-remote {
+  display: table;
+  color: white;
+  width: 100%;
+  height: 50px;
+  bottom: 0px;
+  background-color: #232323;
+  border-top: 1px solid #000000;
+  position: absolute;
+}
+.mini-remote .left {
+  vertical-align: top;
+  display: table-cell;
+  background-color: #000;
+  width: 67px;
+  height: 50px;
+  background-size: contain;
+}
+.mini-remote .middle {
+  padding-left: 15px;
+  vertical-align: middle;
+  display: table-cell;
+  margin-top: 4px;
+}
+.mini-remote .middle .title {
+  font: 14px/10px dinRegular;
+}
+.mini-remote .middle .info {
+  font: 14px dinLight;
+  color: #8e8e8e;
+}
+.mini-remote .right {
+  vertical-align: middle;
+  display: table-cell;
+  padding-right: 15px;
+  text-align: right;
+  font-size: 32px;
+  width: 50px;
+}
+/* /Users/shawn/Work/directv-fl/src/components/active/switcher/style.less */
+.first-switcher {
+  position: absolute;
   overflow: hidden;
 }
-.second-navigation .bar .title > div {
+.first-switcher > div {
   position: absolute;
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  -moz-transition: -moz-transform 0.2s ease-out;
-  -ms-transition: -ms-transform 0.2s ease-out;
-  -o-transition: -o-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
+  background-color: #181818;
+  width: 100%;
 }
-.second-navigation .lists {
-  position: relative;
-  overflow: hidden;
-  height: calc(100% - 80px);
+/* /Users/shawn/Work/directv-fl/src/components/active/popup/style.less */
+.popup {
+  background: #181818;
+  color: white;
 }
-.second-navigation .lists > div {
-  position: absolute;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  -moz-transition: -moz-transform 0.3s ease-out;
-  -ms-transition: -ms-transform 0.3s ease-out;
-  -o-transition: -o-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
+.popup .topbar {
+  background-color: #181818;
 }
 /* /Users/shawn/Work/directv-fl/src/components/shared/icon/style.less */
 /*
@@ -792,6 +792,545 @@ body {
   text-align: center;
   font-size: 24px;
   line-height: 24px;
+}
+/* /Users/shawn/Work/directv-fl/src/components/shared/list/style.less */
+.base-list {
+  white-space: nowrap;
+  width: 100%;
+}
+.base-list > div {
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+}
+.base-list > div .img {
+  background-size: cover;
+  background-position: center;
+}
+.base-list > div {
+  background-color: #181818;
+}
+.spotlight-item {
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  width: 100%;
+  height: 210px;
+}
+.info-item,
+.poster-item {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.info-item .info {
+  text-transform: capitalize;
+  padding: 3px 9px;
+}
+.info-item .subtitle {
+  font-family: dinLight;
+  color: #f2f2f2;
+}
+.info-item .logo {
+  background-size: cover;
+  position: absolute;
+}
+.poster-item .img {
+  height: 100%;
+}
+.poster-item {
+  display: inline-block;
+}
+.list-dots {
+  pointer-events: none;
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.list-dots .container {
+  margin-top: -24px;
+  height: 15px;
+  padding: 6px 9px 0px;
+  display: inline-block;
+  white-space: nowrap;
+}
+.list-dots .container > div {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: top;
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  opacity: 0.5;
+  margin-right: 5px;
+}
+.list-dots .container > div:last-child {
+  margin-right: 0;
+}
+.list-dots .container > div.focused {
+  opacity: 1;
+}
+.hasReceiver .base-list > div .img {
+  opacity: 0.6;
+}
+.isPhone.hasReceiver .focused .dots .container {
+  background-color: #ff0072;
+  opacity: 1;
+}
+.isPhone.hasReceiver .focused .info-item.focused,
+.isPhone.hasReceiver .focused .poster-item.focused {
+  margin: 0 -1px 0 14px;
+  border: 2px solid #ff0072;
+}
+.isPhone.hasReceiver .focused .info-item.focused .img,
+.isPhone.hasReceiver .focused .poster-item.focused .img {
+  opacity: 1;
+}
+.isPhone .info-item {
+  width: 200px;
+  height: 150px;
+  position: relative;
+}
+.isPhone .info-item .img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.isPhone .info-item .logo {
+  width: 80px;
+  height: 30px;
+}
+.isPhone .info-item .info {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 6px 9px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.isPhone .info-item .title {
+  margin-top: 5px;
+  font: 14px/10px dinRegular;
+}
+.isPhone .info-item .subtitle {
+  font: 14px dinLight;
+  color: #8e8e8e;
+}
+.isPhone .info-item,
+.isPhone .poster-item {
+  border: 1px solid #323232;
+  margin: 1px 0px 1px 15px;
+}
+.isPhone .info-item:last-child,
+.isPhone .poster-item:last-child {
+  margin-right: 14px !important;
+}
+.isPhone .poster-item {
+  width: 93px;
+  height: 138px;
+}
+.isPhone .poster-item .img {
+  background-size: cover;
+}
+.notIsPhone .base-list .info-item,
+.notIsPhone .base-list .poster-item {
+  border: 2px solid #323232;
+  margin: 2px 0px 2px 30px;
+}
+.notIsPhone .base-list .info-item:last-child,
+.notIsPhone .base-list .poster-item:last-child {
+  margin-right: 28px !important;
+}
+.notIsPhone .base-list > div.focused {
+  border: 2px solid #ff0072;
+}
+.notIsPhone .base-list > div.focused .img {
+  opacity: 1;
+}
+.notIsPhone .focused .info-item.focused,
+.notIsPhone .focused .poster-item.focused {
+  margin: 0 -2px 0 28px;
+  border: 4px solid #ff0072;
+}
+.notIsPhone .info-item {
+  width: 400px;
+  height: 300px;
+}
+.notIsPhone .info-item .img {
+  height: 210px;
+}
+.notIsPhone .info-item .info {
+  padding: 25px 0px 0px 25px;
+}
+.notIsPhone .info-item .title {
+  font: 26px/18px dinRegular;
+}
+.notIsPhone .info-item .subtitle {
+  font: 24px dinLight;
+  color: #8e8e8e;
+}
+.notIsPhone .info-item .logo {
+  top: 4px;
+  width: 160px;
+  height: 60px;
+}
+.notIsPhone .poster-item {
+  width: 212px;
+  height: 300px;
+}
+/* /Users/shawn/Work/directv-fl/src/components/inactive/progress/style.less */
+.second-progress {
+  border-top: 40px solid #ff0072;
+  border-right: 20px solid transparent;
+}
+/* /Users/shawn/Work/directv-fl/src/components/inactive/cover/style.less */
+.second-cover {
+  width: 100%;
+  height: 100%;
+}
+.second-cover .bg {
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -ms-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.second-cover .overlay {
+  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+/* /Users/shawn/Work/directv-fl/src/components/inactive/channel/style.less */
+.second-channel {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.second-channel .overlay {
+  background: radial-gradient(circle farthest-corner at 95% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+}
+.second-channel > .container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  display: table;
+  border-spacing: 30px;
+}
+.second-channel > .container > div {
+  vertical-align: top;
+  display: table-cell;
+}
+.second-channel > .container .title {
+  font-size: 28px;
+}
+.second-channel > .container .subtitle {
+  font-size: 24px;
+}
+.second-channel .video-widget {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  position: relative;
+  border: 1px solid #f2f2f2;
+  width: 830px;
+  height: 480px;
+  margin-bottom: 30px;
+}
+.second-channel .video-widget .logo {
+  width: 160px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+}
+.second-channel .twitter-widget {
+  width: 830px;
+}
+.second-channel .twitter-widget .header {
+  font-size: 36px;
+  font-family: dinRegular;
+}
+.second-channel .twitter-widget .tweet {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  padding: 30px;
+  border: 1px solid #f2f2f2;
+  margin-bottom: 30px;
+}
+.second-channel .twitter-widget .tweet:nth-child(3) {
+  display: none;
+}
+.second-channel .twitter-widget .bird {
+  margin-right: 15px;
+  vertical-align: middle;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+}
+.second-channel .twitter-widget .author {
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 28px;
+}
+.second-channel .twitter-widget .body {
+  color: #f2f2f2;
+  font-size: 24px;
+}
+.second-channel .guide-widget {
+  width: 406px;
+}
+.second-channel .guide-widget .header {
+  font-size: 36px;
+  font-family: dinRegular;
+  border-bottom: 1px solid #f2f2f2;
+}
+.second-channel .guide-widget .program {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 12px 0;
+  height: 94px;
+}
+.second-channel .guide-widget .program:first-child .bar {
+  display: inline-block;
+}
+.second-channel .guide-widget .program:first-child .dash {
+  display: none;
+}
+.second-channel .guide-widget .progress {
+  width: 100%;
+  font-size: 24px;
+}
+.second-channel .guide-widget .progress > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+.second-channel .guide-widget .progress .seek {
+  width: 35%;
+  border-top: 6px solid #ff0072;
+  border-right: 3px solid transparent;
+}
+.second-channel .guide-widget .progress .bar {
+  width: 260px;
+  margin: 15px;
+  display: none;
+}
+.second-channel .guide-widget .progress .dash {
+  margin: 15px;
+  display: inline-block;
+}
+.second-channel .guide-widget .progress .end {
+  text-align: right;
+}
+.second-channel .about-widget {
+  width: 550px;
+}
+.second-channel .about-widget .header {
+  font-size: 36px;
+  font-family: dinRegular;
+}
+.second-channel .about-widget .container {
+  background-color: rgba(23, 23, 23, 0.8);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #ffffff;
+  height: 834px;
+}
+.second-channel .about-widget .img {
+  height: 314px;
+  background-size: cover;
+}
+.second-channel .about-widget .info {
+  display: table;
+  width: 100%;
+}
+.second-channel .about-widget .info > div {
+  vertical-align: top;
+  display: table-cell;
+}
+.second-channel .about-widget .stickers {
+  width: 159px;
+}
+.second-channel .about-widget .stickers > div {
+  display: inline-block;
+  border: 1px solid #ffffff;
+  width: 70px;
+  height: 70px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.second-channel .about-widget .stickers .tvpg {
+  background-color: #000000;
+}
+.second-channel .about-widget .stickers .rating {
+  background-color: #7ed321;
+  margin-left: 15px;
+}
+.second-channel .about-widget .description {
+  font-size: 28px;
+  padding: 0 30px;
+}
+.second-channel .stats-widget {
+  width: 550px;
+}
+.second-channel .stats-widget .header {
+  font-size: 36px;
+  font-family: dinRegular;
+}
+.second-channel .stats-widget .container {
+  background-color: rgba(23, 23, 23, 0.8);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #ffffff;
+}
+.second-channel .stats-widget .poll {
+  height: 360px;
+}
+.second-channel .stats-widget .poller {
+  display: table;
+  width: 100%;
+}
+.second-channel .stats-widget .poller > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+.second-channel .stats-widget .poller .left {
+  width: 80px;
+}
+.second-channel .stats-widget .poller .logo {
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+  background-color: #181818;
+  height: 80px;
+  width: 80px;
+  border: 1px solid #ffffff;
+}
+.second-channel .stats-widget .poller .bar {
+  border-top: 6px solid transparent;
+  border-right: 3px solid transparent;
+  margin: 10px 0;
+}
+.second-channel .stats-widget .poller .subtitle {
+  text-align: right;
+}
+/* /Users/shawn/Work/directv-fl/src/components/inactive/vod/style.less */
+.second-vod {
+  height: 100%;
+}
+.second-vod > div {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.second-vod .overview .overlay {
+  background: radial-gradient(circle farthest-corner at 95% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+}
+.second-vod .overview .container {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 600px;
+}
+.second-vod .overview .container > div {
+  margin-bottom: 30px;
+}
+.second-vod .overview .poster-item .img {
+  background-size: cover;
+}
+.second-vod .overview .top {
+  display: table;
+}
+.second-vod .overview .top > div {
+  display: table-cell;
+  vertical-align: top;
+}
+.second-vod .overview .right {
+  padding-left: 30px;
+}
+.second-vod .overview .right .title {
+  font-family: dinRegular;
+  font-size: 36px;
+}
+.second-vod .overview .right .subtitle {
+  font-size: 24px;
+}
+.second-vod .overview .description {
+  font-size: 28px;
+}
+.second-vod .overview .starring .header {
+  font-size: 36px;
+  font-family: dinRegular;
+  border-bottom: 1px solid #f2f2f2;
+}
+.second-vod .overview .actors {
+  white-space: nowrap;
+  margin-top: 30px;
+}
+.second-vod .overview .actors > div {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin-right: 30px;
+  display: inline-block;
+  width: 125px;
+  height: 176px;
+  border: 1px solid #f2f2f2;
+}
+.second-vod .preview .container {
+  display: table;
+  position: absolute;
+  color: #ffffff;
+  top: 30px;
+  right: 30px;
+  width: 560px;
+  height: 580px;
+}
+.second-vod .preview .info {
+  display: table-cell;
+  vertical-align: middle;
+}
+.second-vod .preview .title {
+  font: 36px dinRegular;
+}
+.second-vod .preview .subtitle {
+  font: 24px dinLight;
+  color: #8e8e8e;
+}
+.second-vod .preview .description {
+  margin-top: 30px;
+  font: 28px dinLight;
 }
 /* /Users/shawn/Work/directv-fl/src/components/active/discover/style.less */
 .first-discover {
@@ -1023,545 +1562,6 @@ body {
   font-size: 48px;
   padding-bottom: 30px;
   color: #8e8e8e;
-}
-/* /Users/shawn/Work/directv-fl/src/components/inactive/cover/style.less */
-.second-cover {
-  width: 100%;
-  height: 100%;
-}
-.second-cover .bg {
-  -webkit-transition: opacity 0.5s ease-out;
-  -moz-transition: opacity 0.5s ease-out;
-  -ms-transition: opacity 0.5s ease-out;
-  -o-transition: opacity 0.5s ease-out;
-  transition: opacity 0.5s ease-out;
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-.second-cover .overlay {
-  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-/* /Users/shawn/Work/directv-fl/src/components/inactive/vod/style.less */
-.second-vod {
-  height: 100%;
-}
-.second-vod > div {
-  -webkit-transition: opacity 0.2s ease-out;
-  -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
-  -o-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-.second-vod .overview .overlay {
-  background: radial-gradient(circle farthest-corner at 95% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
-}
-.second-vod .overview .container {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  width: 600px;
-}
-.second-vod .overview .container > div {
-  margin-bottom: 30px;
-}
-.second-vod .overview .poster-item .img {
-  background-size: cover;
-}
-.second-vod .overview .top {
-  display: table;
-}
-.second-vod .overview .top > div {
-  display: table-cell;
-  vertical-align: top;
-}
-.second-vod .overview .right {
-  padding-left: 30px;
-}
-.second-vod .overview .right .title {
-  font-family: dinRegular;
-  font-size: 36px;
-}
-.second-vod .overview .right .subtitle {
-  font-size: 24px;
-}
-.second-vod .overview .description {
-  font-size: 28px;
-}
-.second-vod .overview .starring .header {
-  font-size: 36px;
-  font-family: dinRegular;
-  border-bottom: 1px solid #f2f2f2;
-}
-.second-vod .overview .actors {
-  white-space: nowrap;
-  margin-top: 30px;
-}
-.second-vod .overview .actors > div {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  margin-right: 30px;
-  display: inline-block;
-  width: 125px;
-  height: 176px;
-  border: 1px solid #f2f2f2;
-}
-.second-vod .preview .container {
-  display: table;
-  position: absolute;
-  color: #ffffff;
-  top: 30px;
-  right: 30px;
-  width: 560px;
-  height: 580px;
-}
-.second-vod .preview .info {
-  display: table-cell;
-  vertical-align: middle;
-}
-.second-vod .preview .title {
-  font: 36px dinRegular;
-}
-.second-vod .preview .subtitle {
-  font: 24px dinLight;
-  color: #8e8e8e;
-}
-.second-vod .preview .description {
-  margin-top: 30px;
-  font: 28px dinLight;
-}
-/* /Users/shawn/Work/directv-fl/src/components/inactive/channel/style.less */
-.second-channel {
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-}
-.second-channel .overlay {
-  background: radial-gradient(circle farthest-corner at 95% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
-}
-.second-channel > .container {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  color: #ffffff;
-  display: table;
-  border-spacing: 30px;
-}
-.second-channel > .container > div {
-  vertical-align: top;
-  display: table-cell;
-}
-.second-channel > .container .title {
-  font-size: 28px;
-}
-.second-channel > .container .subtitle {
-  font-size: 24px;
-}
-.second-channel .video-widget {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  position: relative;
-  border: 1px solid #f2f2f2;
-  width: 830px;
-  height: 480px;
-  margin-bottom: 30px;
-}
-.second-channel .video-widget .logo {
-  width: 160px;
-  height: 60px;
-  position: absolute;
-  top: 0;
-}
-.second-channel .twitter-widget {
-  width: 830px;
-}
-.second-channel .twitter-widget .header {
-  font-size: 36px;
-  font-family: dinRegular;
-}
-.second-channel .twitter-widget .tweet {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  padding: 30px;
-  border: 1px solid #f2f2f2;
-  margin-bottom: 30px;
-}
-.second-channel .twitter-widget .tweet:nth-child(3) {
-  display: none;
-}
-.second-channel .twitter-widget .bird {
-  margin-right: 15px;
-  vertical-align: middle;
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  background-size: cover;
-}
-.second-channel .twitter-widget .author {
-  vertical-align: middle;
-  display: inline-block;
-  font-size: 28px;
-}
-.second-channel .twitter-widget .body {
-  color: #f2f2f2;
-  font-size: 24px;
-}
-.second-channel .guide-widget {
-  width: 406px;
-}
-.second-channel .guide-widget .header {
-  font-size: 36px;
-  font-family: dinRegular;
-  border-bottom: 1px solid #f2f2f2;
-}
-.second-channel .guide-widget .program {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  padding: 12px 0;
-  height: 94px;
-}
-.second-channel .guide-widget .program:first-child .bar {
-  display: inline-block;
-}
-.second-channel .guide-widget .program:first-child .dash {
-  display: none;
-}
-.second-channel .guide-widget .progress {
-  width: 100%;
-  font-size: 24px;
-}
-.second-channel .guide-widget .progress > div {
-  display: inline-block;
-  vertical-align: middle;
-}
-.second-channel .guide-widget .progress .seek {
-  width: 35%;
-  border-top: 6px solid #ff0072;
-  border-right: 3px solid transparent;
-}
-.second-channel .guide-widget .progress .bar {
-  width: 260px;
-  margin: 15px;
-  display: none;
-}
-.second-channel .guide-widget .progress .dash {
-  margin: 15px;
-  display: inline-block;
-}
-.second-channel .guide-widget .progress .end {
-  text-align: right;
-}
-.second-channel .about-widget {
-  width: 550px;
-}
-.second-channel .about-widget .header {
-  font-size: 36px;
-  font-family: dinRegular;
-}
-.second-channel .about-widget .container {
-  background-color: rgba(23, 23, 23, 0.8);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  border: 1px solid #ffffff;
-  height: 834px;
-}
-.second-channel .about-widget .img {
-  height: 314px;
-  background-size: cover;
-}
-.second-channel .about-widget .info {
-  display: table;
-  width: 100%;
-}
-.second-channel .about-widget .info > div {
-  vertical-align: top;
-  display: table-cell;
-}
-.second-channel .about-widget .stickers {
-  width: 159px;
-}
-.second-channel .about-widget .stickers > div {
-  display: inline-block;
-  border: 1px solid #ffffff;
-  width: 70px;
-  height: 70px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
-.second-channel .about-widget .stickers .tvpg {
-  background-color: #000000;
-}
-.second-channel .about-widget .stickers .rating {
-  background-color: #7ed321;
-  margin-left: 15px;
-}
-.second-channel .about-widget .description {
-  font-size: 28px;
-  padding: 0 30px;
-}
-.second-channel .stats-widget {
-  width: 550px;
-}
-.second-channel .stats-widget .header {
-  font-size: 36px;
-  font-family: dinRegular;
-}
-.second-channel .stats-widget .container {
-  background-color: rgba(23, 23, 23, 0.8);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  border: 1px solid #ffffff;
-}
-.second-channel .stats-widget .poll {
-  height: 360px;
-}
-.second-channel .stats-widget .poller {
-  display: table;
-  width: 100%;
-}
-.second-channel .stats-widget .poller > div {
-  display: table-cell;
-  vertical-align: middle;
-}
-.second-channel .stats-widget .poller .left {
-  width: 80px;
-}
-.second-channel .stats-widget .poller .logo {
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  border-radius: 40px;
-  background-color: #181818;
-  height: 80px;
-  width: 80px;
-  border: 1px solid #ffffff;
-}
-.second-channel .stats-widget .poller .bar {
-  border-top: 6px solid transparent;
-  border-right: 3px solid transparent;
-  margin: 10px 0;
-}
-.second-channel .stats-widget .poller .subtitle {
-  text-align: right;
-}
-/* /Users/shawn/Work/directv-fl/src/components/inactive/progress/style.less */
-.second-progress {
-  border-top: 40px solid #ff0072;
-  border-right: 20px solid transparent;
-}
-/* /Users/shawn/Work/directv-fl/src/components/shared/list/style.less */
-.base-list {
-  white-space: nowrap;
-  width: 100%;
-}
-.base-list > div {
-  display: inline-block;
-  background-size: cover;
-  background-position: center;
-}
-.base-list > div .img {
-  background-size: cover;
-  background-position: center;
-}
-.base-list > div {
-  background-color: #181818;
-}
-.spotlight-item {
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  width: 100%;
-  height: 210px;
-}
-.info-item,
-.poster-item {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  overflow: hidden;
-  vertical-align: middle;
-}
-.info-item .info {
-  text-transform: capitalize;
-  padding: 3px 9px;
-}
-.info-item .subtitle {
-  font-family: dinLight;
-  color: #f2f2f2;
-}
-.info-item .logo {
-  background-size: cover;
-  position: absolute;
-}
-.poster-item .img {
-  height: 100%;
-}
-.poster-item {
-  display: inline-block;
-}
-.list-dots {
-  pointer-events: none;
-  position: absolute;
-  bottom: 15px;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-.list-dots .container {
-  margin-top: -24px;
-  height: 15px;
-  padding: 6px 9px 0px;
-  display: inline-block;
-  white-space: nowrap;
-}
-.list-dots .container > div {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  display: inline-block;
-  vertical-align: top;
-  width: 8px;
-  height: 8px;
-  background-color: #ffffff;
-  opacity: 0.5;
-  margin-right: 5px;
-}
-.list-dots .container > div:last-child {
-  margin-right: 0;
-}
-.list-dots .container > div.focused {
-  opacity: 1;
-}
-.hasReceiver .base-list > div .img {
-  opacity: 0.6;
-}
-.isPhone.hasReceiver .focused .dots .container {
-  background-color: #ff0072;
-  opacity: 1;
-}
-.isPhone.hasReceiver .focused .info-item.focused,
-.isPhone.hasReceiver .focused .poster-item.focused {
-  margin: 0 -1px 0 14px;
-  border: 2px solid #ff0072;
-}
-.isPhone.hasReceiver .focused .info-item.focused .img,
-.isPhone.hasReceiver .focused .poster-item.focused .img {
-  opacity: 1;
-}
-.isPhone .info-item {
-  width: 200px;
-  height: 150px;
-  position: relative;
-}
-.isPhone .info-item .img {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-.isPhone .info-item .logo {
-  width: 80px;
-  height: 30px;
-}
-.isPhone .info-item .info {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  padding: 6px 9px;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.isPhone .info-item .title {
-  margin-top: 5px;
-  font: 14px/10px dinRegular;
-}
-.isPhone .info-item .subtitle {
-  font: 14px dinLight;
-  color: #8e8e8e;
-}
-.isPhone .info-item,
-.isPhone .poster-item {
-  border: 1px solid #323232;
-  margin: 1px 0px 1px 15px;
-}
-.isPhone .info-item:last-child,
-.isPhone .poster-item:last-child {
-  margin-right: 14px !important;
-}
-.isPhone .poster-item {
-  width: 93px;
-  height: 138px;
-}
-.isPhone .poster-item .img {
-  background-size: cover;
-}
-.notIsPhone .base-list .info-item,
-.notIsPhone .base-list .poster-item {
-  border: 2px solid #323232;
-  margin: 2px 0px 2px 30px;
-}
-.notIsPhone .base-list .info-item:last-child,
-.notIsPhone .base-list .poster-item:last-child {
-  margin-right: 28px !important;
-}
-.notIsPhone .base-list > div.focused {
-  border: 2px solid #ff0072;
-}
-.notIsPhone .base-list > div.focused .img {
-  opacity: 1;
-}
-.notIsPhone .focused .info-item.focused,
-.notIsPhone .focused .poster-item.focused {
-  margin: 0 -2px 0 28px;
-  border: 4px solid #ff0072;
-}
-.notIsPhone .info-item {
-  width: 400px;
-  height: 300px;
-}
-.notIsPhone .info-item .img {
-  height: 210px;
-}
-.notIsPhone .info-item .info {
-  padding: 25px 0px 0px 25px;
-}
-.notIsPhone .info-item .title {
-  font: 26px/18px dinRegular;
-}
-.notIsPhone .info-item .subtitle {
-  font: 24px dinLight;
-  color: #8e8e8e;
-}
-.notIsPhone .info-item .logo {
-  top: 4px;
-  width: 160px;
-  height: 60px;
-}
-.notIsPhone .poster-item {
-  width: 212px;
-  height: 300px;
 }
 /* /Users/shawn/Work/directv-fl/src/components/active/popup/actor/style.less */
 .popup .carousel {
@@ -1901,6 +1901,64 @@ body {
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
+/* /Users/shawn/Work/directv-fl/src/components/active/search/reset.less */
+input[placeholder],
+[placeholder],
+*[placeholder] {
+  padding-left: 15px;
+  font-family: dinRegular;
+  font-size: 14px;
+}
+input::-moz-focus-inner {
+  border: 0;
+}
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type="password"] {
+  letter-spacing: 5px;
+}
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+input:invalid {
+  box-shadow: none;
+}
+.submitfix {
+  position: absolute;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  float: left;
+}
+::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="number"] {
+  border: none;
+  text-shadow: none;
+  outline: 0;
+  background: none;
+  color: #181818;
+  margin: 0;
+  padding: 0;
+}
 /* /Users/shawn/Work/directv-fl/src/components/shared/bar/style.less */
 .ui-bar {
   position: relative;
@@ -2002,64 +2060,6 @@ body {
 }
 .bar.program2 {
   border-top: 1px solid #000;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/search/reset.less */
-input[placeholder],
-[placeholder],
-*[placeholder] {
-  padding-left: 15px;
-  font-family: dinRegular;
-  font-size: 14px;
-}
-input::-moz-focus-inner {
-  border: 0;
-}
-select:-moz-focusring {
-  color: transparent;
-  text-shadow: 0 0 0 #000;
-}
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  /* display: none; <- Crashes Chrome on hover */
-  -webkit-appearance: none;
-  margin: 0;
-  /* <-- Apparently some margin are still there even though it's hidden */
-}
-input[type="password"] {
-  letter-spacing: 5px;
-}
-input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-}
-input:invalid {
-  box-shadow: none;
-}
-.submitfix {
-  position: absolute;
-  visibility: hidden;
-  width: 0;
-  height: 0;
-  margin: 0;
-  padding: 0;
-  -webkit-appearance: none;
-  float: left;
-}
-::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-}
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="tel"],
-input[type="search"],
-input[type="number"] {
-  border: none;
-  text-shadow: none;
-  outline: 0;
-  background: none;
-  color: #181818;
-  margin: 0;
-  padding: 0;
 }
 /* /Users/shawn/Work/directv-fl/src/components/shared/trivia/style.less */
 .ui-trivia {

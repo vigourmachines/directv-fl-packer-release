@@ -1,1 +1,101 @@
-{}
+{
+  "name": "directv-fl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "startGaston": "./node_modules/.bin/gaston dev",
+    "start": "npm run startGaston",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "symlink": "mkdir -p node_modules; ln -sf $(pwd) $(pwd)/node_modules",
+    "startHub": "./node_modules/vigour-hub/bin/hub -d -c directv",
+    "prestart": "npm run startHub &",
+    "build": "vNative build",
+    "serve": "packer",
+    "release": "packer -r"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vigour-io/directv-fl.git"
+  },
+  "author": "Vigour",
+  "bugs": {
+    "url": "https://github.com/vigour-io/directv-fl/issues"
+  },
+  "homepage": "https://github.com/vigour-io/directv-fl",
+  "dependencies": {
+    "lodash": "3.2.0",
+    "monotonic-timestamp": "0.0.9",
+    "promise": "^7.0.1",
+    "vigour-js": "git+ssh://git@github.com:vigour-io/vigour-js.git#directv"
+  },
+  "devDependencies": {
+    "vigour-native-statusBar": "git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git",
+    "vigour-packer-server": "git+ssh://git@github.com:vigour-io/vigour-packer-server.git",
+    "vigour-hub": "git+ssh://git@github.com:vigour-io/vigour-hub.git#directv"
+  },
+  "vigour": {
+    "cloud": "domain",
+    "branches": {
+      "marcus-dev": {
+        "cloud": "http://10.0.1.199:10001"
+      },
+      "shawn-dev": {
+        "cloud": "http://192.168.2.18:10001"
+      }
+    },
+    "pointers": {
+      "img": "http://178.62.193.141/assets/",
+      "assets": "http://178.62.193.141/assets/"
+    },
+    "packer": {
+      "web": "index.html",
+      "assets": {
+        "bundle.js": true,
+        "bundle.css": true,
+        "index.html": true,
+        "assets": "*"
+      },
+      "git": {
+        "owner": "vigour-io",
+        "repo": "directv-fl"
+      },
+      "mail": {
+        "fromAddress": "shawn@vigour.io",
+        "to": "shawn@vigour.io"
+      },
+      "slack": {}
+    },
+    "native": {
+      "platforms": {
+        "ios": {
+          "productName": "Direct TV - Future Land",
+          "organizationName": "Vigour",
+          "organizationIdentifier": "io.vigour.directv",
+          "buildNumber": "1",
+          "appIndexPath": "index.html"
+        }
+      }
+    }
+  },
+  "gaston": {
+    "browserify-transforms": [
+      {
+        "path": "vigour-js/util/inform-transform",
+        "options": {
+          "global": "false"
+        }
+      }
+    ],
+    "require-paths": {
+      "dtv": "src",
+      "shared": "src/components/shared",
+      "dtv-components": "src/components",
+      "dtv-active": "src/components/active",
+      "dtv-item": "src/components/active/content-item",
+      "dtv-channel": "src/components/active/content-item/channel",
+      "dtv-episode": "src/components/active/content-item/episode",
+      "dtv-movie": "src/components/active/content-item/movie"
+    }
+  }
+}
