@@ -143,6 +143,7 @@ body.hasTouch {
   top: 0;
 }
 body {
+  background-color: #000000;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -154,21 +155,6 @@ body {
 }
 .app-switcher > div {
   position: absolute;
-  -webkit-transition: opacity 0.2s ease-out;
-  -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
-  -o-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
-}
-/* /Users/shawn/Work/directv-fl/src/components/inactive/style.less */
-.second-state {
-  height: 100%;
-  width: 100%;
-  color: white;
-}
-.second-state > .switcher {
-  height: calc(100% - 80px);
-  width: 100%;
 }
 /* /Users/shawn/Work/directv-fl/src/components/active/style.less */
 .first-state {
@@ -182,6 +168,14 @@ body {
 .pageheader {
   text-transform: uppercase;
   font-family: OpenSansBoldItalic;
+}
+.first-state .header {
+  font: 20px dinRegular;
+  border-bottom: 1px solid #323232;
+  text-transform: capitalize;
+  padding-top: 15px;
+  margin: 0px 15px 15px 15px;
+  width: calc(100% - 15px);
 }
 .desktop .pageheader {
   white-space: nowrap;
@@ -242,82 +236,340 @@ body {
   top: 0px;
   left: 0px;
 }
-.first-state .holder {
+.first-state > .holder {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0px;
   left: 0px;
-  background-color: white;
+  color: #ffffff;
+  background-color: #181818;
 }
 .first-state .open.holder {
   box-shadow: -5px 0px 10px #000000;
+}
+/* /Users/shawn/Work/directv-fl/src/components/inactive/style.less */
+.second-state {
+  height: 100%;
+  width: 100%;
+  color: white;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  -moz-transition: -moz-transform 0.4s ease-out;
+  -ms-transition: -ms-transform 0.4s ease-out;
+  -o-transition: -o-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+}
+.second-state > .switcher {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+/* /Users/shawn/Work/directv-fl/src/components/active/topbar/style.less */
+.topbar {
+  height: 44px;
+  background-color: #0081cf;
+  color: #ffffff;
+  display: table;
+  width: 100%;
+  overflow: hidden;
+}
+.topbar .ui-icon.left {
+  display: table-cell;
+  vertical-align: middle;
+  height: 44px;
+  width: calc(100% / 3);
+  padding-left: 15px;
+  text-align: left;
+}
+.topbar .middle {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: calc(100% / 3);
+  font: 20px dinBold;
+  padding-top: 4px;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+.topbar .ui-icon.right {
+  display: table-cell;
+  text-align: right;
+  padding-right: 15px;
+  vertical-align: middle;
+  width: calc(100% / 3);
+}
+.hasReceiver .holder .topbar .ui-icon.right {
+  color: #ffeb00;
+}
+/* /Users/shawn/Work/directv-fl/src/components/active/remote/style.less */
+.mini-remote {
+  display: table;
+  color: white;
+  width: 100%;
+  height: 50px;
+  bottom: 0px;
+  background-color: #232323;
+  border-top: 1px solid #000000;
+  position: absolute;
+}
+.mini-remote .left {
+  vertical-align: top;
+  display: table-cell;
+  background-color: #000;
+  width: 67px;
+  height: 50px;
+  background-size: contain;
+}
+.mini-remote .middle {
+  padding-left: 15px;
+  vertical-align: middle;
+  display: table-cell;
+  margin-top: 4px;
+}
+.mini-remote .middle .title {
+  font: 14px/10px dinRegular;
+}
+.mini-remote .middle .info {
+  font: 14px dinLight;
+  color: #8e8e8e;
+}
+.mini-remote .right {
+  vertical-align: middle;
+  display: table-cell;
+  padding-right: 15px;
+  text-align: right;
+  font-size: 32px;
+  width: 50px;
+}
+/* /Users/shawn/Work/directv-fl/src/components/active/popup/style.less */
+.popup {
+  background: #181818;
+  color: white;
+}
+.popup .topbar {
+  background-color: #181818;
+}
+/* /Users/shawn/Work/directv-fl/src/components/active/menu/style.less */
+.menu {
+  font-family: 'dinLight';
+  background-color: #000000;
+  color: white;
+  background-image: url('../../../assets/img/app/bg_menu.png');
+  background-size: cover;
+}
+.menu .logo {
+  margin-left: 75px;
+  width: 150px;
+  height: 26px;
+  margin-top: 38px;
+  margin-bottom: 60px;
+  background-image: url('../../../assets/img/app/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.menu .menu-item {
+  display: table;
+  padding: 15px 0px 15px 0px;
+}
+.menu .menu-item .ui-icon {
+  margin-left: 30px;
+  margin-top: 5px;
+  color: #8e8e8e;
+}
+.menu .menu-item .title {
+  padding-left: 15px;
+  display: table-cell;
+  font-size: 22px;
+  line-height: 0px;
+  font-weight: bold;
+  text-transform: capitalize;
+  vertical-align: middle;
+  color: #8e8e8e;
+}
+.menu-item.focused {
+  border-left: 5px solid #ff0072;
+}
+.menu-item.focused .ui-icon {
+  margin-left: 25px;
+  color: #fff;
+}
+.menu-item.focused .title {
+  color: #fff;
+}
+.menu .footer {
+  bottom: 0;
+  position: absolute;
+  width: 325px;
+  padding: 0px 30px 15px 30px;
+}
+.menu .footer .profile {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  display: table-cell;
+  vertical-align: middle;
+  background-image: url('../../../assets/img/app/avatar.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+.menu .footer .title {
+  display: table-cell;
+  vertical-align: middle;
+  width: 195px;
+  padding-left: 10px;
+  color: #8e8e8e;
+}
+.menu .footer .settings {
+  display: table-cell;
+  vertical-align: middle;
+  color: #8e8e8e;
+}
+/* /Users/shawn/Work/directv-fl/src/components/active/switcher/style.less */
+.first-switcher {
+  position: absolute;
+  overflow: hidden;
+}
+.first-switcher > div {
+  position: absolute;
+  background-color: #181818;
+  width: 100%;
 }
 /* /Users/shawn/Work/directv-fl/src/components/inactive/discover/style.less */
 .second-discover {
   height: 100%;
 }
 .second-discover > div {
-  width: 100%;
-  height: 100%;
-}
-.preview-page {
-  background-color: #000000;
-}
-.preview-page .bg {
-  -webkit-transition: opacity 0.5s ease-out;
-  -moz-transition: opacity 0.5s ease-out;
-  -ms-transition: opacity 0.5s ease-out;
-  -o-transition: opacity 0.5s ease-out;
-  transition: opacity 0.5s ease-out;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100%;
-}
-.preview-page .info {
   -webkit-transition: opacity 0.2s ease-out;
   -moz-transition: opacity 0.2s ease-out;
   -ms-transition: opacity 0.2s ease-out;
   -o-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
-  display: table;
   position: absolute;
-  color: #ffffff;
-  top: 30px;
-  right: 30px;
-  width: 560px;
-  height: 580px;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
-.preview-page .container {
+/* /Users/shawn/Work/directv-fl/src/components/inactive/search/style.less */
+.second-search {
+  width: 100%;
+  height: calc(100% - 80px);
+}
+.second-search .searchbox {
+  display: table;
+  background: #ff0072;
+  height: 220px;
+  width: 100%;
+}
+.second-search .searchbox > div {
   display: table-cell;
   vertical-align: middle;
 }
-.preview-page .title {
+.second-search .searchicon {
+  color: #FF99C6;
+  font-size: 192px;
+  width: 220px;
+}
+.second-search .query {
   font-family: dinRegular;
-  font-size: 36px;
+  font-size: 128px;
 }
-.preview-page .subtitle {
-  font-size: 24px;
+.second-search .results {
+  border-spacing: 30px;
+  display: table;
+  width: 100%;
+  background-color: #181818;
+  height: calc(100% - 220px);
 }
-.preview-page .description {
-  font-size: 28px;
+.second-search .results > div {
+  vertical-align: top;
+  display: table-cell;
 }
-.trailer-widget {
-  -webkit-transition: opacity 0.3s ease-out;
-  -moz-transition: opacity 0.3s ease-out;
-  -ms-transition: opacity 0.3s ease-out;
-  -o-transition: opacity 0.3s ease-out;
-  transition: opacity 0.3s ease-out;
-  position: absolute;
-  background-color: #000000;
-  top: 60px;
-  left: 30px;
-  width: 930px;
-  height: 480px;
+.second-search .list {
+  width: 570px;
+}
+.second-search .search-results > .title {
+  text-transform: capitalize;
+  font: 36px dinRegular;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #323232;
+}
+.second-search .search-result {
+  display: table;
+  border-spacing: 0;
+  margin-top: 30px;
+}
+.second-search .search-result > div {
+  vertical-align: top;
+  display: table-cell;
+}
+.second-search .search-result .body {
+  padding-left: 30px;
+  padding-top: 30px;
+}
+.second-search .search-result .title {
+  font: 26px/18px dinRegular;
+}
+.second-search .search-result .subtitle {
+  font: 24px dinLight;
+  color: #8e8e8e;
+}
+.second-search .search-result .poster > .container {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  width: 126px;
+  height: 186px;
+  background-size: contain;
+  border: 1px solid #323232;
+}
+.second-search .topresult .header {
+  text-transform: capitalize;
+  font: 36px dinRegular;
+  padding-bottom: 5px;
+}
+.second-search .topresult .body {
+  display: table;
+  border-spacing: 0;
+}
+.second-search .topresult .body > div {
+  display: table-cell;
+  vertical-align: top;
+}
+.second-search .topresult .container {
+  width: 876px;
+}
+.second-search .topresult .container .video {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  height: 486px;
+  border: 1px solid #323232;
+}
+.second-search .topresult .container .info {
+  margin-top: 30px;
+}
+.second-search .topresult .container .info .title {
+  font: 26px/18px dinRegular;
+}
+.second-search .topresult .container .info .subtitle {
+  font: 24px dinLight;
+  color: #8e8e8e;
+}
+.second-search .topresult .description {
+  font: 28px dinLight;
+  float: right;
+  padding-left: 30px;
 }
 /* /Users/shawn/Work/directv-fl/src/components/inactive/statusbar/style.less */
 .second-statusbar {
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  -o-transition: -o-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;
@@ -355,13 +607,98 @@ body {
 .second-statusbar .sender .icon {
   font-size: 60px;
 }
+/* /Users/shawn/Work/directv-fl/src/components/inactive/player/style.less */
+.second-player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.second-player video {
+  background-image: url(http://theartmad.com/wp-content/uploads/2015/03/Bunny-8.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.second-player .overlay {
+  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+}
+.second-player .overlay,
+.second-player .overlay > div {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+.second-player .container {
+  top: 50%;
+  margin-top: -67px;
+  position: absolute;
+  width: 100%;
+}
+.second-player .container .txt {
+  margin-left: 60px;
+  font-size: 72px;
+}
+.second-player .container .value {
+  display: inline;
+  font-family: dinRegular;
+}
+.second-player .volume-overlay .progress {
+  border-top-color: yellow;
+}
+.second-player .player-overlay {
+  display: table;
+  padding: 30px;
+  color: #ffffff;
+}
+.second-player .player-overlay > div {
+  display: table-cell;
+}
+.second-player .player-overlay .info,
+.second-player .player-overlay .next {
+  width: 50%;
+}
+.second-player .player-overlay .info > div {
+  vertical-align: top;
+  display: inline-block;
+}
+.second-player .player-overlay .icon {
+  vertical-align: middle;
+  font-size: 128px;
+}
+.second-player .player-overlay .nowplaying {
+  font-size: 24px;
+}
+.second-player .player-overlay .titles {
+  margin-left: 30px;
+}
+.second-player .player-overlay .title {
+  font-size: 48px;
+}
+.second-player .player-overlay .subtitle {
+  font-size: 36px;
+}
+.second-player .player-overlay .poster {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #323232;
+  height: 264px;
+  width: 186px;
+}
 /* /Users/shawn/Work/directv-fl/src/components/inactive/navigation/style.less */
 .second-navigation {
   position: absolute;
   width: 100%;
-  height: 420px;
+  height: 460px;
   bottom: 80px;
   color: #ffffff;
+  overflow: hidden;
 }
 .second-navigation .container {
   -webkit-transition: -webkit-transform 0.2s ease-out;
@@ -369,21 +706,21 @@ body {
   -ms-transition: -ms-transform 0.2s ease-out;
   -o-transition: -o-transform 0.2s ease-out;
   transition: transform 0.2s ease-out;
+  margin-top: 40px;
   height: 100%;
-  background: #232323;
+  background: #181818;
   border-top: 1px solid #000000;
 }
 .second-navigation .progress {
-  -webkit-transition: width 0.2s ease-out;
-  -moz-transition: width 0.2s ease-out;
-  -ms-transition: width 0.2s ease-out;
-  -o-transition: width 0.2s ease-out;
-  transition: width 0.2s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -ms-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
   margin-top: -40px;
-  border-top: 40px solid #ff0072;
-  border-right: 20px solid transparent;
 }
 .second-navigation .percentage {
+  padding: 0 5px;
   font-family: dinRegular;
   text-align: right;
   margin-top: -40px;
@@ -429,13 +766,270 @@ body {
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
 }
-/* /Users/shawn/Work/directv-fl/src/components/inactive/channel/style.less */
-.second-channel {
+/* /Users/shawn/Work/directv-fl/src/components/shared/icon/style.less */
+/*
+ * Directv v0.1, 2015
+ * Author: Gideon van Dijk, Vigour.io
+ */
+/*
+ * Icons
+ */
+@font-face {
+  font-family: 'dtvIcons';
+  src: url('../../../../assets/fonts/dtvIcons.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.ui-icon-font {
+  font-family: 'dtvIcons';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ui-icon {
+  font-family: 'dtvIcons';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+}
+/* /Users/shawn/Work/directv-fl/src/components/active/discover/style.less */
+.first-discover {
   height: 100%;
-  overflow: hidden;
+}
+.first-discover .header {
+  width: calc(100% - 15px);
+}
+.first-discover .spotlight {
   position: relative;
 }
-.second-channel .bg {
+.first-discover .spotlight .list-dots .container {
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  border-radius: 11px;
+  background-color: #0081cf;
+}
+.first-discover > div:last-child {
+  margin-bottom: 60px;
+}
+.first-discover > div {
+  height: 220px;
+}
+.first-discover > div.spotlight {
+  height: 210px;
+}
+/* /Users/shawn/Work/directv-fl/src/components/active/search/style.less */
+.first-search .field {
+  display: table-cell;
+  vertical-align: middle;
+  text-transform: capitalize;
+  padding-right: 15px;
+}
+.first-search .field .lefticon {
+  display: table-cell;
+  color: #8e8e8e;
+  padding: 0px;
+  width: 20px;
+  vertical-align: middle;
+  font-size: 28px;
+}
+.first-search .field .clear {
+  width: 25px;
+  display: table-cell;
+  vertical-align: middle;
+  color: #8e8e8e;
+  font-size: 28px;
+}
+.first-search .field .table {
+  width: 100%;
+  vertical-align: middle;
+  display: table;
+  background-color: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  height: 30px;
+}
+.first-search .inputField {
+  width: 100%;
+  display: table-cell;
+  -webkit-appearance: none;
+  margin-top: 5px;
+}
+.first-search .topbar {
+  background-color: #181818;
+}
+.first-search .topbar .ui-icon.left {
+  width: 30px;
+}
+.first-search .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 60px;
+  left: 0;
+}
+.first-search .page {
+  margin-left: 15px;
+  margin-top: 15px;
+}
+.first-search .page .actors {
+  margin-bottom: 30px;
+}
+.first-search .search-top-result .title {
+  font: 20px dinRegular;
+  border-bottom: 1px solid #323232;
+  text-transform: capitalize;
+}
+.first-search .search-top-result .body {
+  margin-top: 15px;
+  display: table;
+  font: 16px dinLight;
+}
+.first-search .search-top-result .body .poster {
+  vertical-align: top;
+  display: table-cell;
+}
+.first-search .search-top-result .body .poster .img {
+  width: 93px;
+  height: 132px;
+  border: 1px solid #8e8e8e;
+  background-size: contain;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.first-search .search-top-result .body .textHolder {
+  vertical-align: top;
+  display: table-cell;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+.first-search .search-top-result .body .textHolder .title {
+  width: 150px;
+  float: left;
+  font-size: 18px;
+  line-height: 16px;
+  font-family: dinRegular;
+  padding-left: 15px;
+  padding-bottom: 0px;
+  border: none;
+}
+.first-search .search-top-result .body .textHolder .info {
+  width: 150px;
+  float: left;
+  font: 14px dinLight;
+  padding-left: 15px;
+  color: #8e8e8e;
+}
+.first-search .search-top-result .body .textHolder .rating {
+  float: right;
+  padding: 12px 9px 9px 9px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 2px solid #fff;
+  background-color: #7ed321;
+  font-family: dinBold;
+  font-size: 16px;
+  margin-top: -15px;
+  margin-right: 15px;
+}
+.first-search .search-top-result .body .textHolder .description {
+  float: left;
+  padding: 15px;
+}
+.first-search .recent {
+  margin-top: 0px;
+}
+.first-search .recent > .holder {
+  margin-top: 0px;
+}
+.first-search .search-results {
+  margin-top: 30px;
+}
+.first-search .search-results .title {
+  font: 20px dinRegular;
+  border-bottom: 1px solid #323232;
+  text-transform: capitalize;
+}
+.first-search .search-results .body {
+  font: 16px dinLight;
+  padding-right: 15px;
+  border-spacing: 0 7px;
+  border-bottom: 1px solid #323232;
+  height: 60px;
+  text-transform: capitalize;
+  display: table;
+  white-space: nowrap;
+  width: 100%;
+  table-layout: fixed;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+.first-search .search-results .body .title {
+  font: 16px dinLight;
+  display: table-cell;
+  vertical-align: middle;
+  border: none;
+}
+.first-search .search-results .body .arrowRight {
+  display: table-cell;
+  vertical-align: middle;
+  width: 24px;
+}
+.first-search .noResults {
+  margin-top: 60px;
+  text-align: center;
+  width: 150px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.first-search .noResults .title {
+  font: 20px dinRegular;
+}
+.first-search .noResults .body {
+  color: #8e8e8e;
+  font: 16px dinLight;
+}
+.first-search .noResults .ui-icon {
+  font-size: 48px;
+  padding-bottom: 30px;
+  color: #8e8e8e;
+}
+.first-search .noRecent {
+  margin-top: 60px;
+  text-align: center;
+  width: 150px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.first-search .noRecent .title {
+  font: 20px dinRegular;
+}
+.first-search .noRecent .body {
+  color: #8e8e8e;
+  font: 16px dinLight;
+}
+.first-search .noRecent .ui-icon {
+  font-size: 48px;
+  padding-bottom: 30px;
+  color: #8e8e8e;
+}
+/* /Users/shawn/Work/directv-fl/src/components/inactive/cover/style.less */
+.second-cover {
+  width: 100%;
+  height: 100%;
+}
+.second-cover .bg {
   -webkit-transition: opacity 0.5s ease-out;
   -moz-transition: opacity 0.5s ease-out;
   -ms-transition: opacity 0.5s ease-out;
@@ -443,11 +1037,120 @@ body {
   transition: opacity 0.5s ease-out;
   background-size: cover;
   background-position: center;
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
 }
-.second-channel .widgets {
-  background-image: radial-gradient(farthest-corner at 45px 45px, rgba(0, 0, 0, 0), #000000 100%);
+.second-cover .overlay {
+  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+/* /Users/shawn/Work/directv-fl/src/components/inactive/vod/style.less */
+.second-vod {
+  height: 100%;
+}
+.second-vod > div {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.second-vod .overview .overlay {
+  background: radial-gradient(circle farthest-corner at 95% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+}
+.second-vod .overview .container {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 600px;
+}
+.second-vod .overview .container > div {
+  margin-bottom: 30px;
+}
+.second-vod .overview .poster-item .img {
+  background-size: cover;
+}
+.second-vod .overview .top {
+  display: table;
+}
+.second-vod .overview .top > div {
+  display: table-cell;
+  vertical-align: top;
+}
+.second-vod .overview .right {
+  padding-left: 30px;
+}
+.second-vod .overview .right .title {
+  font-family: dinRegular;
+  font-size: 36px;
+}
+.second-vod .overview .right .subtitle {
+  font-size: 24px;
+}
+.second-vod .overview .description {
+  font-size: 28px;
+}
+.second-vod .overview .starring .header {
+  font-size: 36px;
+  font-family: dinRegular;
+  border-bottom: 1px solid #f2f2f2;
+}
+.second-vod .overview .actors {
+  white-space: nowrap;
+  margin-top: 30px;
+}
+.second-vod .overview .actors > div {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin-right: 30px;
+  display: inline-block;
+  width: 125px;
+  height: 176px;
+  border: 1px solid #f2f2f2;
+}
+.second-vod .preview .container {
+  display: table;
+  position: absolute;
+  color: #ffffff;
+  top: 30px;
+  right: 30px;
+  width: 560px;
+  height: 580px;
+}
+.second-vod .preview .info {
+  display: table-cell;
+  vertical-align: middle;
+}
+.second-vod .preview .title {
+  font: 36px dinRegular;
+}
+.second-vod .preview .subtitle {
+  font: 24px dinLight;
+  color: #8e8e8e;
+}
+.second-vod .preview .description {
+  margin-top: 30px;
+  font: 28px dinLight;
+}
+/* /Users/shawn/Work/directv-fl/src/components/inactive/channel/style.less */
+.second-channel {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.second-channel .overlay {
+  background: radial-gradient(circle farthest-corner at 95% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+}
+.second-channel > .container {
   position: absolute;
   top: 0;
   width: 100%;
@@ -456,14 +1159,14 @@ body {
   display: table;
   border-spacing: 30px;
 }
-.second-channel .widgets > div {
+.second-channel > .container > div {
   vertical-align: top;
   display: table-cell;
 }
-.second-channel .widgets .title {
+.second-channel > .container .title {
   font-size: 28px;
 }
-.second-channel .widgets .subtitle {
+.second-channel > .container .subtitle {
   font-size: 24px;
 }
 .second-channel .video-widget {
@@ -477,8 +1180,8 @@ body {
   margin-bottom: 30px;
 }
 .second-channel .video-widget .logo {
-  width: 162px;
-  height: 54px;
+  width: 160px;
+  height: 60px;
   position: absolute;
   top: 0;
 }
@@ -510,7 +1213,6 @@ body {
   margin-right: 15px;
   vertical-align: middle;
   display: inline-block;
-  background-image: url('../../../assets/img/app/twitter.png');
   width: 30px;
   height: 30px;
   background-size: cover;
@@ -632,56 +1334,6 @@ body {
   border-radius: 4px;
   border: 1px solid #ffffff;
 }
-.second-channel .stats-widget .info,
-.second-channel .stats-widget .score {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-}
-.second-channel .stats-widget .info {
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  padding: 15px;
-  height: 104px;
-  text-align: center;
-}
-.second-channel .stats-widget .teams {
-  position: relative;
-}
-.second-channel .stats-widget .teams > div {
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  border-radius: 40px;
-  background-color: #181818;
-  margin-top: -40px;
-  position: absolute;
-  height: 80px;
-  width: 80px;
-  border: 1px solid #ffffff;
-}
-.second-channel .stats-widget .teams .left {
-  left: 30px;
-}
-.second-channel .stats-widget .teams .right {
-  right: 30px;
-}
-.second-channel .stats-widget .score {
-  height: 290px;
-  width: 100%;
-  text-align: center;
-  display: table;
-}
-.second-channel .stats-widget .score > div {
-  vertical-align: middle;
-  display: table-cell;
-}
-.second-channel .stats-widget .score .left,
-.second-channel .stats-widget .score .right {
-  font-size: 80px;
-  width: 20%;
-}
 .second-channel .stats-widget .poll {
   height: 360px;
 }
@@ -713,270 +1365,10 @@ body {
 .second-channel .stats-widget .poller .subtitle {
   text-align: right;
 }
-/* /Users/shawn/Work/directv-fl/src/components/inactive/Vod/style.less */
-.second-vod {
-  height: 100%;
-}
-.second-vod .bg {
-  -webkit-transition: opacity 0.5s ease-out;
-  -moz-transition: opacity 0.5s ease-out;
-  -ms-transition: opacity 0.5s ease-out;
-  -o-transition: opacity 0.5s ease-out;
-  transition: opacity 0.5s ease-out;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100%;
-}
-.second-vod .info {
-  position: absolute;
-  color: #ffffff;
-  width: 600px;
-  top: 30px;
-  left: 30px;
-}
-.second-vod .info > div {
-  margin-bottom: 30px;
-}
-.second-vod .top {
-  display: table;
-}
-.second-vod .top > div {
-  display: table-cell;
-  vertical-align: top;
-}
-.second-vod .poster {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  border: 3px solid #ff0072;
-  background-size: cover;
-  background-position: center;
-  height: 264px;
-  width: 186px;
-}
-.second-vod .right {
-  padding-left: 30px;
-}
-.second-vod .right .title {
-  font-family: dinRegular;
-  font-size: 36px;
-}
-.second-vod .right .subtitle {
-  font-size: 24px;
-}
-.second-vod .description {
-  font-size: 28px;
-}
-.second-vod .starring .header {
-  font-size: 36px;
-  font-family: dinRegular;
-  border-bottom: 1px solid #f2f2f2;
-}
-.second-vod .actors {
-  white-space: nowrap;
-  margin-top: 30px;
-}
-.second-vod .actors > div {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  margin-right: 30px;
-  display: inline-block;
-  width: 125px;
-  height: 176px;
-  border: 1px solid #f2f2f2;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/topbar/style.less */
-.topbar {
-  height: 44px;
-  background-color: #0081cf;
-  color: #ffffff;
-  display: table;
-  width: 100%;
-  overflow: hidden;
-}
-.topbar .ui-icon.left {
-  display: table-cell;
-  vertical-align: middle;
-  height: 44px;
-  width: calc(100% / 3);
-  padding-left: 15px;
-  text-align: left;
-}
-.topbar .middle {
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-  width: calc(100% / 3);
-  font: 20px dinBold;
-  padding-top: 4px;
-  white-space: nowrap;
-  text-transform: capitalize;
-}
-.topbar .ui-icon.right {
-  display: table-cell;
-  text-align: right;
-  padding-right: 15px;
-  vertical-align: middle;
-  width: calc(100% / 3);
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/menu/style.less */
-.menu {
-  font-family: 'dinLight';
-  background-color: #000000;
-  color: white;
-  background-image: url('../../../assets/img/app/bg_menu.png');
-  background-size: cover;
-}
-.menu .logo {
-  margin-left: 75px;
-  width: 150px;
-  height: 26px;
-  margin-top: 38px;
-  margin-bottom: 60px;
-  background-image: url('../../../assets/img/app/logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.menu .menu-item {
-  display: table;
-  padding: 15px 0px 15px 0px;
-}
-.menu .menu-item .ui-icon {
-  margin-left: 30px;
-  margin-top: 5px;
-  color: #8e8e8e;
-}
-.menu .menu-item .title {
-  padding-left: 15px;
-  display: table-cell;
-  font-size: 22px;
-  line-height: 0px;
-  font-weight: bold;
-  text-transform: capitalize;
-  vertical-align: middle;
-  color: #8e8e8e;
-}
-.menu-item.focused {
-  border-left: 5px solid #ff0072;
-}
-.menu-item.focused .ui-icon {
-  margin-left: 25px;
-  color: #fff;
-}
-.menu-item.focused .title {
-  color: #fff;
-}
-.menu .footer {
-  bottom: 0;
-  position: absolute;
-  width: 325px;
-  padding: 0px 30px 15px 30px;
-}
-.menu .footer .profile {
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  border-radius: 50%;
-  border: 1px solid #fff;
-  display: table-cell;
-  vertical-align: middle;
-  background-image: url('../../../assets/img/app/avatar.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.5;
-}
-.menu .footer .title {
-  display: table-cell;
-  vertical-align: middle;
-  width: 195px;
-  padding-left: 10px;
-  color: #8e8e8e;
-}
-.menu .footer .settings {
-  display: table-cell;
-  vertical-align: middle;
-  color: #8e8e8e;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/remote/style.less */
-.mini-remote {
-  display: table;
-  color: white;
-  width: 100%;
-  height: 50px;
-  bottom: 0px;
-  background-color: #232323;
-  border-top: 1px solid #000000;
-  position: absolute;
-}
-.mini-remote .left {
-  vertical-align: top;
-  display: table-cell;
-  background-color: #000;
-  width: 67px;
-  height: 50px;
-  background-size: contain;
-}
-.mini-remote .middle {
-  padding-left: 15px;
-  vertical-align: middle;
-  display: table-cell;
-  margin-top: 4px;
-}
-.mini-remote .middle .title {
-  font: 14px/10px dinRegular;
-}
-.mini-remote .middle .info {
-  font: 14px dinLight;
-  color: #8e8e8e;
-}
-.mini-remote .right {
-  vertical-align: middle;
-  display: table-cell;
-  padding-right: 15px;
-  text-align: right;
-  font-size: 32px;
-  width: 50px;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/switcher/style.less */
-.first-switcher {
-  position: absolute;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/popup/style.less */
-.popup {
-  background: #181818;
-  color: white;
-}
-.popup .topbar {
-  background-color: #181818;
-}
-/* /Users/shawn/Work/directv-fl/src/components/shared/icon/style.less */
-/*
- * Directv v0.1, 2015
- * Author: Gideon van Dijk, Vigour.io
- */
-/*
- * Icons
- */
-@font-face {
-  font-family: 'dtvIcons';
-  src: url('../../../../assets/fonts/dtvIcons.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-.ui-icon-font {
-  font-family: 'dtvIcons';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.ui-icon {
-  font-family: 'dtvIcons';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  font-size: 24px;
-  line-height: 24px;
+/* /Users/shawn/Work/directv-fl/src/components/inactive/progress/style.less */
+.second-progress {
+  border-top: 40px solid #ff0072;
+  border-right: 20px solid transparent;
 }
 /* /Users/shawn/Work/directv-fl/src/components/shared/list/style.less */
 .base-list {
@@ -1027,6 +1419,9 @@ body {
 }
 .poster-item .img {
   height: 100%;
+}
+.poster-item {
+  display: inline-block;
 }
 .list-dots {
   pointer-events: none;
@@ -1122,6 +1517,15 @@ body {
 .isPhone .poster-item .img {
   background-size: cover;
 }
+.notIsPhone .base-list .info-item,
+.notIsPhone .base-list .poster-item {
+  border: 2px solid #323232;
+  margin: 2px 0px 2px 30px;
+}
+.notIsPhone .base-list .info-item:last-child,
+.notIsPhone .base-list .poster-item:last-child {
+  margin-right: 28px !important;
+}
 .notIsPhone .base-list > div.focused {
   border: 2px solid #ff0072;
 }
@@ -1141,255 +1545,23 @@ body {
   height: 210px;
 }
 .notIsPhone .info-item .info {
-  padding: 8px 15px;
+  padding: 25px 0px 0px 25px;
 }
 .notIsPhone .info-item .title {
-  font-size: 28px;
+  font: 26px/18px dinRegular;
 }
 .notIsPhone .info-item .subtitle {
-  font-size: 24px;
+  font: 24px dinLight;
+  color: #8e8e8e;
 }
 .notIsPhone .info-item .logo {
   top: 4px;
   width: 160px;
   height: 60px;
 }
-.notIsPhone .info-item,
-.notIsPhone .poster-item {
-  border: 2px solid #323232;
-  margin: 2px 0px 2px 30px;
-}
-.notIsPhone .info-item:last-child,
-.notIsPhone .poster-item:last-child {
-  margin-right: 28px !important;
-}
 .notIsPhone .poster-item {
   width: 212px;
   height: 300px;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/discover/style.less */
-.first-discover {
-  height: 100%;
-  background-color: #181818;
-  color: #ffffff;
-}
-.first-discover .header {
-  font: 20px dinRegular;
-  border-bottom: 1px solid #323232;
-  text-transform: capitalize;
-  margin: 15px 15px 15px 15px;
-  width: calc(100% - 15px);
-}
-.first-discover .spotlight {
-  position: relative;
-}
-.first-discover .spotlight .list-dots .container {
-  -webkit-border-radius: 11px;
-  -moz-border-radius: 11px;
-  border-radius: 11px;
-  background-color: #0081cf;
-}
-.first-discover > div:last-child {
-  margin-bottom: 30px;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/search/style.less */
-.first-search .field {
-  display: table-cell;
-  vertical-align: middle;
-  text-transform: capitalize;
-  padding-right: 15px;
-}
-.first-search .field .lefticon {
-  display: table-cell;
-  color: #8e8e8e;
-  padding: 0px;
-  width: 20px;
-  vertical-align: middle;
-  font-size: 28px;
-}
-.first-search .field .clear {
-  width: 25px;
-  display: table-cell;
-  vertical-align: middle;
-  color: #8e8e8e;
-  font-size: 28px;
-}
-.first-search .field .table {
-  width: 100%;
-  vertical-align: middle;
-  display: table;
-  background-color: #fff;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  height: 30px;
-}
-.first-search .inputField {
-  width: 100%;
-  display: table-cell;
-  -webkit-appearance: none;
-  margin-top: 5px;
-}
-.first-search .topbar {
-  background-color: #181818;
-}
-.first-search .topbar .ui-icon.left {
-  width: 30px;
-}
-.first-search .overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 60px;
-  left: 0;
-}
-.first-search {
-  background-color: #181818;
-  color: white;
-}
-.first-search .page {
-  margin-left: 15px;
-  margin-top: 15px;
-}
-.first-search .page .actors {
-  margin-bottom: 30px;
-}
-.search-top-result .title {
-  font: 20px dinRegular;
-  border-bottom: 1px solid #323232;
-  text-transform: capitalize;
-}
-.search-top-result .body {
-  margin-top: 15px;
-  display: table;
-  font: 16px dinLight;
-}
-.search-top-result .body .poster {
-  vertical-align: top;
-  display: table-cell;
-}
-.search-top-result .body .poster .img {
-  width: 93px;
-  height: 132px;
-  border: 1px solid #8e8e8e;
-  background-size: contain;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-}
-.search-top-result .body .textHolder {
-  vertical-align: top;
-  display: table-cell;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-}
-.search-top-result .body .textHolder .title {
-  width: 150px;
-  float: left;
-  font-size: 18px;
-  line-height: 16px;
-  font-family: dinRegular;
-  padding-left: 15px;
-  padding-bottom: 0px;
-  border: none;
-}
-.search-top-result .body .textHolder .info {
-  width: 150px;
-  float: left;
-  font: 14px dinLight;
-  padding-left: 15px;
-  color: #8e8e8e;
-}
-.search-top-result .body .textHolder .rating {
-  float: right;
-  padding: 12px 9px 9px 9px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  border: 2px solid #fff;
-  background-color: #7ed321;
-  font-family: dinBold;
-  font-size: 16px;
-  margin-top: -15px;
-  margin-right: 15px;
-}
-.search-top-result .body .textHolder .description {
-  float: left;
-  padding: 15px;
-}
-.search-results.recent {
-  margin-top: 0px;
-}
-.search-results {
-  margin-top: 30px;
-}
-.search-results .title {
-  font: 20px dinRegular;
-  border-bottom: 1px solid #323232;
-  text-transform: capitalize;
-}
-.search-results .body {
-  font: 16px dinLight;
-  padding-right: 15px;
-  border-spacing: 0 7px;
-  border-bottom: 1px solid #323232;
-  height: 60px;
-  text-transform: capitalize;
-  display: table;
-  white-space: nowrap;
-  width: 100%;
-  table-layout: fixed;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-}
-.search-results .body .title {
-  font: 16px dinLight;
-  display: table-cell;
-  vertical-align: middle;
-  border: none;
-}
-.search-results .body .arrowRight {
-  display: table-cell;
-  vertical-align: middle;
-  width: 24px;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/content-item/vod/style.less */
-.content-item.vod {
-  background-color: #181818;
-  color: #ffffff;
-}
-.content-item.vod .footer {
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  font-size: 11px;
-  font-family: 'dinBold';
-  color: grey;
-  background-color: #242526;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/content-item/channel/style.less */
-.content-item.channel {
-  background-color: #181818;
-  color: #ffffff;
-}
-.content-item.channel .player {
-  height: 210px;
-}
-.content-item.channel .footer {
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  font-size: 10px;
-  font-family: 'dinBold';
-  background-color: #232323;
 }
 /* /Users/shawn/Work/directv-fl/src/components/active/popup/actor/style.less */
 .popup .carousel {
@@ -1405,37 +1577,11 @@ body {
 .popup .carousel .img .overlay {
   width: 100%;
   height: 100%;
-  background: radial-gradient(ellipse at center, rgba(24, 24, 24, 0) 0%, #181818 100%);
+  background: radial-gradient(circle at center, rgba(23, 23, 23, 0) 0%, rgba(23, 23, 23, 0.8) 70%);
 }
-.popup .bio {
-  margin-top: 30px;
+.popup .famous .header {
   margin-left: 15px;
-}
-.popup .bio .title {
-  font: 20px dinRegular;
-  border-bottom: 1px solid #323232;
-  text-transform: capitalize;
-  margin-bottom: 10px;
-}
-.popup .bio .body {
-  width: calc(100% - 15px);
-  font: 16px dinLight;
-}
-.popup .poster-item {
-  display: inline-block;
-}
-.popup .famous {
-  margin-top: 30px;
-}
-.popup .famous .title {
-  margin-left: 15px;
-  font: 20px dinRegular;
-  border-bottom: 1px solid #323232;
-  text-transform: capitalize;
   margin-bottom: 15px;
-}
-.popup .famous .body {
-  font: 16px dinLight;
 }
 /* /Users/shawn/Work/directv-fl/src/components/active/popup/volume/style.less */
 .popup.volume {
@@ -1615,19 +1761,22 @@ body {
   background-size: contain;
   position: absolute;
 }
-.remote .guide {
-  width: calc(100% - 95px);
-  margin-left: auto;
-  margin-right: auto;
+.remote > .info {
+  margin-left: 50px;
+  width: 100%;
 }
-.remote .guide .header {
-  font: 20px dinRegular;
-  border-bottom: 1px solid #323232;
-  text-transform: capitalize;
+.remote > .info .header {
+  padding-top: 0px;
+  margin-top: -5px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 5px;
+}
+.remote .guide .items {
+  width: calc(100% - 95px);
 }
 .remote .guide .body {
   font-size: 14px;
-  padding-right: 15px;
   border-spacing: 0 7px;
   border-bottom: 1px solid #323232;
   height: 60px;
@@ -1655,6 +1804,11 @@ body {
   vertical-align: middle;
   width: 24px;
 }
+.remote .description .body {
+  margin-left: 0px;
+  padding-left: 0px;
+  width: calc(100% - 95px);
+}
 .remote .controls {
   background-color: #232323;
   border-top: 1px solid #000000;
@@ -1676,7 +1830,7 @@ body {
 .remote .controls .buttons {
   display: table;
   width: 100%;
-  margin-top: 15px;
+  margin-top: 30px;
 }
 .remote .controls .buttons .ui-icon.left {
   font-size: 32px;
@@ -1727,6 +1881,127 @@ body {
 }
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/* /Users/shawn/Work/directv-fl/src/components/active/content/style.less */
+.content-item .swipeup .nested {
+  background-color: #ffeb00;
+}
+.content-item .player {
+  height: 210px;
+}
+.content-item .trivia .header {
+  margin-left: 0px;
+  margin-bottom: 5px;
+}
+.content-item .tweets .header {
+  border-bottom: 0px;
+  margin-bottom: 5px;
+}
+.content-item .widgets {
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+/* /Users/shawn/Work/directv-fl/src/components/shared/bar/style.less */
+.ui-bar {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 60px;
+  background-color: #232323;
+  border-bottom: 1px solid #000000;
+}
+.ui-bar .left,
+.ui-bar .right {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+.ui-bar .right {
+  text-align: right;
+}
+.ui-bar .accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 60px;
+  background-color: #ff0072;
+}
+.ui-bar .title {
+  margin-top: 5px;
+  margin-left: 15px;
+  font: 14px/10px dinRegular;
+}
+.ui-bar .ui-icon {
+  margin-top: 20px;
+  color: #8e8e8e;
+  margin-right: -8px;
+}
+.ui-bar .info {
+  margin-left: 15px;
+  position: relative;
+  font: 14px dinLight;
+  color: #8e8e8e;
+}
+.ui-bar .timefiller {
+  display: table;
+  margin-top: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.ui-bar .timefiller > * {
+  vertical-align: middle;
+  display: table-cell;
+}
+.ui-bar .timefiller .middle {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+}
+.ui-bar .timefiller .middle .filler {
+  margin-top: 5px;
+}
+.ui-bar .badges {
+  margin-right: 15px;
+}
+.ui-bar .badges .badge {
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  vertical-align: middle;
+  display: inline-block;
+  position: relative;
+  width: 35px;
+  height: 35px;
+  margin-left: 5px;
+  padding: 5px;
+  padding-top: 6px;
+  background: black;
+  border: 1px solid white;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 12px;
+  font-family: 'dinBold';
+}
+.ui-bar .badges .rating {
+  background: #9BD32E;
+  font-size: 14px;
+  padding-top: 10px;
+}
+.ui-bar .tvpg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  width: 37px;
+  height: 37px;
+}
+.bar.program2 {
+  border-top: 1px solid #000;
 }
 /* /Users/shawn/Work/directv-fl/src/components/active/search/reset.less */
 input[placeholder],
@@ -1786,206 +2061,21 @@ input[type="number"] {
   margin: 0;
   padding: 0;
 }
-/* /Users/shawn/Work/directv-fl/src/components/active/player/style.less */
-.first-player {
-  position: relative;
-}
-.first-player video {
-  width: 100%;
-  height: 210px;
-}
-.first-player .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.first-player .overlay .middle {
-  width: 100%;
-  height: 80%;
-}
-.first-player .overlay .middle .left,
-.first-player .overlay .middle .middle,
-.first-player .overlay .middle .right {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-}
-.first-player .overlay .middle .middle {
-  width: 1px;
-}
-.first-player .overlay .line {
-  width: 1px;
-  height: 100px;
-  background: white;
-}
-.first-player .overlay .play,
-.first-player .overlay .swipeup {
-  display: inline-block;
-  width: 100px;
-}
-.first-player .overlay .play .icon,
-.first-player .overlay .swipeup .icon {
-  font-size: 48px;
-  line-height: 48px;
-}
-.first-player .overlay .play .subtitle,
-.first-player .overlay .swipeup .subtitle {
-  margin-top: 5px;
-}
-.first-player .overlay .bottom {
-  display: none;
-  width: 100%;
-}
-.first-player .overlay .bottom .left,
-.first-player .overlay .bottom .right {
-  display: table-cell;
-  vertical-align: middle;
-}
-.first-player .overlay .bottom .left {
-  width: 100%;
-  background-color: red;
-}
-.first-player .overlay .bottom .right .fullscreen {
-  display: inline-block;
-  margin-right: 15px;
-  margin-left: 15px;
-}
-/* /Users/shawn/Work/directv-fl/src/components/shared/bar/style.less */
-.ui-bar {
-  position: relative;
-  display: table;
-  width: 100%;
-  height: 60px;
-  background-color: #232323;
-  border-bottom: 1px solid #000000;
-}
-.ui-bar .left,
-.ui-bar .right {
-  position: relative;
-  display: table-cell;
-  vertical-align: middle;
-}
-.ui-bar .right {
-  text-align: right;
-}
-.ui-bar .accent {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 59px;
-  background-color: #ff0072;
-}
-.ui-bar .title {
-  margin-left: 15px;
-  font: 14px/10px dinRegular;
-  margin-bottom: 4px;
-}
-.ui-bar .info {
-  margin-left: 15px;
-  position: relative;
-  font: 14px dinLight;
-}
-.ui-bar .timefiller {
-  display: table;
-  table-layout: fixed;
-  margin-left: 15px;
-  margin-right: 15px;
-  font-size: 12px;
-  margin-bottom: -6px;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-}
-.ui-bar .timefiller .left {
-  display: table-cell;
-  vertical-align: middle;
-}
-.ui-bar .timefiller .middle {
-  width: 100%;
-  display: table-cell;
-  vertical-align: middle;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-.ui-bar .timefiller .right {
-  display: table-cell;
-  vertical-align: middle;
-  margin-right: 15px;
-}
-.ui-bar .timefiller .right .end {
-  display: inline-block;
-  text-align: right;
-}
-.ui-bar .timefiller .filled {
-  background-color: #ff0072;
-}
-.ui-bar .badges {
-  margin-right: 15px;
-}
-.ui-bar .badges .badge {
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  vertical-align: middle;
-  display: inline-block;
-  position: relative;
-  width: 35px;
-  height: 35px;
-  margin-left: 5px;
-  padding: 5px;
-  padding-top: 6px;
-  background: black;
-  border: 1px solid white;
-  border-radius: 3px;
-  text-align: center;
-  font-size: 12px;
-  font-family: 'dinBold';
-}
-.ui-bar .badges .score {
-  background: #9BD32E;
-  font-size: 14px;
-  padding-top: 10px;
-}
-.ui-bar .tvpg {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin-right: 15px;
-  margin-bottom: 20px;
-  width: 37px;
-  height: 37px;
-}
-.ui-bar .line {
-  position: absolute;
-  bottom: 0%;
-  height: 1px;
-  background-color: red;
-}
-.bar.program2 {
-  border-top: 1px solid #000;
-}
 /* /Users/shawn/Work/directv-fl/src/components/shared/trivia/style.less */
 .ui-trivia {
-  padding: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
   width: calc(100% - 30px);
 }
-.ui-trivia .title {
-  font: 20px dinRegular;
+.ui-trivia .header {
+  margin-left: 0px;
   margin-bottom: 5px;
+  border-bottom: 0px;
 }
 .ui-trivia .body {
   padding: 15px;
   height: auto;
-  background-size: contain;
+  background-size: cover;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -1997,19 +2087,35 @@ input[type="number"] {
   color: #0081cf;
 }
 .ui-trivia .body .subtitle {
-  font-size: 68px;
+  font-size: 48px;
   margin-bottom: 8px;
-  line-height: 60px;
+  line-height: 48px;
   padding: 20px;
 }
 .ui-trivia .body .description {
   color: #8e8e8e;
   font: 14px dinLight;
+  padding-bottom: 5px;
+}
+/* /Users/shawn/Work/directv-fl/src/components/shared/description/style.less */
+.ui-description {
+  padding-right: 0;
+}
+.ui-description .header {
+  margin-bottom: 5px;
+  width: calc(100% - 30px);
+}
+.ui-description .body {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 0;
+  height: auto;
+  border: 0;
+  text-align: left;
 }
 /* /Users/shawn/Work/directv-fl/src/components/shared/seekbar/style.less */
 .ui-seekbar {
-  white-space: nowrap;
-  margin-top: 1px;
+  height: 8px;
 }
 .ui-seekbar .bg {
   cursor: pointer;
@@ -2034,22 +2140,24 @@ input[type="number"] {
   width: 20px;
   background-color: #ffffff;
   height: 20px;
-  margin: -14px -10px 0 -10px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
 }
 /* /Users/shawn/Work/directv-fl/src/components/shared/poll/style.less */
+.ui-poll .header {
+  border-bottom: 0px;
+}
 .ui-voterow {
-  width: 100%;
+  margin-left: 15px;
+  width: calc(100% - 30px);
   display: table;
-  padding-top: 5px;
   table-layout: fixed;
 }
 .ui-voterow .left {
   width: 60px;
   display: table-cell;
   vertical-align: middle;
-  position: relative;
+  padding-top: 8px;
 }
 .ui-voterow .logo {
   width: 40px;
@@ -2082,136 +2190,154 @@ input[type="number"] {
   font-size: 10px;
 }
 .ui-voterow .votefiller {
-  display: inline-block;
   width: 100%;
+  margin-top: 10px;
 }
 .ui-voterow.first {
-  margin-bottom: 15px;
-}
-/* /Users/shawn/Work/directv-fl/src/components/shared/statistics/style.less */
-.content-item .statistics .body {
-  position: relative;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-}
-.content-item .statistics .line {
-  height: 1px;
-  background-color: grey;
-  margin-top: 12.5%;
-  width: 100%;
-}
-.content-item .statistics .left {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  width: 25%;
-}
-.content-item .statistics .middle {
-  display: table-cell;
-  width: 50%;
-}
-.content-item .statistics .right {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  width: 25%;
-}
-.content-item .statistics .top {
-  padding: 15px;
-  display: table;
-  table-layout: fixed;
-  border-bottom: 1px solid #323232;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  height: 50%;
-  width: 100%;
-}
-.content-item .statistics .top .logo {
-  width: 40px;
-  height: 40px;
-  display: inline-block;
-  border-radius: 50%;
-  border: 2px solid white;
-  background-size: contain;
-}
-.content-item .statistics .vs {
-  font: 14px/10px dinRegular;
-}
-.content-item .statistics .date {
-  font: 14px dinLight;
-}
-.content-item .statistics .bottom {
-  display: table;
-  width: 100%;
-  height: 100px;
-}
-.content-item .statistics .bottom .middle {
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  position: relative;
-  vertical-align: middle;
-}
-.content-item .statistics .midleft {
-  display: inline-block;
-  width: 30%;
-  text-align: right;
-  padding-right: 20%;
-}
-.content-item .statistics .midright {
-  display: inline-block;
-  width: 30%;
-  text-align: left;
-  padding-left: 20%;
-}
-.content-item .statistics .points {
-  font-size: 42px;
-}
-.content-item .statistics .innings {
-  font-size: 14px;
-  color: grey;
-}
-/* /Users/shawn/Work/directv-fl/src/components/shared/description/style.less */
-.content-item .description.widget {
-  padding-right: 0;
-}
-.content-item .description.widget .title {
-  border-bottom: 1px solid #666;
-  padding-bottom: 5px;
-}
-.content-item .description.widget .body {
-  padding-right: 15px;
-  margin-right: 0;
-  height: auto;
-  border: 0;
-  text-align: left;
-}
-/* /Users/shawn/Work/directv-fl/src/components/shared/actors/style.less */
-/* /Users/shawn/Work/directv-fl/src/components/shared/recommendations/style.less */
-.ui-recommendations {
-  padding: 0;
-  padding-top: 15px;
   padding-bottom: 15px;
 }
-.ui-recommendations .title {
-  font: 20px dinRegular;
+/* /Users/shawn/Work/directv-fl/src/components/shared/statistics/style.less */
+.ui-score .info,
+.ui-score .body {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+.ui-score .info {
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  padding: 15px;
+  height: 104px;
+  text-align: center;
+}
+.ui-score .teams {
+  position: relative;
+}
+.ui-score .teams > div {
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+  margin-top: -40px;
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  border: 1px solid #ffffff;
+  background-size: contain;
+}
+.ui-score .teams .left {
+  left: 30px;
+}
+.ui-score .teams .right {
+  right: 30px;
+}
+.ui-score .body {
+  height: 290px;
+  width: 100%;
+  text-align: center;
+  display: table;
+}
+.ui-score .body > div {
+  vertical-align: middle;
+  display: table-cell;
+}
+.ui-score .body .left,
+.ui-score .body .right {
+  font-size: 80px;
+  width: 20%;
+}
+.ui-statistics {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.ui-statistics > .header {
+  margin-left: 0px;
   margin-bottom: 5px;
-  border-bottom: 1px solid #323232;
-  margin-left: 15px;
+  border-bottom: 0px;
+}
+.ui-statistics > .body {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  height: auto;
+  background-size: contain;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #323232;
+  text-align: center;
+}
+.ui-statistics > .body .info {
+  height: 60px;
+  padding-top: 17px;
+  border: 1px solid #323232;
+}
+.ui-statistics > .body .info .title {
+  font: 14px/10px dinRegular;
+}
+.ui-statistics > .body .info .subtitle {
+  font: 14px dinLight;
+  color: #8e8e8e;
+}
+.ui-statistics > .body .body {
+  border-bottom: none;
+  height: 120px;
+}
+.ui-statistics > .body .body .middleleft,
+.ui-statistics > .body .body .middleright {
+  padding-top: 10px;
+}
+.ui-statistics > .body .body .middleleft .title,
+.ui-statistics > .body .body .middleright .title {
+  font: 14px/10px dinRegular;
+}
+.ui-statistics > .body .body .middleleft .subtitle,
+.ui-statistics > .body .body .middleright .subtitle {
+  font: 14px dinLight;
+  color: #8e8e8e;
+}
+.ui-statistics > .body .body > .left,
+.ui-statistics > .body .body > .right {
+  font-size: 40px;
+}
+.ui-statistics > .body .body .left {
+  padding-left: 15px;
+}
+.ui-statistics > .body .body .right {
+  padding-right: 15px;
+}
+.ui-statistics > .body .teams > div {
+  margin-top: -21px;
+}
+.ui-statistics > .body .teams .left,
+.ui-statistics > .body .teams .right {
+  height: 40px;
+  width: 40px;
+  border: 2px solid white;
+}
+.ui-statistics > .body .teams .left {
+  left: 20px;
+}
+.ui-statistics > .body .teams .right {
+  right: 20px;
+}
+/* /Users/shawn/Work/directv-fl/src/components/shared/actors/style.less */
+.ui-actors .body {
+  margin-right: 15px;
+  border: 0;
+  white-space: nowrap;
+  height: auto;
+}
+/* /Users/shawn/Work/directv-fl/src/components/shared/recommendations/style.less */
+.ui-recommendations {
+  padding-bottom: 15px;
 }
 .ui-recommendations .body {
-  padding-top: 10px;
   margin-right: 15px;
   border: 0;
   white-space: nowrap;
@@ -2232,14 +2358,11 @@ input[type="number"] {
 /* /Users/shawn/Work/directv-fl/src/components/shared/tweets/style.less */
 .ui-tweets {
   transform: rotateX(0deg);
-  padding: 0;
-  padding-top: 15px;
   padding-bottom: 30px;
 }
-.ui-tweets .title {
-  font: 20px dinRegular;
+.ui-tweets .header {
   margin-bottom: 5px;
-  margin-left: 15px;
+  border-bottom: 0px;
 }
 .ui-tweets .body {
   margin-right: 15px;
@@ -2248,10 +2371,10 @@ input[type="number"] {
 }
 .ui-tweets .tweet {
   display: inline-block;
-  border: 1px solid grey;
+  border: 1px solid #323232;
   border-radius: 3px;
   width: 200px;
-  height: 150px;
+  height: 170px;
   margin-left: 15px;
   text-align: left;
   position: relative;
@@ -2279,33 +2402,85 @@ input[type="number"] {
   font-family: 'dinBold';
   position: absolute;
   padding-right: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 7px;
   text-align: right;
   right: 0%;
   bottom: 0%;
   font-size: 12px;
   color: grey;
 }
-/* /Users/shawn/Work/directv-fl/src/components/shared/filler/style.less */
-.content-item .filler {
+/* /Users/shawn/Work/directv-fl/src/components/active/player/style.less */
+.first-player {
   position: relative;
+}
+.first-player video {
   width: 100%;
+  height: 210px;
+}
+.first-player .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.first-player .overlay .middle {
+  display: table;
+  width: 100%;
+  height: calc(100% - 40px);
+}
+.first-player .overlay .middle .left,
+.first-player .overlay .middle .middle,
+.first-player .overlay .middle .right {
+  padding-top: 30px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.first-player .overlay .middle .middle {
+  padding-top: 15px;
+  width: 1px;
+}
+.first-player .overlay .line {
+  width: 1px;
+  height: 100px;
+  background: white;
+}
+.first-player .overlay .play,
+.first-player .overlay .swipeup {
+  display: inline-block;
+  width: 100px;
+}
+.first-player .overlay .play .icon,
+.first-player .overlay .swipeup .icon {
+  font-size: 48px;
+  line-height: 48px;
+}
+.first-player .overlay .play .subtitle,
+.first-player .overlay .swipeup .subtitle {
   margin-top: 5px;
-  margin-bottom: 5px;
-  height: 10px;
 }
-.content-item .filler .bg {
-  position: absolute;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.6);
-  opacity: 0.8;
-  height: 10px;
+.first-player .overlay .seekbar {
+  margin-top: -11px;
+}
+.first-player .overlay .seekbar .bg {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.first-player .overlay .bottom {
+  display: table;
   width: 100%;
 }
-.content-item .filler .filled {
-  position: absolute;
-  border-radius: 5px;
-  background-color: #0081cf;
-  height: 10px;
-  width: 75%;
+.first-player .overlay .bottom .left,
+.first-player .overlay .bottom .right {
+  display: table-cell;
+  vertical-align: middle;
+}
+.first-player .overlay .bottom .left {
+  padding: 15px;
+  width: 100%;
+}
+.first-player .overlay .bottom .right {
+  padding-bottom: 15px;
+  padding-right: 15px;
 }
