@@ -31,13 +31,18 @@
     "vigour-js": "git+ssh://git@github.com:vigour-io/vigour-js.git#directv"
   },
   "devDependencies": {
+    "vigour-native": "git+ssh://git@github.com:vigour-io/vigour-native.git",
     "vigour-native-statusBar": "git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git",
     "vigour-packer-server": "git+ssh://git@github.com:vigour-io/vigour-packer-server.git",
-    "vigour-hub": "git+ssh://git@github.com:vigour-io/vigour-hub.git#directv"
+    "vigour-hub": "git+ssh://git@github.com:vigour-io/vigour-hub.git#directv",
+    "gaston": "git+ssh://git@github.com:vigour-io/gaston.git"
   },
   "vigour": {
-    "cloud": "http://directv.dev.vigour.io:80",
+    "cloud": "domain",
     "branches": {
+      "youzi-dev":{
+        "cloud": "http://10.0.1.2:10001"
+      },
       "marcus-dev": {
         "cloud": "http://10.0.1.199:10001"
       },

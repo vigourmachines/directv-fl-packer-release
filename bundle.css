@@ -172,6 +172,9 @@ body {
   width: 100%;
   overflow: hidden;
 }
+.notIsPhone {
+  pointer-events: none;
+}
 /* /Users/youzi/dev/directv-fl/src/components/active/style.less */
 .first-state {
   height: 100%;
@@ -1963,6 +1966,7 @@ body {
 }
 .content-item .player {
   height: 210px;
+  background-color: #000;
 }
 .content-item .trivia .header {
   margin-left: 0px;
@@ -2117,29 +2121,16 @@ input[type="number"] {
   position: relative;
   width: 35px;
   height: 35px;
-  margin-left: 5px;
-  padding: 5px;
-  padding-top: 6px;
+  margin-left: 15px;
+  font-family: dinBold;
+  padding-top: 10px;
   background: black;
   border: 1px solid white;
   border-radius: 3px;
   text-align: center;
-  font-size: 12px;
-  font-family: 'dinBold';
 }
 .ui-bar .badges .rating {
   background: #9BD32E;
-  font-size: 14px;
-  padding-top: 10px;
-}
-.ui-bar .tvpg {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin-right: 15px;
-  margin-bottom: 20px;
-  width: 37px;
-  height: 37px;
 }
 .bar.program2 {
   border-top: 1px solid #000;
@@ -2563,7 +2554,7 @@ input[type="number"] {
   display: table;
 }
 .first-player .overlay .bottom .left .table > div {
-  padding-right: 8px;
+  padding-right: 15px;
   vertical-align: middle;
   display: table-cell;
 }
