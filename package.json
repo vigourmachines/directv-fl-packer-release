@@ -38,7 +38,7 @@
     "gaston": "git+ssh://git@github.com:vigour-io/gaston.git"
   },
   "vigour": {
-    "cloud": "domain",
+    "cloud": "http://54.171.153.51:10001",
     "branches": {
       "youzi-dev":{
         "cloud": "http://10.0.1.2:10001"
