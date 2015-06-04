@@ -25,3 +25,11 @@
     font-weight: normal;
     font-style: normal;
 }
+
+/* Bold */
+@font-face {
+  font-family:'dtvIcons';
+  src: url('dtvIcons.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,6 @@
     "startHub": "./node_modules/vigour-hub/bin/hub -d -c directv",
     "prestart": "npm run startHub &",
     "build": "vNative build",
-    "serve": "packer",
     "release": "packer -r"
   },
   "repository": {
@@ -38,7 +37,7 @@
     "gaston": "git+ssh://git@github.com:vigour-io/gaston.git"
   },
   "vigour": {
-    "cloud": "http://54.171.153.51:10001",
+    "cloud": "domain",
     "branches": {
       "youzi-dev":{
         "cloud": "http://10.0.1.2:10001"
@@ -48,6 +47,9 @@
       },
       "shawn-dev": {
         "cloud": "http://192.168.2.18:10001"
+      },
+      "youzi-dev": {
+        "cloud": "http://10.0.1.2:10001"
       }
     },
     "pointers": {
@@ -57,8 +59,8 @@
     "packer": {
       "web": "index.html",
       "assets": {
-        "bundle.js": true,
-        "bundle.css": true,
+        "build.js": true,
+        "build.css": true,
         "index.html": true,
         "assets": "*"
       },
@@ -70,7 +72,8 @@
         "fromAddress": "shawn@vigour.io",
         "to": "shawn@vigour.io"
       },
-      "slack": {}
+      "slack": {},
+      "server": {}
     },
     "native": {
       "platforms": {
