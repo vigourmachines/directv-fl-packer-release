@@ -37,7 +37,7 @@
     "gaston": "git+ssh://git@github.com:vigour-io/gaston.git"
   },
   "vigour": {
-    "cloud": "domain",
+    "cloud": "http://directv.dev.vigour.io/",
     "branches": {
       "youzi-dev":{
         "cloud": "http://10.0.1.2:10001"
@@ -59,8 +59,8 @@
     "packer": {
       "web": "index.html",
       "assets": {
-        "bundle.js": true,
-        "bundle.css": true,
+        "build.js": true,
+        "build.css": true,
         "index.html": true,
         "assets": "*"
       },
