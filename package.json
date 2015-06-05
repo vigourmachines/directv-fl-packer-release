@@ -50,7 +50,7 @@
       }
     },
     "development": {
-      "button": true
+      "button": false
     },
     "pointers": {
       "img": "http://devassets.vigour.io/",
@@ -59,8 +59,8 @@
     "packer": {
       "web": "index.html",
       "assets": {
-        "build.js": true,
-        "build.css": true,
+        "bundle.js": true,
+        "bundle.css": true,
         "index.html": true,
         "assets": "*",
         "fonts.css":true
