@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "prestart": "npm run startHub &",
     "build": "vNative build",
     "serve": "packer",
-    "release": "packer -r"
+    "release": "packer -r -c /Users/shawn/Work/directv-fl/package.json,/Users/shawn/Work/directv-fl/.package.json"
   },
   "repository": {
     "type": "git",
