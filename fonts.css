@@ -5,7 +5,7 @@
  /* Regular */
 @font-face {
     font-family: 'dinRegular';
-    src: url('dinRegular.woff') format('woff');
+    src: url('assets/fonts/dinRegular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -13,7 +13,7 @@
 /* Light */
 @font-face {
     font-family: 'dinLight';
-    src: url('dinLight.woff') format('woff');
+    src: url('assets/fonts/dinLight.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -21,15 +21,15 @@
 /* Bold */
 @font-face {
     font-family: 'dinBold';
-    src: url('dinBold.woff') format('woff');
+    src: url('assets/fonts/dinBold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
-/* Bold */
+/* Icons */
 @font-face {
   font-family:'dtvIcons';
-  src: url('dtvIcons.woff') format('woff');
+  src: url('assets/fonts/dtvIcons.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

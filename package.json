@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -37,7 +37,7 @@
     "gaston": "git+ssh://git@github.com:vigour-io/gaston.git"
   },
   "vigour": {
-    "cloud": "http://directv.dev.vigour.io/",
+    "cloud": "http://directv.dev.vigour.io:80",
     "branches": {
       "youzi-dev":{
         "cloud": "http://10.0.1.2:10001"
@@ -47,10 +47,10 @@
       },
       "shawn-dev": {
         "cloud": "http://192.168.2.18:10001"
-      },
-      "youzi-dev": {
-        "cloud": "http://10.0.1.2:10001"
       }
+    },
+    "development": {
+      "button": true
     },
     "pointers": {
       "img": "http://devassets.vigour.io/",
@@ -62,7 +62,8 @@
         "build.js": true,
         "build.css": true,
         "index.html": true,
-        "assets": "*"
+        "assets": "*",
+        "fonts.css":true
       },
       "git": {
         "owner": "vigour-io",
@@ -80,9 +81,11 @@
         "ios": {
           "productName": "Direct TV - Future Land",
           "organizationName": "Vigour",
-          "organizationIdentifier": "io.vigour.directv",
+          "organizationIdentifier": "io.vigour.directv-fl",
           "buildNumber": "1",
-          "appIndexPath": "index.html"
+          "appIndexPath": "index.html",
+          "appUrlIdentifier":"com.directv-fl.org",
+          "appUrlScheme": "directv-fl"
         }
       }
     }
