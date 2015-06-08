@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "startHub": "./node_modules/vigour-hub/bin/hub -d -c directv",
     "prestart": "npm run startHub &",
     "build": "vNative build",
-    "release": "packer -r"
+    "release": "packer -r -c package.json,.package.json"
   },
   "repository": {
     "type": "git",

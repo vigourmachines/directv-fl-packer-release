@@ -137,7 +137,7 @@ body {
 select {
   cursor: pointer !important;
 }
-/* /Users/youzi/dev/directv-fl/src/components/switcher/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/switcher/style.less */
 body.hasTouch {
   position: fixed;
   top: 0;
@@ -156,7 +156,7 @@ body {
 .app-switcher > div {
   position: absolute;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/inactive/style.less */
 .second-state {
   height: 100%;
   width: 100%;
@@ -175,7 +175,7 @@ body {
 .notIsPhone {
   pointer-events: none;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/active/style.less */
 .first-state {
   height: 100%;
   width: 100%;
@@ -267,7 +267,7 @@ body {
 .first-state .open.holder {
   box-shadow: -5px 0px 10px #000000;
 }
-/* /Users/youzi/dev/directv-fl/src/components/shared/wallpaper/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/shared/wallpaper/style.less */
 .ui-wallpaper {
   width: 100%;
   height: 100%;
@@ -275,7 +275,7 @@ body {
   background-size: cover;
   background-position: center;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/discover/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/inactive/discover/style.less */
 .second-discover {
   height: 100%;
 }
@@ -290,7 +290,7 @@ body {
   width: 100%;
   height: 100%;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/search/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/inactive/search/style.less */
 .second-search {
   width: 100%;
   height: calc(100% - 80px);
@@ -418,7 +418,7 @@ body {
   float: right;
   padding-left: 30px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/statusbar/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/inactive/statusbar/style.less */
 .second-statusbar {
   -webkit-transition: -webkit-transform 0.2s ease-out;
   -moz-transition: -moz-transform 0.2s ease-out;
@@ -500,7 +500,7 @@ body {
 .second-statusbar.branded .weather {
   width: 240px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/navigation/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/inactive/navigation/style.less */
 .second-navigation {
   position: absolute;
   width: 100%;
@@ -575,7 +575,7 @@ body {
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/player/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/inactive/player/style.less */
 .second-player {
   position: relative;
   width: 100%;
@@ -673,7 +673,7 @@ body {
   height: 264px;
   width: 186px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/topbar/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/active/topbar/style.less */
 .topbar {
   -webkit-transition: background-color 0.2s ease-out;
   -moz-transition: background-color 0.2s ease-out;
@@ -763,7 +763,7 @@ body {
   -webkit-appearance: none;
   margin-top: 5px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/menu/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/active/menu/style.less */
 .menu {
   font-family: 'dinLight';
   background-color: #000000;
@@ -841,7 +841,7 @@ body {
   vertical-align: middle;
   color: #8e8e8e;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/remote/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/active/remote/style.less */
 .mini-remote {
   display: table;
   color: white;
@@ -881,7 +881,7 @@ body {
   font-size: 32px;
   width: 50px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/switcher/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/active/switcher/style.less */
 .first-switcher {
   position: absolute;
   overflow: hidden;
@@ -899,7 +899,7 @@ body {
   width: 100%;
   height: 100%;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/popup/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/active/popup/style.less */
 .popup {
   background: #181818;
   color: white;
@@ -914,7 +914,7 @@ body {
   color: #ffffff !important;
   opacity: 0.8;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/topbar/reset.less */
+/* /Users/shawn/Work/directv-fl/src/components/active/topbar/reset.less */
 input[placeholder],
 [placeholder],
 *[placeholder] {
@@ -972,7 +972,7 @@ input[type="number"] {
   margin: 0;
   padding: 0;
 }
-/* /Users/youzi/dev/directv-fl/src/components/shared/icon/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/shared/icon/style.less */
 /*
  * Directv v0.1, 2015
  * Author: Gideon van Dijk, Vigour.io
@@ -993,7 +993,7 @@ input[type="number"] {
   font-size: 24px;
   line-height: 24px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/trailer/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/inactive/trailer/style.less */
 .second-trailer {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -1017,7 +1017,7 @@ input[type="number"] {
   position: absolute;
   top: 0;
 }
-/* /Users/youzi/dev/directv-fl/src/components/shared/list/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/shared/list/style.less */
 .base-list {
   white-space: nowrap;
   width: 100%;
@@ -1233,12 +1233,12 @@ input[type="number"] {
   width: 186px;
   height: 276px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/progress/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/inactive/progress/style.less */
 .second-progress {
   border-top: 40px solid #ff0072;
   border-right: 20px solid transparent;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/cover/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/inactive/cover/style.less */
 .second-cover {
   width: 100%;
   height: 100%;
@@ -1263,7 +1263,99 @@ input[type="number"] {
   width: 100%;
   height: 100%;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/channel/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/inactive/vod/style.less */
+.second-vod {
+  height: 100%;
+}
+.second-vod > div {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.second-vod .overview .overlay {
+  background: radial-gradient(circle farthest-corner at 95% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+}
+.second-vod .overview .container {
+  position: absolute;
+  top: 60px;
+  left: 30px;
+  width: 600px;
+}
+.second-vod .overview .container > div {
+  margin-bottom: 30px;
+}
+.second-vod .overview .poster-item {
+  border: 1px solid #f2f2f2;
+}
+.second-vod .overview .poster-item .img {
+  background-size: cover;
+}
+.second-vod .overview .top {
+  display: table;
+}
+.second-vod .overview .top > div {
+  display: table-cell;
+  vertical-align: top;
+}
+.second-vod .overview .right {
+  padding-left: 30px;
+}
+.second-vod .overview .right .title {
+  font-family: dinRegular;
+  font-size: 36px;
+}
+.second-vod .overview .right .subtitle {
+  font-size: 24px;
+}
+.second-vod .overview .description {
+  font-size: 28px;
+}
+.second-vod .overview .starring .header {
+  font-size: 36px;
+  font-family: dinRegular;
+}
+.second-vod .overview .actors {
+  white-space: nowrap;
+  margin-top: 10px;
+}
+.second-vod .overview .actors > div {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin-right: 30px;
+  display: inline-block;
+  border: 1px solid #f2f2f2;
+}
+.second-vod .preview .container {
+  display: table;
+  position: absolute;
+  color: #ffffff;
+  top: 30px;
+  right: 30px;
+  width: 560px;
+  height: 580px;
+}
+.second-vod .preview .info {
+  display: table-cell;
+  vertical-align: middle;
+}
+.second-vod .preview .title {
+  font: 36px dinRegular;
+}
+.second-vod .preview .subtitle {
+  font: 24px dinLight;
+  color: #8e8e8e;
+}
+.second-vod .preview .description {
+  margin-top: 10px;
+  font: 28px dinLight;
+}
+/* /Users/shawn/Work/directv-fl/src/components/inactive/channel/style.less */
 .second-channel {
   height: 100%;
   overflow: hidden;
@@ -1514,99 +1606,7 @@ input[type="number"] {
 .second-channel .stats-widget .poller .subtitle {
   text-align: right;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/vod/style.less */
-.second-vod {
-  height: 100%;
-}
-.second-vod > div {
-  -webkit-transition: opacity 0.2s ease-out;
-  -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
-  -o-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-.second-vod .overview .overlay {
-  background: radial-gradient(circle farthest-corner at 95% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
-}
-.second-vod .overview .container {
-  position: absolute;
-  top: 60px;
-  left: 30px;
-  width: 600px;
-}
-.second-vod .overview .container > div {
-  margin-bottom: 30px;
-}
-.second-vod .overview .poster-item {
-  border: 1px solid #f2f2f2;
-}
-.second-vod .overview .poster-item .img {
-  background-size: cover;
-}
-.second-vod .overview .top {
-  display: table;
-}
-.second-vod .overview .top > div {
-  display: table-cell;
-  vertical-align: top;
-}
-.second-vod .overview .right {
-  padding-left: 30px;
-}
-.second-vod .overview .right .title {
-  font-family: dinRegular;
-  font-size: 36px;
-}
-.second-vod .overview .right .subtitle {
-  font-size: 24px;
-}
-.second-vod .overview .description {
-  font-size: 28px;
-}
-.second-vod .overview .starring .header {
-  font-size: 36px;
-  font-family: dinRegular;
-}
-.second-vod .overview .actors {
-  white-space: nowrap;
-  margin-top: 10px;
-}
-.second-vod .overview .actors > div {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  margin-right: 30px;
-  display: inline-block;
-  border: 1px solid #f2f2f2;
-}
-.second-vod .preview .container {
-  display: table;
-  position: absolute;
-  color: #ffffff;
-  top: 30px;
-  right: 30px;
-  width: 560px;
-  height: 580px;
-}
-.second-vod .preview .info {
-  display: table-cell;
-  vertical-align: middle;
-}
-.second-vod .preview .title {
-  font: 36px dinRegular;
-}
-.second-vod .preview .subtitle {
-  font: 24px dinLight;
-  color: #8e8e8e;
-}
-.second-vod .preview .description {
-  margin-top: 10px;
-  font: 28px dinLight;
-}
-/* /Users/youzi/dev/directv-fl/src/components/active/discover/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/active/discover/style.less */
 .first-discover .header {
   width: calc(100% - 15px);
 }
@@ -1628,7 +1628,7 @@ input[type="number"] {
 .first-discover > div.spotlight {
   height: 210px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/search/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/active/search/style.less */
 .first-search .overlay {
   position: absolute;
   width: 100%;
@@ -1807,7 +1807,7 @@ input[type="number"] {
   padding-bottom: 30px;
   color: #8e8e8e;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/popup/actor/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/active/popup/actor/style.less */
 .popup .carousel {
   position: relative;
 }
@@ -1827,9 +1827,10 @@ input[type="number"] {
   margin-left: 15px;
   margin-bottom: 15px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/popup/volume/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/active/popup/volume/style.less */
 .popup.volume {
   z-index: 10;
+  margin-top: 60px;
   background-image: url('../../../assets/img/app/volume.png');
   width: 100%;
   background-position: center;
@@ -1838,7 +1839,7 @@ input[type="number"] {
 }
 .volume .top {
   text-align: center;
-  margin-top: 71px;
+  margin-top: 52px;
   font-size: 18px;
   font-family: dinRegular;
   background-image: url('../../../assets/img/app/volume.png');
@@ -1888,7 +1889,7 @@ input[type="number"] {
   padding-right: 15px;
   opacity: 0.2;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/popup/devices/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/active/popup/devices/style.less */
 .active.devices {
   margin-left: 15px;
   margin-top: 15px;
@@ -1953,7 +1954,7 @@ input[type="number"] {
 .active.devices .list .device .info .subtitle {
   color: #8e8e8e;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/popup/remote/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/active/popup/remote/style.less */
 .remote .button {
   display: none !important;
 }
@@ -2112,7 +2113,7 @@ input[type="number"] {
   width: calc(100% / 5);
   padding-right: 15px;
 }
-/* /Users/youzi/dev/directv-fl/node_modules/vigour-js/app/style.less */
+/* /Users/shawn/Work/directv-fl/node_modules/vigour-js/app/style.less */
 html {
   -ms-touch-action: pan-x;
   touch-action: pan-x;
@@ -2131,7 +2132,7 @@ body {
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-/* /Users/youzi/dev/directv-fl/src/components/shared/mute/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/shared/mute/style.less */
 .shared-mute {
   font-size: 32px;
   line-height: 46px;
@@ -2143,7 +2144,7 @@ body {
   border-radius: 23px;
   font-size: 48px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/bio/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/inactive/bio/style.less */
 .second-bio > .switcher {
   height: 100%;
 }
@@ -2185,7 +2186,7 @@ body {
   margin-top: 15px;
   font-size: 28px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/shared/description/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/shared/description/style.less */
 .ui-description {
   padding-right: 0;
 }
@@ -2201,14 +2202,7 @@ body {
   border: 0;
   text-align: left;
 }
-/* /Users/youzi/dev/directv-fl/src/components/shared/actors/style.less */
-.ui-actors .body {
-  margin-right: 15px;
-  border: 0;
-  white-space: nowrap;
-  height: auto;
-}
-/* /Users/youzi/dev/directv-fl/src/components/shared/bar/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/shared/bar/style.less */
 .ui-bar {
   position: relative;
   display: table;
@@ -2303,7 +2297,14 @@ body {
 .bar.program2 {
   border-top: 1px solid #000;
 }
-/* /Users/youzi/dev/directv-fl/src/components/shared/recommendations/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/shared/actors/style.less */
+.ui-actors .body {
+  margin-right: 15px;
+  border: 0;
+  white-space: nowrap;
+  height: auto;
+}
+/* /Users/shawn/Work/directv-fl/src/components/shared/recommendations/style.less */
 .ui-recommendations {
   padding-bottom: 15px;
 }
@@ -2324,7 +2325,49 @@ body {
   white-space: normal;
   vertical-align: top;
 }
-/* /Users/youzi/dev/directv-fl/src/components/shared/seekbar/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/active/content/style.less */
+.content-item {
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}
+.content-item .swipeup .nested {
+  background-color: #ffeb00;
+}
+.content-item .swipeup .msg {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  color: #000000;
+  text-align: center;
+  line-height: 35px;
+}
+.content-item .swipeup .msg .ui-icon {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 5px;
+  font-size: 18px;
+  line-height: 32px;
+}
+.content-item .player {
+  height: 210px;
+  background-color: #000;
+}
+.content-item .trivia .header {
+  margin-left: 0px;
+  margin-bottom: 5px;
+}
+.content-item .tweets .header {
+  border-bottom: 0px;
+  margin-bottom: 5px;
+}
+.content-item .widgets {
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+.content-item .page > div:last-child {
+  padding-bottom: 65px;
+}
+/* /Users/shawn/Work/directv-fl/src/components/shared/seekbar/style.less */
 @keyframes moveCandyBar {
   0% {
     background-position: 0 0;
@@ -2375,7 +2418,7 @@ body {
   background-image: linear-gradient(-45deg, transparent 0%, transparent 5%, rgba(255, 255, 255, 0.2) 5%, rgba(255, 255, 255, 0.2) 10%, transparent 10%, transparent 15%, rgba(255, 255, 255, 0.2) 15%, rgba(255, 255, 255, 0.2) 20%, transparent 20%, transparent 25%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 30%, transparent 30%, transparent 35%, rgba(255, 255, 255, 0.2) 35%, rgba(255, 255, 255, 0.2) 40%, transparent 40%, transparent 45%, rgba(255, 255, 255, 0.2) 45%, rgba(255, 255, 255, 0.2) 50%, transparent 50%, transparent 55%, rgba(255, 255, 255, 0.2) 55%, rgba(255, 255, 255, 0.2) 60%, transparent 60%, transparent 65%, rgba(255, 255, 255, 0.2) 65%, rgba(255, 255, 255, 0.2) 70%, transparent 70%, transparent 75%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0.2) 80%, transparent 80%, transparent 85%, rgba(255, 255, 255, 0.2) 85%, rgba(255, 255, 255, 0.2) 90%, transparent 90%, transparent 95%, rgba(255, 255, 255, 0.2) 95%, rgba(255, 255, 255, 0.2) 100%);
   animation: moveCandyBar 2s linear infinite;
 }
-/* /Users/youzi/dev/directv-fl/src/components/shared/poll/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/shared/poll/style.less */
 .ui-poll .header {
   border-bottom: 0px;
 }
@@ -2434,139 +2477,7 @@ body {
 .ui-voterow.second .right .ui-seekbar .seek {
   background-color: #0081cf;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/content/style.less */
-.content-item {
-  -webkit-backface-visibility: hidden;
-  -webkit-perspective: 1000;
-}
-.content-item .swipeup .nested {
-  background-color: #ffeb00;
-}
-.content-item .swipeup .msg {
-  bottom: 0;
-  position: absolute;
-  width: 100%;
-  color: #000000;
-  text-align: center;
-  line-height: 35px;
-}
-.content-item .swipeup .msg .ui-icon {
-  display: inline-block;
-  vertical-align: bottom;
-  margin-right: 5px;
-  font-size: 18px;
-  line-height: 32px;
-}
-.content-item .player {
-  height: 210px;
-  background-color: #000;
-}
-.content-item .trivia .header {
-  margin-left: 0px;
-  margin-bottom: 5px;
-}
-.content-item .tweets .header {
-  border-bottom: 0px;
-  margin-bottom: 5px;
-}
-.content-item .widgets {
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-}
-.content-item .page > div:last-child {
-  padding-bottom: 65px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/shared/trivia/style.less */
-.ui-trivia {
-  padding-left: 15px;
-  padding-right: 15px;
-  width: calc(100% - 30px);
-}
-.ui-trivia .header {
-  margin-left: 0px;
-  margin-bottom: 5px;
-  border-bottom: 0px;
-}
-.ui-trivia .body {
-  padding: 15px;
-  height: auto;
-  background-size: cover;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  border: 1px solid #323232;
-  text-align: center;
-}
-.ui-trivia .body .title {
-  font: 20px dinRegular;
-  color: #0081cf;
-}
-.ui-trivia .body .subtitle {
-  font-size: 48px;
-  margin-bottom: 8px;
-  line-height: 48px;
-  padding: 20px;
-}
-.ui-trivia .body .description {
-  color: #8e8e8e;
-  font: 14px dinLight;
-  padding-bottom: 5px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/shared/tweets/style.less */
-.ui-tweets {
-  transform: rotateX(0deg);
-  padding-bottom: 30px;
-}
-.ui-tweets .header {
-  margin-bottom: 5px;
-  border-bottom: 0px;
-}
-.ui-tweets .body {
-  margin-right: 15px;
-  border: 0;
-  white-space: nowrap;
-}
-.ui-tweets .tweet {
-  display: inline-block;
-  border: 1px solid #323232;
-  border-radius: 3px;
-  width: 200px;
-  height: 170px;
-  margin-left: 15px;
-  text-align: left;
-  position: relative;
-  white-space: normal;
-  vertical-align: top;
-}
-.ui-tweets .tweet .icon {
-  text-align: left;
-  padding: 10px;
-  font-size: 20px;
-  color: #55acee;
-}
-.ui-tweets .tweet .from {
-  padding-left: 10px;
-  font: 14px/10px dinRegular;
-  text-align: center;
-  padding-bottom: 10px;
-}
-.ui-tweets .tweet .msg {
-  padding-left: 10px;
-  color: #8e8e8e;
-  font: 14px dinLight;
-}
-.ui-tweets .tweet .retweet {
-  font-family: 'dinBold';
-  position: absolute;
-  padding-right: 10px;
-  padding-bottom: 7px;
-  text-align: right;
-  right: 0%;
-  bottom: 0%;
-  font-size: 12px;
-  color: grey;
-}
-/* /Users/youzi/dev/directv-fl/src/components/shared/statistics/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/shared/statistics/style.less */
 .ui-score .info,
 .ui-score .body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -2696,7 +2607,97 @@ body {
 .ui-statistics > .body .teams .right {
   right: 20px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/player/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/shared/trivia/style.less */
+.ui-trivia {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: calc(100% - 30px);
+}
+.ui-trivia .header {
+  margin-left: 0px;
+  margin-bottom: 5px;
+  border-bottom: 0px;
+}
+.ui-trivia .body {
+  padding: 15px;
+  height: auto;
+  background-size: cover;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #323232;
+  text-align: center;
+}
+.ui-trivia .body .title {
+  font: 20px dinRegular;
+  color: #0081cf;
+}
+.ui-trivia .body .subtitle {
+  font-size: 48px;
+  margin-bottom: 8px;
+  line-height: 48px;
+  padding: 20px;
+}
+.ui-trivia .body .description {
+  color: #8e8e8e;
+  font: 14px dinLight;
+  padding-bottom: 5px;
+}
+/* /Users/shawn/Work/directv-fl/src/components/shared/tweets/style.less */
+.ui-tweets {
+  transform: rotateX(0deg);
+  padding-bottom: 30px;
+}
+.ui-tweets .header {
+  margin-bottom: 5px;
+  border-bottom: 0px;
+}
+.ui-tweets .body {
+  margin-right: 15px;
+  border: 0;
+  white-space: nowrap;
+}
+.ui-tweets .tweet {
+  display: inline-block;
+  border: 1px solid #323232;
+  border-radius: 3px;
+  width: 200px;
+  height: 170px;
+  margin-left: 15px;
+  text-align: left;
+  position: relative;
+  white-space: normal;
+  vertical-align: top;
+}
+.ui-tweets .tweet .icon {
+  text-align: left;
+  padding: 10px;
+  font-size: 20px;
+  color: #55acee;
+}
+.ui-tweets .tweet .from {
+  padding-left: 10px;
+  font: 14px/10px dinRegular;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.ui-tweets .tweet .msg {
+  padding-left: 10px;
+  color: #8e8e8e;
+  font: 14px dinLight;
+}
+.ui-tweets .tweet .retweet {
+  font-family: 'dinBold';
+  position: absolute;
+  padding-right: 10px;
+  padding-bottom: 7px;
+  text-align: right;
+  right: 0%;
+  bottom: 0%;
+  font-size: 12px;
+  color: grey;
+}
+/* /Users/shawn/Work/directv-fl/src/components/active/player/style.less */
 .first-player {
   position: relative;
 }
@@ -2786,7 +2787,7 @@ body {
 .first-player .overlay .bottom .right {
   padding-right: 15px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/shared/loader/style.less */
+/* /Users/shawn/Work/directv-fl/src/components/shared/loader/style.less */
 .ui-loader {
   background-image: url('assets/img/app/loader.png');
   background-size: 100% auto;
