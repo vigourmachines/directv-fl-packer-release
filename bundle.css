@@ -1049,7 +1049,6 @@ input[type="number"] {
   /* Opera/IE 8+ */
   width: 100%;
   height: 210px;
-  opacity: 0.6;
 }
 .spotlight-item .lock {
   font-size: 48px;
@@ -1129,6 +1128,9 @@ input[type="number"] {
 .isPhone.hasReceiver .focused .info-item.focused .img,
 .isPhone.hasReceiver .focused .poster-item.focused .img {
   opacity: 1;
+}
+.isPhone.hasReceiver .focused .spotlight-item {
+  opacity: 0.6;
 }
 .isPhone.hasReceiver .focused .spotlight-item.focused {
   opacity: 1;
@@ -1432,18 +1434,22 @@ input[type="number"] {
   width: 159px;
 }
 .second-channel .about-widget .stickers > div {
+  vertical-align: top;
   display: inline-block;
-  border: 1px solid #ffffff;
   width: 70px;
   height: 70px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-.second-channel .about-widget .stickers .tvpg {
+.second-channel .about-widget .stickers .mpaa {
   background-color: #000000;
 }
 .second-channel .about-widget .stickers .rating {
+  font-family: dinBold;
+  line-height: 72px;
+  text-align: center;
+  font-size: 24px;
   background-color: #7ed321;
   margin-left: 15px;
 }
@@ -1987,6 +1993,9 @@ input[type="number"] {
   z-index: 1;
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75);
 }
+.remote .carousel .carousel-item.front .img {
+  opacity: 1;
+}
 .remote .carousel .carousel-item .img {
   width: 100%;
   height: 100%;
@@ -2192,6 +2201,13 @@ body {
   border: 0;
   text-align: left;
 }
+/* /Users/youzi/dev/directv-fl/src/components/shared/actors/style.less */
+.ui-actors .body {
+  margin-right: 15px;
+  border: 0;
+  white-space: nowrap;
+  height: auto;
+}
 /* /Users/youzi/dev/directv-fl/src/components/shared/bar/style.less */
 .ui-bar {
   position: relative;
@@ -2287,13 +2303,6 @@ body {
 .bar.program2 {
   border-top: 1px solid #000;
 }
-/* /Users/youzi/dev/directv-fl/src/components/shared/actors/style.less */
-.ui-actors .body {
-  margin-right: 15px;
-  border: 0;
-  white-space: nowrap;
-  height: auto;
-}
 /* /Users/youzi/dev/directv-fl/src/components/shared/recommendations/style.less */
 .ui-recommendations {
   padding-bottom: 15px;
@@ -2314,48 +2323,6 @@ body {
   position: relative;
   white-space: normal;
   vertical-align: top;
-}
-/* /Users/youzi/dev/directv-fl/src/components/active/content/style.less */
-.content-item {
-  -webkit-backface-visibility: hidden;
-  -webkit-perspective: 1000;
-}
-.content-item .swipeup .nested {
-  background-color: #ffeb00;
-}
-.content-item .swipeup .msg {
-  bottom: 0;
-  position: absolute;
-  width: 100%;
-  color: #000000;
-  text-align: center;
-  line-height: 35px;
-}
-.content-item .swipeup .msg .ui-icon {
-  display: inline-block;
-  vertical-align: bottom;
-  margin-right: 5px;
-  font-size: 18px;
-  line-height: 32px;
-}
-.content-item .player {
-  height: 210px;
-  background-color: #000;
-}
-.content-item .trivia .header {
-  margin-left: 0px;
-  margin-bottom: 5px;
-}
-.content-item .tweets .header {
-  border-bottom: 0px;
-  margin-bottom: 5px;
-}
-.content-item .widgets {
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-}
-.content-item .page > div:last-child {
-  padding-bottom: 65px;
 }
 /* /Users/youzi/dev/directv-fl/src/components/shared/seekbar/style.less */
 @keyframes moveCandyBar {
@@ -2466,6 +2433,138 @@ body {
 }
 .ui-voterow.second .right .ui-seekbar .seek {
   background-color: #0081cf;
+}
+/* /Users/youzi/dev/directv-fl/src/components/active/content/style.less */
+.content-item {
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}
+.content-item .swipeup .nested {
+  background-color: #ffeb00;
+}
+.content-item .swipeup .msg {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  color: #000000;
+  text-align: center;
+  line-height: 35px;
+}
+.content-item .swipeup .msg .ui-icon {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 5px;
+  font-size: 18px;
+  line-height: 32px;
+}
+.content-item .player {
+  height: 210px;
+  background-color: #000;
+}
+.content-item .trivia .header {
+  margin-left: 0px;
+  margin-bottom: 5px;
+}
+.content-item .tweets .header {
+  border-bottom: 0px;
+  margin-bottom: 5px;
+}
+.content-item .widgets {
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+.content-item .page > div:last-child {
+  padding-bottom: 65px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/shared/trivia/style.less */
+.ui-trivia {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: calc(100% - 30px);
+}
+.ui-trivia .header {
+  margin-left: 0px;
+  margin-bottom: 5px;
+  border-bottom: 0px;
+}
+.ui-trivia .body {
+  padding: 15px;
+  height: auto;
+  background-size: cover;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #323232;
+  text-align: center;
+}
+.ui-trivia .body .title {
+  font: 20px dinRegular;
+  color: #0081cf;
+}
+.ui-trivia .body .subtitle {
+  font-size: 48px;
+  margin-bottom: 8px;
+  line-height: 48px;
+  padding: 20px;
+}
+.ui-trivia .body .description {
+  color: #8e8e8e;
+  font: 14px dinLight;
+  padding-bottom: 5px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/shared/tweets/style.less */
+.ui-tweets {
+  transform: rotateX(0deg);
+  padding-bottom: 30px;
+}
+.ui-tweets .header {
+  margin-bottom: 5px;
+  border-bottom: 0px;
+}
+.ui-tweets .body {
+  margin-right: 15px;
+  border: 0;
+  white-space: nowrap;
+}
+.ui-tweets .tweet {
+  display: inline-block;
+  border: 1px solid #323232;
+  border-radius: 3px;
+  width: 200px;
+  height: 170px;
+  margin-left: 15px;
+  text-align: left;
+  position: relative;
+  white-space: normal;
+  vertical-align: top;
+}
+.ui-tweets .tweet .icon {
+  text-align: left;
+  padding: 10px;
+  font-size: 20px;
+  color: #55acee;
+}
+.ui-tweets .tweet .from {
+  padding-left: 10px;
+  font: 14px/10px dinRegular;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.ui-tweets .tweet .msg {
+  padding-left: 10px;
+  color: #8e8e8e;
+  font: 14px dinLight;
+}
+.ui-tweets .tweet .retweet {
+  font-family: 'dinBold';
+  position: absolute;
+  padding-right: 10px;
+  padding-bottom: 7px;
+  text-align: right;
+  right: 0%;
+  bottom: 0%;
+  font-size: 12px;
+  color: grey;
 }
 /* /Users/youzi/dev/directv-fl/src/components/shared/statistics/style.less */
 .ui-score .info,
@@ -2596,96 +2695,6 @@ body {
 }
 .ui-statistics > .body .teams .right {
   right: 20px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/shared/trivia/style.less */
-.ui-trivia {
-  padding-left: 15px;
-  padding-right: 15px;
-  width: calc(100% - 30px);
-}
-.ui-trivia .header {
-  margin-left: 0px;
-  margin-bottom: 5px;
-  border-bottom: 0px;
-}
-.ui-trivia .body {
-  padding: 15px;
-  height: auto;
-  background-size: cover;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  border: 1px solid #323232;
-  text-align: center;
-}
-.ui-trivia .body .title {
-  font: 20px dinRegular;
-  color: #0081cf;
-}
-.ui-trivia .body .subtitle {
-  font-size: 48px;
-  margin-bottom: 8px;
-  line-height: 48px;
-  padding: 20px;
-}
-.ui-trivia .body .description {
-  color: #8e8e8e;
-  font: 14px dinLight;
-  padding-bottom: 5px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/shared/tweets/style.less */
-.ui-tweets {
-  transform: rotateX(0deg);
-  padding-bottom: 30px;
-}
-.ui-tweets .header {
-  margin-bottom: 5px;
-  border-bottom: 0px;
-}
-.ui-tweets .body {
-  margin-right: 15px;
-  border: 0;
-  white-space: nowrap;
-}
-.ui-tweets .tweet {
-  display: inline-block;
-  border: 1px solid #323232;
-  border-radius: 3px;
-  width: 200px;
-  height: 170px;
-  margin-left: 15px;
-  text-align: left;
-  position: relative;
-  white-space: normal;
-  vertical-align: top;
-}
-.ui-tweets .tweet .icon {
-  text-align: left;
-  padding: 10px;
-  font-size: 20px;
-  color: #55acee;
-}
-.ui-tweets .tweet .from {
-  padding-left: 10px;
-  font: 14px/10px dinRegular;
-  text-align: center;
-  padding-bottom: 10px;
-}
-.ui-tweets .tweet .msg {
-  padding-left: 10px;
-  color: #8e8e8e;
-  font: 14px dinLight;
-}
-.ui-tweets .tweet .retweet {
-  font-family: 'dinBold';
-  position: absolute;
-  padding-right: 10px;
-  padding-bottom: 7px;
-  text-align: right;
-  right: 0%;
-  bottom: 0%;
-  font-size: 12px;
-  color: grey;
 }
 /* /Users/youzi/dev/directv-fl/src/components/active/player/style.less */
 .first-player {
