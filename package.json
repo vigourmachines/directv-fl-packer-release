@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,7 @@
     "startHub": "./node_modules/vigour-hub/bin/hub -d -c directv",
     "prestart": "npm run startHub &",
     "build": "vNative build",
-    "serve": "packer",
-    "release": "packer -r -c /Users/shawn/Work/directv-fl/package.json,/Users/shawn/Work/directv-fl/.package.json"
+    "release": "packer -r -c package.json,.package.json"
   },
   "repository": {
     "type": "git",
@@ -31,20 +30,31 @@
     "vigour-js": "git+ssh://git@github.com:vigour-io/vigour-js.git#directv"
   },
   "devDependencies": {
-    "gaston": "git+ssh://git@github.com:vigour-io/gaston.git#dev",
+    "vigour-native": "git+ssh://git@github.com:vigour-io/vigour-native.git",
     "vigour-native-statusBar": "git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git",
     "vigour-packer-server": "git+ssh://git@github.com:vigour-io/vigour-packer-server.git",
-    "vigour-hub": "git+ssh://git@github.com:vigour-io/vigour-hub.git#directv"
+    "vigour-hub": "git+ssh://git@github.com:vigour-io/vigour-hub.git#directv",
+    "gaston": "git+ssh://git@github.com:vigour-io/gaston.git"
   },
   "vigour": {
-    "cloud": "domain",
+    "cloud": "http://localhost:10001",
     "branches": {
+      "youzi-dev":{
+        "cloud": "http://localhost:10001",
+        "pointers": {
+          "img": "http://localhost:8080/",
+          "assets": "http://localhost:8080/"
+        }
+      },
       "marcus-dev": {
         "cloud": "http://10.0.1.199:10001"
       },
       "shawn-dev": {
-        "cloud": "http://192.168.2.18:10001"
+        "cloud": "http://directv2.dev.vigour.io:80"
       }
+    },
+    "development": {
+      "button": false
     },
     "pointers": {
       "img": "http://devassets.vigour.io/",
@@ -56,7 +66,8 @@
         "bundle.js": true,
         "bundle.css": true,
         "index.html": true,
-        "assets": "*"
+        "assets": "*",
+        "fonts.css":true
       },
       "git": {
         "owner": "vigour-io",
@@ -66,16 +77,19 @@
         "fromAddress": "shawn@vigour.io",
         "to": "shawn@vigour.io"
       },
-      "slack": {}
+      "slack": {},
+      "server": {}
     },
     "native": {
       "platforms": {
         "ios": {
           "productName": "Direct TV - Future Land",
           "organizationName": "Vigour",
-          "organizationIdentifier": "io.vigour.directv",
+          "organizationIdentifier": "io.vigour.directv-fl",
           "buildNumber": "1",
-          "appIndexPath": "index.html"
+          "appIndexPath": "index.html",
+          "appUrlIdentifier":"com.directv-fl.org",
+          "appUrlScheme": "directv-fl"
         }
       }
     }
