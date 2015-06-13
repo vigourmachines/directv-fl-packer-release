@@ -1,0 +1,35 @@
+/*
+ * Typography
+ */
+
+ /* Regular */
+@font-face {
+    font-family: 'dinRegular';
+    src: url('assets/fonts/dinRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Light */
+@font-face {
+    font-family: 'dinLight';
+    src: url('assets/fonts/dinLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'dinBold';
+    src: url('assets/fonts/dinBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Icons */
+@font-face {
+  font-family:'dtvIcons';
+  src: url('assets/fonts/dtvIcons.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
