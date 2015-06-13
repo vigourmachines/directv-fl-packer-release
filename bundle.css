@@ -172,9 +172,6 @@ body {
   width: 100%;
   overflow: hidden;
 }
-.notIsPhone {
-  pointer-events: none;
-}
 /* /Users/shawn/Work/directv-fl/src/components/active/style.less */
 .first-state {
   height: 100%;
@@ -365,7 +362,7 @@ body {
   padding-top: 30px;
 }
 .second-search .search-result .title {
-  font: 26px/14px dinRegular;
+  font: 26px/18px dinRegular;
 }
 .second-search .search-result .subtitle {
   font: 24px dinLight;
@@ -401,13 +398,13 @@ body {
   -moz-border-radius: 2px;
   border-radius: 2px;
   height: 486px;
-  border: 2px solid #323232;
+  border: 1px solid #323232;
 }
 .second-search .topresult .container .info {
   margin-top: 30px;
 }
 .second-search .topresult .container .info .title {
-  font: 26px/14px dinRegular;
+  font: 26px/18px dinRegular;
 }
 .second-search .topresult .container .info .subtitle {
   font: 24px dinLight;
@@ -500,6 +497,119 @@ body {
 .second-statusbar.branded .weather {
   width: 240px;
 }
+/* /Users/shawn/Work/directv-fl/src/components/inactive/player/style.less */
+.second-player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.second-player video {
+  background: #000000;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.second-player .overlay {
+  background: radial-gradient(circle farthest-corner at 95% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+}
+.second-player .overlay,
+.second-player .overlay > div {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+.second-player .container {
+  top: 50%;
+  margin-top: -67px;
+  position: absolute;
+  width: 100%;
+}
+.second-player .container .txt {
+  margin-left: 60px;
+  font-size: 72px;
+}
+.second-player .container .value {
+  display: inline;
+  font-family: dinRegular;
+}
+.second-player .volume-overlay .progress {
+  border-top-color: #ffeb00;
+}
+.second-player .player-overlay {
+  display: table;
+  color: #ffffff;
+}
+.second-player .player-overlay .info {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+}
+.second-player .player-overlay .info > div {
+  vertical-align: top;
+  display: inline-block;
+}
+.second-player .player-overlay .icon {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 128px;
+}
+.second-player .player-overlay .fade-in {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+}
+.second-player .player-overlay .fade-out {
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -ms-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+}
+.second-player .player-overlay .nowplaying {
+  font-size: 24px;
+}
+.second-player .player-overlay .titles {
+  margin-left: 30px;
+}
+.second-player .player-overlay .title {
+  font-size: 48px;
+}
+.second-player .player-overlay .subtitle {
+  font-size: 36px;
+}
+.second-player .player-overlay .poster {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #323232;
+  height: 264px;
+  width: 186px;
+}
+.second-player .player-overlay .recommended {
+  position: absolute;
+  right: 30px;
+  bottom: 110px;
+}
+.second-player .player-overlay .recommended .header {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+.second-player .player-overlay .thumb {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #323232;
+  width: 400px;
+  height: 300px;
+}
 /* /Users/shawn/Work/directv-fl/src/components/inactive/navigation/style.less */
 .second-navigation {
   pointer-events: none;
@@ -575,128 +685,6 @@ body {
   -ms-transition: -ms-transform 0.3s ease-out;
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
-}
-/* /Users/shawn/Work/directv-fl/src/components/inactive/player/style.less */
-.second-player {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.second-player video {
-  background: #000000;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-}
-.second-player .overlay {
-  background: radial-gradient(circle farthest-corner at 95% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
-}
-.second-player .overlay,
-.second-player .overlay > div {
-  -webkit-transition: opacity 0.2s ease-out;
-  -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
-  -o-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-}
-.second-player .container {
-  top: 50%;
-  margin-top: -67px;
-  position: absolute;
-  width: 100%;
-}
-.second-player .container .txt {
-  margin-left: 60px;
-  font-size: 72px;
-}
-.second-player .container .value {
-  display: inline;
-  font-family: dinRegular;
-}
-.second-player .volume-overlay .progress {
-  border-top-color: #ffeb00;
-}
-.second-player .player-overlay {
-  display: table;
-  color: #ffffff;
-}
-.second-player .player-overlay .info {
-  position: absolute;
-  left: 30px;
-  top: 30px;
-}
-.second-player .player-overlay .info > div {
-  vertical-align: top;
-  display: inline-block;
-}
-.second-player .player-overlay .icon {
-  display: table-cell;
-  vertical-align: middle;
-  font-size: 128px;
-}
-.second-player .player-overlay .fade-in {
-  -webkit-transition: opacity 0.75s ease-out, -webkit-transform 0.1s ease-out;
-  -moz-transition: opacity 0.75s ease-out, -moz-transform 0.1s ease-out;
-  -ms-transition: opacity 0.75s ease-out, -ms-transform 0.1s ease-out;
-  -o-transition: opacity 0.75s ease-out, -o-transform 0.1s ease-out;
-  transition: opacity 0.75s ease-out, transform 0.1s ease-out;
-}
-.second-player .player-overlay .fade-out {
-  -webkit-transition: opacity 0.2s ease-out, -webkit-transform 0s ease-out 0.2s;
-  -moz-transition: opacity 0.2s ease-out, -moz-transform 0s ease-out 0.2s;
-  -ms-transition: opacity 0.2s ease-out, -ms-transform 0s ease-out 0.2s;
-  -o-transition: opacity 0.2s ease-out, -o-transform 0s ease-out 0.2s;
-  transition: opacity 0.2s ease-out, transform 0s ease-out 0.2s;
-}
-.second-player .player-overlay .nowplaying {
-  margin-top: 15px;
-  font-size: 24px;
-}
-.second-player .player-overlay .titles {
-  margin-left: 30px;
-}
-.second-player .player-overlay .title {
-  font-size: 48px;
-}
-.second-player .player-overlay .subtitle {
-  margin-top: 5px;
-  font-size: 28px;
-  opacity: 0.6;
-}
-.second-player .player-overlay .poster {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  border: 2px solid #323232;
-  height: 264px;
-  width: 186px;
-}
-.second-player .player-overlay .img {
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-}
-.second-player .player-overlay .recommended {
-  position: absolute;
-  right: 30px;
-  bottom: 110px;
-}
-.second-player .player-overlay .recommended .header {
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-.second-player .player-overlay .thumb {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  overflow: hidden;
-  border: 2px solid #323232;
-  width: 400px;
-  height: 300px;
 }
 /* /Users/shawn/Work/directv-fl/src/components/active/topbar/style.less */
 .topbar {
@@ -939,9 +927,6 @@ body {
   color: #ffffff !important;
   opacity: 0.8;
 }
-.popup .footer {
-  padding-bottom: 25px;
-}
 /* /Users/shawn/Work/directv-fl/src/components/active/topbar/reset.less */
 input[placeholder],
 [placeholder],
@@ -1040,12 +1025,15 @@ input[type="number"] {
   bottom: 30px;
 }
 .second-trailer .logo {
-  background-size: cover;
   width: 160px;
   height: 60px;
   position: absolute;
   top: 0;
-  background-size: contain;
+}
+/* /Users/shawn/Work/directv-fl/src/components/inactive/progress/style.less */
+.second-progress {
+  border-top: 40px solid #ff0072;
+  border-right: 20px solid transparent;
 }
 /* /Users/shawn/Work/directv-fl/src/components/shared/list/style.less */
 .base-list {
@@ -1248,7 +1236,7 @@ input[type="number"] {
   padding: 25px 0px 0px 25px;
 }
 .notIsPhone .info-item .title {
-  font: 26px/14px dinRegular;
+  font: 26px/18px dinRegular;
 }
 .notIsPhone .info-item .subtitle {
   font: 24px dinLight;
@@ -1262,36 +1250,6 @@ input[type="number"] {
 .notIsPhone .poster-item {
   width: 186px;
   height: 276px;
-}
-/* /Users/shawn/Work/directv-fl/src/components/inactive/progress/style.less */
-.second-progress {
-  border-top: 40px solid #ff0072;
-  border-right: 20px solid transparent;
-}
-/* /Users/shawn/Work/directv-fl/src/components/inactive/cover/style.less */
-.second-cover {
-  width: 100%;
-  height: 100%;
-}
-.second-cover .bg {
-  -webkit-transition: opacity 0.5s ease-out;
-  -moz-transition: opacity 0.5s ease-out;
-  -ms-transition: opacity 0.5s ease-out;
-  -o-transition: opacity 0.5s ease-out;
-  transition: opacity 0.5s ease-out;
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-.second-cover .overlay {
-  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
 }
 /* /Users/shawn/Work/directv-fl/src/components/inactive/channel/style.less */
 .second-channel {
@@ -1340,11 +1298,6 @@ input[type="number"] {
   color: #8e8e8e;
 }
 .second-channel .twitter {
-  -webkit-transition: opacity 0.2s ease-out;
-  -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
-  -o-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
   position: absolute;
   bottom: 20px;
 }
@@ -1371,7 +1324,6 @@ input[type="number"] {
   display: none;
 }
 .second-channel .twitter .bird {
-  font-size: 36px;
   margin-right: 15px;
   vertical-align: middle;
   display: inline-block;
@@ -1381,11 +1333,11 @@ input[type="number"] {
   color: #55acee;
 }
 .second-channel .twitter .author {
-  font-family: dinRegular;
   vertical-align: middle;
   display: inline-block;
   font-size: 28px;
   text-align: center;
+  padding-bottom: 15px;
 }
 .second-channel .twitter .body {
   color: #f2f2f2;
@@ -1400,14 +1352,9 @@ input[type="number"] {
   border-bottom: 1px solid #f2f2f2;
 }
 .second-channel .guide-widget .program {
-  -webkit-transition: opacity 0.2s ease-out;
-  -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
-  -o-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  padding: 25px 0;
-  height: 122px;
+  padding: 30px 0;
+  height: 120px;
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;
@@ -1415,27 +1362,17 @@ input[type="number"] {
   box-sizing: border-box;
   /* Opera/IE 8+ */
 }
-.second-channel .guide-widget .program .left {
-  float: left;
-}
 .second-channel .guide-widget .program .title {
-  margin-top: 7px;
-  font: 26px/14px dinRegular;
+  font: 26px/18px dinRegular;
 }
 .second-channel .guide-widget .program .progress {
   font: 24px dinLight;
   color: #8e8e8e;
 }
-.second-channel .guide-widget .program .mpaa {
-  float: right;
-  width: 70px;
-  height: 70px;
-}
 .second-channel .guide-widget .program:first-child .bar {
   display: inline-block;
 }
-.second-channel .guide-widget .program:first-child .dash,
-.second-channel .guide-widget .program:first-child .mpaa {
+.second-channel .guide-widget .program:first-child .dash {
   display: none;
 }
 .second-channel .guide-widget .progress {
@@ -1448,8 +1385,8 @@ input[type="number"] {
 }
 .second-channel .guide-widget .progress .seek {
   width: 35%;
-  border-top: 10px solid #d62f2f;
-  border-right: 5px solid transparent;
+  border-top: 10px solid #ff0072;
+  border-right: 3px solid transparent;
 }
 .second-channel .guide-widget .progress .bar {
   width: 260px;
@@ -1457,7 +1394,7 @@ input[type="number"] {
   display: none;
 }
 .second-channel .guide-widget .progress .dash {
-  margin: 15px 5px;
+  margin: 15px;
   display: inline-block;
 }
 .second-channel .guide-widget .progress .end {
@@ -1471,18 +1408,12 @@ input[type="number"] {
   font-family: dinRegular;
 }
 .second-channel .about-widget .container {
-  overflow: hidden;
   background-color: rgba(23, 23, 23, 0.8);
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
   border: 1px solid #ffffff;
-  height: 854px;
-  -webkit-transition: height 0.2s ease-out;
-  -moz-transition: height 0.2s ease-out;
-  -ms-transition: height 0.2s ease-out;
-  -o-transition: height 0.2s ease-out;
-  transition: height 0.2s ease-out;
+  height: 834px;
 }
 .second-channel .about-widget .img {
   height: 314px;
@@ -1495,6 +1426,29 @@ input[type="number"] {
 .second-channel .about-widget .info > div {
   vertical-align: top;
   display: table-cell;
+}
+.second-channel .about-widget .stickers {
+  width: 159px;
+}
+.second-channel .about-widget .stickers > div {
+  vertical-align: top;
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.second-channel .about-widget .stickers .mpaa {
+  background-color: #000000;
+}
+.second-channel .about-widget .stickers .rating {
+  font-family: dinBold;
+  line-height: 72px;
+  text-align: center;
+  font-size: 24px;
+  background-color: #7ed321;
+  margin-left: 15px;
 }
 .second-channel .about-widget .description {
   font-size: 28px;
@@ -1513,13 +1467,6 @@ input[type="number"] {
   -moz-border-radius: 4px;
   border-radius: 4px;
   border: 1px solid #ffffff;
-  height: 854px;
-  overflow: hidden;
-  -webkit-transition: height 0.2s ease-out;
-  -moz-transition: height 0.2s ease-out;
-  -ms-transition: height 0.2s ease-out;
-  -o-transition: height 0.2s ease-out;
-  transition: height 0.2s ease-out;
 }
 .second-channel .stats-widget .info {
   -webkit-box-sizing: border-box;
@@ -1533,21 +1480,16 @@ input[type="number"] {
   text-align: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
-.second-channel .stats-widget .body .title {
-  font-size: 36px;
-}
 .second-channel .stats-widget .poll {
   height: 350px;
 }
 .second-channel .stats-widget .poller {
-  margin: 50px 0;
-  border-spacing: 30px 0;
   display: table;
   width: 100%;
 }
 .second-channel .stats-widget .poller > div {
   display: table-cell;
-  vertical-align: top;
+  vertical-align: middle;
 }
 .second-channel .stats-widget .poller .left {
   width: 80px;
@@ -1562,33 +1504,37 @@ input[type="number"] {
   border: 1px solid #ffffff;
 }
 .second-channel .stats-widget .poller .bar {
-  border-top: 16px solid transparent;
-  border-right: 8px solid transparent;
+  border-top: 6px solid transparent;
+  border-right: 3px solid transparent;
   margin: 10px 0;
 }
-.second-channel .stats-widget .poller .title {
-  margin-top: 5px;
-}
-.second-channel .stats-widget .poller .votes {
-  opacity: 0.6;
-  font-family: dinRegular;
-  font-size: 20px;
+.second-channel .stats-widget .poller .subtitle {
   text-align: right;
 }
-.second-channel.preview .twitter {
-  opacity: 0;
+/* /Users/shawn/Work/directv-fl/src/components/inactive/cover/style.less */
+.second-cover {
+  width: 100%;
+  height: 100%;
 }
-.second-channel.preview .guide-widget .program:nth-child(4),
-.second-channel.preview .guide-widget .program:nth-child(5),
-.second-channel.preview .guide-widget .program:nth-child(6),
-.second-channel.preview .guide-widget .program:nth-child(7) {
-  opacity: 0;
+.second-cover .bg {
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -ms-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
-.second-channel.preview .about-widget .container {
-  height: 431px;
-}
-.second-channel.preview .stats-widget .container {
-  height: 367px;
+.second-cover .overlay {
+  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 /* /Users/shawn/Work/directv-fl/src/components/inactive/vod/style.less */
 .second-vod {
@@ -1617,10 +1563,7 @@ input[type="number"] {
   margin-bottom: 30px;
 }
 .second-vod .overview .poster-item {
-  border: 4px solid #ff0072;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  border: 1px solid #f2f2f2;
 }
 .second-vod .overview .poster-item .img {
   background-size: cover;
@@ -1648,25 +1591,18 @@ input[type="number"] {
 .second-vod .overview .starring .header {
   font-size: 36px;
   font-family: dinRegular;
-  border-bottom: 2px solid #323232;
-  margin-bottom: 30px;
 }
 .second-vod .overview .actors {
   white-space: nowrap;
   margin-top: 10px;
 }
-.second-vod .overview .actor {
+.second-vod .overview .actors > div {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
   margin-right: 30px;
   display: inline-block;
-  border: 2px solid #323232;
-  width: 124px;
-  height: 172px;
-}
-.second-vod .overview .stickers {
-  margin-top: 70px;
+  border: 1px solid #f2f2f2;
 }
 .second-vod .preview .container {
   display: table;
@@ -1691,37 +1627,6 @@ input[type="number"] {
 .second-vod .preview .description {
   margin-top: 10px;
   font: 28px dinLight;
-}
-.second-vod .preview .stickers {
-  width: 100%;
-  margin-top: 30px;
-}
-.second-vod .preview .audience {
-  margin-left: 60px;
-  height: 50px;
-  width: 252px;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/discover/style.less */
-.first-discover .header {
-  width: calc(100% - 15px);
-}
-.first-discover .spotlight {
-  position: relative;
-}
-.first-discover .spotlight .list-dots .container {
-  -webkit-border-radius: 11px;
-  -moz-border-radius: 11px;
-  border-radius: 11px;
-  background-color: #0081cf;
-}
-.first-discover > div:last-child {
-  margin-bottom: 60px;
-}
-.first-discover > div {
-  height: 220px;
-}
-.first-discover > div.spotlight {
-  height: 210px;
 }
 /* /Users/shawn/Work/directv-fl/src/components/active/search/style.less */
 .first-search .overlay {
@@ -1902,6 +1807,28 @@ input[type="number"] {
   padding-bottom: 30px;
   color: #8e8e8e;
 }
+/* /Users/shawn/Work/directv-fl/src/components/active/discover/style.less */
+.first-discover .header {
+  width: calc(100% - 15px);
+}
+.first-discover .spotlight {
+  position: relative;
+}
+.first-discover .spotlight .list-dots .container {
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  border-radius: 11px;
+  background-color: #0081cf;
+}
+.first-discover > div:last-child {
+  margin-bottom: 60px;
+}
+.first-discover > div {
+  height: 220px;
+}
+.first-discover > div.spotlight {
+  height: 210px;
+}
 /* /Users/shawn/Work/directv-fl/src/components/active/popup/actor/style.less */
 .popup .carousel {
   position: relative;
@@ -1916,11 +1843,170 @@ input[type="number"] {
 .popup .carousel .img .overlay {
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(23, 23, 23, 0) 30%, #171717 100%);
+  background: radial-gradient(circle at center, rgba(23, 23, 23, 0) 0%, rgba(23, 23, 23, 0.8) 70%);
 }
 .popup .famous .header {
   margin-left: 15px;
   margin-bottom: 15px;
+}
+/* /Users/shawn/Work/directv-fl/src/components/active/popup/remote/style.less */
+.remote .button {
+  display: none !important;
+}
+.remote .carousel {
+  padding-top: 15px;
+  height: 200px;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.remote .carousel > .base-list {
+  margin-left: 63px;
+}
+.remote .carousel .carousel-item {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #323232;
+  position: relative;
+  width: 280px;
+  height: 210px;
+  display: inline-block;
+  margin: 0 -15px;
+}
+.remote .carousel .carousel-item .info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 7px 9px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.remote .carousel .carousel-item .subtitle {
+  color: #8e8e8e;
+}
+.remote .carousel .carousel-item.front {
+  z-index: 1;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75);
+}
+.remote .carousel .carousel-item.front .img {
+  opacity: 1;
+}
+.remote .carousel .carousel-item .img {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.remote .carousel .carousel-item .logo {
+  top: 0;
+  width: 80px;
+  height: 30px;
+  background-size: contain;
+  position: absolute;
+}
+.remote > .info {
+  margin-left: 50px;
+  width: 100%;
+}
+.remote > .info .header {
+  padding-top: 0px;
+  margin-top: -5px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 5px;
+}
+.remote .guide .items {
+  width: calc(100% - 95px);
+}
+.remote .guide .body {
+  font-size: 14px;
+  border-spacing: 0 7px;
+  border-bottom: 1px solid #323232;
+  height: 60px;
+  text-transform: capitalize;
+  display: table;
+  white-space: nowrap;
+  width: 100%;
+  table-layout: fixed;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+.remote .guide .body .title {
+  margin-top: 3px;
+  font-size: 14px;
+}
+.remote .guide .body .subtitle {
+  color: #8e8e8e;
+}
+.remote .guide .body .arrowRight {
+  display: table-cell;
+  vertical-align: middle;
+  width: 24px;
+}
+.remote .description .body {
+  margin-left: 0px;
+  padding-left: 0px;
+  width: calc(100% - 95px);
+}
+.remote .controls {
+  background-color: #232323;
+  border-top: 1px solid #000000;
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+  height: 152px;
+}
+.remote .controls .title {
+  font-size: 18px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  text-align: center;
+}
+.remote .controls .seekbar {
+  margin: 15px;
+}
+.remote .controls .buttons {
+  display: table;
+  width: 100%;
+  margin-top: 30px;
+}
+.remote .controls .buttons .ui-icon.left {
+  font-size: 32px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+  width: calc(100% / 5 * 2);
+  opacity: 0.2;
+}
+.remote .controls .buttons .ui-icon.play {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 48px;
+  width: calc(100% / 5);
+}
+.remote .controls .buttons .ui-icon.right {
+  font-size: 32px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  width: calc(100% / 5);
+  opacity: 0.2;
+}
+.remote .controls .buttons .ui-icon.volume {
+  font-size: 32px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+  width: calc(100% / 5);
+  padding-right: 15px;
 }
 /* /Users/shawn/Work/directv-fl/src/components/active/popup/volume/style.less */
 .popup.volume {
@@ -2048,162 +2134,6 @@ input[type="number"] {
 .active.devices .list .device .info .subtitle {
   color: #8e8e8e;
 }
-/* /Users/shawn/Work/directv-fl/src/components/active/popup/remote/style.less */
-.remote .carousel {
-  padding-top: 15px;
-  height: 200px;
-  color: #ffffff;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.remote .carousel > .base-list {
-  margin-left: 63px;
-}
-.remote .carousel .carousel-item {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  border: 1px solid #323232;
-  position: relative;
-  width: 280px;
-  height: 210px;
-  display: inline-block;
-  margin: 0 -15px;
-}
-.remote .carousel .carousel-item .info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 7px 9px;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.remote .carousel .carousel-item .subtitle {
-  color: #8e8e8e;
-}
-.remote .carousel .carousel-item.front {
-  z-index: 1;
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75);
-}
-.remote .carousel .carousel-item.front .img {
-  opacity: 1;
-}
-.remote .carousel .carousel-item .img {
-  width: 100%;
-  height: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.remote .carousel .carousel-item .logo {
-  top: 0;
-  width: 80px;
-  height: 30px;
-  background-size: contain;
-  position: absolute;
-}
-.remote > .info {
-  margin-left: 50px;
-  width: 100%;
-}
-.remote > .info .header {
-  padding-top: 0px;
-  margin-top: -5px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-bottom: 5px;
-}
-.remote .guide .items {
-  width: calc(100% - 95px);
-}
-.remote .guide .body {
-  font-size: 14px;
-  border-spacing: 0 7px;
-  border-bottom: 1px solid #323232;
-  height: 60px;
-  text-transform: capitalize;
-  display: table;
-  white-space: nowrap;
-  width: 100%;
-  table-layout: fixed;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-}
-.remote .guide .body .title {
-  margin-top: 3px;
-  font-size: 14px;
-}
-.remote .guide .body .subtitle {
-  color: #8e8e8e;
-}
-.remote .guide .body .arrowRight {
-  display: table-cell;
-  vertical-align: middle;
-  width: 24px;
-}
-.remote .description .body {
-  margin-left: 0px;
-  padding-left: 0px;
-  width: calc(100% - 95px);
-}
-.remote .controls {
-  background-color: #232323;
-  border-top: 1px solid #000000;
-  bottom: 0px;
-  position: absolute;
-  width: 100%;
-  height: 152px;
-}
-.remote .controls .title {
-  font-size: 18px;
-  text-transform: capitalize;
-  margin-bottom: 10px;
-  margin-top: 15px;
-  text-align: center;
-}
-.remote .controls .ui-seekbar {
-  margin: 15px;
-}
-.remote .controls .buttons {
-  display: table;
-  width: 100%;
-  margin-top: 30px;
-}
-.remote .controls .buttons .ui-icon.left {
-  font-size: 32px;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: right;
-  width: calc(100% / 5 * 2);
-  opacity: 0.2;
-}
-.remote .controls .buttons .ui-icon.play {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  font-size: 48px;
-  width: calc(100% / 5);
-}
-.remote .controls .buttons .ui-icon.right {
-  font-size: 32px;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: left;
-  width: calc(100% / 5);
-  opacity: 0.2;
-}
-.remote .controls .buttons .ui-icon.volume {
-  font-size: 32px;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: right;
-  width: calc(100% / 5);
-  padding-right: 15px;
-}
 /* /Users/shawn/Work/directv-fl/node_modules/vigour-js/app/style.less */
 html {
   -ms-touch-action: pan-x;
@@ -2234,37 +2164,6 @@ body {
   width: 46px;
   border-radius: 23px;
   font-size: 48px;
-}
-/* /Users/shawn/Work/directv-fl/src/components/shared/stickers/style.less */
-.ui-stickers {
-  width: 159px;
-}
-.ui-stickers > div {
-  vertical-align: top;
-  display: inline-block;
-  width: 70px;
-  height: 70px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
-.ui-stickers .mpaa {
-  background-color: #000000;
-}
-.ui-stickers .rating {
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  border: 2px solid white;
-  font-family: dinBold;
-  line-height: 70px;
-  text-align: center;
-  font-size: 24px;
-  background-color: #7ed321;
-  margin-left: 15px;
 }
 /* /Users/shawn/Work/directv-fl/src/components/inactive/bio/style.less */
 .second-bio > .switcher {
@@ -2323,6 +2222,13 @@ body {
   height: auto;
   border: 0;
   text-align: left;
+}
+/* /Users/shawn/Work/directv-fl/src/components/shared/actors/style.less */
+.ui-actors .body {
+  margin-right: 15px;
+  border: 0;
+  white-space: nowrap;
+  height: auto;
 }
 /* /Users/shawn/Work/directv-fl/src/components/shared/bar/style.less */
 .ui-bar {
@@ -2419,13 +2325,6 @@ body {
 .bar.program2 {
   border-top: 1px solid #000;
 }
-/* /Users/shawn/Work/directv-fl/src/components/shared/actors/style.less */
-.ui-actors .body {
-  margin-right: 15px;
-  border: 0;
-  white-space: nowrap;
-  height: auto;
-}
 /* /Users/shawn/Work/directv-fl/src/components/shared/recommendations/style.less */
 .ui-recommendations {
   padding-bottom: 15px;
@@ -2486,7 +2385,7 @@ body {
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
-.content-item .page {
+.content-item .page > div:last-child {
   padding-bottom: 65px;
 }
 /* /Users/shawn/Work/directv-fl/src/components/shared/seekbar/style.less */
@@ -2543,12 +2442,6 @@ body {
   margin: -14px -60px 0 -10px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
-}
-.ui-seekbar.channel {
-  pointer-events: none;
-}
-.ui-seekbar.channel .button {
-  display: none !important;
 }
 .ui-seekbar.loading .loaderbar {
   background-image: repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 4%, transparent 4%, transparent 8%);
@@ -2643,7 +2536,6 @@ body {
   width: 80px;
   border: 1px solid #ffffff;
   background-size: contain;
-  background-color: #181818;
 }
 .ui-score .teams .left {
   left: 30px;
@@ -2838,8 +2730,6 @@ body {
 /* /Users/shawn/Work/directv-fl/src/components/active/player/style.less */
 .first-player {
   position: relative;
-  -webkit-transform-origin: top left;
-  /* Chrome, Safari, Opera */
 }
 .first-player video {
   width: 100%;
