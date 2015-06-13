@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -38,26 +38,10 @@
   },
   "vigour": {
     "cloud": "http://localhost:10001",
-    "branches": {
-      "youzi-dev":{
-        "cloud": "http://localhost:10001",
-        "pointers": {
-          "img": "http://localhost:8080/",
-          "assets": "http://localhost:8080/"
-        }
-      },
-      "marcus-dev": {
-        "cloud": "http://10.0.1.199:10001"
-      },
-      "shawn-dev": {
-        "cloud": "http://directv2.dev.vigour.io:80"
-      }
-    },
     "development": {
       "button": false
     },
     "pointers": {
-      "img": "http://devassets.vigour.io/",
       "assets": "http://devassets.vigour.io/"
     },
     "packer": {
@@ -91,6 +75,60 @@
           "appUrlIdentifier":"com.directv-fl.org",
           "appUrlScheme": "directv-fl"
         }
+      }
+    },
+    "branches": {
+      "master": {
+        "pointers": {
+          "img": "http://jim.local/assets/",
+          "assets": "http://jim.local/assets/"
+        }
+      },
+      "youzi-dev":{
+        "pointers": {
+          "img": "http://jim.local/assets/",
+          "assets": "http://jim.local/assets/"
+        }
+      },
+      "marcus-dev": {
+        "cloud": "http://localhost:10001",
+        "uscloud": "http://54.173.192.57:10001"
+      },
+      "shawn-dev": {
+        "cloud": "http://192.168.2.18:10001"
+      },
+      "production": {
+        "cloud": "http://52.8.23.45:80",
+        "native": {
+          "platforms": {
+            "ios": {
+              "productName": "DTV - In Flight"
+            }
+          }
+        }
+      },
+      "airplane": {
+        "cloud": "http://52.8.40.195:80",
+        "native": {
+          "platforms": {
+            "ios": {
+              "productName": "DTV DEMO - In Flight"
+            }
+          }
+        }       
+      },
+      "livingroom": {
+        "cloud": "http://directv-fl-demo.local:10001",
+        "pointers": {
+          "assets": "http://directv-fl-demo.local/"
+        },
+        "native": {
+          "platforms": {
+            "ios": {
+              "productName": "DTV DEMO - Home"
+            }
+          }
+        }     
       }
     }
   },
