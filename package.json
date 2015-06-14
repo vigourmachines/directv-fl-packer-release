@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "startHub": "./node_modules/vigour-hub/bin/hub -d -c directv",
     "prestart": "npm run startHub &",
     "build": "vNative build",
-    "release": "packer -r"
+    "release": "packer -r -c package.json,.package.json"
   },
   "repository": {
     "type": "git",
@@ -42,7 +42,7 @@
       "button": false
     },
     "pointers": {
-      "assets": "http://jim.local/assets/"
+      "assets": "http://devassets.vigour.io/"
     },
     "packer": {
       "web": "index.html",
@@ -84,9 +84,6 @@
           "assets": "http://jim.local/assets/"
         }
       },
-      "production": {
-
-      },
       "youzi-dev":{
         "pointers": {
           "img": "http://jim.local/assets/",
@@ -94,13 +91,23 @@
         }
       },
       "marcus-dev": {
-        "cloud": "http://10.0.1.199:10001"
+        "cloud": "http://localhost:10001",
+        "uscloud": "http://54.173.192.57:10001"
       },
       "shawn-dev": {
         "cloud": "http://192.168.2.18:10001"
       },
+      "production": {
+        "cloud": "http://52.8.23.45:80"
+      },
       "airplane": {
-        "cloud": "http://54.173.192.57:80"
+        "cloud": "http://52.8.40.195:80"      
+      },
+      "livingroom": {
+        "cloud": "http://directv-fl-demo.local:10001",
+        "pointers": {
+          "assets": "http://directv-fl-demo.local/"
+        }    
       }
     }
   },
