@@ -191,6 +191,25 @@ body {
 .app-switcher > div {
   position: absolute;
 }
+/* /Users/youzi/dev/directv-fl/src/components/inactive/style.less */
+.second-state {
+  height: 100%;
+  width: 100%;
+  color: white;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  -moz-transition: -moz-transform 0.4s ease-out;
+  -ms-transition: -ms-transform 0.4s ease-out;
+  -o-transition: -o-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+}
+.second-state > .switcher {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.notIsPhone {
+  pointer-events: none;
+}
 /* /Users/youzi/dev/directv-fl/src/components/active/style.less */
 .first-state {
   height: 100%;
@@ -283,25 +302,6 @@ body {
 .first-state .open.holder {
   box-shadow: -5px 0px 10px #000000;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/style.less */
-.second-state {
-  height: 100%;
-  width: 100%;
-  color: white;
-  -webkit-transition: -webkit-transform 0.4s ease-out;
-  -moz-transition: -moz-transform 0.4s ease-out;
-  -ms-transition: -ms-transform 0.4s ease-out;
-  -o-transition: -o-transform 0.4s ease-out;
-  transition: transform 0.4s ease-out;
-}
-.second-state > .switcher {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-.notIsPhone {
-  pointer-events: none;
-}
 /* /Users/youzi/dev/directv-fl/src/components/shared/wallpaper/style.less */
 .ui-wallpaper {
   width: 100%;
@@ -309,250 +309,6 @@ body {
   background-image: url('../../assets/img/app/waiting.png');
   background-size: cover;
   background-position: center;
-}
-/* /Users/youzi/dev/directv-fl/src/components/active/topbar/style.less */
-.topbar {
-  -webkit-transition: background-color 0.2s ease-out;
-  -moz-transition: background-color 0.2s ease-out;
-  -ms-transition: background-color 0.2s ease-out;
-  -o-transition: background-color 0.2s ease-out;
-  transition: background-color 0.2s ease-out;
-  padding-top: 20px;
-  height: 44px;
-  background-color: #0081cf;
-  color: #ffffff;
-  display: table;
-  width: 100%;
-  overflow: hidden;
-}
-.topbar .ui-icon.left {
-  display: table-cell;
-  vertical-align: middle;
-  height: 44px;
-  width: calc(100% / 3);
-  padding-left: 15px;
-  text-align: left;
-}
-.topbar .middle {
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-  width: calc(100% / 3);
-  font: 20px dinBold;
-  padding-top: 4px;
-  white-space: nowrap;
-  text-transform: capitalize;
-}
-.topbar .ui-icon.right {
-  display: table-cell;
-  text-align: right;
-  padding-right: 15px;
-  vertical-align: middle;
-  width: calc(100% / 3);
-}
-.topbar.searching {
-  background-color: #181818;
-}
-.topbar.searching .ui-icon.left {
-  width: 30px;
-}
-.topbar.searching .ui-icon.right,
-.topbar.searching .middle {
-  display: none;
-}
-.hasReceiver .holder .topbar .ui-icon.right {
-  color: #ffeb00;
-}
-.search-field {
-  display: table-cell;
-  vertical-align: middle;
-  text-transform: capitalize;
-  padding-right: 15px;
-}
-.search-field .lefticon {
-  display: table-cell;
-  color: #8e8e8e;
-  padding: 0px;
-  width: 20px;
-  vertical-align: middle;
-  font-size: 28px;
-}
-.search-field .clear {
-  width: 25px;
-  display: table-cell;
-  vertical-align: middle;
-  color: #8e8e8e;
-  font-size: 28px;
-}
-.search-field .table {
-  width: 100%;
-  vertical-align: middle;
-  display: table;
-  background-color: #fff;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  height: 30px;
-}
-.search-field .inputField {
-  width: 100%;
-  display: table-cell;
-  -webkit-appearance: none;
-  margin-top: 5px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/active/remote/style.less */
-.mini-remote {
-  display: table;
-  color: white;
-  width: 100%;
-  height: 50px;
-  bottom: 0px;
-  background-color: #232323;
-  border-top: 1px solid #000000;
-  position: absolute;
-}
-.mini-remote .left {
-  vertical-align: top;
-  display: table-cell;
-  background-color: #000;
-  width: 67px;
-  height: 50px;
-  background-size: contain;
-}
-.mini-remote .middle {
-  padding-left: 15px;
-  vertical-align: middle;
-  display: table-cell;
-  margin-top: 4px;
-}
-.mini-remote .middle .title {
-  font: 14px/10px dinRegular;
-}
-.mini-remote .middle .info {
-  font: 14px dinLight;
-  color: #8e8e8e;
-}
-.mini-remote .right {
-  vertical-align: middle;
-  display: table-cell;
-  padding-right: 15px;
-  text-align: right;
-  font-size: 32px;
-  width: 50px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/active/menu/style.less */
-.menu {
-  font-family: 'dinLight';
-  background-color: #000000;
-  color: white;
-  background-image: url('../../../assets/img/app/bg_menu.png');
-  background-size: cover;
-}
-.menu .logo {
-  margin-left: 75px;
-  width: 150px;
-  height: 26px;
-  margin-top: 38px;
-  margin-bottom: 60px;
-  background-image: url('../../../assets/img/app/logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.menu .menu-item {
-  display: table;
-  padding: 15px 0px 15px 0px;
-}
-.menu .menu-item .ui-icon {
-  margin-left: 30px;
-  margin-top: 5px;
-  color: #8e8e8e;
-}
-.menu .menu-item .title {
-  padding-left: 15px;
-  display: table-cell;
-  font-size: 22px;
-  line-height: 0px;
-  font-weight: bold;
-  text-transform: capitalize;
-  vertical-align: middle;
-  color: #8e8e8e;
-}
-.menu-item.focused {
-  border-left: 5px solid #ff0072;
-}
-.menu-item.focused .ui-icon {
-  margin-left: 25px;
-  color: #fff;
-}
-.menu-item.focused .title {
-  color: #fff;
-}
-.menu .footer {
-  bottom: 0;
-  position: absolute;
-  width: 325px;
-  padding: 0px 30px 15px 30px;
-}
-.menu .footer .profile {
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  border-radius: 50%;
-  border: 1px solid #fff;
-  display: table-cell;
-  vertical-align: middle;
-  background-image: url('../../../assets/img/app/avatar.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.5;
-}
-.menu .footer .title {
-  display: table-cell;
-  vertical-align: middle;
-  width: 195px;
-  padding-left: 10px;
-  color: #8e8e8e;
-}
-.menu .footer .settings {
-  display: table-cell;
-  vertical-align: middle;
-  color: #8e8e8e;
-}
-/* /Users/youzi/dev/directv-fl/src/components/active/switcher/style.less */
-.first-switcher {
-  position: absolute;
-  overflow: hidden;
-  height: calc(100% - 64px);
-  width: 100%;
-}
-.first-switcher > div {
-  -webkit-transition: opacity 0.2s ease-out;
-  -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
-  -o-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
-  position: absolute;
-  background-color: #181818;
-  width: 100%;
-  height: 100%;
-}
-/* /Users/youzi/dev/directv-fl/src/components/active/popup/style.less */
-.popup {
-  background: #181818;
-  color: white;
-}
-.popup .topbar {
-  background-color: #181818;
-}
-.popup .devices .focused {
-  background-color: #0081cf;
-}
-.popup .devices .focused .subtitle {
-  color: #ffffff !important;
-  opacity: 0.8;
-}
-.popup .footer {
-  padding-bottom: 25px;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/discover/style.less */
 .second-discover {
@@ -861,11 +617,20 @@ body {
   width: 100%;
   height: 100%;
 }
+.second-player .holder {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.second-player .holder .center {
+  display: table-cell;
+  vertical-align: middle;
+}
 .second-player video {
   background: #000000;
   background-size: cover;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 .second-player .overlay {
   background: radial-gradient(circle farthest-corner at 95% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
@@ -974,8 +739,252 @@ body {
   border-radius: 4px;
   overflow: hidden;
   border: 2px solid #323232;
-  width: 400px;
-  height: 300px;
+  width: 625px;
+  height: 350px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/active/topbar/style.less */
+.topbar {
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -ms-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
+  padding-top: 20px;
+  height: 44px;
+  background-color: #0081cf;
+  color: #ffffff;
+  display: table;
+  width: 100%;
+  overflow: hidden;
+}
+.topbar .ui-icon.left {
+  display: table-cell;
+  vertical-align: middle;
+  height: 44px;
+  width: calc(100% / 3);
+  padding-left: 15px;
+  text-align: left;
+}
+.topbar .middle {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: calc(100% / 3);
+  font: 20px dinBold;
+  padding-top: 4px;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+.topbar .ui-icon.right {
+  display: table-cell;
+  text-align: right;
+  padding-right: 15px;
+  vertical-align: middle;
+  width: calc(100% / 3);
+}
+.topbar.searching {
+  background-color: #181818;
+}
+.topbar.searching .ui-icon.left {
+  width: 30px;
+}
+.topbar.searching .ui-icon.right,
+.topbar.searching .middle {
+  display: none;
+}
+.hasReceiver .holder .topbar .ui-icon.right {
+  color: #ffeb00;
+}
+.search-field {
+  display: table-cell;
+  vertical-align: middle;
+  text-transform: capitalize;
+  padding-right: 15px;
+}
+.search-field .lefticon {
+  display: table-cell;
+  color: #8e8e8e;
+  padding: 0px;
+  width: 20px;
+  vertical-align: middle;
+  font-size: 28px;
+}
+.search-field .clear {
+  width: 25px;
+  display: table-cell;
+  vertical-align: middle;
+  color: #8e8e8e;
+  font-size: 28px;
+}
+.search-field .table {
+  width: 100%;
+  vertical-align: middle;
+  display: table;
+  background-color: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  height: 30px;
+}
+.search-field .inputField {
+  width: 100%;
+  display: table-cell;
+  -webkit-appearance: none;
+  margin-top: 5px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/active/menu/style.less */
+.menu {
+  font-family: 'dinLight';
+  background-color: #000000;
+  color: white;
+  background-image: url('../../../assets/img/app/bg_menu.png');
+  background-size: cover;
+}
+.menu .logo {
+  margin-left: 75px;
+  width: 150px;
+  height: 26px;
+  margin-top: 38px;
+  margin-bottom: 60px;
+  background-image: url('../../../assets/img/app/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.menu .menu-item {
+  display: table;
+  padding: 15px 0px 15px 0px;
+}
+.menu .menu-item .ui-icon {
+  margin-left: 30px;
+  margin-top: 5px;
+  color: #8e8e8e;
+}
+.menu .menu-item .title {
+  padding-left: 15px;
+  display: table-cell;
+  font-size: 22px;
+  line-height: 0px;
+  font-weight: bold;
+  text-transform: capitalize;
+  vertical-align: middle;
+  color: #8e8e8e;
+}
+.menu-item.focused {
+  border-left: 5px solid #ff0072;
+}
+.menu-item.focused .ui-icon {
+  margin-left: 25px;
+  color: #fff;
+}
+.menu-item.focused .title {
+  color: #fff;
+}
+.menu .footer {
+  bottom: 0;
+  position: absolute;
+  width: 325px;
+  padding: 0px 30px 15px 30px;
+}
+.menu .footer .profile {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  display: table-cell;
+  vertical-align: middle;
+  background-image: url('../../../assets/img/app/avatar.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+.menu .footer .title {
+  display: table-cell;
+  vertical-align: middle;
+  width: 195px;
+  padding-left: 10px;
+  color: #8e8e8e;
+}
+.menu .footer .settings {
+  display: table-cell;
+  vertical-align: middle;
+  color: #8e8e8e;
+}
+/* /Users/youzi/dev/directv-fl/src/components/active/remote/style.less */
+.mini-remote {
+  display: table;
+  color: white;
+  width: 100%;
+  height: 50px;
+  bottom: 0px;
+  background-color: #232323;
+  border-top: 1px solid #000000;
+  position: absolute;
+}
+.mini-remote .left {
+  vertical-align: top;
+  display: table-cell;
+  background-color: #000;
+  width: 67px;
+  height: 50px;
+  background-size: contain;
+}
+.mini-remote .middle {
+  padding-left: 15px;
+  vertical-align: middle;
+  display: table-cell;
+  margin-top: 4px;
+}
+.mini-remote .middle .title {
+  font: 14px/10px dinRegular;
+}
+.mini-remote .middle .info {
+  font: 14px dinLight;
+  color: #8e8e8e;
+}
+.mini-remote .right {
+  vertical-align: middle;
+  display: table-cell;
+  padding-right: 15px;
+  text-align: right;
+  font-size: 32px;
+  width: 50px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/active/switcher/style.less */
+.first-switcher {
+  position: absolute;
+  overflow: hidden;
+  height: calc(100% - 64px);
+  width: 100%;
+}
+.first-switcher > div {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  position: absolute;
+  background-color: #181818;
+  width: 100%;
+  height: 100%;
+}
+/* /Users/youzi/dev/directv-fl/src/components/active/popup/style.less */
+.popup {
+  background: #181818;
+  color: white;
+}
+.popup .topbar {
+  background-color: #181818;
+}
+.popup .devices .focused {
+  background-color: #0081cf;
+}
+.popup .devices .focused .subtitle {
+  color: #ffffff !important;
+  opacity: 0.8;
+}
+.popup .footer {
+  padding-bottom: 25px;
 }
 /* /Users/youzi/dev/directv-fl/src/components/active/topbar/reset.less */
 input[placeholder],
@@ -1055,207 +1064,6 @@ input[type="number"] {
   text-align: center;
   font-size: 24px;
   line-height: 24px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/active/discover/style.less */
-.first-discover .header {
-  width: calc(100% - 15px);
-}
-.first-discover .spotlight {
-  position: relative;
-}
-.first-discover .spotlight .list-dots .container {
-  -webkit-border-radius: 11px;
-  -moz-border-radius: 11px;
-  border-radius: 11px;
-  background-color: #0081cf;
-}
-.first-discover > div:last-child {
-  margin-bottom: 60px;
-}
-.first-discover > div {
-  height: 220px;
-}
-.first-discover > div.spotlight {
-  height: 210px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/active/search/style.less */
-.first-search .overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 60px;
-  left: 0;
-}
-.first-search {
-  width: 100%;
-  height: 100%;
-}
-.first-search .page {
-  width: calc(100% - 15px);
-  height: calc(100% - 15px);
-  margin-left: 15px;
-  margin-top: 15px;
-}
-.first-search .page .actors {
-  margin-bottom: 30px;
-}
-.first-search .search-top-result .title {
-  font: 20px dinRegular;
-  border-bottom: 1px solid #323232;
-  text-transform: capitalize;
-}
-.first-search .search-top-result .body {
-  margin-top: 15px;
-  display: table;
-  font: 16px dinLight;
-}
-.first-search .search-top-result .body .poster {
-  position: relative;
-  vertical-align: top;
-  display: table-cell;
-}
-.first-search .search-top-result .body .poster .img {
-  width: 93px;
-  height: 132px;
-  border: 1px solid #8e8e8e;
-  background-size: contain;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-}
-.first-search .search-top-result .body .poster .backdrop {
-  background-color: rgba(23, 23, 23, 0.8);
-  height: 100%;
-}
-.first-search .search-top-result .body .poster .mute {
-  position: absolute;
-  top: 44px;
-  left: 25px;
-}
-.first-search .search-top-result .body .textHolder {
-  vertical-align: top;
-  display: table-cell;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-}
-.first-search .search-top-result .body .textHolder .title {
-  width: 150px;
-  float: left;
-  font-size: 18px;
-  line-height: 16px;
-  font-family: 14px/10px dinRegular;
-  padding-left: 15px;
-  padding-bottom: 0px;
-  border: none;
-}
-.first-search .search-top-result .body .textHolder .info {
-  width: 150px;
-  float: left;
-  font: 14px dinLight;
-  padding-left: 15px;
-  color: #8e8e8e;
-}
-.first-search .search-top-result .body .textHolder .rating {
-  float: right;
-  padding: 12px 9px 9px 9px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  border: 2px solid #fff;
-  background-color: #7ed321;
-  font-family: dinBold;
-  font-size: 16px;
-  margin-top: -15px;
-  margin-right: 15px;
-}
-.first-search .search-top-result .body .textHolder .description {
-  float: left;
-  padding: 15px;
-}
-.first-search .recent {
-  margin-top: 0px;
-}
-.first-search .recent > .holder {
-  margin-top: 0px;
-}
-.first-search .search-results {
-  margin-top: 30px;
-}
-.first-search .search-results .title {
-  font: 20px dinRegular;
-  border-bottom: 1px solid #323232;
-  text-transform: capitalize;
-}
-.first-search .search-results .body {
-  font: 16px dinLight;
-  padding-right: 15px;
-  border-spacing: 0 7px;
-  border-bottom: 1px solid #323232;
-  height: 60px;
-  text-transform: capitalize;
-  display: table;
-  white-space: nowrap;
-  width: 100%;
-  table-layout: fixed;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-}
-.first-search .search-results .body .title {
-  font: 16px dinLight;
-  display: table-cell;
-  vertical-align: middle;
-  border: none;
-}
-.first-search .search-results .body .arrowRight {
-  display: table-cell;
-  vertical-align: middle;
-  width: 24px;
-}
-.first-search .noResults {
-  margin-top: 60px;
-  text-align: center;
-  width: 150px;
-  margin-right: auto;
-  margin-left: auto;
-}
-.first-search .noResults .title {
-  font: 20px dinRegular;
-}
-.first-search .noResults .body {
-  color: #8e8e8e;
-  font: 16px dinLight;
-}
-.first-search .noResults .ui-icon {
-  font-size: 48px;
-  padding-bottom: 30px;
-  color: #8e8e8e;
-}
-.first-search .noRecent {
-  margin-top: 60px;
-  text-align: center;
-  width: 150px;
-  margin-right: auto;
-  margin-left: auto;
-}
-.first-search .noRecent .title {
-  font: 20px dinRegular;
-}
-.first-search .noRecent .body {
-  color: #8e8e8e;
-  font: 16px dinLight;
-}
-.first-search .noRecent .ui-icon {
-  font-size: 48px;
-  padding-bottom: 30px;
-  color: #8e8e8e;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/trailer/style.less */
 .second-trailer {
@@ -1948,6 +1756,207 @@ input[type="number"] {
   height: 50px;
   width: 252px;
 }
+/* /Users/youzi/dev/directv-fl/src/components/active/discover/style.less */
+.first-discover .header {
+  width: calc(100% - 15px);
+}
+.first-discover .spotlight {
+  position: relative;
+}
+.first-discover .spotlight .list-dots .container {
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  border-radius: 11px;
+  background-color: #0081cf;
+}
+.first-discover > div:last-child {
+  margin-bottom: 60px;
+}
+.first-discover > div {
+  height: 220px;
+}
+.first-discover > div.spotlight {
+  height: 210px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/active/search/style.less */
+.first-search .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 60px;
+  left: 0;
+}
+.first-search {
+  width: 100%;
+  height: 100%;
+}
+.first-search .page {
+  width: calc(100% - 15px);
+  height: calc(100% - 15px);
+  margin-left: 15px;
+  margin-top: 15px;
+}
+.first-search .page .actors {
+  margin-bottom: 30px;
+}
+.first-search .search-top-result .title {
+  font: 20px dinRegular;
+  border-bottom: 1px solid #323232;
+  text-transform: capitalize;
+}
+.first-search .search-top-result .body {
+  margin-top: 15px;
+  display: table;
+  font: 16px dinLight;
+}
+.first-search .search-top-result .body .poster {
+  position: relative;
+  vertical-align: top;
+  display: table-cell;
+}
+.first-search .search-top-result .body .poster .img {
+  width: 93px;
+  height: 132px;
+  border: 1px solid #8e8e8e;
+  background-size: contain;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.first-search .search-top-result .body .poster .backdrop {
+  background-color: rgba(23, 23, 23, 0.8);
+  height: 100%;
+}
+.first-search .search-top-result .body .poster .mute {
+  position: absolute;
+  top: 44px;
+  left: 25px;
+}
+.first-search .search-top-result .body .textHolder {
+  vertical-align: top;
+  display: table-cell;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+.first-search .search-top-result .body .textHolder .title {
+  width: 150px;
+  float: left;
+  font-size: 18px;
+  line-height: 16px;
+  font-family: 14px/10px dinRegular;
+  padding-left: 15px;
+  padding-bottom: 0px;
+  border: none;
+}
+.first-search .search-top-result .body .textHolder .info {
+  width: 150px;
+  float: left;
+  font: 14px dinLight;
+  padding-left: 15px;
+  color: #8e8e8e;
+}
+.first-search .search-top-result .body .textHolder .rating {
+  float: right;
+  padding: 12px 9px 9px 9px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 2px solid #fff;
+  background-color: #7ed321;
+  font-family: dinBold;
+  font-size: 16px;
+  margin-top: -15px;
+  margin-right: 15px;
+}
+.first-search .search-top-result .body .textHolder .description {
+  float: left;
+  padding: 15px;
+}
+.first-search .recent {
+  margin-top: 0px;
+}
+.first-search .recent > .holder {
+  margin-top: 0px;
+}
+.first-search .search-results {
+  margin-top: 30px;
+}
+.first-search .search-results .title {
+  font: 20px dinRegular;
+  border-bottom: 1px solid #323232;
+  text-transform: capitalize;
+}
+.first-search .search-results .body {
+  font: 16px dinLight;
+  padding-right: 15px;
+  border-spacing: 0 7px;
+  border-bottom: 1px solid #323232;
+  height: 60px;
+  text-transform: capitalize;
+  display: table;
+  white-space: nowrap;
+  width: 100%;
+  table-layout: fixed;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+.first-search .search-results .body .title {
+  font: 16px dinLight;
+  display: table-cell;
+  vertical-align: middle;
+  border: none;
+}
+.first-search .search-results .body .arrowRight {
+  display: table-cell;
+  vertical-align: middle;
+  width: 24px;
+}
+.first-search .noResults {
+  margin-top: 60px;
+  text-align: center;
+  width: 150px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.first-search .noResults .title {
+  font: 20px dinRegular;
+}
+.first-search .noResults .body {
+  color: #8e8e8e;
+  font: 16px dinLight;
+}
+.first-search .noResults .ui-icon {
+  font-size: 48px;
+  padding-bottom: 30px;
+  color: #8e8e8e;
+}
+.first-search .noRecent {
+  margin-top: 60px;
+  text-align: center;
+  width: 150px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.first-search .noRecent .title {
+  font: 20px dinRegular;
+}
+.first-search .noRecent .body {
+  color: #8e8e8e;
+  font: 16px dinLight;
+}
+.first-search .noRecent .ui-icon {
+  font-size: 48px;
+  padding-bottom: 30px;
+  color: #8e8e8e;
+}
 /* /Users/youzi/dev/directv-fl/src/components/active/popup/actor/style.less */
 .popup .carousel {
   position: relative;
@@ -2280,6 +2289,79 @@ body {
   width: 46px;
   border-radius: 23px;
   font-size: 48px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/shared/stickers/style.less */
+.ui-stickers {
+  width: 159px;
+}
+.ui-stickers > div {
+  vertical-align: top;
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.ui-stickers .mpaa {
+  background-color: #000000;
+}
+.ui-stickers .rating {
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  border: 2px solid white;
+  font-family: dinBold;
+  line-height: 70px;
+  text-align: center;
+  font-size: 24px;
+  background-color: #7ed321;
+  margin-left: 15px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/inactive/bio/style.less */
+.second-bio > .switcher {
+  height: 100%;
+}
+.second-bio > .switcher > div {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  top: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.second-bio > .overlay {
+  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+  top: 0;
+  position: absolute;
+  border-spacing: 30px 60px;
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.second-bio > .overlay > .header {
+  display: table-cell;
+}
+.second-bio > .overlay .header {
+  font-family: dinRegular;
+  font-size: 36px;
+}
+.second-bio > .overlay .bio {
+  width: 570px;
+  display: table-cell;
+}
+.second-bio > .overlay .bio > .header {
+  border-bottom: 1px solid #ffffff;
+}
+.second-bio > .overlay .body {
+  margin-top: 15px;
+  font-size: 28px;
 }
 /* /Users/youzi/dev/directv-fl/src/components/shared/description/style.less */
 .ui-description {
@@ -2808,79 +2890,6 @@ body {
   font-size: 12px;
   color: grey;
 }
-/* /Users/youzi/dev/directv-fl/src/components/shared/stickers/style.less */
-.ui-stickers {
-  width: 159px;
-}
-.ui-stickers > div {
-  vertical-align: top;
-  display: inline-block;
-  width: 70px;
-  height: 70px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
-.ui-stickers .mpaa {
-  background-color: #000000;
-}
-.ui-stickers .rating {
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  border: 2px solid white;
-  font-family: dinBold;
-  line-height: 70px;
-  text-align: center;
-  font-size: 24px;
-  background-color: #7ed321;
-  margin-left: 15px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/inactive/bio/style.less */
-.second-bio > .switcher {
-  height: 100%;
-}
-.second-bio > .switcher > div {
-  -webkit-transition: opacity 0.2s ease-out;
-  -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
-  -o-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
-  top: 0;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-.second-bio > .overlay {
-  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
-  top: 0;
-  position: absolute;
-  border-spacing: 30px 60px;
-  display: table;
-  width: 100%;
-  height: 100%;
-}
-.second-bio > .overlay > .header {
-  display: table-cell;
-}
-.second-bio > .overlay .header {
-  font-family: dinRegular;
-  font-size: 36px;
-}
-.second-bio > .overlay .bio {
-  width: 570px;
-  display: table-cell;
-}
-.second-bio > .overlay .bio > .header {
-  border-bottom: 1px solid #ffffff;
-}
-.second-bio > .overlay .body {
-  margin-top: 15px;
-  font-size: 28px;
-}
 /* /Users/youzi/dev/directv-fl/src/components/active/player/style.less */
 .first-player {
   position: relative;
@@ -2889,7 +2898,6 @@ body {
 }
 .first-player video {
   width: 100%;
-  height: 210px;
 }
 .first-player .overlay {
   background-color: rgba(0, 0, 0, 0.5);
@@ -2938,6 +2946,8 @@ body {
 .first-player .overlay .bottom {
   display: table;
   width: 100%;
+  height: 50px;
+  margin-top: -10px;
 }
 .first-player .overlay .bottom .left,
 .first-player .overlay .bottom .right {

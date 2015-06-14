@@ -86,9 +86,10 @@
         }
       },
       "youzi-dev":{
+        "cloud":"http://Imac2014.local:10001",
         "pointers": {
-          "img": "http://jim.local/assets/",
-          "assets": "http://jim.local/assets/"
+          "img": "http://Imac2014.local/assets/",
+          "assets": "http://Imac2014.local/assets/"
         }
       },
       "marcus-dev": {
