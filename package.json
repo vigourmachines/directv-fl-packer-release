@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -48,6 +48,7 @@
       "web": "index.html",
       "assets": {
         "bundle.js": true,
+        "build.js":true,
         "bundle.css": true,
         "index.html": true,
         "assets": "*",
