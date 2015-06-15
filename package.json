@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -38,32 +38,17 @@
   },
   "vigour": {
     "cloud": "http://localhost:10001",
-    "branches": {
-      "youzi-dev":{
-        "cloud": "http://localhost:10001",
-        "pointers": {
-          "img": "http://localhost:8080/",
-          "assets": "http://localhost:8080/"
-        }
-      },
-      "marcus-dev": {
-        "cloud": "http://10.0.1.199:10001"
-      },
-      "ramon": {
-        "cloud": "http://directv2.dev.vigour.io:80"
-      }
-    },
     "development": {
       "button": false
     },
     "pointers": {
-      "img": "http://devassets.vigour.io/",
       "assets": "http://devassets.vigour.io/"
     },
     "packer": {
       "web": "index.html",
       "assets": {
         "bundle.js": true,
+        "build.js":true,
         "bundle.css": true,
         "index.html": true,
         "assets": "*",
@@ -91,6 +76,49 @@
           "appUrlIdentifier":"com.directv-fl.org",
           "appUrlScheme": "directv-fl"
         }
+      }
+    },
+    "branches": {
+      "master": {
+        "pointers": {
+          "img": "http://jim.local/assets/",
+          "assets": "http://jim.local/assets/"
+        }
+      },
+      "youzi-dev":{
+        "cloud":"http://Imac2014.local:10001",
+        "pointers": {
+          "img": "http://Imac2014.local/assets/",
+          "assets": "http://Imac2014.local/assets/"
+        }
+      },
+      "marcus-dev": {
+        "cloud": "http://localhost:10001",
+        "uscloud": "http://54.173.192.57:10001"
+      },
+      "shawn-dev": {
+        "cloud": "http://192.168.2.18:10001"
+      },
+      "production": {
+        "cloud": "http://52.8.23.45:80"
+      },
+      "airplane": {
+        "cloud": "http://52.8.40.195:80",
+        "pointers": {
+          "assets": "http://dtv-us1assets.vigour.io/"
+        }
+      },
+      "ramon": {
+        "cloud":"http://54.173.192.57:80/",
+        "pointers": {
+          "assets": "http://dtv-us1assets.vigour.io/"
+        }
+      },
+      "livingroom": {
+        "cloud": "http://directv-fl-demo.local:10001",
+        "pointers": {
+          "assets": "http://directv-fl-demo.local/"
+        }    
       }
     }
   },

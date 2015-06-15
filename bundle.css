@@ -137,7 +137,42 @@ body {
 select {
   cursor: pointer !important;
 }
-/* /Users/shawn/Work/directv-fl/src/components/switcher/style.less */
+/* /Users/youzi/dev/gaston/lib/browser/styles.less */
+.gaston-ui {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 99999999999999999999999999999999;
+  background: red;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 2em;
+}
+.gaston-ui .logo {
+  width: 50px;
+  height: 50px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+.gaston-ui .content {
+  display: none;
+}
+.gaston-ui.open {
+  border-radius: 0%;
+  width: 100vw;
+  height: 100vh;
+  right: inherit;
+  bottom: inherit;
+  background: #000;
+}
+.gaston-ui.open .content {
+  display: block;
+}
+.gaston-ui.open .logo {
+  display: none;
+}
+/* /Users/youzi/dev/directv-fl/src/components/switcher/style.less */
 body.hasTouch {
   position: fixed;
   top: 0;
@@ -156,7 +191,7 @@ body {
 .app-switcher > div {
   position: absolute;
 }
-/* /Users/shawn/Work/directv-fl/src/components/inactive/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/inactive/style.less */
 .second-state {
   height: 100%;
   width: 100%;
@@ -172,7 +207,10 @@ body {
   width: 100%;
   overflow: hidden;
 }
-/* /Users/shawn/Work/directv-fl/src/components/active/style.less */
+body.notIsPhone {
+  pointer-events: none;
+}
+/* /Users/youzi/dev/directv-fl/src/components/active/style.less */
 .first-state {
   height: 100%;
   width: 100%;
@@ -264,7 +302,7 @@ body {
 .first-state .open.holder {
   box-shadow: -5px 0px 10px #000000;
 }
-/* /Users/shawn/Work/directv-fl/src/components/shared/wallpaper/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/shared/wallpaper/style.less */
 .ui-wallpaper {
   width: 100%;
   height: 100%;
@@ -272,7 +310,7 @@ body {
   background-size: cover;
   background-position: center;
 }
-/* /Users/shawn/Work/directv-fl/src/components/inactive/discover/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/inactive/discover/style.less */
 .second-discover {
   height: 100%;
 }
@@ -287,7 +325,138 @@ body {
   width: 100%;
   height: 100%;
 }
-/* /Users/shawn/Work/directv-fl/src/components/inactive/search/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/inactive/player/style.less */
+.second-player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.second-player .holder {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.second-player .holder .center {
+  display: table-cell;
+  vertical-align: middle;
+}
+.second-player video {
+  background: #000000;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+.second-player .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.second-player .overlay,
+.second-player .overlay > div {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+.second-player .container {
+  top: 50%;
+  margin-top: -67px;
+  position: absolute;
+  width: 100%;
+}
+.second-player .container .txt {
+  margin-left: 60px;
+  font-size: 72px;
+}
+.second-player .container .value {
+  display: inline;
+  font-family: dinRegular;
+}
+.second-player .volume-overlay .progress {
+  border-top-color: #ffeb00;
+}
+.second-player .player-overlay {
+  display: table;
+  color: #ffffff;
+}
+.second-player .player-overlay .info {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+}
+.second-player .player-overlay .info > div {
+  vertical-align: top;
+  display: inline-block;
+}
+.second-player .player-overlay .icon {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 128px;
+}
+.second-player .player-overlay .fade-in {
+  -webkit-transition: opacity 0.75s ease-out, -webkit-transform 0.1s ease-out;
+  -moz-transition: opacity 0.75s ease-out, -moz-transform 0.1s ease-out;
+  -ms-transition: opacity 0.75s ease-out, -ms-transform 0.1s ease-out;
+  -o-transition: opacity 0.75s ease-out, -o-transform 0.1s ease-out;
+  transition: opacity 0.75s ease-out, transform 0.1s ease-out;
+}
+.second-player .player-overlay .fade-out {
+  -webkit-transition: opacity 0.2s ease-out, -webkit-transform 0s ease-out 0.2s;
+  -moz-transition: opacity 0.2s ease-out, -moz-transform 0s ease-out 0.2s;
+  -ms-transition: opacity 0.2s ease-out, -ms-transform 0s ease-out 0.2s;
+  -o-transition: opacity 0.2s ease-out, -o-transform 0s ease-out 0.2s;
+  transition: opacity 0.2s ease-out, transform 0s ease-out 0.2s;
+}
+.second-player .player-overlay .nowplaying {
+  margin-top: 15px;
+  font-size: 24px;
+}
+.second-player .player-overlay .titles {
+  margin-left: 30px;
+}
+.second-player .player-overlay .title {
+  font-size: 48px;
+}
+.second-player .player-overlay .subtitle {
+  margin-top: 5px;
+  font-size: 28px;
+  opacity: 0.6;
+}
+.second-player .player-overlay .poster {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 2px solid #323232;
+  height: 264px;
+  width: 186px;
+}
+.second-player .player-overlay .img {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.second-player .player-overlay .additional {
+  position: absolute;
+  right: 30px;
+  bottom: 110px;
+}
+.second-player .player-overlay .additional .header {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+.second-player .player-overlay .thumb {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 2px solid #323232;
+  width: 625px;
+  height: 350px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/inactive/search/style.less */
 .second-search {
   width: 100%;
   height: calc(100% - 80px);
@@ -362,7 +531,7 @@ body {
   padding-top: 30px;
 }
 .second-search .search-result .title {
-  font: 26px/18px dinRegular;
+  font: 26px/14px dinRegular;
 }
 .second-search .search-result .subtitle {
   font: 24px dinLight;
@@ -398,13 +567,13 @@ body {
   -moz-border-radius: 2px;
   border-radius: 2px;
   height: 486px;
-  border: 1px solid #323232;
+  border: 2px solid #323232;
 }
 .second-search .topresult .container .info {
   margin-top: 30px;
 }
 .second-search .topresult .container .info .title {
-  font: 26px/18px dinRegular;
+  font: 26px/14px dinRegular;
 }
 .second-search .topresult .container .info .subtitle {
   font: 24px dinLight;
@@ -413,9 +582,21 @@ body {
 .second-search .topresult .description {
   font: 28px dinLight;
   float: right;
+}
+.isTv .second-search .topresult .description {
   padding-left: 30px;
 }
-/* /Users/shawn/Work/directv-fl/src/components/inactive/statusbar/style.less */
+.notIsTv .second-search .topresult .body {
+  width: 100%;
+  height: auto;
+}
+.notIsTv .second-search .topresult .trailer {
+  height: auto;
+}
+.notIsTv .second-search .topresult .description {
+  padding-top: 15px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/inactive/statusbar/style.less */
 .second-statusbar {
   -webkit-transition: -webkit-transform 0.2s ease-out;
   -moz-transition: -moz-transform 0.2s ease-out;
@@ -497,120 +678,7 @@ body {
 .second-statusbar.branded .weather {
   width: 240px;
 }
-/* /Users/shawn/Work/directv-fl/src/components/inactive/player/style.less */
-.second-player {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.second-player video {
-  background: #000000;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-}
-.second-player .overlay {
-  background: radial-gradient(circle farthest-corner at 95% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
-}
-.second-player .overlay,
-.second-player .overlay > div {
-  -webkit-transition: opacity 0.2s ease-out;
-  -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
-  -o-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-}
-.second-player .container {
-  top: 50%;
-  margin-top: -67px;
-  position: absolute;
-  width: 100%;
-}
-.second-player .container .txt {
-  margin-left: 60px;
-  font-size: 72px;
-}
-.second-player .container .value {
-  display: inline;
-  font-family: dinRegular;
-}
-.second-player .volume-overlay .progress {
-  border-top-color: #ffeb00;
-}
-.second-player .player-overlay {
-  display: table;
-  color: #ffffff;
-}
-.second-player .player-overlay .info {
-  position: absolute;
-  left: 30px;
-  top: 30px;
-}
-.second-player .player-overlay .info > div {
-  vertical-align: top;
-  display: inline-block;
-}
-.second-player .player-overlay .icon {
-  display: table-cell;
-  vertical-align: middle;
-  font-size: 128px;
-}
-.second-player .player-overlay .fade-in {
-  -webkit-transition: opacity 0.2s ease-out;
-  -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
-  -o-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
-}
-.second-player .player-overlay .fade-out {
-  -webkit-transition: opacity 0.5s ease-out;
-  -moz-transition: opacity 0.5s ease-out;
-  -ms-transition: opacity 0.5s ease-out;
-  -o-transition: opacity 0.5s ease-out;
-  transition: opacity 0.5s ease-out;
-}
-.second-player .player-overlay .nowplaying {
-  font-size: 24px;
-}
-.second-player .player-overlay .titles {
-  margin-left: 30px;
-}
-.second-player .player-overlay .title {
-  font-size: 48px;
-}
-.second-player .player-overlay .subtitle {
-  font-size: 36px;
-}
-.second-player .player-overlay .poster {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  border: 1px solid #323232;
-  height: 264px;
-  width: 186px;
-}
-.second-player .player-overlay .recommended {
-  position: absolute;
-  right: 30px;
-  bottom: 110px;
-}
-.second-player .player-overlay .recommended .header {
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-.second-player .player-overlay .thumb {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  border: 1px solid #323232;
-  width: 400px;
-  height: 300px;
-}
-/* /Users/shawn/Work/directv-fl/src/components/inactive/navigation/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/inactive/navigation/style.less */
 .second-navigation {
   pointer-events: none;
   position: absolute;
@@ -686,7 +754,7 @@ body {
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
 }
-/* /Users/shawn/Work/directv-fl/src/components/active/topbar/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/active/topbar/style.less */
 .topbar {
   -webkit-transition: background-color 0.2s ease-out;
   -moz-transition: background-color 0.2s ease-out;
@@ -776,7 +844,7 @@ body {
   -webkit-appearance: none;
   margin-top: 5px;
 }
-/* /Users/shawn/Work/directv-fl/src/components/active/menu/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/active/menu/style.less */
 .menu {
   font-family: 'dinLight';
   background-color: #000000;
@@ -854,7 +922,7 @@ body {
   vertical-align: middle;
   color: #8e8e8e;
 }
-/* /Users/shawn/Work/directv-fl/src/components/active/remote/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/active/remote/style.less */
 .mini-remote {
   display: table;
   color: white;
@@ -894,7 +962,7 @@ body {
   font-size: 32px;
   width: 50px;
 }
-/* /Users/shawn/Work/directv-fl/src/components/active/switcher/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/active/switcher/style.less */
 .first-switcher {
   position: absolute;
   overflow: hidden;
@@ -912,7 +980,7 @@ body {
   width: 100%;
   height: 100%;
 }
-/* /Users/shawn/Work/directv-fl/src/components/active/popup/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/active/popup/style.less */
 .popup {
   background: #181818;
   color: white;
@@ -927,7 +995,10 @@ body {
   color: #ffffff !important;
   opacity: 0.8;
 }
-/* /Users/shawn/Work/directv-fl/src/components/active/topbar/reset.less */
+.popup .footer {
+  padding-bottom: 25px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/active/topbar/reset.less */
 input[placeholder],
 [placeholder],
 *[placeholder] {
@@ -985,7 +1056,12 @@ input[type="number"] {
   margin: 0;
   padding: 0;
 }
-/* /Users/shawn/Work/directv-fl/src/components/shared/icon/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/inactive/progress/style.less */
+.second-progress {
+  border-top: 40px solid #ff0072;
+  border-right: 20px solid transparent;
+}
+/* /Users/youzi/dev/directv-fl/src/components/shared/icon/style.less */
 /*
  * Directv v0.1, 2015
  * Author: Gideon van Dijk, Vigour.io
@@ -1006,7 +1082,7 @@ input[type="number"] {
   font-size: 24px;
   line-height: 24px;
 }
-/* /Users/shawn/Work/directv-fl/src/components/inactive/trailer/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/inactive/trailer/style.less */
 .second-trailer {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -1025,17 +1101,14 @@ input[type="number"] {
   bottom: 30px;
 }
 .second-trailer .logo {
+  background-size: cover;
   width: 160px;
   height: 60px;
   position: absolute;
   top: 0;
+  background-size: contain;
 }
-/* /Users/shawn/Work/directv-fl/src/components/inactive/progress/style.less */
-.second-progress {
-  border-top: 40px solid #ff0072;
-  border-right: 20px solid transparent;
-}
-/* /Users/shawn/Work/directv-fl/src/components/shared/list/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/shared/list/style.less */
 .base-list {
   white-space: nowrap;
   width: 100%;
@@ -1044,16 +1117,10 @@ input[type="number"] {
   display: inline-block;
   background-size: cover;
   background-position: center;
-  position: relative;
 }
 .base-list > div .img {
   background-size: cover;
   background-position: center;
-}
-.base-list > div .lock {
-  position: absolute;
-  bottom: 0;
-  right: 0;
 }
 .base-list > div {
   background-color: #181818;
@@ -1065,20 +1132,30 @@ input[type="number"] {
   /* Firefox, other Gecko */
   box-sizing: border-box;
   /* Opera/IE 8+ */
+  position: relative;
   width: 100%;
   height: 210px;
 }
 .spotlight-item .lock {
   font-size: 48px;
-  bottom: 17px !important;
+  position: absolute;
+  right: 0;
+  bottom: 17px;
 }
 .info-item,
 .poster-item {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
+  position: relative;
   overflow: hidden;
   vertical-align: middle;
+}
+.info-item .lock,
+.poster-item .lock {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 .info-item .info {
   text-transform: capitalize;
@@ -1236,7 +1313,7 @@ input[type="number"] {
   padding: 25px 0px 0px 25px;
 }
 .notIsPhone .info-item .title {
-  font: 26px/18px dinRegular;
+  font: 26px/14px dinRegular;
 }
 .notIsPhone .info-item .subtitle {
   font: 24px dinLight;
@@ -1251,7 +1328,32 @@ input[type="number"] {
   width: 186px;
   height: 276px;
 }
-/* /Users/shawn/Work/directv-fl/src/components/inactive/channel/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/inactive/cover/style.less */
+.second-cover {
+  width: 100%;
+  height: 100%;
+}
+.second-cover .bg {
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -ms-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.second-cover .overlay {
+  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+/* /Users/youzi/dev/directv-fl/src/components/inactive/channel/style.less */
 .second-channel {
   height: 100%;
   overflow: hidden;
@@ -1298,6 +1400,11 @@ input[type="number"] {
   color: #8e8e8e;
 }
 .second-channel .twitter {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
   position: absolute;
   bottom: 20px;
 }
@@ -1324,6 +1431,7 @@ input[type="number"] {
   display: none;
 }
 .second-channel .twitter .bird {
+  font-size: 36px;
   margin-right: 15px;
   vertical-align: middle;
   display: inline-block;
@@ -1333,11 +1441,11 @@ input[type="number"] {
   color: #55acee;
 }
 .second-channel .twitter .author {
+  font-family: dinRegular;
   vertical-align: middle;
   display: inline-block;
   font-size: 28px;
   text-align: center;
-  padding-bottom: 15px;
 }
 .second-channel .twitter .body {
   color: #f2f2f2;
@@ -1352,9 +1460,14 @@ input[type="number"] {
   border-bottom: 1px solid #f2f2f2;
 }
 .second-channel .guide-widget .program {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  padding: 30px 0;
-  height: 120px;
+  padding: 25px 0;
+  height: 122px;
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;
@@ -1362,17 +1475,27 @@ input[type="number"] {
   box-sizing: border-box;
   /* Opera/IE 8+ */
 }
+.second-channel .guide-widget .program .left {
+  float: left;
+}
 .second-channel .guide-widget .program .title {
-  font: 26px/18px dinRegular;
+  margin-top: 7px;
+  font: 26px/14px dinRegular;
 }
 .second-channel .guide-widget .program .progress {
   font: 24px dinLight;
   color: #8e8e8e;
 }
+.second-channel .guide-widget .program .mpaa {
+  float: right;
+  width: 70px;
+  height: 70px;
+}
 .second-channel .guide-widget .program:first-child .bar {
   display: inline-block;
 }
-.second-channel .guide-widget .program:first-child .dash {
+.second-channel .guide-widget .program:first-child .dash,
+.second-channel .guide-widget .program:first-child .mpaa {
   display: none;
 }
 .second-channel .guide-widget .progress {
@@ -1385,8 +1508,8 @@ input[type="number"] {
 }
 .second-channel .guide-widget .progress .seek {
   width: 35%;
-  border-top: 10px solid #ff0072;
-  border-right: 3px solid transparent;
+  border-top: 10px solid #d62f2f;
+  border-right: 5px solid transparent;
 }
 .second-channel .guide-widget .progress .bar {
   width: 260px;
@@ -1394,7 +1517,7 @@ input[type="number"] {
   display: none;
 }
 .second-channel .guide-widget .progress .dash {
-  margin: 15px;
+  margin: 15px 5px;
   display: inline-block;
 }
 .second-channel .guide-widget .progress .end {
@@ -1412,8 +1535,14 @@ input[type="number"] {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+  -webkit-transition: height 0.2s ease-out;
+  -moz-transition: height 0.2s ease-out;
+  -ms-transition: height 0.2s ease-out;
+  -o-transition: height 0.2s ease-out;
+  transition: height 0.2s ease-out;
+  overflow: hidden;
   border: 1px solid #ffffff;
-  height: 834px;
+  height: 854px;
 }
 .second-channel .about-widget .img {
   height: 314px;
@@ -1426,29 +1555,6 @@ input[type="number"] {
 .second-channel .about-widget .info > div {
   vertical-align: top;
   display: table-cell;
-}
-.second-channel .about-widget .stickers {
-  width: 159px;
-}
-.second-channel .about-widget .stickers > div {
-  vertical-align: top;
-  display: inline-block;
-  width: 70px;
-  height: 70px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
-.second-channel .about-widget .stickers .mpaa {
-  background-color: #000000;
-}
-.second-channel .about-widget .stickers .rating {
-  font-family: dinBold;
-  line-height: 72px;
-  text-align: center;
-  font-size: 24px;
-  background-color: #7ed321;
-  margin-left: 15px;
 }
 .second-channel .about-widget .description {
   font-size: 28px;
@@ -1466,7 +1572,14 @@ input[type="number"] {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+  height: 854px;
   border: 1px solid #ffffff;
+  overflow: hidden;
+  -webkit-transition: height 0.2s ease-out;
+  -moz-transition: height 0.2s ease-out;
+  -ms-transition: height 0.2s ease-out;
+  -o-transition: height 0.2s ease-out;
+  transition: height 0.2s ease-out;
 }
 .second-channel .stats-widget .info {
   -webkit-box-sizing: border-box;
@@ -1480,16 +1593,21 @@ input[type="number"] {
   text-align: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
+.second-channel .stats-widget .body .title {
+  font-size: 36px;
+}
 .second-channel .stats-widget .poll {
   height: 350px;
 }
 .second-channel .stats-widget .poller {
+  margin: 50px 0;
+  border-spacing: 30px 0;
   display: table;
   width: 100%;
 }
 .second-channel .stats-widget .poller > div {
   display: table-cell;
-  vertical-align: middle;
+  vertical-align: top;
 }
 .second-channel .stats-widget .poller .left {
   width: 80px;
@@ -1504,39 +1622,42 @@ input[type="number"] {
   border: 1px solid #ffffff;
 }
 .second-channel .stats-widget .poller .bar {
-  border-top: 6px solid transparent;
-  border-right: 3px solid transparent;
+  border-top: 16px solid transparent;
+  border-right: 8px solid transparent;
   margin: 10px 0;
 }
-.second-channel .stats-widget .poller .subtitle {
+.second-channel .stats-widget .poller .title {
+  margin-top: 5px;
+}
+.second-channel .stats-widget .poller .votes {
+  opacity: 0.6;
+  font-family: dinRegular;
+  font-size: 20px;
   text-align: right;
 }
-/* /Users/shawn/Work/directv-fl/src/components/inactive/cover/style.less */
-.second-cover {
-  width: 100%;
-  height: 100%;
+.isTv .second-channel.preview .twitter {
+  opacity: 0;
 }
-.second-cover .bg {
-  -webkit-transition: opacity 0.5s ease-out;
-  -moz-transition: opacity 0.5s ease-out;
-  -ms-transition: opacity 0.5s ease-out;
-  -o-transition: opacity 0.5s ease-out;
-  transition: opacity 0.5s ease-out;
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
+.isTv .second-channel.preview .guide-widget .program:nth-child(4),
+.isTv .second-channel.preview .guide-widget .program:nth-child(5),
+.isTv .second-channel.preview .guide-widget .program:nth-child(6),
+.isTv .second-channel.preview .guide-widget .program:nth-child(7) {
+  opacity: 0;
 }
-.second-cover .overlay {
-  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
+.isTv .second-channel.preview .about-widget .container {
+  height: 431px;
 }
-/* /Users/shawn/Work/directv-fl/src/components/inactive/vod/style.less */
+.isTv .second-channel.preview .stats-widget .container {
+  height: 367px;
+}
+.isTablet .stats-widget .container {
+  height: 1054px;
+}
+.isTablet .twitter {
+  position: static;
+  margin-top: 15px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/inactive/vod/style.less */
 .second-vod {
   height: 100%;
 }
@@ -1563,7 +1684,10 @@ input[type="number"] {
   margin-bottom: 30px;
 }
 .second-vod .overview .poster-item {
-  border: 1px solid #f2f2f2;
+  border: 4px solid #ff0072;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 .second-vod .overview .poster-item .img {
   background-size: cover;
@@ -1591,18 +1715,25 @@ input[type="number"] {
 .second-vod .overview .starring .header {
   font-size: 36px;
   font-family: dinRegular;
+  border-bottom: 2px solid #323232;
+  margin-bottom: 30px;
 }
 .second-vod .overview .actors {
   white-space: nowrap;
   margin-top: 10px;
 }
-.second-vod .overview .actors > div {
+.second-vod .overview .actor {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
   margin-right: 30px;
   display: inline-block;
-  border: 1px solid #f2f2f2;
+  border: 2px solid #323232;
+  width: 124px;
+  height: 172px;
+}
+.second-vod .overview .stickers {
+  margin-top: 70px;
 }
 .second-vod .preview .container {
   display: table;
@@ -1628,7 +1759,38 @@ input[type="number"] {
   margin-top: 10px;
   font: 28px dinLight;
 }
-/* /Users/shawn/Work/directv-fl/src/components/active/search/style.less */
+.second-vod .preview .stickers {
+  width: 100%;
+  margin-top: 30px;
+}
+.second-vod .preview .audience {
+  margin-left: 60px;
+  height: 50px;
+  width: 252px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/active/discover/style.less */
+.first-discover .header {
+  width: calc(100% - 15px);
+}
+.first-discover .spotlight {
+  position: relative;
+}
+.first-discover .spotlight .list-dots .container {
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  border-radius: 11px;
+  background-color: #0081cf;
+}
+.first-discover > div:last-child {
+  margin-bottom: 60px;
+}
+.first-discover > div {
+  height: 220px;
+}
+.first-discover > div.spotlight {
+  height: 210px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/active/search/style.less */
 .first-search .overlay {
   position: absolute;
   width: 100%;
@@ -1807,29 +1969,7 @@ input[type="number"] {
   padding-bottom: 30px;
   color: #8e8e8e;
 }
-/* /Users/shawn/Work/directv-fl/src/components/active/discover/style.less */
-.first-discover .header {
-  width: calc(100% - 15px);
-}
-.first-discover .spotlight {
-  position: relative;
-}
-.first-discover .spotlight .list-dots .container {
-  -webkit-border-radius: 11px;
-  -moz-border-radius: 11px;
-  border-radius: 11px;
-  background-color: #0081cf;
-}
-.first-discover > div:last-child {
-  margin-bottom: 60px;
-}
-.first-discover > div {
-  height: 220px;
-}
-.first-discover > div.spotlight {
-  height: 210px;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/popup/actor/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/active/popup/actor/style.less */
 .popup .carousel {
   position: relative;
 }
@@ -1843,16 +1983,139 @@ input[type="number"] {
 .popup .carousel .img .overlay {
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(23, 23, 23, 0) 0%, rgba(23, 23, 23, 0.8) 70%);
+  background: radial-gradient(circle at center, rgba(23, 23, 23, 0) 30%, #171717 100%);
 }
 .popup .famous .header {
   margin-left: 15px;
   margin-bottom: 15px;
 }
-/* /Users/shawn/Work/directv-fl/src/components/active/popup/remote/style.less */
-.remote .button {
-  display: none !important;
+/* /Users/youzi/dev/directv-fl/src/components/active/popup/volume/style.less */
+.popup.volume {
+  z-index: 10;
+  background-image: url('../../../assets/img/app/volume.png');
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
+.volume .top {
+  text-align: center;
+  margin-top: 52px;
+  font-size: 18px;
+  font-family: dinRegular;
+  background-image: url('../../../assets/img/app/volume.png');
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.volume .top .ui-icon.volume {
+  margin-top: 8px;
+  font-size: 32px;
+}
+.volume .muted {
+  margin-top: 8px;
+  font-size: 32px;
+}
+.volume .slider {
+  overflow: hidden;
+}
+.volume .slider .block {
+  background-color: #0081cf;
+  width: calc(100% - 30px);
+  margin-left: 15px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  display: table;
+}
+.volume .slider .block .left {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  padding-left: 15px;
+  opacity: 0.2;
+}
+.volume .slider .block .middle {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 18px;
+  font-family: dinBold;
+}
+.volume .slider .block .right {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+  padding-right: 15px;
+  opacity: 0.2;
+}
+/* /Users/youzi/dev/directv-fl/src/components/active/popup/devices/style.less */
+.active.devices {
+  margin-left: 15px;
+  margin-top: 15px;
+}
+.active.devices .device {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  height: 60px;
+  display: table;
+  width: calc(100% - 15px);
+}
+.active.devices .device .icon {
+  width: 50px;
+  font-size: 34px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.active.devices .device .info {
+  padding-top: 5px;
+  padding-left: 10px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.active.devices .device .info .title {
+  font: 14px/10px dinRegular;
+}
+.active.devices .device .info .subtitle {
+  color: #8e8e8e;
+}
+.active.devices .myDevice {
+  border: 1px solid #323232;
+}
+.active.devices .device.current {
+  border-bottom: 1px solid #323232;
+  height: 60px;
+  text-transform: capitalize;
+}
+.active.devices .listTitle {
+  font: 20px dinRegular;
+  border-bottom: 1px solid #323232;
+  text-transform: capitalize;
+  padding-bottom: 5px;
+  margin-top: 15px;
+}
+.active.devices .middle {
+  padding: 15px;
+  text-align: center;
+  font: 14px/10px dinRegular;
+  color: #8e8e8e;
+}
+.active.devices .list .device {
+  border-bottom: 1px solid #323232;
+}
+.active.devices .list .device .info {
+  display: table-cell;
+  vertical-align: middle;
+}
+.active.devices .list .device .info .title {
+  font: 14px/10px dinRegular;
+}
+.active.devices .list .device .info .subtitle {
+  color: #8e8e8e;
+}
+/* /Users/youzi/dev/directv-fl/src/components/active/popup/remote/style.less */
 .remote .carousel {
   padding-top: 15px;
   height: 200px;
@@ -1969,7 +2232,7 @@ input[type="number"] {
   margin-top: 15px;
   text-align: center;
 }
-.remote .controls .seekbar {
+.remote .controls .ui-seekbar {
   margin: 15px;
 }
 .remote .controls .buttons {
@@ -2008,133 +2271,7 @@ input[type="number"] {
   width: calc(100% / 5);
   padding-right: 15px;
 }
-/* /Users/shawn/Work/directv-fl/src/components/active/popup/volume/style.less */
-.popup.volume {
-  z-index: 10;
-  background-image: url('../../../assets/img/app/volume.png');
-  width: 100%;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.volume .top {
-  text-align: center;
-  margin-top: 52px;
-  font-size: 18px;
-  font-family: dinRegular;
-  background-image: url('../../../assets/img/app/volume.png');
-  width: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.volume .top .ui-icon.volume {
-  margin-top: 8px;
-  font-size: 32px;
-}
-.volume .muted {
-  margin-top: 8px;
-  font-size: 32px;
-}
-.volume .slider {
-  overflow: hidden;
-}
-.volume .slider .block {
-  background-color: #0081cf;
-  width: calc(100% - 30px);
-  margin-left: 15px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  display: table;
-}
-.volume .slider .block .left {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: left;
-  padding-left: 15px;
-  opacity: 0.2;
-}
-.volume .slider .block .middle {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  font-size: 18px;
-  font-family: dinBold;
-}
-.volume .slider .block .right {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: right;
-  padding-right: 15px;
-  opacity: 0.2;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/popup/devices/style.less */
-.active.devices {
-  margin-left: 15px;
-  margin-top: 15px;
-}
-.active.devices .device {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  height: 60px;
-  display: table;
-  width: calc(100% - 15px);
-}
-.active.devices .device .icon {
-  width: 50px;
-  font-size: 34px;
-  display: table-cell;
-  vertical-align: middle;
-}
-.active.devices .device .info {
-  padding-top: 5px;
-  padding-left: 10px;
-  display: table-cell;
-  vertical-align: middle;
-}
-.active.devices .device .info .title {
-  font: 14px/10px dinRegular;
-}
-.active.devices .device .info .subtitle {
-  color: #8e8e8e;
-}
-.active.devices .myDevice {
-  border: 1px solid #323232;
-}
-.active.devices .device.current {
-  border-bottom: 1px solid #323232;
-  height: 60px;
-  text-transform: capitalize;
-}
-.active.devices .listTitle {
-  font: 20px dinRegular;
-  border-bottom: 1px solid #323232;
-  text-transform: capitalize;
-  padding-bottom: 5px;
-  margin-top: 15px;
-}
-.active.devices .middle {
-  padding: 15px;
-  text-align: center;
-  font: 14px/10px dinRegular;
-  color: #8e8e8e;
-}
-.active.devices .list .device {
-  border-bottom: 1px solid #323232;
-}
-.active.devices .list .device .info {
-  display: table-cell;
-  vertical-align: middle;
-}
-.active.devices .list .device .info .title {
-  font: 14px/10px dinRegular;
-}
-.active.devices .list .device .info .subtitle {
-  color: #8e8e8e;
-}
-/* /Users/shawn/Work/directv-fl/node_modules/vigour-js/app/style.less */
+/* /Users/youzi/dev/directv-fl/node_modules/vigour-js/app/style.less */
 html {
   -ms-touch-action: pan-x;
   touch-action: pan-x;
@@ -2153,7 +2290,7 @@ body {
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-/* /Users/shawn/Work/directv-fl/src/components/shared/mute/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/shared/mute/style.less */
 .shared-mute {
   font-size: 32px;
   line-height: 46px;
@@ -2165,7 +2302,38 @@ body {
   border-radius: 23px;
   font-size: 48px;
 }
-/* /Users/shawn/Work/directv-fl/src/components/inactive/bio/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/shared/stickers/style.less */
+.ui-stickers {
+  width: 159px;
+}
+.ui-stickers > div {
+  vertical-align: top;
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.ui-stickers .mpaa {
+  background-color: #000000;
+}
+.ui-stickers .rating {
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  border: 2px solid white;
+  font-family: dinBold;
+  line-height: 70px;
+  text-align: center;
+  font-size: 24px;
+  background-color: #7ed321;
+  margin-left: 15px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/inactive/bio/style.less */
 .second-bio > .switcher {
   height: 100%;
 }
@@ -2207,7 +2375,7 @@ body {
   margin-top: 15px;
   font-size: 28px;
 }
-/* /Users/shawn/Work/directv-fl/src/components/shared/description/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/shared/description/style.less */
 .ui-description {
   padding-right: 0;
 }
@@ -2223,14 +2391,7 @@ body {
   border: 0;
   text-align: left;
 }
-/* /Users/shawn/Work/directv-fl/src/components/shared/actors/style.less */
-.ui-actors .body {
-  margin-right: 15px;
-  border: 0;
-  white-space: nowrap;
-  height: auto;
-}
-/* /Users/shawn/Work/directv-fl/src/components/shared/bar/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/shared/bar/style.less */
 .ui-bar {
   position: relative;
   display: table;
@@ -2325,7 +2486,14 @@ body {
 .bar.program2 {
   border-top: 1px solid #000;
 }
-/* /Users/shawn/Work/directv-fl/src/components/shared/recommendations/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/shared/actors/style.less */
+.ui-actors .body {
+  margin-right: 15px;
+  border: 0;
+  white-space: nowrap;
+  height: auto;
+}
+/* /Users/youzi/dev/directv-fl/src/components/shared/recommendations/style.less */
 .ui-recommendations {
   padding-bottom: 15px;
 }
@@ -2346,13 +2514,26 @@ body {
   white-space: normal;
   vertical-align: top;
 }
-/* /Users/shawn/Work/directv-fl/src/components/active/content/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/active/content/style.less */
 .content-item {
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
 }
 .content-item .swipeup .nested {
   background-color: #ffeb00;
+}
+.content-item .swipeup .arrow {
+  color: #000000;
+  position: absolute;
+  bottom: 29px;
+  width: 100%;
+  line-height: 60px;
+  font-size: 64px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 .content-item .swipeup .msg {
   bottom: 0;
@@ -2385,10 +2566,10 @@ body {
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
-.content-item .page > div:last-child {
+.content-item .page {
   padding-bottom: 65px;
 }
-/* /Users/shawn/Work/directv-fl/src/components/shared/seekbar/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/shared/seekbar/style.less */
 @keyframes moveCandyBar {
   0% {
     background-position: 0 0;
@@ -2443,12 +2624,18 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
 }
+.ui-seekbar.channel {
+  pointer-events: none;
+}
+.ui-seekbar.channel .button {
+  display: none !important;
+}
 .ui-seekbar.loading .loaderbar {
   background-image: repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 4%, transparent 4%, transparent 8%);
   -webkit-animation: moveCandyBar 15s linear infinite;
   animation: moveCandyBar 15s linear infinite;
 }
-/* /Users/shawn/Work/directv-fl/src/components/shared/poll/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/shared/poll/style.less */
 .ui-poll .header {
   border-bottom: 0px;
 }
@@ -2507,7 +2694,7 @@ body {
 .ui-voterow.second .right .ui-seekbar .seek {
   background-color: #0081cf;
 }
-/* /Users/shawn/Work/directv-fl/src/components/shared/statistics/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/shared/statistics/style.less */
 .ui-score .info,
 .ui-score .body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -2536,6 +2723,7 @@ body {
   width: 80px;
   border: 1px solid #ffffff;
   background-size: contain;
+  background-color: #181818;
 }
 .ui-score .teams .left {
   left: 30px;
@@ -2637,7 +2825,7 @@ body {
 .ui-statistics > .body .teams .right {
   right: 20px;
 }
-/* /Users/shawn/Work/directv-fl/src/components/shared/trivia/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/shared/trivia/style.less */
 .ui-trivia {
   padding-left: 15px;
   padding-right: 15px;
@@ -2673,7 +2861,7 @@ body {
   font: 14px dinLight;
   padding-bottom: 5px;
 }
-/* /Users/shawn/Work/directv-fl/src/components/shared/tweets/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/shared/tweets/style.less */
 .ui-tweets {
   transform: rotateX(0deg);
   padding-bottom: 30px;
@@ -2727,13 +2915,24 @@ body {
   font-size: 12px;
   color: grey;
 }
-/* /Users/shawn/Work/directv-fl/src/components/active/player/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/active/player/style.less */
 .first-player {
   position: relative;
+  -webkit-transform-origin: top left;
+  /* Chrome, Safari, Opera */
+}
+.first-player .holder {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.first-player .holder .center {
+  display: table-cell;
+  vertical-align: middle;
 }
 .first-player video {
   width: 100%;
-  height: 210px;
+  height: auto;
 }
 .first-player .overlay {
   background-color: rgba(0, 0, 0, 0.5);
@@ -2782,6 +2981,8 @@ body {
 .first-player .overlay .bottom {
   display: table;
   width: 100%;
+  height: 50px;
+  margin-top: -10px;
 }
 .first-player .overlay .bottom .left,
 .first-player .overlay .bottom .right {
@@ -2817,7 +3018,7 @@ body {
 .first-player .overlay .bottom .right {
   padding-right: 15px;
 }
-/* /Users/shawn/Work/directv-fl/src/components/shared/loader/style.less */
+/* /Users/youzi/dev/directv-fl/src/components/shared/loader/style.less */
 .ui-loader {
   background-image: url('assets/img/app/loader.png');
   background-size: 100% auto;
