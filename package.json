@@ -103,7 +103,16 @@
         "cloud": "http://52.8.23.45:80"
       },
       "airplane": {
-        "cloud": "http://52.8.40.195:80"      
+        "cloud": "http://52.8.40.195:80",
+        "pointers": {
+          "assets": "http://dtv-us1assets.vigour.io/"
+        }
+      },
+      "ramon": {
+        "cloud": "http://52.8.40.195:80",
+        "pointers": {
+          "assets": "http://dtv-us1assets.vigour.io/"
+        }
       },
       "livingroom": {
         "cloud": "http://directv-fl-demo.local:10001",
