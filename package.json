@@ -51,7 +51,8 @@
         "bundle.css": true,
         "index.html": true,
         "assets": "*",
-        "fonts.css":true
+        "fonts.css":true,
+        "robots.txt": true
       },
       "git": {
         "owner": "vigourmachines",
