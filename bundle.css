@@ -1251,31 +1251,6 @@ input[type="number"] {
   width: 186px;
   height: 276px;
 }
-/* /Users/shawn/Work/directv-fl/src/components/inactive/cover/style.less */
-.second-cover {
-  width: 100%;
-  height: 100%;
-}
-.second-cover .bg {
-  -webkit-transition: opacity 0.5s ease-out;
-  -moz-transition: opacity 0.5s ease-out;
-  -ms-transition: opacity 0.5s ease-out;
-  -o-transition: opacity 0.5s ease-out;
-  transition: opacity 0.5s ease-out;
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-.second-cover .overlay {
-  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
 /* /Users/shawn/Work/directv-fl/src/components/inactive/channel/style.less */
 .second-channel {
   height: 100%;
@@ -1536,6 +1511,31 @@ input[type="number"] {
 .second-channel .stats-widget .poller .subtitle {
   text-align: right;
 }
+/* /Users/shawn/Work/directv-fl/src/components/inactive/cover/style.less */
+.second-cover {
+  width: 100%;
+  height: 100%;
+}
+.second-cover .bg {
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -ms-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.second-cover .overlay {
+  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
 /* /Users/shawn/Work/directv-fl/src/components/inactive/vod/style.less */
 .second-vod {
   height: 100%;
@@ -1627,28 +1627,6 @@ input[type="number"] {
 .second-vod .preview .description {
   margin-top: 10px;
   font: 28px dinLight;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/discover/style.less */
-.first-discover .header {
-  width: calc(100% - 15px);
-}
-.first-discover .spotlight {
-  position: relative;
-}
-.first-discover .spotlight .list-dots .container {
-  -webkit-border-radius: 11px;
-  -moz-border-radius: 11px;
-  border-radius: 11px;
-  background-color: #0081cf;
-}
-.first-discover > div:last-child {
-  margin-bottom: 60px;
-}
-.first-discover > div {
-  height: 220px;
-}
-.first-discover > div.spotlight {
-  height: 210px;
 }
 /* /Users/shawn/Work/directv-fl/src/components/active/search/style.less */
 .first-search .overlay {
@@ -1829,6 +1807,28 @@ input[type="number"] {
   padding-bottom: 30px;
   color: #8e8e8e;
 }
+/* /Users/shawn/Work/directv-fl/src/components/active/discover/style.less */
+.first-discover .header {
+  width: calc(100% - 15px);
+}
+.first-discover .spotlight {
+  position: relative;
+}
+.first-discover .spotlight .list-dots .container {
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  border-radius: 11px;
+  background-color: #0081cf;
+}
+.first-discover > div:last-child {
+  margin-bottom: 60px;
+}
+.first-discover > div {
+  height: 220px;
+}
+.first-discover > div.spotlight {
+  height: 210px;
+}
 /* /Users/shawn/Work/directv-fl/src/components/active/popup/actor/style.less */
 .popup .carousel {
   position: relative;
@@ -1848,132 +1848,6 @@ input[type="number"] {
 .popup .famous .header {
   margin-left: 15px;
   margin-bottom: 15px;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/popup/volume/style.less */
-.popup.volume {
-  z-index: 10;
-  background-image: url('../../../assets/img/app/volume.png');
-  width: 100%;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.volume .top {
-  text-align: center;
-  margin-top: 52px;
-  font-size: 18px;
-  font-family: dinRegular;
-  background-image: url('../../../assets/img/app/volume.png');
-  width: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.volume .top .ui-icon.volume {
-  margin-top: 8px;
-  font-size: 32px;
-}
-.volume .muted {
-  margin-top: 8px;
-  font-size: 32px;
-}
-.volume .slider {
-  overflow: hidden;
-}
-.volume .slider .block {
-  background-color: #0081cf;
-  width: calc(100% - 30px);
-  margin-left: 15px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  display: table;
-}
-.volume .slider .block .left {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: left;
-  padding-left: 15px;
-  opacity: 0.2;
-}
-.volume .slider .block .middle {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  font-size: 18px;
-  font-family: dinBold;
-}
-.volume .slider .block .right {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: right;
-  padding-right: 15px;
-  opacity: 0.2;
-}
-/* /Users/shawn/Work/directv-fl/src/components/active/popup/devices/style.less */
-.active.devices {
-  margin-left: 15px;
-  margin-top: 15px;
-}
-.active.devices .device {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  height: 60px;
-  display: table;
-  width: calc(100% - 15px);
-}
-.active.devices .device .icon {
-  width: 50px;
-  font-size: 34px;
-  display: table-cell;
-  vertical-align: middle;
-}
-.active.devices .device .info {
-  padding-top: 5px;
-  padding-left: 10px;
-  display: table-cell;
-  vertical-align: middle;
-}
-.active.devices .device .info .title {
-  font: 14px/10px dinRegular;
-}
-.active.devices .device .info .subtitle {
-  color: #8e8e8e;
-}
-.active.devices .myDevice {
-  border: 1px solid #323232;
-}
-.active.devices .device.current {
-  border-bottom: 1px solid #323232;
-  height: 60px;
-  text-transform: capitalize;
-}
-.active.devices .listTitle {
-  font: 20px dinRegular;
-  border-bottom: 1px solid #323232;
-  text-transform: capitalize;
-  padding-bottom: 5px;
-  margin-top: 15px;
-}
-.active.devices .middle {
-  padding: 15px;
-  text-align: center;
-  font: 14px/10px dinRegular;
-  color: #8e8e8e;
-}
-.active.devices .list .device {
-  border-bottom: 1px solid #323232;
-}
-.active.devices .list .device .info {
-  display: table-cell;
-  vertical-align: middle;
-}
-.active.devices .list .device .info .title {
-  font: 14px/10px dinRegular;
-}
-.active.devices .list .device .info .subtitle {
-  color: #8e8e8e;
 }
 /* /Users/shawn/Work/directv-fl/src/components/active/popup/remote/style.less */
 .remote .button {
@@ -2134,6 +2008,132 @@ input[type="number"] {
   width: calc(100% / 5);
   padding-right: 15px;
 }
+/* /Users/shawn/Work/directv-fl/src/components/active/popup/volume/style.less */
+.popup.volume {
+  z-index: 10;
+  background-image: url('../../../assets/img/app/volume.png');
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.volume .top {
+  text-align: center;
+  margin-top: 52px;
+  font-size: 18px;
+  font-family: dinRegular;
+  background-image: url('../../../assets/img/app/volume.png');
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.volume .top .ui-icon.volume {
+  margin-top: 8px;
+  font-size: 32px;
+}
+.volume .muted {
+  margin-top: 8px;
+  font-size: 32px;
+}
+.volume .slider {
+  overflow: hidden;
+}
+.volume .slider .block {
+  background-color: #0081cf;
+  width: calc(100% - 30px);
+  margin-left: 15px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  display: table;
+}
+.volume .slider .block .left {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  padding-left: 15px;
+  opacity: 0.2;
+}
+.volume .slider .block .middle {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 18px;
+  font-family: dinBold;
+}
+.volume .slider .block .right {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+  padding-right: 15px;
+  opacity: 0.2;
+}
+/* /Users/shawn/Work/directv-fl/src/components/active/popup/devices/style.less */
+.active.devices {
+  margin-left: 15px;
+  margin-top: 15px;
+}
+.active.devices .device {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  height: 60px;
+  display: table;
+  width: calc(100% - 15px);
+}
+.active.devices .device .icon {
+  width: 50px;
+  font-size: 34px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.active.devices .device .info {
+  padding-top: 5px;
+  padding-left: 10px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.active.devices .device .info .title {
+  font: 14px/10px dinRegular;
+}
+.active.devices .device .info .subtitle {
+  color: #8e8e8e;
+}
+.active.devices .myDevice {
+  border: 1px solid #323232;
+}
+.active.devices .device.current {
+  border-bottom: 1px solid #323232;
+  height: 60px;
+  text-transform: capitalize;
+}
+.active.devices .listTitle {
+  font: 20px dinRegular;
+  border-bottom: 1px solid #323232;
+  text-transform: capitalize;
+  padding-bottom: 5px;
+  margin-top: 15px;
+}
+.active.devices .middle {
+  padding: 15px;
+  text-align: center;
+  font: 14px/10px dinRegular;
+  color: #8e8e8e;
+}
+.active.devices .list .device {
+  border-bottom: 1px solid #323232;
+}
+.active.devices .list .device .info {
+  display: table-cell;
+  vertical-align: middle;
+}
+.active.devices .list .device .info .title {
+  font: 14px/10px dinRegular;
+}
+.active.devices .list .device .info .subtitle {
+  color: #8e8e8e;
+}
 /* /Users/shawn/Work/directv-fl/node_modules/vigour-js/app/style.less */
 html {
   -ms-touch-action: pan-x;
@@ -2222,6 +2222,13 @@ body {
   height: auto;
   border: 0;
   text-align: left;
+}
+/* /Users/shawn/Work/directv-fl/src/components/shared/actors/style.less */
+.ui-actors .body {
+  margin-right: 15px;
+  border: 0;
+  white-space: nowrap;
+  height: auto;
 }
 /* /Users/shawn/Work/directv-fl/src/components/shared/bar/style.less */
 .ui-bar {
@@ -2317,13 +2324,6 @@ body {
 }
 .bar.program2 {
   border-top: 1px solid #000;
-}
-/* /Users/shawn/Work/directv-fl/src/components/shared/actors/style.less */
-.ui-actors .body {
-  margin-right: 15px;
-  border: 0;
-  white-space: nowrap;
-  height: auto;
 }
 /* /Users/shawn/Work/directv-fl/src/components/shared/recommendations/style.less */
 .ui-recommendations {

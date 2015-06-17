@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -38,27 +38,11 @@
   },
   "vigour": {
     "cloud": "http://localhost:10001",
-    "branches": {
-      "youzi-dev":{
-        "cloud": "http://localhost:10001",
-        "pointers": {
-          "img": "http://localhost:8080/",
-          "assets": "http://localhost:8080/"
-        }
-      },
-      "marcus-dev": {
-        "cloud": "http://10.0.1.199:10001"
-      },
-      "shawn-dev": {
-        "cloud": "http://directv2.dev.vigour.io:80"
-      }
-    },
     "development": {
       "button": false
     },
     "pointers": {
-      "img": "http://devassets.vigour.io/",
-      "assets": "http://devassets.vigour.io/"
+      "assets": "http://jim.local/assets/"
     },
     "packer": {
       "web": "index.html",
@@ -70,7 +54,7 @@
         "fonts.css":true
       },
       "git": {
-        "owner": "vigour-io",
+        "owner": "vigourmachines",
         "repo": "directv-fl"
       },
       "mail": {
@@ -91,6 +75,36 @@
           "appUrlIdentifier":"com.directv-fl.org",
           "appUrlScheme": "directv-fl"
         }
+      }
+    },
+    "branches": {
+      "master": {
+        "pointers": {
+          "img": "http://jim.local/assets/",
+          "assets": "http://jim.local/assets/"
+        }
+      },
+      "production": {
+        "cloud": "http://directv-fl-demo.local:10001",
+        "pointers": {
+          "assets": "http://directv-fl-demo.local/"
+        }        
+      },
+      "youzi-dev":{
+        "pointers": {
+          "img": "http://jim.local/assets/",
+          "assets": "http://jim.local/assets/"
+        }
+      },
+      "marcus-dev": {
+        "cloud": "http://localhost:10001",
+        "uscloud": "http://54.173.192.57:10001"
+      },
+      "shawn-dev": {
+        "cloud": "http://192.168.2.18:10001"
+      },
+      "ramon": {
+        "cloud": "http://192.168.2.18:10001"
       }
     }
   },
