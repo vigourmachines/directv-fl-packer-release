@@ -310,137 +310,6 @@ body.notIsPhone {
   background-size: cover;
   background-position: center;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/player/style.less */
-.second-player {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.second-player .holder {
-  display: table;
-  height: 100%;
-  width: 100%;
-}
-.second-player .holder .center {
-  display: table-cell;
-  vertical-align: middle;
-}
-.second-player video {
-  background: #000000;
-  background-size: cover;
-  width: 100%;
-  height: auto;
-}
-.second-player .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.second-player .overlay,
-.second-player .overlay > div {
-  -webkit-transition: opacity 0.2s ease-out;
-  -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
-  -o-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-}
-.second-player .container {
-  top: 50%;
-  margin-top: -67px;
-  position: absolute;
-  width: 100%;
-}
-.second-player .container .txt {
-  margin-left: 60px;
-  font-size: 72px;
-}
-.second-player .container .value {
-  display: inline;
-  font-family: dinRegular;
-}
-.second-player .volume-overlay .progress {
-  border-top-color: #ffeb00;
-}
-.second-player .player-overlay {
-  display: table;
-  color: #ffffff;
-}
-.second-player .player-overlay .info {
-  position: absolute;
-  left: 30px;
-  top: 30px;
-}
-.second-player .player-overlay .info > div {
-  vertical-align: top;
-  display: inline-block;
-}
-.second-player .player-overlay .icon {
-  display: table-cell;
-  vertical-align: middle;
-  font-size: 128px;
-}
-.second-player .player-overlay .fade-in {
-  -webkit-transition: opacity 0.75s ease-out, -webkit-transform 0.1s ease-out;
-  -moz-transition: opacity 0.75s ease-out, -moz-transform 0.1s ease-out;
-  -ms-transition: opacity 0.75s ease-out, -ms-transform 0.1s ease-out;
-  -o-transition: opacity 0.75s ease-out, -o-transform 0.1s ease-out;
-  transition: opacity 0.75s ease-out, transform 0.1s ease-out;
-}
-.second-player .player-overlay .fade-out {
-  -webkit-transition: opacity 0.2s ease-out, -webkit-transform 0s ease-out 0.2s;
-  -moz-transition: opacity 0.2s ease-out, -moz-transform 0s ease-out 0.2s;
-  -ms-transition: opacity 0.2s ease-out, -ms-transform 0s ease-out 0.2s;
-  -o-transition: opacity 0.2s ease-out, -o-transform 0s ease-out 0.2s;
-  transition: opacity 0.2s ease-out, transform 0s ease-out 0.2s;
-}
-.second-player .player-overlay .nowplaying {
-  margin-top: 15px;
-  font-size: 24px;
-}
-.second-player .player-overlay .titles {
-  margin-left: 30px;
-}
-.second-player .player-overlay .title {
-  font-size: 48px;
-}
-.second-player .player-overlay .subtitle {
-  margin-top: 5px;
-  font-size: 28px;
-  opacity: 0.6;
-}
-.second-player .player-overlay .poster {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  border: 2px solid #323232;
-  height: 264px;
-  width: 186px;
-}
-.second-player .player-overlay .img {
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-}
-.second-player .player-overlay .additional {
-  position: absolute;
-  right: 30px;
-  bottom: 110px;
-}
-.second-player .player-overlay .additional .header {
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-.second-player .player-overlay .thumb {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  overflow: hidden;
-  border: 2px solid #323232;
-  width: 625px;
-  height: 350px;
-}
 /* /Users/youzi/dev/directv-fl/src/components/inactive/discover/style.less */
 .second-discover {
   height: 100%;
@@ -456,26 +325,87 @@ body.notIsPhone {
   width: 100%;
   height: 100%;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/switcher/style.less */
-.first-switcher {
-  position: absolute;
-  overflow: hidden;
-  height: calc(100% - 64px);
+/* /Users/youzi/dev/directv-fl/src/components/inactive/statusbar/style.less */
+.second-statusbar {
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  -o-transition: -o-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  display: table;
+  background-color: #0081CF;
+  height: 80px;
   width: 100%;
-}
-.first-switcher > div {
-  -webkit-transition: opacity 0.2s ease-out;
-  -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
-  -o-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
   position: absolute;
-  background-color: #181818;
-  width: 100%;
-  height: 100%;
+  bottom: 0;
 }
-.first-switcher.remote-visible {
-  height: calc(100% - 115px);
+.second-statusbar > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+.second-statusbar > div > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+.second-statusbar .directv .logo {
+  width: 234px;
+  height: 40px;
+  margin-left: 30px;
+  background-image: url('../../../assets/img/app/logo.png');
+}
+.second-statusbar .partner {
+  vertical-align: bottom;
+  width: 350px;
+}
+.second-statusbar .partner .logo {
+  height: 68px;
+  width: 315px;
+  background-image: url('../../../assets/img/app/united_logo.png');
+}
+.second-statusbar .logo {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.second-statusbar .sender {
+  padding-right: 30px;
+  text-align: right;
+  color: #ffffff;
+  font-size: 28px;
+  font-family: dinRegular;
+}
+.second-statusbar .sender > div {
+  vertical-align: middle;
+  display: inline-block;
+}
+.second-statusbar .sender .icon {
+  font-size: 60px;
+}
+.second-statusbar.branded {
+  font-family: dinRegular;
+  background-color: #06225a;
+  font-size: 24px;
+}
+.second-statusbar.branded .between {
+  border-top: 80px solid #06225a;
+  border-right: 40px solid #0081cf;
+}
+.second-statusbar.branded .directv {
+  background-color: #0081cf;
+  width: 300px;
+}
+.second-statusbar.branded .ui-icon {
+  font-size: 36px;
+  line-height: 36px;
+  width: 40px;
+}
+.second-statusbar.branded .weather {
+  width: 240px;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/search/style.less */
 .second-search {
@@ -617,88 +547,6 @@ body.notIsPhone {
 .notIsTv .second-search .topresult .description {
   padding-top: 15px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/statusbar/style.less */
-.second-statusbar {
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  -moz-transition: -moz-transform 0.2s ease-out;
-  -ms-transition: -ms-transform 0.2s ease-out;
-  -o-transition: -o-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  display: table;
-  background-color: #0081CF;
-  height: 80px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
-.second-statusbar > div {
-  display: table-cell;
-  vertical-align: middle;
-}
-.second-statusbar > div > div {
-  display: inline-block;
-  vertical-align: middle;
-}
-.second-statusbar .directv .logo {
-  width: 234px;
-  height: 40px;
-  margin-left: 30px;
-  background-image: url('../../../assets/img/app/logo.png');
-}
-.second-statusbar .partner {
-  vertical-align: bottom;
-  width: 350px;
-}
-.second-statusbar .partner .logo {
-  height: 68px;
-  width: 315px;
-  background-image: url('../../../assets/img/app/united_logo.png');
-}
-.second-statusbar .logo {
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.second-statusbar .sender {
-  padding-right: 30px;
-  text-align: right;
-  color: #ffffff;
-  font-size: 28px;
-  font-family: dinRegular;
-}
-.second-statusbar .sender > div {
-  vertical-align: middle;
-  display: inline-block;
-}
-.second-statusbar .sender .icon {
-  font-size: 60px;
-}
-.second-statusbar.branded {
-  font-family: dinRegular;
-  background-color: #06225a;
-  font-size: 24px;
-}
-.second-statusbar.branded .between {
-  border-top: 80px solid #06225a;
-  border-right: 40px solid #0081cf;
-}
-.second-statusbar.branded .directv {
-  background-color: #0081cf;
-  width: 300px;
-}
-.second-statusbar.branded .ui-icon {
-  font-size: 36px;
-  line-height: 36px;
-  width: 40px;
-}
-.second-statusbar.branded .weather {
-  width: 240px;
-}
 /* /Users/youzi/dev/directv-fl/src/components/inactive/navigation/style.less */
 .second-navigation {
   pointer-events: none;
@@ -774,6 +622,227 @@ body.notIsPhone {
   -ms-transition: -ms-transform 0.3s ease-out;
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
+}
+/* /Users/youzi/dev/directv-fl/src/components/inactive/player/style.less */
+.second-player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.second-player .holder {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.second-player .holder .center {
+  display: table-cell;
+  vertical-align: middle;
+}
+.second-player video {
+  background: #000000;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+.second-player .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.second-player .overlay,
+.second-player .overlay > div {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+.second-player .container {
+  top: 50%;
+  margin-top: -67px;
+  position: absolute;
+  width: 100%;
+}
+.second-player .container .txt {
+  margin-left: 60px;
+  font-size: 72px;
+}
+.second-player .container .value {
+  display: inline;
+  font-family: dinRegular;
+}
+.second-player .volume-overlay .progress {
+  border-top-color: #ffeb00;
+}
+.second-player .player-overlay {
+  display: table;
+  color: #ffffff;
+}
+.second-player .player-overlay .info {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+}
+.second-player .player-overlay .info > div {
+  vertical-align: top;
+  display: inline-block;
+}
+.second-player .player-overlay .icon {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 128px;
+}
+.second-player .player-overlay .fade-in {
+  -webkit-transition: opacity 0.75s ease-out, -webkit-transform 0.1s ease-out;
+  -moz-transition: opacity 0.75s ease-out, -moz-transform 0.1s ease-out;
+  -ms-transition: opacity 0.75s ease-out, -ms-transform 0.1s ease-out;
+  -o-transition: opacity 0.75s ease-out, -o-transform 0.1s ease-out;
+  transition: opacity 0.75s ease-out, transform 0.1s ease-out;
+}
+.second-player .player-overlay .fade-out {
+  -webkit-transition: opacity 0.2s ease-out, -webkit-transform 0s ease-out 0.2s;
+  -moz-transition: opacity 0.2s ease-out, -moz-transform 0s ease-out 0.2s;
+  -ms-transition: opacity 0.2s ease-out, -ms-transform 0s ease-out 0.2s;
+  -o-transition: opacity 0.2s ease-out, -o-transform 0s ease-out 0.2s;
+  transition: opacity 0.2s ease-out, transform 0s ease-out 0.2s;
+}
+.second-player .player-overlay .nowplaying {
+  margin-top: 15px;
+  font-size: 24px;
+}
+.second-player .player-overlay .titles {
+  margin-left: 30px;
+}
+.second-player .player-overlay .title {
+  font-size: 48px;
+}
+.second-player .player-overlay .subtitle {
+  margin-top: 5px;
+  font-size: 28px;
+  opacity: 0.6;
+}
+.second-player .player-overlay .poster {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 2px solid #323232;
+  height: 264px;
+  width: 186px;
+}
+.second-player .player-overlay .img {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.second-player .player-overlay .additional {
+  position: absolute;
+  right: 30px;
+  bottom: 110px;
+}
+.second-player .player-overlay .additional .header {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+.second-player .player-overlay .thumb {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 2px solid #323232;
+  width: 625px;
+  height: 350px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/active/topbar/style.less */
+.topbar {
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -ms-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
+  padding-top: 20px;
+  height: 44px;
+  background-color: #0081cf;
+  color: #ffffff;
+  display: table;
+  width: 100%;
+  overflow: hidden;
+}
+.topbar .ui-icon.left {
+  display: table-cell;
+  vertical-align: middle;
+  height: 44px;
+  width: calc(100% / 3);
+  padding-left: 15px;
+  text-align: left;
+}
+.topbar .middle {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: calc(100% / 3);
+  font: 20px dinBold;
+  padding-top: 4px;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+.topbar .ui-icon.right {
+  display: table-cell;
+  text-align: right;
+  padding-right: 15px;
+  vertical-align: middle;
+  width: calc(100% / 3);
+}
+.topbar.searching {
+  background-color: #181818;
+}
+.topbar.searching .ui-icon.left {
+  width: 30px;
+}
+.topbar.searching .ui-icon.right,
+.topbar.searching .middle {
+  display: none;
+}
+.hasReceiver .holder .topbar .ui-icon.right {
+  color: #ffeb00;
+}
+.search-field {
+  display: table-cell;
+  vertical-align: middle;
+  text-transform: capitalize;
+  padding-right: 15px;
+}
+.search-field .lefticon {
+  display: table-cell;
+  color: #8e8e8e;
+  padding: 0px;
+  width: 20px;
+  vertical-align: middle;
+  font-size: 28px;
+}
+.search-field .clear {
+  width: 25px;
+  display: table-cell;
+  vertical-align: middle;
+  color: #8e8e8e;
+  font-size: 28px;
+}
+.search-field .table {
+  width: 100%;
+  vertical-align: middle;
+  display: table;
+  background-color: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  height: 30px;
+}
+.search-field .inputField {
+  width: 100%;
+  display: table-cell;
+  -webkit-appearance: none;
+  margin-top: 5px;
 }
 /* /Users/youzi/dev/directv-fl/src/components/active/menu/style.less */
 .menu {
@@ -893,95 +962,26 @@ body.notIsPhone {
   font-size: 32px;
   width: 50px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/topbar/style.less */
-.topbar {
-  -webkit-transition: background-color 0.2s ease-out;
-  -moz-transition: background-color 0.2s ease-out;
-  -ms-transition: background-color 0.2s ease-out;
-  -o-transition: background-color 0.2s ease-out;
-  transition: background-color 0.2s ease-out;
-  padding-top: 20px;
-  height: 44px;
-  background-color: #0081cf;
-  color: #ffffff;
-  display: table;
-  width: 100%;
+/* /Users/youzi/dev/directv-fl/src/components/active/switcher/style.less */
+.first-switcher {
+  position: absolute;
   overflow: hidden;
+  height: calc(100% - 64px);
+  width: 100%;
 }
-.topbar .ui-icon.left {
-  display: table-cell;
-  vertical-align: middle;
-  height: 44px;
-  width: calc(100% / 3);
-  padding-left: 15px;
-  text-align: left;
-}
-.topbar .middle {
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-  width: calc(100% / 3);
-  font: 20px dinBold;
-  padding-top: 4px;
-  white-space: nowrap;
-  text-transform: capitalize;
-}
-.topbar .ui-icon.right {
-  display: table-cell;
-  text-align: right;
-  padding-right: 15px;
-  vertical-align: middle;
-  width: calc(100% / 3);
-}
-.topbar.searching {
+.first-switcher > div {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  position: absolute;
   background-color: #181818;
-}
-.topbar.searching .ui-icon.left {
-  width: 30px;
-}
-.topbar.searching .ui-icon.right,
-.topbar.searching .middle {
-  display: none;
-}
-.hasReceiver .holder .topbar .ui-icon.right {
-  color: #ffeb00;
-}
-.search-field {
-  display: table-cell;
-  vertical-align: middle;
-  text-transform: capitalize;
-  padding-right: 15px;
-}
-.search-field .lefticon {
-  display: table-cell;
-  color: #8e8e8e;
-  padding: 0px;
-  width: 20px;
-  vertical-align: middle;
-  font-size: 28px;
-}
-.search-field .clear {
-  width: 25px;
-  display: table-cell;
-  vertical-align: middle;
-  color: #8e8e8e;
-  font-size: 28px;
-}
-.search-field .table {
   width: 100%;
-  vertical-align: middle;
-  display: table;
-  background-color: #fff;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  height: 30px;
+  height: 100%;
 }
-.search-field .inputField {
-  width: 100%;
-  display: table-cell;
-  -webkit-appearance: none;
-  margin-top: 5px;
+.first-switcher.remote-visible {
+  height: calc(100% - 115px);
 }
 /* /Users/youzi/dev/directv-fl/src/components/active/popup/style.less */
 .popup {
@@ -1079,11 +1079,6 @@ input[type="number"] {
   text-align: center;
   font-size: 24px;
   line-height: 24px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/inactive/progress/style.less */
-.second-progress {
-  border-top: 40px solid #ff0072;
-  border-right: 20px solid transparent;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/trailer/style.less */
 .second-trailer {
@@ -1330,6 +1325,11 @@ input[type="number"] {
 .notIsPhone .poster-item {
   width: 186px;
   height: 276px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/inactive/progress/style.less */
+.second-progress {
+  border-top: 40px solid #ff0072;
+  border-right: 20px solid transparent;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/cover/style.less */
 .second-cover {
@@ -2493,6 +2493,27 @@ body {
   white-space: nowrap;
   height: auto;
 }
+/* /Users/youzi/dev/directv-fl/src/components/shared/recommendations/style.less */
+.ui-recommendations {
+  padding-bottom: 15px;
+}
+.ui-recommendations .body {
+  border: 0;
+  white-space: nowrap;
+  height: auto;
+}
+.ui-recommendation {
+  display: inline-block;
+  border: 1px solid grey;
+  border-radius: 3px;
+  width: 93px;
+  height: 132px;
+  margin-left: 15px;
+  text-align: left;
+  position: relative;
+  white-space: normal;
+  vertical-align: top;
+}
 /* /Users/youzi/dev/directv-fl/src/components/active/content/style.less */
 .content-item {
   -webkit-backface-visibility: hidden;
@@ -2547,27 +2568,6 @@ body {
 }
 .content-item .holder.swiped {
   margin-bottom: -210px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/shared/recommendations/style.less */
-.ui-recommendations {
-  padding-bottom: 15px;
-}
-.ui-recommendations .body {
-  border: 0;
-  white-space: nowrap;
-  height: auto;
-}
-.ui-recommendation {
-  display: inline-block;
-  border: 1px solid grey;
-  border-radius: 3px;
-  width: 93px;
-  height: 132px;
-  margin-left: 15px;
-  text-align: left;
-  position: relative;
-  white-space: normal;
-  vertical-align: top;
 }
 /* /Users/youzi/dev/directv-fl/src/components/shared/seekbar/style.less */
 @keyframes moveCandyBar {
