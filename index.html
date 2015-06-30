@@ -13,16 +13,16 @@
 <link href="bundle.css" rel="stylesheet" type="text/css">
 <meta id="viewport" name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 <meta name="apple-mobile-web-app-title" content="Futureland">
-<!-- <script src="libs/swfobject.js"></script> -->
 </head>
 <body>
 <script>
-    (function(doc) {
-        var viewport = document.getElementById('viewport');
-        if ( navigator.userAgent.match(/iPad/i) ) {
-            viewport.setAttribute("content", "initial-scale=0.6");
-        }
-    }(document));
+    var viewport = document.getElementById('viewport');
+    if ( navigator.userAgent.match(/iPad/i) ) {
+        viewport.setAttribute("content", "width=device-width, height=device-height, initial-scale=0.6, maximum-scale=1, user-scalable=no");
+          // window.__ua__ = {
+          //   device: 'IFE'
+          // };
+    }
 </script>
 <script src="bundle.js" type="text/javascript"></script>
 </body>
