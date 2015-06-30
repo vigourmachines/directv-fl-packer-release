@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -23,10 +23,11 @@
   },
   "homepage": "https://github.com/vigour-io/directv-fl",
   "dependencies": {
-    "through2":"*",
     "lodash": "3.2.0",
     "monotonic-timestamp": "0.0.9",
+    "package-branch-config": "^1.0.0",
     "promise": "^7.0.1",
+    "through2": "*",
     "vigour-js": "git+ssh://git@github.com:vigour-io/vigour-js.git#directv"
   },
   "devDependencies": {
@@ -42,17 +43,17 @@
       "button": false
     },
     "pointers": {
-      "assets": "http://jim.local/assets/"
+      "assets": "http://devassets.vigour.io/"
     },
     "packer": {
       "web": "index.html",
       "assets": {
         "bundle.js": true,
+        "build.js": true,
         "bundle.css": true,
         "index.html": true,
         "assets": "*",
-        "fonts.css":true,
-        "robots.txt": true
+        "fonts.css": true
       },
       "git": {
         "owner": "vigourmachines",
@@ -73,7 +74,7 @@
           "organizationIdentifier": "io.vigour.directv-fl",
           "buildNumber": "1",
           "appIndexPath": "index.html",
-          "appUrlIdentifier":"com.directv-fl.org",
+          "appUrlIdentifier": "com.directv-fl.org",
           "appUrlScheme": "directv-fl"
         }
       }
@@ -85,13 +86,7 @@
           "assets": "http://jim.local/assets/"
         }
       },
-      "production": {
-        "cloud": "http://directv-fl-demo.local:10001",
-        "pointers": {
-          "assets": "http://directv-fl-demo.local/"
-        }        
-      },
-      "youzi-dev":{
+      "youzi-dev": {
         "pointers": {
           "img": "http://jim.local/assets/",
           "assets": "http://jim.local/assets/"
@@ -104,20 +99,49 @@
       "shawn-dev": {
         "cloud": "http://192.168.2.18:10001"
       },
+      "production": {
+        "cloud": "http://52.8.23.45:80"
+      },
+      "airplane": {
+        "cloud": "http://52.8.40.195:80"
+      },
       "ramon": {
-        "cloud": "http://192.168.2.18:10001"
+        "cloud": "http://54.173.192.57:80/",
+        "pointers": {
+          "assets": "http://dtv-us1assets.vigour.io/"
+        }
+      },
+      "livingroom": {
+        "cloud": "http://directv-fl-demo.local:10001",
+        "pointers": {
+          "assets": "http://directv-fl-demo.local/"
+        }
       }
     }
   },
   "gaston": {
-    "browserify-transforms": [
-      {
-        "path": "vigour-js/util/inform-transform",
-        "options": {
-          "global": "false"
+    "port": 8080,
+    "socket-port": 9000,
+    "no-auto-reload": false,
+    "no-package": false,
+    "bundle": "./",
+    "build": "./",
+    "browserify": {
+      "transforms": [
+        {
+          "path": "package-branch-config",
+          "options": {
+            "section": "vigour"
+          }
         }
+      ]
+    },
+    "less": {
+      "options": {
+        "strictMath": true
       }
-    ],
+    },
+    "remote-logging": true,
     "require-paths": {
       "dtv": "src",
       "shared": "src/components/shared",
