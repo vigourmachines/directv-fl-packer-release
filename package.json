@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -79,12 +79,6 @@
       }
     },
     "branches": {
-      "master": {
-        "pointers": {
-          "img": "http://jim.local/assets/",
-          "assets": "http://jim.local/assets/"
-        }
-      },
       "youzi-dev":{
         "cloud":"http://Imac2014.local:10001",
         "pointers": {

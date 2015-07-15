@@ -2046,8 +2046,6 @@ VObject.inject(
 
 var INACTIVE = typeof window !== void 0 && window.INACTIVE
 
-void(0)
-
 var deviceIsCandidate = /(desktop)|(tv)|(cast)|(tablet)|(airplay)/i
 cases.$isCandidate = deviceIsCandidate.test(ua.device)
 
@@ -2699,6 +2697,7 @@ function linkReceiver (user) {
     playing: linkedreceiver.get('playing', false)
   }
 }
+
 function selectReceiver(user, list) {
   // console.error('\n\n=========================selectReceiver!!!\n\n')
   while(list && list.__t === 4 && !list._filter){
@@ -27386,12 +27385,13 @@ module.exports={
       "libName": "statusbar-debug.aar"
     }
   },
+  "gitHead": "588de4723cbde673fb22b4a28b70472045d3c8ff",
   "readme": "# vigour-native-statusBar\nAllows one to control the native status bar from a web app\n\n##Install\n`npm i vigour-native-statusBar`\n\n##Usage\nSee [test/index.js](test/index.js)\n\n##Building a set of native apps from your codebase\n- `npm run build`\n- `npm run build -- ios android`",
   "readmeFilename": "README.md",
   "_id": "vigour-native-statusBar@0.0.1",
-  "_shasum": "5569644d2af920e5af3a608c5cbe05a6ca269b8b",
-  "_resolved": "git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git#588de4723cbde673fb22b4a28b70472045d3c8ff",
-  "_from": "vigour-native-statusBar@git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git"
+  "_shasum": "52e7d185c70a9a7db8f0c32b67003395600bf839",
+  "_from": "git+ssh://git@github.com/vigour-io/vigour-native-statusBar.git",
+  "_resolved": "git+ssh://git@github.com/vigour-io/vigour-native-statusBar.git#588de4723cbde673fb22b4a28b70472045d3c8ff"
 }
 
 },{}],"/Users/youzi/dev/directv-fl/src/app/index.js":[function(require,module,exports){
@@ -32563,13 +32563,20 @@ arguments[4]["/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/style.less"
 },{}],"/Users/youzi/dev/directv-fl/src/components/shared/wallpaper/index.js":[function(require,module,exports){
 require('./style.less')
 
-var Element = require( 'vigour-js/app/ui/element' )
+var Img = require('../img')
+var cases = require('vigour-js/browser/cases')
 
-module.exports = new Element({
-  css:'ui-wallpaper'
+module.exports = new Img({
+  css: 'ui-wallpaper',
+  background: cases.$isPhone 
+  	? 'img/app/phone_waiting.png'
+  	: 'img/app/waiting.png',
+  icon:new Img({
+  	background:'img/app/cast_anim.svg'
+  })
 }).Class
 
-},{"./style.less":"/Users/youzi/dev/directv-fl/src/components/shared/wallpaper/style.less","vigour-js/app/ui/element":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/ui/element/index.js"}],"/Users/youzi/dev/directv-fl/src/components/shared/wallpaper/style.less":[function(require,module,exports){
+},{"../img":"/Users/youzi/dev/directv-fl/src/components/shared/img/index.js","./style.less":"/Users/youzi/dev/directv-fl/src/components/shared/wallpaper/style.less","vigour-js/browser/cases":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/browser/cases/index.js"}],"/Users/youzi/dev/directv-fl/src/components/shared/wallpaper/style.less":[function(require,module,exports){
 arguments[4]["/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/style.less"][0].apply(exports,arguments)
 },{}],"/Users/youzi/dev/directv-fl/src/components/switcher/index.js":[function(require,module,exports){
 /*!
@@ -33935,6 +33942,6 @@ function hasOwnProperty(obj, prop) {
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
 },{"./support/isBuffer":"/Users/youzi/dev/gaston/node_modules/browserify/node_modules/util/support/isBufferBrowser.js","_process":"/Users/youzi/dev/gaston/node_modules/browserify/node_modules/process/browser.js","inherits":"/Users/youzi/dev/gaston/node_modules/browserify/node_modules/inherits/inherits_browser.js"}],"package.json":[function(require,module,exports){
-module.exports={"name":"directv-fl","version":"1.0.7","description":"","main":"index.js","scripts":{"startGaston":"./node_modules/.bin/gaston dev","start":"npm run startGaston","test":"echo \"Error: no test specified\" && exit 1","symlink":"mkdir -p node_modules; ln -sf $(pwd) $(pwd)/node_modules","startHub":"./node_modules/vigour-hub/bin/hub -d -c directv","prestart":"npm run startHub &","build":"vNative build","release":"packer -r -c package.json,.package.json"},"repository":{"type":"git","url":"https://github.com/vigour-io/directv-fl.git","branch":"ramon"},"author":"Vigour","bugs":{"url":"https://github.com/vigour-io/directv-fl/issues"},"homepage":"https://github.com/vigour-io/directv-fl","dependencies":{"through2":"*","lodash":"3.2.0","monotonic-timestamp":"0.0.9","promise":"^7.0.1","vigour-js":"git+ssh://git@github.com:vigour-io/vigour-js.git#directv"},"devDependencies":{"vigour-native":"git+ssh://git@github.com:vigour-io/vigour-native.git","vigour-native-statusBar":"git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git","vigour-packer-server":"git+ssh://git@github.com:vigour-io/vigour-packer-server.git","vigour-hub":"git+ssh://git@github.com:vigour-io/vigour-hub.git#directv","gaston":"git+ssh://git@github.com:vigour-io/gaston.git"},"vigour":{"cloud":"http://54.173.192.57:80/","development":{"button":false},"pointers":{"assets":"http://dtv-us1assets.vigour.io/"},"packer":{"web":"index.html","assets":{"bundle.js":true,"build.js":true,"bundle.css":true,"index.html":true,"assets":"*","fonts.css":true},"git":{"owner":"vigour-io","repo":"directv-fl"},"mail":{"fromAddress":"shawn@vigour.io","to":"shawn@vigour.io"},"slack":{},"server":{}},"native":{"platforms":{"ios":{"productName":"Direct TV - Future Land","organizationName":"Vigour","organizationIdentifier":"io.vigour.directv-fl","buildNumber":"1","appIndexPath":"index.html","appUrlIdentifier":"com.directv-fl.org","appUrlScheme":"directv-fl"}}},"nobrand":true},"gaston":{"port":8080,"socket-port":9000,"no-auto-reload":false,"no-package":false,"bundle":"./","build":"./","browserify":{"transforms":[{"path":"package-branch-config","options":{"section":"vigour"}}]},"less":{"options":{"strictMath":true}},"require-paths":{"dtv":"src","shared":"src/components/shared","dtv-components":"src/components","dtv-active":"src/components/active","dtv-item":"src/components/active/content-item","dtv-channel":"src/components/active/content-item/channel","dtv-episode":"src/components/active/content-item/episode","dtv-movie":"src/components/active/content-item/movie"}},"sha":"1.0.7"}
+module.exports={"name":"directv-fl","version":"1.0.8","description":"","main":"index.js","scripts":{"startGaston":"./node_modules/.bin/gaston dev","start":"npm run startGaston","test":"echo \"Error: no test specified\" && exit 1","symlink":"mkdir -p node_modules; ln -sf $(pwd) $(pwd)/node_modules","startHub":"./node_modules/vigour-hub/bin/hub -d -c directv","prestart":"npm run startHub &","build":"vNative build","release":"packer -r -c package.json,.package.json"},"repository":{"type":"git","url":"https://github.com/vigour-io/directv-fl.git","branch":"ramon"},"author":"Vigour","bugs":{"url":"https://github.com/vigour-io/directv-fl/issues"},"homepage":"https://github.com/vigour-io/directv-fl","dependencies":{"through2":"*","lodash":"3.2.0","monotonic-timestamp":"0.0.9","promise":"^7.0.1","vigour-js":"git+ssh://git@github.com:vigour-io/vigour-js.git#directv"},"devDependencies":{"vigour-native":"git+ssh://git@github.com:vigour-io/vigour-native.git","vigour-native-statusBar":"git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git","vigour-packer-server":"git+ssh://git@github.com:vigour-io/vigour-packer-server.git","vigour-hub":"git+ssh://git@github.com:vigour-io/vigour-hub.git#directv","gaston":"git+ssh://git@github.com:vigour-io/gaston.git"},"vigour":{"cloud":"http://54.173.192.57:80/","development":{"button":false},"pointers":{"assets":"http://dtv-us1assets.vigour.io/"},"packer":{"web":"index.html","assets":{"bundle.js":true,"build.js":true,"bundle.css":true,"index.html":true,"assets":"*","fonts.css":true},"git":{"owner":"vigour-io","repo":"directv-fl"},"mail":{"fromAddress":"shawn@vigour.io","to":"shawn@vigour.io"},"slack":{},"server":{}},"native":{"platforms":{"ios":{"productName":"Direct TV - Future Land","organizationName":"Vigour","organizationIdentifier":"io.vigour.directv-fl","buildNumber":"1","appIndexPath":"index.html","appUrlIdentifier":"com.directv-fl.org","appUrlScheme":"directv-fl"}}},"nobrand":true},"gaston":{"port":8080,"socket-port":9000,"no-auto-reload":false,"no-package":false,"bundle":"./","build":"./","browserify":{"transforms":[{"path":"package-branch-config","options":{"section":"vigour"}}]},"less":{"options":{"strictMath":true}},"require-paths":{"dtv":"src","shared":"src/components/shared","dtv-components":"src/components","dtv-active":"src/components/active","dtv-item":"src/components/active/content-item","dtv-channel":"src/components/active/content-item/channel","dtv-episode":"src/components/active/content-item/episode","dtv-movie":"src/components/active/content-item/movie"}},"sha":"1.0.8"}
 },{}]},{},["/Users/youzi/dev/directv-fl/index.js"])
 //# sourceMappingURL=bundle.js.map
