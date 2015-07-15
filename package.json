@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -55,7 +55,7 @@
         "fonts.css":true
       },
       "git": {
-        "owner": "vigourmachines",
+        "owner": "vigour-io",
         "repo": "directv-fl"
       },
       "mail": {
@@ -110,6 +110,7 @@
       },
       "ramon": {
         "cloud":"http://54.173.192.57:80/",
+        "nobrand":true,
         "pointers": {
           "assets": "http://dtv-us1assets.vigour.io/"
         }
@@ -123,14 +124,27 @@
     }
   },
   "gaston": {
-    "browserify-transforms": [
-      {
-        "path": "vigour-js/util/inform-transform",
-        "options": {
-          "global": "false"
+    "port": 8080,
+    "socket-port": 9000,
+    "no-auto-reload": false,
+    "no-package": false,
+    "bundle": "./",
+    "build": "./",
+    "browserify": {
+      "transforms": [
+        {
+          "path": "package-branch-config",
+          "options": {
+            "section": "vigour"
+          }
         }
+      ]
+    },
+    "less":{
+      "options":{
+        "strictMath":true
       }
-    ],
+    },
     "require-paths": {
       "dtv": "src",
       "shared": "src/components/shared",
