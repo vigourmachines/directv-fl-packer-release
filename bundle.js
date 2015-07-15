@@ -32568,11 +32568,11 @@ var cases = require('vigour-js/browser/cases')
 
 module.exports = new Img({
   css: 'ui-wallpaper',
-  background: cases.$isPhone 
+  background: cases.$isPhone
   	? 'img/app/phone_waiting.png'
   	: 'img/app/waiting.png',
-  icon:new Img({
-  	background:'img/app/cast_anim.svg'
+  icon: new Img({
+    background: 'img/app/cast_anim.svg'
   })
 }).Class
 
