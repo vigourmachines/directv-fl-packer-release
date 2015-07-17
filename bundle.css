@@ -319,22 +319,73 @@ body {
   background-size: cover;
   background-position: center;
 }
-.ui-wallpaper .icon {
-  height: 44px;
-  background-repeat: no-repeat;
-  width: 48px;
-  left: 50%;
+.ui-wallpaper .sprite {
   position: absolute;
-  margin-left: -24px;
+  width: 100%;
+  height: 120px;
+  background-position-x: center;
+  background-repeat: no-repeat;
   top: 50%;
-  margin-top: -82px;
+  margin-top: -172px;
+  -webkit-animation: play 2s steps(5) infinite;
+  -moz-animation: play 2s steps(5) infinite;
+  animation: play 2s steps(5) infinite;
 }
-.notIsPhone .ui-wallpaper .icon {
-  background-size: 200%;
-  height: 110px;
-  width: 200px;
-  margin-left: -66px;
-  margin-top: -170px;
+.isPhone .ui-wallpaper .sprite {
+  margin-top: -76px;
+  height: 40px;
+  background-size: 48px 200px;
+  -webkit-animation: phone-play 2s steps(5) infinite;
+  -moz-animation: phone-play 2s steps(5) infinite;
+  animation: phone-play 2s steps(5) infinite;
+}
+@-webkit-keyframes play {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-y: -600px;
+  }
+}
+@-moz-keyframes play {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-y: -600px;
+  }
+}
+@keyframes play {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-y: -600px;
+  }
+}
+@-webkit-keyframes phone-play {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-y: -200px;
+  }
+}
+@-moz-keyframes phone-play {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-y: -200px;
+  }
+}
+@keyframes phone-play {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-y: -200px;
+  }
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/discover/style.less */
 .second-discover {
@@ -350,6 +401,89 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
+}
+/* /Users/youzi/dev/directv-fl/src/components/inactive/statusbar/style.less */
+.second-statusbar {
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  -o-transition: -o-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  display: table;
+  background-color: #0081CF;
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.second-statusbar > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+.second-statusbar > div > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+.second-statusbar .directv .logo {
+  width: 234px;
+  height: 40px;
+  margin-left: 30px;
+  background-image: url('../../../assets/img/app/logo.png');
+}
+.second-statusbar .partner {
+  vertical-align: bottom;
+  width: 350px;
+}
+.second-statusbar .partner .logo {
+  height: 68px;
+  width: 315px;
+  background-image: url('../../../assets/img/app/united_logo.png');
+}
+.second-statusbar .logo {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.second-statusbar .sender {
+  padding-right: 30px;
+  text-align: right;
+  color: #ffffff;
+  font-size: 28px;
+  font-family: dinRegular;
+}
+.second-statusbar .sender > div {
+  vertical-align: middle;
+  display: inline-block;
+}
+.second-statusbar .sender .pretitle {
+  margin-right: 14px;
+  opacity: 0.6;
+}
+.second-statusbar.branded {
+  font-family: dinRegular;
+  background-color: #06225a;
+  font-size: 24px;
+}
+.second-statusbar.branded .between {
+  border-top: 80px solid #06225a;
+  border-right: 40px solid #0081cf;
+}
+.second-statusbar.branded .directv {
+  background-color: #0081cf;
+  width: 300px;
+}
+.second-statusbar.branded .ui-icon {
+  font-size: 36px;
+  line-height: 36px;
+  width: 40px;
+}
+.second-statusbar.branded .weather {
+  width: 240px;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/search/style.less */
 .second-search {
@@ -490,88 +624,6 @@ body {
 }
 .notIsTv .second-search .topresult .description {
   padding-top: 15px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/inactive/statusbar/style.less */
-.second-statusbar {
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  -moz-transition: -moz-transform 0.2s ease-out;
-  -ms-transition: -ms-transform 0.2s ease-out;
-  -o-transition: -o-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  display: table;
-  background-color: #0081CF;
-  height: 80px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
-.second-statusbar > div {
-  display: table-cell;
-  vertical-align: middle;
-}
-.second-statusbar > div > div {
-  display: inline-block;
-  vertical-align: middle;
-}
-.second-statusbar .directv .logo {
-  width: 234px;
-  height: 40px;
-  margin-left: 30px;
-  background-image: url('../../../assets/img/app/logo.png');
-}
-.second-statusbar .partner {
-  vertical-align: bottom;
-  width: 350px;
-}
-.second-statusbar .partner .logo {
-  height: 68px;
-  width: 315px;
-  background-image: url('../../../assets/img/app/united_logo.png');
-}
-.second-statusbar .logo {
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.second-statusbar .sender {
-  padding-right: 30px;
-  text-align: right;
-  color: #ffffff;
-  font-size: 28px;
-  font-family: dinRegular;
-}
-.second-statusbar .sender > div {
-  vertical-align: middle;
-  display: inline-block;
-}
-.second-statusbar .sender .icon {
-  font-size: 60px;
-}
-.second-statusbar.branded {
-  font-family: dinRegular;
-  background-color: #06225a;
-  font-size: 24px;
-}
-.second-statusbar.branded .between {
-  border-top: 80px solid #06225a;
-  border-right: 40px solid #0081cf;
-}
-.second-statusbar.branded .directv {
-  background-color: #0081cf;
-  width: 300px;
-}
-.second-statusbar.branded .ui-icon {
-  font-size: 36px;
-  line-height: 36px;
-  width: 40px;
-}
-.second-statusbar.branded .weather {
-  width: 240px;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/navigation/style.less */
 .second-navigation {
@@ -922,49 +974,6 @@ body {
   font-size: 32px;
   width: 50px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/switcher/style.less */
-.first-switcher {
-  position: absolute;
-  overflow: hidden;
-  height: calc(100% - 64px);
-  width: 100%;
-}
-.first-switcher > div {
-  -webkit-transition: opacity 0.2s ease-out;
-  -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
-  -o-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
-  position: absolute;
-  background-color: #181818;
-  width: 100%;
-  height: 100%;
-}
-.first-switcher.remote-visible {
-  height: calc(100% - 115px);
-}
-/* /Users/youzi/dev/directv-fl/src/components/active/popup/style.less */
-.popup {
-  background: #181818;
-  color: white;
-}
-.popup .topbar {
-  background-color: #181818;
-}
-.popup .devices .focused {
-  background-color: #0081cf;
-}
-.popup .devices .focused .subtitle {
-  color: #ffffff !important;
-  opacity: 0.8;
-}
-.popup .footer {
-  padding-bottom: 25px;
-}
-.popup.profile {
-  background-image: url('https://cloud.githubusercontent.com/assets/261494/8648753/9c65f418-2963-11e5-85dd-da8543a57f18.png');
-  background-size: cover;
-}
 /* /Users/youzi/dev/directv-fl/src/components/active/menu/style.less */
 .menu {
   font-family: 'dinLight';
@@ -1039,6 +1048,49 @@ body {
   display: table-cell;
   vertical-align: middle;
   color: #8e8e8e;
+}
+/* /Users/youzi/dev/directv-fl/src/components/active/switcher/style.less */
+.first-switcher {
+  position: absolute;
+  overflow: hidden;
+  height: calc(100% - 64px);
+  width: 100%;
+}
+.first-switcher > div {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  position: absolute;
+  background-color: #181818;
+  width: 100%;
+  height: 100%;
+}
+.first-switcher.remote-visible {
+  height: calc(100% - 115px);
+}
+/* /Users/youzi/dev/directv-fl/src/components/active/popup/style.less */
+.popup {
+  background: #181818;
+  color: white;
+}
+.popup .topbar {
+  background-color: #181818;
+}
+.popup .devices .focused {
+  background-color: #0081cf;
+}
+.popup .devices .focused .subtitle {
+  color: #ffffff !important;
+  opacity: 0.8;
+}
+.popup .footer {
+  padding-bottom: 25px;
+}
+.popup.profile {
+  background-image: url('https://cloud.githubusercontent.com/assets/261494/8648753/9c65f418-2963-11e5-85dd-da8543a57f18.png');
+  background-size: cover;
 }
 /* /Users/youzi/dev/directv-fl/src/components/active/topbar/reset.less */
 input[placeholder],
@@ -1118,6 +1170,32 @@ input[type="number"] {
   text-align: center;
   font-size: 24px;
   line-height: 24px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/inactive/trailer/style.less */
+.second-trailer {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #000000;
+  position: relative;
+  border: 1px solid #f2f2f2;
+}
+.second-trailer video {
+  width: 100%;
+  height: 100%;
+}
+.second-trailer .muted {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+.second-trailer .logo {
+  background-size: cover;
+  width: 160px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  background-size: contain;
 }
 /* /Users/youzi/dev/directv-fl/src/components/shared/list/style.less */
 .base-list {
@@ -1339,36 +1417,35 @@ input[type="number"] {
   width: 186px;
   height: 276px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/trailer/style.less */
-.second-trailer {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  background-color: #000000;
-  position: relative;
-  border: 1px solid #f2f2f2;
-}
-.second-trailer video {
-  width: 100%;
-  height: 100%;
-}
-.second-trailer .muted {
-  position: absolute;
-  right: 30px;
-  bottom: 30px;
-}
-.second-trailer .logo {
-  background-size: cover;
-  width: 160px;
-  height: 60px;
-  position: absolute;
-  top: 0;
-  background-size: contain;
-}
 /* /Users/youzi/dev/directv-fl/src/components/inactive/progress/style.less */
 .second-progress {
   border-top: 40px solid #ff0072;
   border-right: 20px solid transparent;
+}
+/* /Users/youzi/dev/directv-fl/src/components/inactive/cover/style.less */
+.second-cover {
+  width: 100%;
+  height: 100%;
+}
+.second-cover .bg {
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -ms-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.second-cover .overlay {
+  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/channel/style.less */
 .second-channel {
@@ -1673,31 +1750,6 @@ input[type="number"] {
 .isTablet .twitter {
   position: static;
   margin-top: 15px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/inactive/cover/style.less */
-.second-cover {
-  width: 100%;
-  height: 100%;
-}
-.second-cover .bg {
-  -webkit-transition: opacity 0.5s ease-out;
-  -moz-transition: opacity 0.5s ease-out;
-  -ms-transition: opacity 0.5s ease-out;
-  -o-transition: opacity 0.5s ease-out;
-  transition: opacity 0.5s ease-out;
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-.second-cover .overlay {
-  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/vod/style.less */
 .second-vod {
@@ -2383,6 +2435,37 @@ body {
   margin-top: 15px;
   font-size: 28px;
 }
+/* /Users/youzi/dev/directv-fl/src/components/shared/stickers/style.less */
+.ui-stickers {
+  width: 159px;
+}
+.ui-stickers > div {
+  vertical-align: top;
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.ui-stickers .mpaa {
+  background-color: #000000;
+}
+.ui-stickers .rating {
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  border: 2px solid white;
+  font-family: dinBold;
+  line-height: 70px;
+  text-align: center;
+  font-size: 24px;
+  background-color: #7ed321;
+  margin-left: 15px;
+}
 /* /Users/youzi/dev/directv-fl/src/components/shared/description/style.less */
 .ui-description {
   padding-right: 0;
@@ -2398,27 +2481,6 @@ body {
   height: auto;
   border: 0;
   text-align: left;
-}
-/* /Users/youzi/dev/directv-fl/src/components/shared/recommendations/style.less */
-.ui-recommendations {
-  padding-bottom: 15px;
-}
-.ui-recommendations .body {
-  border: 0;
-  white-space: nowrap;
-  height: auto;
-}
-.ui-recommendation {
-  display: inline-block;
-  border: 1px solid grey;
-  border-radius: 3px;
-  width: 93px;
-  height: 132px;
-  margin-left: 15px;
-  text-align: left;
-  position: relative;
-  white-space: normal;
-  vertical-align: top;
 }
 /* /Users/youzi/dev/directv-fl/src/components/shared/bar/style.less */
 .ui-bar {
@@ -2515,36 +2577,33 @@ body {
 .bar.program2 {
   border-top: 1px solid #000;
 }
-/* /Users/youzi/dev/directv-fl/src/components/shared/stickers/style.less */
-.ui-stickers {
-  width: 159px;
+/* /Users/youzi/dev/directv-fl/src/components/shared/actors/style.less */
+.ui-actors .body {
+  margin-right: 15px;
+  border: 0;
+  white-space: nowrap;
+  height: auto;
 }
-.ui-stickers > div {
-  vertical-align: top;
+/* /Users/youzi/dev/directv-fl/src/components/shared/recommendations/style.less */
+.ui-recommendations {
+  padding-bottom: 15px;
+}
+.ui-recommendations .body {
+  border: 0;
+  white-space: nowrap;
+  height: auto;
+}
+.ui-recommendation {
   display: inline-block;
-  width: 70px;
-  height: 70px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
-.ui-stickers .mpaa {
-  background-color: #000000;
-}
-.ui-stickers .rating {
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  border: 2px solid white;
-  font-family: dinBold;
-  line-height: 70px;
-  text-align: center;
-  font-size: 24px;
-  background-color: #7ed321;
+  border: 1px solid grey;
+  border-radius: 3px;
+  width: 93px;
+  height: 132px;
   margin-left: 15px;
+  text-align: left;
+  position: relative;
+  white-space: normal;
+  vertical-align: top;
 }
 /* /Users/youzi/dev/directv-fl/src/components/active/content/style.less */
 .content-item {
@@ -2600,13 +2659,6 @@ body {
 }
 .content-item .holder.swiped {
   margin-bottom: -210px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/shared/actors/style.less */
-.ui-actors .body {
-  margin-right: 15px;
-  border: 0;
-  white-space: nowrap;
-  height: auto;
 }
 /* /Users/youzi/dev/directv-fl/src/components/shared/seekbar/style.less */
 @keyframes moveCandyBar {
@@ -2732,60 +2784,6 @@ body {
 }
 .ui-voterow.second .right .ui-seekbar .seek {
   background-color: #0081cf;
-}
-/* /Users/youzi/dev/directv-fl/src/components/shared/tweets/style.less */
-.ui-tweets {
-  transform: rotateX(0deg);
-  padding-bottom: 30px;
-}
-.ui-tweets .header {
-  margin-bottom: 5px;
-  border-bottom: 0px;
-}
-.ui-tweets .body {
-  margin-right: 15px;
-  border: 0;
-  white-space: nowrap;
-}
-.ui-tweets .tweet {
-  display: inline-block;
-  border: 1px solid #323232;
-  border-radius: 3px;
-  width: 200px;
-  height: 170px;
-  margin-left: 15px;
-  text-align: left;
-  position: relative;
-  white-space: normal;
-  vertical-align: top;
-}
-.ui-tweets .tweet .icon {
-  text-align: left;
-  padding: 10px;
-  font-size: 20px;
-  color: #55acee;
-}
-.ui-tweets .tweet .from {
-  padding-left: 10px;
-  font: 14px/10px dinRegular;
-  text-align: center;
-  padding-bottom: 10px;
-}
-.ui-tweets .tweet .msg {
-  padding-left: 10px;
-  color: #8e8e8e;
-  font: 14px dinLight;
-}
-.ui-tweets .tweet .retweet {
-  font-family: 'dinBold';
-  position: absolute;
-  padding-right: 10px;
-  padding-bottom: 7px;
-  text-align: right;
-  right: 0%;
-  bottom: 0%;
-  font-size: 12px;
-  color: grey;
 }
 /* /Users/youzi/dev/directv-fl/src/components/shared/statistics/style.less */
 .ui-score .info,
@@ -2953,6 +2951,60 @@ body {
   color: #8e8e8e;
   font: 14px dinLight;
   padding-bottom: 5px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/shared/tweets/style.less */
+.ui-tweets {
+  transform: rotateX(0deg);
+  padding-bottom: 30px;
+}
+.ui-tweets .header {
+  margin-bottom: 5px;
+  border-bottom: 0px;
+}
+.ui-tweets .body {
+  margin-right: 15px;
+  border: 0;
+  white-space: nowrap;
+}
+.ui-tweets .tweet {
+  display: inline-block;
+  border: 1px solid #323232;
+  border-radius: 3px;
+  width: 200px;
+  height: 170px;
+  margin-left: 15px;
+  text-align: left;
+  position: relative;
+  white-space: normal;
+  vertical-align: top;
+}
+.ui-tweets .tweet .icon {
+  text-align: left;
+  padding: 10px;
+  font-size: 20px;
+  color: #55acee;
+}
+.ui-tweets .tweet .from {
+  padding-left: 10px;
+  font: 14px/10px dinRegular;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.ui-tweets .tweet .msg {
+  padding-left: 10px;
+  color: #8e8e8e;
+  font: 14px dinLight;
+}
+.ui-tweets .tweet .retweet {
+  font-family: 'dinBold';
+  position: absolute;
+  padding-right: 10px;
+  padding-bottom: 7px;
+  text-align: right;
+  right: 0%;
+  bottom: 0%;
+  font-size: 12px;
+  color: grey;
 }
 /* /Users/youzi/dev/directv-fl/src/components/active/player/style.less */
 .first-player {
