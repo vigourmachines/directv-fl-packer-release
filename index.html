@@ -5,7 +5,7 @@
 
 <link rel="icon" href="http://cdn.directv.com/images/common/favicon.ico" type="image/x-icon" />
 <link rel="apple-touch-icon" href="http://cdn.directv.com/images/common/icons/apple-touch-icon.png" type="image/png" />
-
+<meta charset="UTF-8">
 <meta name="application-name" content="DirecTV Futureland">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -16,11 +16,12 @@
 </head>
 <body>
 <script>
-    if( navigator.userAgent.match(/iPad/i) ) {
-      document.getElementById('viewport').setAttribute("content", "initial-scale=0.6");
-      window.__ua__ = {
-        device: 'IFE'
-      };
+    var viewport = document.getElementById('viewport');
+    if ( navigator.userAgent.match(/iPad/i) ) {
+        viewport.setAttribute("content", "width=device-width, height=device-height, initial-scale=0.6, maximum-scale=1, user-scalable=no");
+          // window.__ua__ = {
+          //   device: 'IFE'
+          // };
     }
 </script>
 <script src="bundle.js" type="text/javascript"></script>

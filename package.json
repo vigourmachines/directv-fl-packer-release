@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.6",
+  "version": "1.0.11",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -48,13 +48,14 @@
       "web": "index.html",
       "assets": {
         "bundle.js": true,
+        "build.js":true,
         "bundle.css": true,
         "index.html": true,
         "assets": "*",
         "fonts.css":true
       },
       "git": {
-        "owner": "vigour-io",
+        "owner": "vigourmachines",
         "repo": "directv-fl"
       },
       "mail": {
@@ -78,16 +79,11 @@
       }
     },
     "branches": {
-      "master": {
-        "pointers": {
-          "img": "http://jim.local/assets/",
-          "assets": "http://jim.local/assets/"
-        }
-      },
       "youzi-dev":{
+        "cloud":"http://Imac2014.local:10001",
         "pointers": {
-          "img": "http://jim.local/assets/",
-          "assets": "http://jim.local/assets/"
+          "img": "http://Imac2014.local/assets/",
+          "assets": "http://Imac2014.local/assets/"
         }
       },
       "marcus-dev": {
@@ -98,49 +94,51 @@
         "cloud": "http://192.168.2.18:10001"
       },
       "production": {
-        "cloud": "http://52.8.23.45:80",
-        "native": {
-          "platforms": {
-            "ios": {
-              "productName": "DTV - In Flight"
-            }
-          }
-        }
+        "cloud": "http://52.8.23.45:80"
       },
       "airplane": {
         "cloud": "http://52.8.40.195:80",
-        "native": {
-          "platforms": {
-            "ios": {
-              "productName": "DTV DEMO - In Flight"
-            }
-          }
-        }       
+        "pointers": {
+          "assets": "http://dtv-us1assets.vigour.io/"
+        }
+      },
+      "ramon": {
+        "cloud":"http://54.173.192.57:80/",
+        "nobrand":true,
+        "pointers": {
+          "assets": "http://dtv-us1assets.vigour.io/"
+        }
       },
       "livingroom": {
         "cloud": "http://directv-fl-demo.local:10001",
         "pointers": {
           "assets": "http://directv-fl-demo.local/"
-        },
-        "native": {
-          "platforms": {
-            "ios": {
-              "productName": "DTV DEMO - Home"
-            }
-          }
-        }     
+        }    
       }
     }
   },
   "gaston": {
-    "browserify-transforms": [
-      {
-        "path": "vigour-js/util/inform-transform",
-        "options": {
-          "global": "false"
+    "port": 8080,
+    "socket-port": 9000,
+    "no-auto-reload": false,
+    "no-package": false,
+    "bundle": "./",
+    "build": "./",
+    "browserify": {
+      "transforms": [
+        {
+          "path": "package-branch-config",
+          "options": {
+            "section": "vigour"
+          }
         }
+      ]
+    },
+    "less":{
+      "options":{
+        "strictMath":true
       }
-    ],
+    },
     "require-paths": {
       "dtv": "src",
       "shared": "src/components/shared",
