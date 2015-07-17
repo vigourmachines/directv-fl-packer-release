@@ -201,16 +201,26 @@ body {
   -ms-transition: -ms-transform 0.4s ease-out;
   -o-transition: -o-transform 0.4s ease-out;
   transition: transform 0.4s ease-out;
+  opacity: 1;
+  -webkit-filter: blur(0px);
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
 }
 .second-state > .switcher {
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
-body.notIsPhone {
-  pointer-events: none;
+.blur-out {
+  opacity: 0.5;
+  -webkit-filter: blur(8px);
 }
 /* /Users/youzi/dev/directv-fl/src/components/active/style.less */
+.first-mockup {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
 .first-state {
   height: 100%;
   width: 100%;
@@ -306,9 +316,114 @@ body.notIsPhone {
 .ui-wallpaper {
   width: 100%;
   height: 100%;
-  background-image: url('../../assets/img/app/waiting.png');
   background-size: cover;
   background-position: center;
+  -webkit-animation: wallpaper-fadein 1s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: wallpaper-fadein 1s;
+  /* Firefox < 16 */
+  animation: wallpaper-fadein 1s;
+}
+.ui-wallpaper .sprite {
+  position: absolute;
+  width: 100%;
+  height: 120px;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  top: 50%;
+  margin-top: -172px;
+  -webkit-animation: sprite-play 2s steps(5) infinite;
+  -moz-animation: sprite-play 2s steps(5) infinite;
+  animation: sprite-play 2s steps(5) infinite;
+}
+.isPhone .ui-wallpaper .sprite {
+  margin-top: -76px;
+  height: 40px;
+  background-size: 48px 200px;
+  -webkit-animation: phone-sprite-play 2s steps(5) infinite;
+  -moz-animation: phone-sprite-play 2s steps(5) infinite;
+  animation: phone-sprite-play 2s steps(5) infinite;
+}
+@keyframes wallpaper-fadein {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes wallpaper-fadein {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes wallpaper-fadein {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes sprite-play {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-y: -600px;
+  }
+}
+@-moz-keyframes sprite-play {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-y: -600px;
+  }
+}
+@keyframes sprite-play {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-y: -600px;
+  }
+}
+@-webkit-keyframes phone-sprite-play {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-y: -200px;
+  }
+}
+@-moz-keyframes phone-sprite-play {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-y: -200px;
+  }
+}
+@keyframes phone-sprite-play {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-y: -200px;
+  }
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/discover/style.less */
 .second-discover {
@@ -324,88 +439,6 @@ body.notIsPhone {
   top: 0;
   width: 100%;
   height: 100%;
-}
-/* /Users/youzi/dev/directv-fl/src/components/inactive/statusbar/style.less */
-.second-statusbar {
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  -moz-transition: -moz-transform 0.2s ease-out;
-  -ms-transition: -ms-transform 0.2s ease-out;
-  -o-transition: -o-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  display: table;
-  background-color: #0081CF;
-  height: 80px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
-.second-statusbar > div {
-  display: table-cell;
-  vertical-align: middle;
-}
-.second-statusbar > div > div {
-  display: inline-block;
-  vertical-align: middle;
-}
-.second-statusbar .directv .logo {
-  width: 234px;
-  height: 40px;
-  margin-left: 30px;
-  background-image: url('../../../assets/img/app/logo.png');
-}
-.second-statusbar .partner {
-  vertical-align: bottom;
-  width: 350px;
-}
-.second-statusbar .partner .logo {
-  height: 68px;
-  width: 315px;
-  background-image: url('../../../assets/img/app/united_logo.png');
-}
-.second-statusbar .logo {
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.second-statusbar .sender {
-  padding-right: 30px;
-  text-align: right;
-  color: #ffffff;
-  font-size: 28px;
-  font-family: dinRegular;
-}
-.second-statusbar .sender > div {
-  vertical-align: middle;
-  display: inline-block;
-}
-.second-statusbar .sender .icon {
-  font-size: 60px;
-}
-.second-statusbar.branded {
-  font-family: dinRegular;
-  background-color: #06225a;
-  font-size: 24px;
-}
-.second-statusbar.branded .between {
-  border-top: 80px solid #06225a;
-  border-right: 40px solid #0081cf;
-}
-.second-statusbar.branded .directv {
-  background-color: #0081cf;
-  width: 300px;
-}
-.second-statusbar.branded .ui-icon {
-  font-size: 36px;
-  line-height: 36px;
-  width: 40px;
-}
-.second-statusbar.branded .weather {
-  width: 240px;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/search/style.less */
 .second-search {
@@ -546,6 +579,89 @@ body.notIsPhone {
 }
 .notIsTv .second-search .topresult .description {
   padding-top: 15px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/inactive/statusbar/style.less */
+.second-statusbar {
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  -o-transition: -o-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  display: table;
+  background-color: #0081CF;
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.second-statusbar > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+.second-statusbar > div > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+.second-statusbar .directv .logo {
+  width: 234px;
+  height: 40px;
+  margin-left: 30px;
+  background-image: url('../../../assets/img/app/logo.png');
+}
+.second-statusbar .partner {
+  vertical-align: bottom;
+  width: 350px;
+}
+.second-statusbar .partner .logo {
+  height: 68px;
+  width: 315px;
+  background-image: url('../../../assets/img/app/united_logo.png');
+}
+.second-statusbar .logo {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.second-statusbar .sender {
+  padding-right: 30px;
+  text-align: right;
+  color: #ffffff;
+  font-size: 28px;
+  font-family: dinRegular;
+}
+.second-statusbar .sender > div {
+  vertical-align: middle;
+  display: inline-block;
+}
+.second-statusbar .sender .pretitle {
+  margin-right: 14px;
+  opacity: 0.6;
+}
+.second-statusbar.branded {
+  font-family: dinRegular;
+  background-color: #06225a;
+  font-size: 24px;
+}
+.second-statusbar.branded .between {
+  border-top: 80px solid #06225a;
+  border-right: 40px solid #0081cf;
+}
+.second-statusbar.branded .directv {
+  background-color: #0081cf;
+  width: 300px;
+}
+.second-statusbar.branded .ui-icon {
+  font-size: 36px;
+  line-height: 36px;
+  width: 40px;
+}
+.second-statusbar.branded .weather {
+  width: 240px;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/navigation/style.less */
 .second-navigation {
@@ -754,6 +870,18 @@ body.notIsPhone {
   width: 625px;
   height: 350px;
 }
+/* /Users/youzi/dev/directv-fl/src/components/inactive/profile/style.less */
+.second-profile {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 330px;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  -o-transition: -o-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+}
 /* /Users/youzi/dev/directv-fl/src/components/active/topbar/style.less */
 .topbar {
   -webkit-transition: background-color 0.2s ease-out;
@@ -901,21 +1029,18 @@ body.notIsPhone {
   width: 30px;
   height: 30px;
   display: inline-block;
-  border-radius: 50%;
+  border-radius: 2px;
   border: 1px solid #fff;
   display: table-cell;
   vertical-align: middle;
-  background-image: url('../../../assets/img/app/avatar.png');
   background-size: contain;
   background-repeat: no-repeat;
-  opacity: 0.5;
 }
 .menu .footer .title {
   display: table-cell;
   vertical-align: middle;
   width: 195px;
   padding-left: 10px;
-  color: #8e8e8e;
 }
 .menu .footer .settings {
   display: table-cell;
@@ -1000,6 +1125,10 @@ body.notIsPhone {
 }
 .popup .footer {
   padding-bottom: 25px;
+}
+.popup.profile {
+  background-image: url('https://cloud.githubusercontent.com/assets/261494/8648753/9c65f418-2963-11e5-85dd-da8543a57f18.png');
+  background-size: cover;
 }
 /* /Users/youzi/dev/directv-fl/src/components/active/topbar/reset.less */
 input[placeholder],
@@ -1356,117 +1485,6 @@ input[type="number"] {
   width: 100%;
   height: 100%;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/vod/style.less */
-.second-vod {
-  height: 100%;
-}
-.second-vod > div {
-  -webkit-transition: opacity 0.2s ease-out;
-  -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
-  -o-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-.second-vod .overview .overlay {
-  background: radial-gradient(circle farthest-corner at 95% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
-}
-.second-vod .overview .container {
-  position: absolute;
-  top: 60px;
-  left: 30px;
-  width: 600px;
-}
-.second-vod .overview .container > div {
-  margin-bottom: 30px;
-}
-.second-vod .overview .poster-item {
-  border: 4px solid #ff0072;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
-.second-vod .overview .poster-item .img {
-  background-size: cover;
-}
-.second-vod .overview .top {
-  display: table;
-}
-.second-vod .overview .top > div {
-  display: table-cell;
-  vertical-align: top;
-}
-.second-vod .overview .right {
-  padding-left: 30px;
-}
-.second-vod .overview .right .title {
-  font-family: dinRegular;
-  font-size: 36px;
-}
-.second-vod .overview .right .subtitle {
-  font-size: 24px;
-}
-.second-vod .overview .description {
-  font-size: 28px;
-}
-.second-vod .overview .starring .header {
-  font-size: 36px;
-  font-family: dinRegular;
-  border-bottom: 2px solid #323232;
-  margin-bottom: 30px;
-}
-.second-vod .overview .actors {
-  white-space: nowrap;
-  margin-top: 10px;
-}
-.second-vod .overview .actor {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  margin-right: 30px;
-  display: inline-block;
-  border: 2px solid #323232;
-  width: 124px;
-  height: 172px;
-}
-.second-vod .overview .stickers {
-  margin-top: 70px;
-}
-.second-vod .preview .container {
-  display: table;
-  position: absolute;
-  color: #ffffff;
-  top: 30px;
-  right: 30px;
-  width: 560px;
-  height: 580px;
-}
-.second-vod .preview .info {
-  display: table-cell;
-  vertical-align: middle;
-}
-.second-vod .preview .title {
-  font: 36px dinRegular;
-}
-.second-vod .preview .subtitle {
-  font: 24px dinLight;
-  color: #8e8e8e;
-}
-.second-vod .preview .description {
-  margin-top: 10px;
-  font: 28px dinLight;
-}
-.second-vod .preview .stickers {
-  width: 100%;
-  margin-top: 30px;
-}
-.second-vod .preview .audience {
-  margin-left: 60px;
-  height: 50px;
-  width: 252px;
-}
 /* /Users/youzi/dev/directv-fl/src/components/inactive/channel/style.less */
 .second-channel {
   height: 100%;
@@ -1770,6 +1788,117 @@ input[type="number"] {
 .isTablet .twitter {
   position: static;
   margin-top: 15px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/inactive/vod/style.less */
+.second-vod {
+  height: 100%;
+}
+.second-vod > div {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.second-vod .overview .overlay {
+  background: radial-gradient(circle farthest-corner at 95% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+}
+.second-vod .overview .container {
+  position: absolute;
+  top: 60px;
+  left: 30px;
+  width: 600px;
+}
+.second-vod .overview .container > div {
+  margin-bottom: 30px;
+}
+.second-vod .overview .poster-item {
+  border: 4px solid #ff0072;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.second-vod .overview .poster-item .img {
+  background-size: cover;
+}
+.second-vod .overview .top {
+  display: table;
+}
+.second-vod .overview .top > div {
+  display: table-cell;
+  vertical-align: top;
+}
+.second-vod .overview .right {
+  padding-left: 30px;
+}
+.second-vod .overview .right .title {
+  font-family: dinRegular;
+  font-size: 36px;
+}
+.second-vod .overview .right .subtitle {
+  font-size: 24px;
+}
+.second-vod .overview .description {
+  font-size: 28px;
+}
+.second-vod .overview .starring .header {
+  font-size: 36px;
+  font-family: dinRegular;
+  border-bottom: 2px solid #323232;
+  margin-bottom: 30px;
+}
+.second-vod .overview .actors {
+  white-space: nowrap;
+  margin-top: 10px;
+}
+.second-vod .overview .actor {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin-right: 30px;
+  display: inline-block;
+  border: 2px solid #323232;
+  width: 124px;
+  height: 172px;
+}
+.second-vod .overview .stickers {
+  margin-top: 70px;
+}
+.second-vod .preview .container {
+  display: table;
+  position: absolute;
+  color: #ffffff;
+  top: 30px;
+  right: 30px;
+  width: 560px;
+  height: 580px;
+}
+.second-vod .preview .info {
+  display: table-cell;
+  vertical-align: middle;
+}
+.second-vod .preview .title {
+  font: 36px dinRegular;
+}
+.second-vod .preview .subtitle {
+  font: 24px dinLight;
+  color: #8e8e8e;
+}
+.second-vod .preview .description {
+  margin-top: 10px;
+  font: 28px dinLight;
+}
+.second-vod .preview .stickers {
+  width: 100%;
+  margin-top: 30px;
+}
+.second-vod .preview .audience {
+  margin-left: 60px;
+  height: 50px;
+  width: 252px;
 }
 /* /Users/youzi/dev/directv-fl/src/components/active/discover/style.less */
 .first-discover .header {

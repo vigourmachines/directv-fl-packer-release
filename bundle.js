@@ -36,13 +36,13 @@ if( config.development && config.development.button )
             .native( false, false, function(url) {} , 'bundle' )
 }
 
-if( !remote )
+if( !remote ) 
 {
   var cases = require( 'vigour-js/browser/cases' )
     , ua = require( 'vigour-js/browser/ua' )
 
   require( './src/main' )
-
+  
 }
 },{"./src/main":"/Users/youzi/dev/directv-fl/src/main/index.js","/Users/youzi/dev/directv-fl//config":"/Users/youzi/dev/directv-fl/config.js","package.json":"package.json","vigour-js/browser/cases":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/browser/cases/index.js","vigour-js/browser/ua":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/browser/ua.js","vigour-js/util/debug":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/util/debug/index.js"}],"/Users/youzi/dev/directv-fl/node_modules/monotonic-timestamp/index.js":[function(require,module,exports){
 // If `Date.now()` is invoked twice quickly, it's possible to get two
@@ -27345,7 +27345,7 @@ module.exports={
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vigour-io/vigour-native-statusBar.git"
+    "url": "https://github.com/vigour-io/vigour-native-statusBar"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -27367,10 +27367,10 @@ module.exports={
   },
   "homepage": "https://github.com/vigour-io/vigour-native-statusBar",
   "dependencies": {
-    "gaston": "git+ssh://git@github.com/vigour-io/gaston.git",
-    "vigour-native": "git+ssh://git@github.com/vigour-io/vigour-native.git",
-    "vigour-fs": "git+ssh://git@github.com/vigour-io/vigour-fs.git",
-    "vigour-dev-tools": "git+ssh://git@github.com/vigour-io/vigour-dev-tools.git"
+    "gaston": "git+ssh://git@github.com:vigour-io/gaston.git",
+    "vigour-native": "git+ssh://git@github.com:vigour-io/vigour-native.git",
+    "vigour-fs": "git+ssh://git@github.com:vigour-io/vigour-fs.git",
+    "vigour-dev-tools": "git+ssh://git@github.com:vigour-io/vigour-dev-tools.git"
   },
   "optionalDependencies": {},
   "devDependencies": {
@@ -27389,7 +27389,7 @@ module.exports={
   "readme": "# vigour-native-statusBar\nAllows one to control the native status bar from a web app\n\n##Install\n`npm i vigour-native-statusBar`\n\n##Usage\nSee [test/index.js](test/index.js)\n\n##Building a set of native apps from your codebase\n- `npm run build`\n- `npm run build -- ios android`",
   "readmeFilename": "README.md",
   "_id": "vigour-native-statusBar@0.0.1",
-  "_shasum": "fa179ab6842c46079d6caa236f206de326630eec",
+  "_shasum": "52e7d185c70a9a7db8f0c32b67003395600bf839",
   "_from": "git+ssh://git@github.com/vigour-io/vigour-native-statusBar.git",
   "_resolved": "git+ssh://git@github.com/vigour-io/vigour-native-statusBar.git#588de4723cbde673fb22b4a28b70472045d3c8ff"
 }
@@ -27575,6 +27575,7 @@ var ua = require('vigour-js/browser/ua')
 var user = app.user
 var cases = app.cases
 var Value = require('vigour-js/value')
+var NOBRAND = require('vigour-js/util/config').nobrand
 var ua = require('vigour-js/browser/ua')
   // TODO: base this on device role
 // app.state.val = {
@@ -27627,12 +27628,32 @@ cases.$hasReceiver.on(function() {
 
 cases.$isIFE = ua.device === 'IFE'
 
-if(!cases.$isPhone){
-  cases.$isReceiver.on(function(){
-    app.state.val = this.val ? 'second' : 'inactive'
+cases.$hasBranding = !NOBRAND
+
+if(cases.$isPhone){
+  cases.$isActive.on(function(){
+    app.state.val = this.val
+      ? 'first'
+      : 'inactive'
   })
+}else{
+  cases.$isReceiver.on(function(){
+    app.state.val = this.val
+      ? 'second'
+      : 'inactive'
+  })
+
+  if(cases.$isTablet){
+    cases.$isActive.on(function(){
+      app.state.val = this.val
+        ? 'first'
+        : cases.$isReceiver.val
+          ? 'second'
+          : 'inactive'
+    })
+  }
 }
-},{"./":"/Users/youzi/dev/directv-fl/src/app/index.js","vigour-js/browser/ua":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/browser/ua.js","vigour-js/value":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/value/index.js"}],"/Users/youzi/dev/directv-fl/src/components/active/channel/index.js":[function(require,module,exports){
+},{"./":"/Users/youzi/dev/directv-fl/src/app/index.js","vigour-js/browser/ua":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/browser/ua.js","vigour-js/util/config":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/util/config/index.js","vigour-js/value":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/value/index.js"}],"/Users/youzi/dev/directv-fl/src/components/active/channel/index.js":[function(require,module,exports){
 require('./style.less')
 
 var Actors = require('/Users/youzi/dev/directv-fl/src/components/shared/actors')
@@ -27975,6 +27996,7 @@ module.exports = new Element( {
 } ).Class
 
 function getIndex( _this ){
+  if(!_this) return
   if (_this._index === void 0) {
     var siblings = _this.parent.children
     for (var i = siblings.length - 1; i >= 0; i--) {
@@ -28014,6 +28036,7 @@ var cases = app.cases
 var Topbar = require('./topbar')
 var Menu = require('./menu')
 var Remote = require('./remote')
+var Img = require('../shared/img')
 var Popup
 var First
 
@@ -28025,9 +28048,10 @@ if ( cases.$isPhone ) {
   var Switcher = require( './switcher' )
 
   First = new Element({
-    // w:app.w,
-    y:{val:0,translate:true},
-    // h:app.h,
+    y:{
+      val:0,
+      translate:true
+    },
     css: 'first-state',
     menu: new Menu({
       menu: app.menu
@@ -28075,7 +28099,6 @@ if ( cases.$isPhone ) {
         val: app.menu, 
         transform: function(val, cv) {
           return cv ? 'open' : ''
-
         }
       },
       x:{ 
@@ -28084,12 +28107,6 @@ if ( cases.$isPhone ) {
         animation:{ time: 12, easing:'outCubic' } 
       },
       topbar: new Topbar(),
-      // w: {
-      //   parent: 'w'
-      // },
-      // h:{
-      //   parent: 'h'
-      // },
       events: {
         down:function(e) {
           if(app.menu.val) {
@@ -28098,30 +28115,27 @@ if ( cases.$isPhone ) {
           }
         }
       },
-      switcher: new Switcher({
-        // w:app.w,
-        // h:{ val:app.h,sub:Topbar.base.h }
-      }),
-      miniplayer: new Remote({
-        
-      }) 
+      switcher: new Switcher(),
+      miniplayer: new Remote() 
     }
   }).Class
 
 } else {
 
-  First = new Element({
-    text: 'oops not phone in firstscreen'
+  First = new Img({
+    css:'first-mockup',
+    background:'img/app/ipad_episodes.png'
   }).Class
 
 }
 
 module.exports = First
-},{"./menu":"/Users/youzi/dev/directv-fl/src/components/active/menu/index.js","./popup":"/Users/youzi/dev/directv-fl/src/components/active/popup/index.js","./remote":"/Users/youzi/dev/directv-fl/src/components/active/remote/index.js","./style.less":"/Users/youzi/dev/directv-fl/src/components/active/style.less","./switcher":"/Users/youzi/dev/directv-fl/src/components/active/switcher/index.js","./topbar":"/Users/youzi/dev/directv-fl/src/components/active/topbar/index.js","vigour-js/app":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/index.js","vigour-js/app/ui/element":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/ui/element/index.js"}],"/Users/youzi/dev/directv-fl/src/components/active/menu/index.js":[function(require,module,exports){
+},{"../shared/img":"/Users/youzi/dev/directv-fl/src/components/shared/img/index.js","./menu":"/Users/youzi/dev/directv-fl/src/components/active/menu/index.js","./popup":"/Users/youzi/dev/directv-fl/src/components/active/popup/index.js","./remote":"/Users/youzi/dev/directv-fl/src/components/active/remote/index.js","./style.less":"/Users/youzi/dev/directv-fl/src/components/active/style.less","./switcher":"/Users/youzi/dev/directv-fl/src/components/active/switcher/index.js","./topbar":"/Users/youzi/dev/directv-fl/src/components/active/topbar/index.js","vigour-js/app":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/index.js","vigour-js/app/ui/element":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/ui/element/index.js"}],"/Users/youzi/dev/directv-fl/src/components/active/menu/index.js":[function(require,module,exports){
 require('./style.less')
 var Element = require( 'vigour-js/app/ui/element' )
 var app = require( 'vigour-js/app' )
 var Icon = require('../../shared/icon')
+var Img = require('../../shared/img')
 
 var MenuItem = new Element({
 	icon: new Icon({icon:'search'}),
@@ -28132,13 +28146,16 @@ var MenuItem = new Element({
 module.exports = exports = new Element({
 	w:app.w,
 	h:app.h,
-	logo: {},
+	logo: {
+		'!$hasBranding':{
+			opacity:0
+		}
+	},
 	css:'menu',
 	extend: {
 		menu:function(){},
 		navigation:function(){}
 	},
-	// scrollbar:'y',
 	append: [
 		MenuItem,
 		{ 'title.text':'search',
@@ -28172,9 +28189,17 @@ module.exports = exports = new Element({
 		}
 	],
 	footer: {
-		profile:{},
+		profile:new Img({
+			background:'img/app/profile.png',
+		 'events.click':function() {
+				app.popup.$userOrigin = 'profile'
+			}
+		}),
 		title: {
-			text:'Kevin Tague'
+			text:'Gideon van Dijk',
+			'events.click':function() {
+				app.popup.$userOrigin = 'profile'
+			}
 		},
 		settings: new Icon({
 			icon:'settings'
@@ -28207,7 +28232,7 @@ module.exports = exports = new Element({
 
 
 
-},{"../../shared/icon":"/Users/youzi/dev/directv-fl/src/components/shared/icon/index.js","./style.less":"/Users/youzi/dev/directv-fl/src/components/active/menu/style.less","vigour-js/app":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/index.js","vigour-js/app/ui/element":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/ui/element/index.js"}],"/Users/youzi/dev/directv-fl/src/components/active/menu/style.less":[function(require,module,exports){
+},{"../../shared/icon":"/Users/youzi/dev/directv-fl/src/components/shared/icon/index.js","../../shared/img":"/Users/youzi/dev/directv-fl/src/components/shared/img/index.js","./style.less":"/Users/youzi/dev/directv-fl/src/components/active/menu/style.less","vigour-js/app":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/index.js","vigour-js/app/ui/element":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/ui/element/index.js"}],"/Users/youzi/dev/directv-fl/src/components/active/menu/style.less":[function(require,module,exports){
 arguments[4]["/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/style.less"][0].apply(exports,arguments)
 },{}],"/Users/youzi/dev/directv-fl/src/components/active/movie/index.js":[function(require,module,exports){
 require('./style.less')
@@ -28774,12 +28799,15 @@ var Element = require( 'vigour-js/app/ui/element' )
 var app = require( 'vigour-js/app' )
 var Icon = require('../../shared/icon')
 
+var ASSETS = require('vigour-js/util/config').pointers.assets
+
 var Popup = require('../../shared/popup')
 
 var Actor
 var Volume
 var Devices
 var Remote
+var Profile
 
 //basis of popup is shared (also used for remote? or is remote a popup thing?)
 
@@ -28795,7 +28823,8 @@ module.exports = exports = new Popup({
       
       var val = this.val
       var element
-      var switcher = this._caller && this._caller.switcher
+      var popup = this._caller
+      var switcher = popup && popup.switcher
       var params = {}
       var topbarParams
 
@@ -28810,22 +28839,11 @@ module.exports = exports = new Popup({
         //word if this._contentType === 'actor' // doe dit -- popup.val word op gelistend in app
         element = Actor = Actor || require('./actor')
         params = { 
-          // carousel:{
-          //   container:{
-          //     $focus: this.from.get('focus',2)
-          //   },
-          //   dots:{
-          //     container:{
-          //       $focus: this.from.get('focus',2)
-          //     }
-          //   }
-          // },
           data: this.from
         }
       } else if(val === 'volume') { //listen to misc different!
         element = Volume = Volume || require('./volume')
       } else if(val === 'devices') { //listen to misc different!
-        // topbar.middle.text.val = app.deviceMessage
         element = Devices = Devices || require('./devices')
 
         var user = app.user
@@ -28839,28 +28857,45 @@ module.exports = exports = new Popup({
       } else if(val === 'remote') { //listen to misc different!
         element = Remote = Remote || require('./remote')
         topbarParams = {
-          // left:{
-          //   icon:'navDown'
-          // },
           middle:{
             text:{data:'title'},
             data:app.user.receiver.media
           }
-          // right:{
-          //   display:'none'
-          // }
         }
+      } else if(val === 'profile') { //listen to misc different!
+        popup.set({
+          css:'profile',
+          background:ASSETS + 'img/app/phone_profile.png',
+          topbar:{
+            opacity:0
+          },
+          switcher:{
+            display:'none'
+          }
+        })
       } 
 
       if(element) {
+        void(0)
+
         switcher.transition = {
           element: element,
-          $params: params
+          $params:params
         }
+
+        popup.set({
+          css:'',
+          topbar:{
+            opacity:1
+          },
+          switcher:{
+            display:'block'
+          }
+        })
       }
 
       if(topbarParams){
-        switcher.parent.topbar.set(topbarParams)
+        popup.topbar.set(topbarParams)
       }
 
       update()
@@ -28870,7 +28905,7 @@ module.exports = exports = new Popup({
 
 
 
-},{"../../shared/icon":"/Users/youzi/dev/directv-fl/src/components/shared/icon/index.js","../../shared/popup":"/Users/youzi/dev/directv-fl/src/components/shared/popup/index.js","./actor":"/Users/youzi/dev/directv-fl/src/components/active/popup/actor/index.js","./devices":"/Users/youzi/dev/directv-fl/src/components/active/popup/devices/index.js","./remote":"/Users/youzi/dev/directv-fl/src/components/active/popup/remote/index.js","./style.less":"/Users/youzi/dev/directv-fl/src/components/active/popup/style.less","./volume":"/Users/youzi/dev/directv-fl/src/components/active/popup/volume/index.js","vigour-js/app":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/index.js","vigour-js/app/ui/element":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/ui/element/index.js"}],"/Users/youzi/dev/directv-fl/src/components/active/popup/page.js":[function(require,module,exports){
+},{"../../shared/icon":"/Users/youzi/dev/directv-fl/src/components/shared/icon/index.js","../../shared/popup":"/Users/youzi/dev/directv-fl/src/components/shared/popup/index.js","./actor":"/Users/youzi/dev/directv-fl/src/components/active/popup/actor/index.js","./devices":"/Users/youzi/dev/directv-fl/src/components/active/popup/devices/index.js","./remote":"/Users/youzi/dev/directv-fl/src/components/active/popup/remote/index.js","./style.less":"/Users/youzi/dev/directv-fl/src/components/active/popup/style.less","./volume":"/Users/youzi/dev/directv-fl/src/components/active/popup/volume/index.js","vigour-js/app":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/index.js","vigour-js/app/ui/element":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/ui/element/index.js","vigour-js/util/config":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/util/config/index.js"}],"/Users/youzi/dev/directv-fl/src/components/active/popup/page.js":[function(require,module,exports){
 var Element = require('vigour-js/app/ui/element')
 
 //maybe add scroll, only when list is too large
@@ -30011,6 +30046,7 @@ var Switcher = require('vigour-js/app/ui/switcher')
   , Navigation = require('./navigation')
   , Player = require('./player')
   , Content = require('./content')
+  , Profile = require('./profile')
   , statusBar = app.cases.$isNative && require('vigour-native-statusBar')
 //secondscreen toplevel
 module.exports = exports = new Element({
@@ -30025,6 +30061,35 @@ module.exports = exports = new Element({
   extend:{
     $highlight:function( val ){},
     $preview:function( val ){},
+    $popup:function( val ){
+      var profile = app.profile
+      if( val && val.val === 'profile' ){
+        if( !profile ){
+          app.set({
+            profile:new Profile()
+          })
+          setTimeout(function(){
+            var p = app.profile
+            if(p){
+              p.y = 0
+            }
+          },20)
+        }else{
+          profile.y = 0
+        }
+
+        this.css = { addClass:'blur-out' }
+      }else if( profile ){
+        profile.y = -300
+        this.css = { removeClass:'blur-out' }
+        setTimeout(function(){
+          var p = app.profile
+          if(p && p.y.val){
+            p.remove()
+          }
+        },200)
+      }
+    },
     $page:function( val, stamp ){
 
 
@@ -30153,7 +30218,7 @@ module.exports = exports = new Element({
     }
   }
 }).Class
-},{"./content":"/Users/youzi/dev/directv-fl/src/components/inactive/content/index.js","./discover":"/Users/youzi/dev/directv-fl/src/components/inactive/discover/index.js","./navigation":"/Users/youzi/dev/directv-fl/src/components/inactive/navigation/index.js","./player":"/Users/youzi/dev/directv-fl/src/components/inactive/player/index.js","./search":"/Users/youzi/dev/directv-fl/src/components/inactive/search/index.js","./statusbar":"/Users/youzi/dev/directv-fl/src/components/inactive/statusbar/index.js","./style.less":"/Users/youzi/dev/directv-fl/src/components/inactive/style.less","/Users/youzi/dev/directv-fl//src/app":"/Users/youzi/dev/directv-fl/src/app/index.js","vigour-js/app/ui/element":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/ui/element/index.js","vigour-js/app/ui/switcher":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/ui/switcher/index.js","vigour-native-statusBar":"/Users/youzi/dev/directv-fl/node_modules/vigour-native-statusBar/index.js"}],"/Users/youzi/dev/directv-fl/src/components/inactive/navigation/index.js":[function(require,module,exports){
+},{"./content":"/Users/youzi/dev/directv-fl/src/components/inactive/content/index.js","./discover":"/Users/youzi/dev/directv-fl/src/components/inactive/discover/index.js","./navigation":"/Users/youzi/dev/directv-fl/src/components/inactive/navigation/index.js","./player":"/Users/youzi/dev/directv-fl/src/components/inactive/player/index.js","./profile":"/Users/youzi/dev/directv-fl/src/components/inactive/profile/index.js","./search":"/Users/youzi/dev/directv-fl/src/components/inactive/search/index.js","./statusbar":"/Users/youzi/dev/directv-fl/src/components/inactive/statusbar/index.js","./style.less":"/Users/youzi/dev/directv-fl/src/components/inactive/style.less","/Users/youzi/dev/directv-fl//src/app":"/Users/youzi/dev/directv-fl/src/app/index.js","vigour-js/app/ui/element":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/ui/element/index.js","vigour-js/app/ui/switcher":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/ui/switcher/index.js","vigour-native-statusBar":"/Users/youzi/dev/directv-fl/node_modules/vigour-native-statusBar/index.js"}],"/Users/youzi/dev/directv-fl/src/components/inactive/navigation/index.js":[function(require,module,exports){
 require('./style.less')
 
 var app = require('/Users/youzi/dev/directv-fl//src/app')
@@ -30665,6 +30730,21 @@ module.exports = new Element({
 
 },{"./style.less":"/Users/youzi/dev/directv-fl/src/components/inactive/player/style.less","/Users/youzi/dev/directv-fl//src/components/inactive/progress":"/Users/youzi/dev/directv-fl/src/components/inactive/progress/index.js","/Users/youzi/dev/directv-fl/src/components/shared/icon":"/Users/youzi/dev/directv-fl/src/components/shared/icon/index.js","/Users/youzi/dev/directv-fl/src/components/shared/img":"/Users/youzi/dev/directv-fl/src/components/shared/img/index.js","/Users/youzi/dev/directv-fl/src/components/shared/subtitle":"/Users/youzi/dev/directv-fl/src/components/shared/subtitle/index.js","vigour-js/app":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/index.js","vigour-js/app/ui/element":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/ui/element/index.js","vigour-js/app/ui/switcher":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/ui/switcher/index.js","vigour-js/browser/element/video":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/browser/element/video/index.js","vigour-js/browser/element/video/html5":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/browser/element/video/html5.js","vigour-js/browser/events/util":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/browser/events/util.js","vigour-js/util/config":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/util/config/index.js","vigour-native-statusBar":"/Users/youzi/dev/directv-fl/node_modules/vigour-native-statusBar/index.js"}],"/Users/youzi/dev/directv-fl/src/components/inactive/player/style.less":[function(require,module,exports){
 arguments[4]["/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/style.less"][0].apply(exports,arguments)
+},{}],"/Users/youzi/dev/directv-fl/src/components/inactive/profile/index.js":[function(require,module,exports){
+require('./style.less')
+
+var Img = require('../../shared/img')
+
+module.exports = new Img({
+	css:'second-profile',
+  background:'img/app/ss_profilebar.png',
+  y:{
+    translate:true,
+    val:-300
+  }
+}).Class
+},{"../../shared/img":"/Users/youzi/dev/directv-fl/src/components/shared/img/index.js","./style.less":"/Users/youzi/dev/directv-fl/src/components/inactive/profile/style.less"}],"/Users/youzi/dev/directv-fl/src/components/inactive/profile/style.less":[function(require,module,exports){
+arguments[4]["/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/style.less"][0].apply(exports,arguments)
 },{}],"/Users/youzi/dev/directv-fl/src/components/inactive/progress/index.js":[function(require,module,exports){
 require('./style.less')
 
@@ -30825,45 +30905,73 @@ var app = require('vigour-js/app')
 var Element = require('vigour-js/app/ui/element')
 var Icon = require('/Users/youzi/dev/directv-fl//src/components/shared/icon')
 
-module.exports = app.cases.$isIFE 
-? new Element({
-    css:'second-statusbar branded',
-    y:{
-      translate:true,
-      val:80,
-      multiply:app.hideStatusbar
-    },
-    partner:{
-      logo:{}
-    },
-    weather:{
-      add:new Icon({icon:'weather'}),
-      text:'Partially Clouded'
-    },
-    eta:{
-      add:new Icon({icon:'airplane'}),
-      text:'Time to Los Angeles: 6hr'
-    },
-    between:{},
-    directv:{
-      logo:{}
+module.exports = app.cases.$isIFE ? new Element({
+  css: 'second-statusbar branded',
+  y: {
+    translate: true,
+    val: 80,
+    multiply: app.hideStatusbar
+  },
+  partner: {
+    logo: {
+      '!$hasBranding': {
+        opacity: 0
+      }
     }
-  }).Class
-: new Element({
-    css:'second-statusbar',
-    y:{
-    	translate:true,
-      val:80,
-      multiply:app.hideStatusbar
-    },
-    directv:{
-      logo:{}
-    },
-    sender:{
-      icon:new Icon({icon:'phone'}),
-      title:{text:'controlled by iPhone'}
+  },
+  weather: {
+    add: new Icon({
+      icon: 'weather'
+    }),
+    text: 'Partially Clouded'
+  },
+  eta: {
+    add: new Icon({
+      icon: 'airplane'
+    }),
+    text: 'Time to Los Angeles: 6hr'
+  },
+  between: {},
+  directv: {
+    logo: {
+      '!$hasBranding': {
+        opacity: 0
+      }
     }
-  }).Class
+  }
+}).Class : new Element({
+  css: 'second-statusbar',
+  y: {
+    translate: true,
+    val: 80,
+    multiply: app.hideStatusbar
+  },
+  directv: {
+    logo: {
+      '!$hasBranding': {
+        opacity: 0
+      }
+    }
+  },
+  sender: {
+    pretitle: {
+      text: 'Controlled by'
+    },
+    title: {
+      text:{
+        val:function(){
+          var activeClient = app.user.activeClient.val
+          var device = activeClient && activeClient.device
+          return (device && device.val === 'tablet')
+            ? 'iPad'
+            : 'iPhone'
+        },
+        listen:app.user.activeClient
+      }
+    }
+  }
+}).Class
+
 },{"./style.less":"/Users/youzi/dev/directv-fl/src/components/inactive/statusbar/style.less","/Users/youzi/dev/directv-fl//src/components/shared/icon":"/Users/youzi/dev/directv-fl/src/components/shared/icon/index.js","vigour-js/app":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/index.js","vigour-js/app/ui/element":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/ui/element/index.js","vigour-js/app/ui/switcher":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/ui/switcher/index.js"}],"/Users/youzi/dev/directv-fl/src/components/inactive/statusbar/style.less":[function(require,module,exports){
 arguments[4]["/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/style.less"][0].apply(exports,arguments)
 },{}],"/Users/youzi/dev/directv-fl/src/components/inactive/style.less":[function(require,module,exports){
@@ -31285,6 +31393,7 @@ var Element = require('vigour-js/app/ui/element')
     , mutedAlt:'\ue62b'
     , locked:'\ue62c'
     , weather:'\ue62d'
+    , tvAlt:'\ue62e'
     , empty:' '
     }
 
@@ -32471,13 +32580,20 @@ arguments[4]["/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/style.less"
 },{}],"/Users/youzi/dev/directv-fl/src/components/shared/wallpaper/index.js":[function(require,module,exports){
 require('./style.less')
 
-var Element = require( 'vigour-js/app/ui/element' )
+var Img = require('../img')
+var cases = require('vigour-js/browser/cases')
 
-module.exports = new Element({
-  css:'ui-wallpaper'
+module.exports = new Img({
+  css: 'ui-wallpaper',
+  background: cases.$isPhone
+  	? 'img/app/phone_waiting.png'
+  	: 'img/app/waiting.png',
+  sprite:new Img({
+  	background:'img/app/cast_sprite.png'
+  })
 }).Class
 
-},{"./style.less":"/Users/youzi/dev/directv-fl/src/components/shared/wallpaper/style.less","vigour-js/app/ui/element":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/ui/element/index.js"}],"/Users/youzi/dev/directv-fl/src/components/shared/wallpaper/style.less":[function(require,module,exports){
+},{"../img":"/Users/youzi/dev/directv-fl/src/components/shared/img/index.js","./style.less":"/Users/youzi/dev/directv-fl/src/components/shared/wallpaper/style.less","vigour-js/browser/cases":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/browser/cases/index.js"}],"/Users/youzi/dev/directv-fl/src/components/shared/wallpaper/style.less":[function(require,module,exports){
 arguments[4]["/Users/youzi/dev/directv-fl/node_modules/vigour-js/app/style.less"][0].apply(exports,arguments)
 },{}],"/Users/youzi/dev/directv-fl/src/components/switcher/index.js":[function(require,module,exports){
 /*!
@@ -32502,35 +32618,40 @@ module.exports = exports = new Switcher( {
         var on = this._parent
         var switcher = on._caller
         var state = this.from.val
-        
-        if( state==='second' ) {
+        var params
 
-          switcher.transition = {
-            element:require('/Users/youzi/dev/directv-fl//src/components/inactive'),
-            $params:{ 
-              $highlight:on.highlight._val,
-              $preview:on.preview._val,
-              $media:app.user.receiver.media,
-              $page:on.navigation._val.page,
-              $content:on.navigation._val.content,
-              navigation:{
-                data:app.content.get('discover'),
-                $focus:on.focus._val,
-                container:{
-                  progress:{
-                    data:on.preview._val
-                  }
+        if( state === 'second' ) {
+
+          app.popup.from = false
+
+          params = {
+            $popup:app.popup,
+            $highlight:on.highlight._val,
+            $preview:on.preview._val,
+            $media:app.user.receiver.media,
+            $page:on.navigation._val.page,
+            $content:on.navigation._val.content,
+            navigation:{
+              data:app.content.get('discover'),
+              $focus:on.focus._val,
+              container:{
+                progress:{
+                  data:on.preview._val
                 }
-                // $progress:app.progress
               }
             }
           }
 
+          switcher.transition = {
+            element:require('/Users/youzi/dev/directv-fl//src/components/inactive'),
+            $params:params
+          }
+
         } else if( state==='first' ) {
 
-          switcher.transition = {
-            element:require('/Users/youzi/dev/directv-fl//src/components/active'),
-            $params:{
+          params = cases.$isTablet 
+            ? {}
+            : {
               menu: {
                 navigation: app.user.navigation
               },
@@ -32552,9 +32673,15 @@ module.exports = exports = new Switcher( {
                 }
               }
             }
+
+          switcher.transition = {
+            element:require('/Users/youzi/dev/directv-fl//src/components/active'),
+            $params:params
           }
 
         } else if( state === 'inactive'){
+        
+          app.popup.from = false
         
           switcher.transition = {
             element:Wallpaper,
@@ -32625,11 +32752,11 @@ var device = url.params.device && url.params.device.val || ua.device
 
 var clientinfo = {
   phone: {
-    title: 'Kevin\'s iPhone',
+    title: 'Gideon\'s iPhone',
     info: 'iPhone 6'
   },
   tablet: {
-    title: 'Kevin\'s iPad',
+    title: 'Gideon\'s iPad',
     info: 'iPad 2',
     device: 'tablet'
   },
@@ -32727,9 +32854,8 @@ if(ua.device === 'desktop') {
   cases.$isDesktop = false
   cases.$isTv = true
   window.INACTIVE = true
-} else if(ua.device === 'ipad' || ua.device === 'tablet' || ua.device === 'IFE') {
+} else if(ua.device === 'IFE') {
   window.INACTIVE = true
-
 }
 
 },{"vigour-js/browser/cases":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/browser/cases/index.js","vigour-js/browser/ua":"/Users/youzi/dev/directv-fl/node_modules/vigour-js/browser/ua.js"}],"/Users/youzi/dev/gaston/node_modules/browserify/lib/_empty.js":[function(require,module,exports){
@@ -33833,159 +33959,6 @@ function hasOwnProperty(obj, prop) {
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
 },{"./support/isBuffer":"/Users/youzi/dev/gaston/node_modules/browserify/node_modules/util/support/isBufferBrowser.js","_process":"/Users/youzi/dev/gaston/node_modules/browserify/node_modules/process/browser.js","inherits":"/Users/youzi/dev/gaston/node_modules/browserify/node_modules/inherits/inherits_browser.js"}],"package.json":[function(require,module,exports){
-module.exports={
-  "name": "directv-fl",
-  "version": "1.0.6",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "startGaston": "./node_modules/.bin/gaston dev",
-    "start": "npm run startGaston",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "symlink": "mkdir -p node_modules; ln -sf $(pwd) $(pwd)/node_modules",
-    "startHub": "./node_modules/vigour-hub/bin/hub -d -c directv",
-    "prestart": "npm run startHub &",
-    "build": "vNative build",
-    "release": "packer -r -c package.json,.package.json"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vigour-io/directv-fl.git"
-  },
-  "author": "Vigour",
-  "bugs": {
-    "url": "https://github.com/vigour-io/directv-fl/issues"
-  },
-  "homepage": "https://github.com/vigour-io/directv-fl",
-  "dependencies": {
-    "through2": "*",
-    "lodash": "3.2.0",
-    "monotonic-timestamp": "0.0.9",
-    "promise": "^7.0.1",
-    "vigour-js": "git+ssh://git@github.com:vigour-io/vigour-js.git#directv"
-  },
-  "devDependencies": {
-    "vigour-native": "git+ssh://git@github.com:vigour-io/vigour-native.git",
-    "vigour-native-statusBar": "git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git",
-    "vigour-packer-server": "git+ssh://git@github.com:vigour-io/vigour-packer-server.git",
-    "vigour-hub": "git+ssh://git@github.com:vigour-io/vigour-hub.git#directv",
-    "gaston": "git+ssh://git@github.com:vigour-io/gaston.git"
-  },
-  "vigour": {
-    "cloud": "http://52.8.40.195:80",
-    "development": {
-      "button": false
-    },
-    "pointers": {
-      "assets": "http://devassets.vigour.io/"
-    },
-    "packer": {
-      "web": "index.html",
-      "assets": {
-        "bundle.js": true,
-        "build.js": true,
-        "bundle.css": true,
-        "index.html": true,
-        "assets": "*",
-        "fonts.css": true
-      },
-      "git": {
-        "owner": "vigourmachines",
-        "repo": "directv-fl"
-      },
-      "mail": {
-        "fromAddress": "shawn@vigour.io",
-        "to": "shawn@vigour.io"
-      },
-      "slack": {},
-      "server": {}
-    },
-    "native": {
-      "platforms": {
-        "ios": {
-          "productName": "Direct TV - Future Land",
-          "organizationName": "Vigour",
-          "organizationIdentifier": "io.vigour.directv-fl",
-          "buildNumber": "1",
-          "appIndexPath": "index.html",
-          "appUrlIdentifier": "com.directv-fl.org",
-          "appUrlScheme": "directv-fl"
-        }
-      }
-    },
-    "branches": {
-      "master": {
-        "pointers": {
-          "img": "http://jim.local/assets/",
-          "assets": "http://jim.local/assets/"
-        }
-      },
-      "youzi-dev": {
-        "pointers": {
-          "img": "http://jim.local/assets/",
-          "assets": "http://jim.local/assets/"
-        }
-      },
-      "marcus-dev": {
-        "cloud": "http://localhost:10001",
-        "uscloud": "http://54.173.192.57:10001"
-      },
-      "shawn-dev": {
-        "cloud": "http://192.168.2.18:10001"
-      },
-      "production": {
-        "cloud": "http://52.8.23.45:80"
-      },
-      "airplane": {
-        "cloud": "http://52.8.40.195:80"
-      },
-      "ramon": {
-        "cloud": "http://54.173.192.57:80/",
-        "pointers": {
-          "assets": "http://dtv-us1assets.vigour.io/"
-        }
-      },
-      "livingroom": {
-        "cloud": "http://directv-fl-demo.local:10001",
-        "pointers": {
-          "assets": "http://directv-fl-demo.local/"
-        }
-      }
-    }
-  },
-  "gaston": {
-    "port": 8080,
-    "socket-port": 9000,
-    "no-auto-reload": false,
-    "no-package": false,
-    "bundle": "./",
-    "build": "./",
-    "browserify": {
-      "transforms": [{
-        "path": "vigour-js/util/inform-transform",
-        "options": {
-          "global": "false"
-        }
-      }]
-    },
-    "less": {
-      "options": {
-        "strictMath": true
-      }
-    },
-    "remote-logging": true,
-    "require-paths": {
-      "dtv": "src",
-      "shared": "src/components/shared",
-      "dtv-components": "src/components",
-      "dtv-active": "src/components/active",
-      "dtv-item": "src/components/active/content-item",
-      "dtv-channel": "src/components/active/content-item/channel",
-      "dtv-episode": "src/components/active/content-item/episode",
-      "dtv-movie": "src/components/active/content-item/movie"
-    }
-  }
-}
-
+module.exports={"name":"directv-fl","version":"1.0.13","description":"","main":"index.js","scripts":{"startGaston":"./node_modules/.bin/gaston dev","start":"npm run startGaston","test":"echo \"Error: no test specified\" && exit 1","symlink":"mkdir -p node_modules; ln -sf $(pwd) $(pwd)/node_modules","startHub":"./node_modules/vigour-hub/bin/hub -d -c directv","prestart":"npm run startHub &","build":"vNative build","release":"packer -r -c package.json,.package.json"},"repository":{"type":"git","url":"https://github.com/vigour-io/directv-fl.git","branch":"airplane"},"author":"Vigour","bugs":{"url":"https://github.com/vigour-io/directv-fl/issues"},"homepage":"https://github.com/vigour-io/directv-fl","dependencies":{"through2":"*","lodash":"3.2.0","monotonic-timestamp":"0.0.9","promise":"^7.0.1","vigour-js":"git+ssh://git@github.com:vigour-io/vigour-js.git#directv"},"devDependencies":{"vigour-native":"git+ssh://git@github.com:vigour-io/vigour-native.git","vigour-native-statusBar":"git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git","vigour-packer-server":"git+ssh://git@github.com:vigour-io/vigour-packer-server.git","vigour-hub":"git+ssh://git@github.com:vigour-io/vigour-hub.git#directv","gaston":"git+ssh://git@github.com:vigour-io/gaston.git"},"vigour":{"cloud":"http://52.8.40.195:80","development":{"button":false},"pointers":{"assets":"http://dtv-us1assets.vigour.io/"},"packer":{"web":"index.html","assets":{"bundle.js":true,"build.js":true,"bundle.css":true,"index.html":true,"assets":"*","fonts.css":true},"git":{"owner":"vigour-io","repo":"directv-fl"},"mail":{"fromAddress":"shawn@vigour.io","to":"shawn@vigour.io"},"slack":{},"server":{}},"native":{"platforms":{"ios":{"productName":"Direct TV - Future Land","organizationName":"Vigour","organizationIdentifier":"io.vigour.directv-fl","buildNumber":"1","appIndexPath":"index.html","appUrlIdentifier":"com.directv-fl.org","appUrlScheme":"directv-fl"}}}},"gaston":{"port":8080,"socket-port":9000,"no-auto-reload":false,"no-package":false,"bundle":"./","build":"./","browserify":{"transforms":[{"path":"package-branch-config","options":{"section":"vigour"}}]},"less":{"options":{"strictMath":true}},"require-paths":{"dtv":"src","shared":"src/components/shared","dtv-components":"src/components","dtv-active":"src/components/active","dtv-item":"src/components/active/content-item","dtv-channel":"src/components/active/content-item/channel","dtv-episode":"src/components/active/content-item/episode","dtv-movie":"src/components/active/content-item/movie"}},"sha":"1.0.13"}
 },{}]},{},["/Users/youzi/dev/directv-fl/index.js"])
 //# sourceMappingURL=bundle.js.map
