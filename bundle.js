@@ -28876,15 +28876,13 @@ module.exports = exports = new Popup({
       } 
 
       if(element) {
-        void(0)
-
         switcher.transition = {
           element: element,
           $params:params
         }
 
         popup.set({
-          css:'',
+          css:'popup',
           topbar:{
             opacity:1
           },
@@ -29159,7 +29157,8 @@ require('./style.less')
 
 module.exports = exports = new Page({
 	w:app.w,
-	css:'volume',
+	// rotate:5,
+	// css:'popup volume',
 	top: {
 		title: { text: '100%' },
 		volume: new Icon({
@@ -33959,6 +33958,6 @@ function hasOwnProperty(obj, prop) {
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
 },{"./support/isBuffer":"/Users/youzi/dev/gaston/node_modules/browserify/node_modules/util/support/isBufferBrowser.js","_process":"/Users/youzi/dev/gaston/node_modules/browserify/node_modules/process/browser.js","inherits":"/Users/youzi/dev/gaston/node_modules/browserify/node_modules/inherits/inherits_browser.js"}],"package.json":[function(require,module,exports){
-module.exports={"name":"directv-fl","version":"1.0.13","description":"","main":"index.js","scripts":{"startGaston":"./node_modules/.bin/gaston dev","start":"npm run startGaston","test":"echo \"Error: no test specified\" && exit 1","symlink":"mkdir -p node_modules; ln -sf $(pwd) $(pwd)/node_modules","startHub":"./node_modules/vigour-hub/bin/hub -d -c directv","prestart":"npm run startHub &","build":"vNative build","release":"packer -r -c package.json,.package.json"},"repository":{"type":"git","url":"https://github.com/vigour-io/directv-fl.git","branch":"airplane"},"author":"Vigour","bugs":{"url":"https://github.com/vigour-io/directv-fl/issues"},"homepage":"https://github.com/vigour-io/directv-fl","dependencies":{"through2":"*","lodash":"3.2.0","monotonic-timestamp":"0.0.9","promise":"^7.0.1","vigour-js":"git+ssh://git@github.com:vigour-io/vigour-js.git#directv"},"devDependencies":{"vigour-native":"git+ssh://git@github.com:vigour-io/vigour-native.git","vigour-native-statusBar":"git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git","vigour-packer-server":"git+ssh://git@github.com:vigour-io/vigour-packer-server.git","vigour-hub":"git+ssh://git@github.com:vigour-io/vigour-hub.git#directv","gaston":"git+ssh://git@github.com:vigour-io/gaston.git"},"vigour":{"cloud":"http://52.8.40.195:80","development":{"button":false},"pointers":{"assets":"http://dtv-us1assets.vigour.io/"},"packer":{"web":"index.html","assets":{"bundle.js":true,"build.js":true,"bundle.css":true,"index.html":true,"assets":"*","fonts.css":true},"git":{"owner":"vigour-io","repo":"directv-fl"},"mail":{"fromAddress":"shawn@vigour.io","to":"shawn@vigour.io"},"slack":{},"server":{}},"native":{"platforms":{"ios":{"productName":"Direct TV - Future Land","organizationName":"Vigour","organizationIdentifier":"io.vigour.directv-fl","buildNumber":"1","appIndexPath":"index.html","appUrlIdentifier":"com.directv-fl.org","appUrlScheme":"directv-fl"}}}},"gaston":{"port":8080,"socket-port":9000,"no-auto-reload":false,"no-package":false,"bundle":"./","build":"./","browserify":{"transforms":[{"path":"package-branch-config","options":{"section":"vigour"}}]},"less":{"options":{"strictMath":true}},"require-paths":{"dtv":"src","shared":"src/components/shared","dtv-components":"src/components","dtv-active":"src/components/active","dtv-item":"src/components/active/content-item","dtv-channel":"src/components/active/content-item/channel","dtv-episode":"src/components/active/content-item/episode","dtv-movie":"src/components/active/content-item/movie"}},"sha":"1.0.13"}
+module.exports={"name":"directv-fl","version":"1.0.14","description":"","main":"index.js","scripts":{"startGaston":"./node_modules/.bin/gaston dev","start":"npm run startGaston","test":"echo \"Error: no test specified\" && exit 1","symlink":"mkdir -p node_modules; ln -sf $(pwd) $(pwd)/node_modules","startHub":"./node_modules/vigour-hub/bin/hub -d -c directv","prestart":"npm run startHub &","build":"vNative build","release":"packer -r -c package.json,.package.json"},"repository":{"type":"git","url":"https://github.com/vigour-io/directv-fl.git","branch":"airplane"},"author":"Vigour","bugs":{"url":"https://github.com/vigour-io/directv-fl/issues"},"homepage":"https://github.com/vigour-io/directv-fl","dependencies":{"through2":"*","lodash":"3.2.0","monotonic-timestamp":"0.0.9","promise":"^7.0.1","vigour-js":"git+ssh://git@github.com:vigour-io/vigour-js.git#directv"},"devDependencies":{"vigour-native":"git+ssh://git@github.com:vigour-io/vigour-native.git","vigour-native-statusBar":"git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git","vigour-packer-server":"git+ssh://git@github.com:vigour-io/vigour-packer-server.git","vigour-hub":"git+ssh://git@github.com:vigour-io/vigour-hub.git#directv","gaston":"git+ssh://git@github.com:vigour-io/gaston.git"},"vigour":{"cloud":"http://52.8.40.195:80","development":{"button":false},"pointers":{"assets":"http://dtv-us1assets.vigour.io/"},"packer":{"web":"index.html","assets":{"bundle.js":true,"build.js":true,"bundle.css":true,"index.html":true,"assets":"*","fonts.css":true},"git":{"owner":"vigour-io","repo":"directv-fl"},"mail":{"fromAddress":"shawn@vigour.io","to":"shawn@vigour.io"},"slack":{},"server":{}},"native":{"platforms":{"ios":{"productName":"Direct TV - Future Land","organizationName":"Vigour","organizationIdentifier":"io.vigour.directv-fl","buildNumber":"1","appIndexPath":"index.html","appUrlIdentifier":"com.directv-fl.org","appUrlScheme":"directv-fl"}}}},"gaston":{"port":8080,"socket-port":9000,"no-auto-reload":false,"no-package":false,"bundle":"./","build":"./","browserify":{"transforms":[{"path":"package-branch-config","options":{"section":"vigour"}}]},"less":{"options":{"strictMath":true}},"require-paths":{"dtv":"src","shared":"src/components/shared","dtv-components":"src/components","dtv-active":"src/components/active","dtv-item":"src/components/active/content-item","dtv-channel":"src/components/active/content-item/channel","dtv-episode":"src/components/active/content-item/episode","dtv-movie":"src/components/active/content-item/movie"}},"sha":"1.0.14"}
 },{}]},{},["/Users/youzi/dev/directv-fl/index.js"])
 //# sourceMappingURL=bundle.js.map

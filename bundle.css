@@ -663,82 +663,6 @@ body {
 .second-statusbar.branded .weather {
   width: 240px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/navigation/style.less */
-.second-navigation {
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-  height: 460px;
-  bottom: 80px;
-  color: #ffffff;
-  overflow: hidden;
-}
-.second-navigation .container {
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  -moz-transition: -moz-transform 0.2s ease-out;
-  -ms-transition: -ms-transform 0.2s ease-out;
-  -o-transition: -o-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
-  margin-top: 40px;
-  height: 100%;
-  background: #181818;
-  border-top: 1px solid #000000;
-}
-.second-navigation .progress {
-  -webkit-transition: all 0.4s ease-out;
-  -moz-transition: all 0.4s ease-out;
-  -ms-transition: all 0.4s ease-out;
-  -o-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
-  margin-top: -40px;
-}
-.second-navigation .percentage {
-  padding: 0 5px;
-  font-family: dinRegular;
-  text-align: right;
-  margin-top: -40px;
-  font-size: 28px;
-}
-.second-navigation .bar {
-  padding: 15px 30px;
-}
-.second-navigation .bar > div {
-  vertical-align: middle;
-  display: inline-block;
-}
-.second-navigation .arrows .ui-icon {
-  font-size: 48px;
-}
-.second-navigation .bar .title {
-  font-family: dinRegular;
-  font-size: 36px;
-  width: 430px;
-  height: 40px;
-  line-height: 40px;
-  position: relative;
-  overflow: hidden;
-}
-.second-navigation .bar .title > div {
-  position: absolute;
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  -moz-transition: -moz-transform 0.2s ease-out;
-  -ms-transition: -ms-transform 0.2s ease-out;
-  -o-transition: -o-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
-}
-.second-navigation .lists {
-  position: relative;
-  overflow: hidden;
-  height: calc(100% - 80px);
-}
-.second-navigation .lists > div {
-  position: absolute;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  -moz-transition: -moz-transform 0.3s ease-out;
-  -ms-transition: -ms-transform 0.3s ease-out;
-  -o-transition: -o-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-}
 /* /Users/youzi/dev/directv-fl/src/components/inactive/player/style.less */
 .second-player {
   position: relative;
@@ -869,6 +793,82 @@ body {
   border: 2px solid #323232;
   width: 625px;
   height: 350px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/inactive/navigation/style.less */
+.second-navigation {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 460px;
+  bottom: 80px;
+  color: #ffffff;
+  overflow: hidden;
+}
+.second-navigation .container {
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  -o-transition: -o-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  margin-top: 40px;
+  height: 100%;
+  background: #181818;
+  border-top: 1px solid #000000;
+}
+.second-navigation .progress {
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -ms-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  margin-top: -40px;
+}
+.second-navigation .percentage {
+  padding: 0 5px;
+  font-family: dinRegular;
+  text-align: right;
+  margin-top: -40px;
+  font-size: 28px;
+}
+.second-navigation .bar {
+  padding: 15px 30px;
+}
+.second-navigation .bar > div {
+  vertical-align: middle;
+  display: inline-block;
+}
+.second-navigation .arrows .ui-icon {
+  font-size: 48px;
+}
+.second-navigation .bar .title {
+  font-family: dinRegular;
+  font-size: 36px;
+  width: 430px;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.second-navigation .bar .title > div {
+  position: absolute;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  -o-transition: -o-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+}
+.second-navigation .lists {
+  position: relative;
+  overflow: hidden;
+  height: calc(100% - 80px);
+}
+.second-navigation .lists > div {
+  position: absolute;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -ms-transition: -ms-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/profile/style.less */
 .second-profile {
@@ -1235,6 +1235,11 @@ input[type="number"] {
   top: 0;
   background-size: contain;
 }
+/* /Users/youzi/dev/directv-fl/src/components/inactive/progress/style.less */
+.second-progress {
+  border-top: 40px solid #ff0072;
+  border-right: 20px solid transparent;
+}
 /* /Users/youzi/dev/directv-fl/src/components/shared/list/style.less */
 .base-list {
   white-space: nowrap;
@@ -1454,11 +1459,6 @@ input[type="number"] {
 .notIsPhone .poster-item {
   width: 186px;
   height: 276px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/inactive/progress/style.less */
-.second-progress {
-  border-top: 40px solid #ff0072;
-  border-right: 20px solid transparent;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/cover/style.less */
 .second-cover {
@@ -2520,6 +2520,13 @@ body {
   border: 0;
   text-align: left;
 }
+/* /Users/youzi/dev/directv-fl/src/components/shared/actors/style.less */
+.ui-actors .body {
+  margin-right: 15px;
+  border: 0;
+  white-space: nowrap;
+  height: auto;
+}
 /* /Users/youzi/dev/directv-fl/src/components/shared/bar/style.less */
 .ui-bar {
   position: relative;
@@ -2615,34 +2622,6 @@ body {
 .bar.program2 {
   border-top: 1px solid #000;
 }
-/* /Users/youzi/dev/directv-fl/src/components/shared/actors/style.less */
-.ui-actors .body {
-  margin-right: 15px;
-  border: 0;
-  white-space: nowrap;
-  height: auto;
-}
-/* /Users/youzi/dev/directv-fl/src/components/shared/recommendations/style.less */
-.ui-recommendations {
-  padding-bottom: 15px;
-}
-.ui-recommendations .body {
-  border: 0;
-  white-space: nowrap;
-  height: auto;
-}
-.ui-recommendation {
-  display: inline-block;
-  border: 1px solid grey;
-  border-radius: 3px;
-  width: 93px;
-  height: 132px;
-  margin-left: 15px;
-  text-align: left;
-  position: relative;
-  white-space: normal;
-  vertical-align: top;
-}
 /* /Users/youzi/dev/directv-fl/src/components/active/content/style.less */
 .content-item {
   -webkit-backface-visibility: hidden;
@@ -2697,6 +2676,27 @@ body {
 }
 .content-item .holder.swiped {
   margin-bottom: -210px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/shared/recommendations/style.less */
+.ui-recommendations {
+  padding-bottom: 15px;
+}
+.ui-recommendations .body {
+  border: 0;
+  white-space: nowrap;
+  height: auto;
+}
+.ui-recommendation {
+  display: inline-block;
+  border: 1px solid grey;
+  border-radius: 3px;
+  width: 93px;
+  height: 132px;
+  margin-left: 15px;
+  text-align: left;
+  position: relative;
+  white-space: normal;
+  vertical-align: top;
 }
 /* /Users/youzi/dev/directv-fl/src/components/shared/seekbar/style.less */
 @keyframes moveCandyBar {
@@ -2763,65 +2763,6 @@ body {
   background-image: repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 4%, transparent 4%, transparent 8%);
   -webkit-animation: moveCandyBar 15s linear infinite;
   animation: moveCandyBar 15s linear infinite;
-}
-/* /Users/youzi/dev/directv-fl/src/components/shared/poll/style.less */
-.ui-poll .header {
-  border-bottom: 0px;
-}
-.ui-voterow {
-  margin-left: 15px;
-  width: calc(100% - 30px);
-  display: table;
-  table-layout: fixed;
-}
-.ui-voterow .left {
-  width: 60px;
-  display: table-cell;
-  vertical-align: middle;
-  padding-top: 8px;
-}
-.ui-voterow .logo {
-  width: 40px;
-  height: 40px;
-  display: inline-block;
-  border-radius: 50%;
-  border: 2px solid white;
-  background-size: contain;
-}
-.ui-voterow .logo:active {
-  border: 2px solid #ff0072;
-}
-.ui-voterow .right {
-  display: table-cell;
-  vertical-align: middle;
-}
-.ui-voterow .count {
-  width: 100%;
-  position: relative;
-}
-.ui-voterow .team {
-  display: inline-block;
-  width: 50%;
-}
-.ui-voterow .votes {
-  display: inline-block;
-  width: 50%;
-  text-align: right;
-  font-family: dinBold;
-  font-size: 10px;
-}
-.ui-voterow .votefiller {
-  width: 100%;
-  margin-top: 10px;
-}
-.ui-voterow.first {
-  padding-bottom: 15px;
-}
-.ui-voterow.first .right .ui-seekbar .seek {
-  background-color: #ffeb00;
-}
-.ui-voterow.second .right .ui-seekbar .seek {
-  background-color: #0081cf;
 }
 /* /Users/youzi/dev/directv-fl/src/components/shared/statistics/style.less */
 .ui-score .info,
@@ -2953,6 +2894,65 @@ body {
 }
 .ui-statistics > .body .teams .right {
   right: 20px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/shared/poll/style.less */
+.ui-poll .header {
+  border-bottom: 0px;
+}
+.ui-voterow {
+  margin-left: 15px;
+  width: calc(100% - 30px);
+  display: table;
+  table-layout: fixed;
+}
+.ui-voterow .left {
+  width: 60px;
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 8px;
+}
+.ui-voterow .logo {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-size: contain;
+}
+.ui-voterow .logo:active {
+  border: 2px solid #ff0072;
+}
+.ui-voterow .right {
+  display: table-cell;
+  vertical-align: middle;
+}
+.ui-voterow .count {
+  width: 100%;
+  position: relative;
+}
+.ui-voterow .team {
+  display: inline-block;
+  width: 50%;
+}
+.ui-voterow .votes {
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+  font-family: dinBold;
+  font-size: 10px;
+}
+.ui-voterow .votefiller {
+  width: 100%;
+  margin-top: 10px;
+}
+.ui-voterow.first {
+  padding-bottom: 15px;
+}
+.ui-voterow.first .right .ui-seekbar .seek {
+  background-color: #ffeb00;
+}
+.ui-voterow.second .right .ui-seekbar .seek {
+  background-color: #0081cf;
 }
 /* /Users/youzi/dev/directv-fl/src/components/shared/trivia/style.less */
 .ui-trivia {
