@@ -425,6 +425,21 @@ body {
     background-position-y: -200px;
   }
 }
+/* /Users/youzi/dev/directv-fl/src/components/inactive/discover/style.less */
+.second-discover {
+  height: 100%;
+}
+.second-discover > div {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
 /* /Users/youzi/dev/directv-fl/src/components/inactive/search/style.less */
 .second-search {
   width: 100%;
@@ -564,21 +579,6 @@ body {
 }
 .notIsTv .second-search .topresult .description {
   padding-top: 15px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/inactive/discover/style.less */
-.second-discover {
-  height: 100%;
-}
-.second-discover > div {
-  -webkit-transition: opacity 0.2s ease-out;
-  -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
-  -o-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/statusbar/style.less */
 .second-statusbar {
@@ -1460,31 +1460,6 @@ input[type="number"] {
   border-top: 40px solid #ff0072;
   border-right: 20px solid transparent;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/cover/style.less */
-.second-cover {
-  width: 100%;
-  height: 100%;
-}
-.second-cover .bg {
-  -webkit-transition: opacity 0.5s ease-out;
-  -moz-transition: opacity 0.5s ease-out;
-  -ms-transition: opacity 0.5s ease-out;
-  -o-transition: opacity 0.5s ease-out;
-  transition: opacity 0.5s ease-out;
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-.second-cover .overlay {
-  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
 /* /Users/youzi/dev/directv-fl/src/components/inactive/channel/style.less */
 .second-channel {
   height: 100%;
@@ -1788,6 +1763,31 @@ input[type="number"] {
 .isTablet .twitter {
   position: static;
   margin-top: 15px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/inactive/cover/style.less */
+.second-cover {
+  width: 100%;
+  height: 100%;
+}
+.second-cover .bg {
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -ms-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.second-cover .overlay {
+  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/vod/style.less */
 .second-vod {
@@ -2098,6 +2098,26 @@ input[type="number"] {
   padding-bottom: 30px;
   color: #8e8e8e;
 }
+/* /Users/youzi/dev/directv-fl/src/components/active/popup/actor/style.less */
+.popup .carousel {
+  position: relative;
+}
+.popup .carousel .img {
+  width: 375px;
+  height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.popup .carousel .img .overlay {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(23, 23, 23, 0) 30%, #171717 100%);
+}
+.popup .famous .header {
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
 /* /Users/youzi/dev/directv-fl/src/components/active/popup/volume/style.less */
 .popup.volume {
   z-index: 10;
@@ -2158,26 +2178,6 @@ input[type="number"] {
   text-align: right;
   padding-right: 15px;
   opacity: 0.2;
-}
-/* /Users/youzi/dev/directv-fl/src/components/active/popup/actor/style.less */
-.popup .carousel {
-  position: relative;
-}
-.popup .carousel .img {
-  width: 375px;
-  height: 250px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.popup .carousel .img .overlay {
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(23, 23, 23, 0) 30%, #171717 100%);
-}
-.popup .famous .header {
-  margin-left: 15px;
-  margin-bottom: 15px;
 }
 /* /Users/youzi/dev/directv-fl/src/components/active/popup/devices/style.less */
 .active.devices {
