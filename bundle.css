@@ -882,6 +882,81 @@ body {
   -o-transition: -o-transform 0.2s ease-out;
   transition: transform 0.2s ease-out;
 }
+/* /Users/youzi/dev/directv-fl/src/components/active/menu/style.less */
+.menu {
+  font-family: 'dinLight';
+  background-color: #000000;
+  color: white;
+  background-image: url('../../../assets/img/app/bg_menu.png');
+  background-size: cover;
+}
+.menu .logo {
+  margin-left: 75px;
+  width: 150px;
+  height: 26px;
+  margin-top: 38px;
+  margin-bottom: 60px;
+  background-image: url('../../../assets/img/app/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.menu .menu-item {
+  display: table;
+  padding: 15px 0px 15px 0px;
+}
+.menu .menu-item .ui-icon {
+  margin-left: 30px;
+  margin-top: 5px;
+  color: #8e8e8e;
+}
+.menu .menu-item .title {
+  padding-left: 15px;
+  display: table-cell;
+  font-size: 22px;
+  line-height: 0px;
+  font-weight: bold;
+  text-transform: capitalize;
+  vertical-align: middle;
+  color: #8e8e8e;
+}
+.menu-item.focused {
+  border-left: 5px solid #ff0072;
+}
+.menu-item.focused .ui-icon {
+  margin-left: 25px;
+  color: #fff;
+}
+.menu-item.focused .title {
+  color: #fff;
+}
+.menu .footer {
+  bottom: 0;
+  position: absolute;
+  width: 325px;
+  padding: 0px 30px 15px 30px;
+}
+.menu .footer .profile {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  border-radius: 2px;
+  border: 1px solid #fff;
+  display: table-cell;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.menu .footer .title {
+  display: table-cell;
+  vertical-align: middle;
+  width: 195px;
+  padding-left: 10px;
+}
+.menu .footer .settings {
+  display: table-cell;
+  vertical-align: middle;
+  color: #8e8e8e;
+}
 /* /Users/youzi/dev/directv-fl/src/components/active/topbar/style.less */
 .topbar {
   -webkit-transition: background-color 0.2s ease-out;
@@ -971,81 +1046,6 @@ body {
   display: table-cell;
   -webkit-appearance: none;
   margin-top: 5px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/active/menu/style.less */
-.menu {
-  font-family: 'dinLight';
-  background-color: #000000;
-  color: white;
-  background-image: url('../../../assets/img/app/bg_menu.png');
-  background-size: cover;
-}
-.menu .logo {
-  margin-left: 75px;
-  width: 150px;
-  height: 26px;
-  margin-top: 38px;
-  margin-bottom: 60px;
-  background-image: url('../../../assets/img/app/logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.menu .menu-item {
-  display: table;
-  padding: 15px 0px 15px 0px;
-}
-.menu .menu-item .ui-icon {
-  margin-left: 30px;
-  margin-top: 5px;
-  color: #8e8e8e;
-}
-.menu .menu-item .title {
-  padding-left: 15px;
-  display: table-cell;
-  font-size: 22px;
-  line-height: 0px;
-  font-weight: bold;
-  text-transform: capitalize;
-  vertical-align: middle;
-  color: #8e8e8e;
-}
-.menu-item.focused {
-  border-left: 5px solid #ff0072;
-}
-.menu-item.focused .ui-icon {
-  margin-left: 25px;
-  color: #fff;
-}
-.menu-item.focused .title {
-  color: #fff;
-}
-.menu .footer {
-  bottom: 0;
-  position: absolute;
-  width: 325px;
-  padding: 0px 30px 15px 30px;
-}
-.menu .footer .profile {
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  border-radius: 2px;
-  border: 1px solid #fff;
-  display: table-cell;
-  vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.menu .footer .title {
-  display: table-cell;
-  vertical-align: middle;
-  width: 195px;
-  padding-left: 10px;
-}
-.menu .footer .settings {
-  display: table-cell;
-  vertical-align: middle;
-  color: #8e8e8e;
 }
 /* /Users/youzi/dev/directv-fl/src/components/active/remote/style.less */
 .mini-remote {
@@ -1460,6 +1460,142 @@ input[type="number"] {
   border-top: 40px solid #ff0072;
   border-right: 20px solid transparent;
 }
+/* /Users/youzi/dev/directv-fl/src/components/inactive/cover/style.less */
+.second-cover {
+  width: 100%;
+  height: 100%;
+}
+.second-cover .bg {
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -ms-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.second-cover .overlay {
+  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+/* /Users/youzi/dev/directv-fl/src/components/inactive/vod/style.less */
+.second-vod {
+  height: 100%;
+}
+.second-vod > div {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.second-vod .overview .overlay {
+  background: radial-gradient(circle farthest-corner at 95% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+}
+.second-vod .overview .container {
+  position: absolute;
+  top: 60px;
+  left: 30px;
+  width: 600px;
+}
+.second-vod .overview .container > div {
+  margin-bottom: 30px;
+}
+.second-vod .overview .poster-item {
+  border: 4px solid #ff0072;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.second-vod .overview .poster-item .img {
+  background-size: cover;
+}
+.second-vod .overview .top {
+  display: table;
+}
+.second-vod .overview .top > div {
+  display: table-cell;
+  vertical-align: top;
+}
+.second-vod .overview .right {
+  padding-left: 30px;
+}
+.second-vod .overview .right .title {
+  font-family: dinRegular;
+  font-size: 36px;
+}
+.second-vod .overview .right .subtitle {
+  font-size: 24px;
+}
+.second-vod .overview .description {
+  font-size: 28px;
+}
+.second-vod .overview .starring .header {
+  font-size: 36px;
+  font-family: dinRegular;
+  border-bottom: 2px solid #323232;
+  margin-bottom: 30px;
+}
+.second-vod .overview .actors {
+  white-space: nowrap;
+  margin-top: 10px;
+}
+.second-vod .overview .actor {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin-right: 30px;
+  display: inline-block;
+  border: 2px solid #323232;
+  width: 124px;
+  height: 172px;
+}
+.second-vod .overview .stickers {
+  margin-top: 70px;
+}
+.second-vod .preview .container {
+  display: table;
+  position: absolute;
+  color: #ffffff;
+  top: 30px;
+  right: 30px;
+  width: 560px;
+  height: 580px;
+}
+.second-vod .preview .info {
+  display: table-cell;
+  vertical-align: middle;
+}
+.second-vod .preview .title {
+  font: 36px dinRegular;
+}
+.second-vod .preview .subtitle {
+  font: 24px dinLight;
+  color: #8e8e8e;
+}
+.second-vod .preview .description {
+  margin-top: 10px;
+  font: 28px dinLight;
+}
+.second-vod .preview .stickers {
+  width: 100%;
+  margin-top: 30px;
+}
+.second-vod .preview .audience {
+  margin-left: 60px;
+  height: 50px;
+  width: 252px;
+}
 /* /Users/youzi/dev/directv-fl/src/components/inactive/channel/style.less */
 .second-channel {
   height: 100%;
@@ -1763,142 +1899,6 @@ input[type="number"] {
 .isTablet .twitter {
   position: static;
   margin-top: 15px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/inactive/cover/style.less */
-.second-cover {
-  width: 100%;
-  height: 100%;
-}
-.second-cover .bg {
-  -webkit-transition: opacity 0.5s ease-out;
-  -moz-transition: opacity 0.5s ease-out;
-  -ms-transition: opacity 0.5s ease-out;
-  -o-transition: opacity 0.5s ease-out;
-  transition: opacity 0.5s ease-out;
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-.second-cover .overlay {
-  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-/* /Users/youzi/dev/directv-fl/src/components/inactive/vod/style.less */
-.second-vod {
-  height: 100%;
-}
-.second-vod > div {
-  -webkit-transition: opacity 0.2s ease-out;
-  -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
-  -o-transition: opacity 0.2s ease-out;
-  transition: opacity 0.2s ease-out;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-.second-vod .overview .overlay {
-  background: radial-gradient(circle farthest-corner at 95% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
-}
-.second-vod .overview .container {
-  position: absolute;
-  top: 60px;
-  left: 30px;
-  width: 600px;
-}
-.second-vod .overview .container > div {
-  margin-bottom: 30px;
-}
-.second-vod .overview .poster-item {
-  border: 4px solid #ff0072;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
-.second-vod .overview .poster-item .img {
-  background-size: cover;
-}
-.second-vod .overview .top {
-  display: table;
-}
-.second-vod .overview .top > div {
-  display: table-cell;
-  vertical-align: top;
-}
-.second-vod .overview .right {
-  padding-left: 30px;
-}
-.second-vod .overview .right .title {
-  font-family: dinRegular;
-  font-size: 36px;
-}
-.second-vod .overview .right .subtitle {
-  font-size: 24px;
-}
-.second-vod .overview .description {
-  font-size: 28px;
-}
-.second-vod .overview .starring .header {
-  font-size: 36px;
-  font-family: dinRegular;
-  border-bottom: 2px solid #323232;
-  margin-bottom: 30px;
-}
-.second-vod .overview .actors {
-  white-space: nowrap;
-  margin-top: 10px;
-}
-.second-vod .overview .actor {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  margin-right: 30px;
-  display: inline-block;
-  border: 2px solid #323232;
-  width: 124px;
-  height: 172px;
-}
-.second-vod .overview .stickers {
-  margin-top: 70px;
-}
-.second-vod .preview .container {
-  display: table;
-  position: absolute;
-  color: #ffffff;
-  top: 30px;
-  right: 30px;
-  width: 560px;
-  height: 580px;
-}
-.second-vod .preview .info {
-  display: table-cell;
-  vertical-align: middle;
-}
-.second-vod .preview .title {
-  font: 36px dinRegular;
-}
-.second-vod .preview .subtitle {
-  font: 24px dinLight;
-  color: #8e8e8e;
-}
-.second-vod .preview .description {
-  margin-top: 10px;
-  font: 28px dinLight;
-}
-.second-vod .preview .stickers {
-  width: 100%;
-  margin-top: 30px;
-}
-.second-vod .preview .audience {
-  margin-left: 60px;
-  height: 50px;
-  width: 252px;
 }
 /* /Users/youzi/dev/directv-fl/src/components/active/discover/style.less */
 .first-discover .header {
