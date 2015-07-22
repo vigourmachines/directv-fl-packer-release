@@ -28179,7 +28179,10 @@ module.exports = exports = new Element({
 		},
 		{
 			'title.text':'live tv',
-			'icon.icon': 'tv',
+			icon:{
+				icon: 'tv',
+				'!$hasBranding.hider':{}
+			},
 		  css:'menu-item inactive'
 		},
 		{
