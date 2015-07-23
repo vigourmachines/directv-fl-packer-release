@@ -172,6 +172,34 @@ select {
 .gaston-ui.open .logo {
   display: none;
 }
+/* /Users/youzi/dev/directv-fl/src/components/switcher/style.less */
+body.hasTouch {
+  position: fixed;
+  top: 0;
+}
+body {
+  background-color: #181818;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.app-switcher {
+  height: 100%;
+}
+.app-switcher > div {
+  position: absolute;
+}
+.passwordInput {
+  background-color: #181818 !important;
+  color: #ffffff !important;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 24px !important;
+  padding: 0 !important;
+}
 /* /Users/youzi/dev/directv-fl/src/components/inactive/style.less */
 .second-state {
   height: 100%;
@@ -421,146 +449,6 @@ select {
   width: 100%;
   height: 100%;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/search/style.less */
-.second-search {
-  width: 100%;
-  height: calc(100% - 80px);
-  background-color: #181818;
-}
-.second-search .searchbox {
-  display: table;
-  background: #f8ab1b;
-  height: 220px;
-  width: 100%;
-}
-.second-search .searchbox > div {
-  display: table-cell;
-  vertical-align: middle;
-}
-.second-search .message {
-  display: table;
-  width: 100%;
-  height: calc(100% - 220px);
-  font-size: 48px;
-}
-.second-search .message .container {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-}
-.second-search .message .subtitle {
-  color: #8e8e8e;
-}
-.second-search .searchicon {
-  color: #FF99C6;
-  font-size: 192px;
-  width: 220px;
-}
-.second-search .query {
-  font-family: dinRegular;
-  font-size: 128px;
-}
-.second-search .results {
-  border-spacing: 30px;
-  display: table;
-  width: 100%;
-  height: calc(100% - 220px);
-}
-.second-search .results > div {
-  vertical-align: top;
-  display: table-cell;
-}
-.second-search .list {
-  width: 570px;
-}
-.second-search .search-results {
-  margin-bottom: 30px;
-}
-.second-search .search-results > .title {
-  text-transform: capitalize;
-  font: 36px dinRegular;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #323232;
-}
-.second-search .search-result {
-  display: table;
-  border-spacing: 0;
-  margin-top: 30px;
-}
-.second-search .search-result > div {
-  vertical-align: top;
-  display: table-cell;
-}
-.second-search .search-result .body {
-  padding-left: 30px;
-  padding-top: 30px;
-}
-.second-search .search-result .title {
-  font: 26px/14px dinRegular;
-}
-.second-search .search-result .subtitle {
-  font: 24px dinLight;
-  color: #8e8e8e;
-}
-.second-search .search-result .poster > .container {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  width: 126px;
-  height: 186px;
-  background-size: contain;
-  border: 1px solid #323232;
-}
-.second-search .topresult .header {
-  text-transform: capitalize;
-  font: 36px dinRegular;
-  padding-bottom: 5px;
-}
-.second-search .topresult .body {
-  display: table;
-  border-spacing: 0;
-}
-.second-search .topresult .body > div {
-  display: table-cell;
-  vertical-align: top;
-}
-.second-search .topresult .container {
-  width: 876px;
-}
-.second-search .topresult .container .trailer {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  height: 486px;
-  border: 2px solid #323232;
-}
-.second-search .topresult .container .info {
-  margin-top: 30px;
-}
-.second-search .topresult .container .info .title {
-  font: 26px/14px dinRegular;
-}
-.second-search .topresult .container .info .subtitle {
-  font: 24px dinLight;
-  color: #8e8e8e;
-}
-.second-search .topresult .description {
-  font: 28px dinLight;
-  float: right;
-}
-.isTv .second-search .topresult .description {
-  padding-left: 30px;
-}
-.notIsTv .second-search .topresult .body {
-  width: 100%;
-  height: auto;
-}
-.notIsTv .second-search .topresult .trailer {
-  height: auto;
-}
-.notIsTv .second-search .topresult .description {
-  padding-top: 15px;
-}
 /* /Users/youzi/dev/directv-fl/src/components/inactive/statusbar/style.less */
 .second-statusbar {
   -webkit-transition: -webkit-transform 0.2s ease-out;
@@ -630,10 +518,10 @@ select {
 }
 .second-statusbar.branded .between {
   border-top: 80px solid #06225a;
-  border-right: 40px solid #0081cf;
+  border-right: 40px solid #1692ce;
 }
 .second-statusbar.branded .directv {
-  background-color: #0081cf;
+  background-color: #1692ce;
   width: 300px;
 }
 .second-statusbar.branded .ui-icon {
@@ -863,6 +751,96 @@ select {
   -o-transition: -o-transform 0.2s ease-out;
   transition: transform 0.2s ease-out;
 }
+/* /Users/youzi/dev/directv-fl/src/components/active/topbar/style.less */
+.topbar {
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -ms-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
+  padding-top: 20px;
+  height: 44px;
+  background-color: #1692ce;
+  color: #ffffff;
+  display: table;
+  width: 100%;
+  overflow: hidden;
+}
+.topbar .ui-icon.left {
+  display: table-cell;
+  vertical-align: middle;
+  height: 44px;
+  width: calc(100% / 3);
+  padding-left: 15px;
+  text-align: left;
+}
+.topbar .middle {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: calc(100% / 3);
+  font: 20px dinBold;
+  padding-top: 4px;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+.topbar .ui-icon.right {
+  display: table-cell;
+  text-align: right;
+  padding-right: 15px;
+  vertical-align: middle;
+  width: calc(100% / 3);
+}
+.topbar.searching {
+  background-color: #181818;
+}
+.topbar.searching .ui-icon.left {
+  width: 30px;
+}
+.topbar.searching .ui-icon.right,
+.topbar.searching .middle {
+  display: none;
+}
+.hasReceiver .holder .topbar .ui-icon.right {
+  color: #ffeb00;
+}
+.search-field {
+  display: table-cell;
+  vertical-align: middle;
+  text-transform: capitalize;
+  padding-right: 15px;
+}
+.search-field .lefticon {
+  display: table-cell;
+  color: #8e8e8e;
+  padding: 0px;
+  width: 20px;
+  vertical-align: middle;
+  font-size: 28px;
+}
+.search-field .clear {
+  width: 25px;
+  display: table-cell;
+  vertical-align: middle;
+  color: #8e8e8e;
+  font-size: 28px;
+}
+.search-field .table {
+  width: 100%;
+  vertical-align: middle;
+  display: table;
+  background-color: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  height: 30px;
+}
+.search-field .inputField {
+  width: 100%;
+  display: table-cell;
+  -webkit-appearance: none;
+  margin-top: 5px;
+}
 /* /Users/youzi/dev/directv-fl/src/components/active/menu/style.less */
 .menu {
   font-family: 'dinLight';
@@ -945,96 +923,6 @@ select {
   vertical-align: middle;
   color: #8e8e8e;
 }
-/* /Users/youzi/dev/directv-fl/src/components/active/topbar/style.less */
-.topbar {
-  -webkit-transition: background-color 0.2s ease-out;
-  -moz-transition: background-color 0.2s ease-out;
-  -ms-transition: background-color 0.2s ease-out;
-  -o-transition: background-color 0.2s ease-out;
-  transition: background-color 0.2s ease-out;
-  padding-top: 20px;
-  height: 44px;
-  background-color: #0081cf;
-  color: #ffffff;
-  display: table;
-  width: 100%;
-  overflow: hidden;
-}
-.topbar .ui-icon.left {
-  display: table-cell;
-  vertical-align: middle;
-  height: 44px;
-  width: calc(100% / 3);
-  padding-left: 15px;
-  text-align: left;
-}
-.topbar .middle {
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-  width: calc(100% / 3);
-  font: 20px dinBold;
-  padding-top: 4px;
-  white-space: nowrap;
-  text-transform: capitalize;
-}
-.topbar .ui-icon.right {
-  display: table-cell;
-  text-align: right;
-  padding-right: 15px;
-  vertical-align: middle;
-  width: calc(100% / 3);
-}
-.topbar.searching {
-  background-color: #181818;
-}
-.topbar.searching .ui-icon.left {
-  width: 30px;
-}
-.topbar.searching .ui-icon.right,
-.topbar.searching .middle {
-  display: none;
-}
-.hasReceiver .holder .topbar .ui-icon.right {
-  color: #ffeb00;
-}
-.search-field {
-  display: table-cell;
-  vertical-align: middle;
-  text-transform: capitalize;
-  padding-right: 15px;
-}
-.search-field .lefticon {
-  display: table-cell;
-  color: #8e8e8e;
-  padding: 0px;
-  width: 20px;
-  vertical-align: middle;
-  font-size: 28px;
-}
-.search-field .clear {
-  width: 25px;
-  display: table-cell;
-  vertical-align: middle;
-  color: #8e8e8e;
-  font-size: 28px;
-}
-.search-field .table {
-  width: 100%;
-  vertical-align: middle;
-  display: table;
-  background-color: #fff;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  height: 30px;
-}
-.search-field .inputField {
-  width: 100%;
-  display: table-cell;
-  -webkit-appearance: none;
-  margin-top: 5px;
-}
 /* /Users/youzi/dev/directv-fl/src/components/active/remote/style.less */
 .mini-remote {
   display: table;
@@ -1105,7 +993,7 @@ select {
   background-color: #181818;
 }
 .popup .devices .focused {
-  background-color: #0081cf;
+  background-color: #1692ce;
 }
 .popup .devices .focused .subtitle {
   color: #ffffff !important;
@@ -1361,7 +1249,7 @@ input[type="number"] {
 }
 .isPhone .info-item .bar {
   position: absolute;
-  border-top: 6px solid #0081cf;
+  border-top: 6px solid #1692ce;
   border-right: 3px solid transparent;
   bottom: 42px;
 }
@@ -1447,6 +1335,31 @@ input[type="number"] {
 .second-progress {
   border-top: 40px solid #f8ab1b;
   border-right: 20px solid transparent;
+}
+/* /Users/youzi/dev/directv-fl/src/components/inactive/cover/style.less */
+.second-cover {
+  width: 100%;
+  height: 100%;
+}
+.second-cover .bg {
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -ms-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.second-cover .overlay {
+  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/channel/style.less */
 .second-channel {
@@ -1752,31 +1665,6 @@ input[type="number"] {
   position: static;
   margin-top: 15px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/inactive/cover/style.less */
-.second-cover {
-  width: 100%;
-  height: 100%;
-}
-.second-cover .bg {
-  -webkit-transition: opacity 0.5s ease-out;
-  -moz-transition: opacity 0.5s ease-out;
-  -ms-transition: opacity 0.5s ease-out;
-  -o-transition: opacity 0.5s ease-out;
-  transition: opacity 0.5s ease-out;
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-.second-cover .overlay {
-  background-image: radial-gradient(circle farthest-corner at 5% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 70%);
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
 /* /Users/youzi/dev/directv-fl/src/components/inactive/vod/style.less */
 .second-vod {
   height: 100%;
@@ -1899,7 +1787,7 @@ input[type="number"] {
   -webkit-border-radius: 11px;
   -moz-border-radius: 11px;
   border-radius: 11px;
-  background-color: #0081cf;
+  background-color: #1692ce;
 }
 .first-discover > div {
   height: 220px;
@@ -2138,7 +2026,7 @@ input[type="number"] {
   overflow: hidden;
 }
 .volume .slider .block {
-  background-color: #0081cf;
+  background-color: #1692ce;
   width: calc(100% - 30px);
   margin-left: 15px;
   -webkit-border-radius: 2px;
@@ -2450,22 +2338,6 @@ body {
   background-color: #7ed321;
   margin-left: 15px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/shared/description/style.less */
-.ui-description {
-  padding-right: 0;
-}
-.ui-description .header {
-  margin-bottom: 5px;
-  width: calc(100% - 30px);
-}
-.ui-description .body {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-right: 0;
-  height: auto;
-  border: 0;
-  text-align: left;
-}
 /* /Users/youzi/dev/directv-fl/src/components/inactive/bio/style.less */
 .second-bio > .switcher {
   height: 100%;
@@ -2507,6 +2379,22 @@ body {
 .second-bio > .overlay .body {
   margin-top: 15px;
   font-size: 28px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/shared/description/style.less */
+.ui-description {
+  padding-right: 0;
+}
+.ui-description .header {
+  margin-bottom: 5px;
+  width: calc(100% - 30px);
+}
+.ui-description .body {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 0;
+  height: auto;
+  border: 0;
+  text-align: left;
 }
 /* /Users/youzi/dev/directv-fl/src/components/shared/bar/style.less */
 .ui-bar {
@@ -2809,43 +2697,7 @@ body {
   background-color: #ffeb00;
 }
 .ui-voterow.second .right .ui-seekbar .seek {
-  background-color: #0081cf;
-}
-/* /Users/youzi/dev/directv-fl/src/components/shared/trivia/style.less */
-.ui-trivia {
-  padding-left: 15px;
-  padding-right: 15px;
-  width: calc(100% - 30px);
-}
-.ui-trivia .header {
-  margin-left: 0px;
-  margin-bottom: 5px;
-  border-bottom: 0px;
-}
-.ui-trivia .body {
-  padding: 15px;
-  height: auto;
-  background-size: cover;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  border: 1px solid #323232;
-  text-align: center;
-}
-.ui-trivia .body .title {
-  font: 20px dinRegular;
-  color: #0081cf;
-}
-.ui-trivia .body .subtitle {
-  font-size: 48px;
-  margin-bottom: 8px;
-  line-height: 48px;
-  padding: 20px;
-}
-.ui-trivia .body .description {
-  color: #8e8e8e;
-  font: 14px dinLight;
-  padding-bottom: 5px;
+  background-color: #1692ce;
 }
 /* /Users/youzi/dev/directv-fl/src/components/shared/statistics/style.less */
 .ui-score .info,
@@ -2977,6 +2829,42 @@ body {
 }
 .ui-statistics > .body .teams .right {
   right: 20px;
+}
+/* /Users/youzi/dev/directv-fl/src/components/shared/trivia/style.less */
+.ui-trivia {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: calc(100% - 30px);
+}
+.ui-trivia .header {
+  margin-left: 0px;
+  margin-bottom: 5px;
+  border-bottom: 0px;
+}
+.ui-trivia .body {
+  padding: 15px;
+  height: auto;
+  background-size: cover;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #323232;
+  text-align: center;
+}
+.ui-trivia .body .title {
+  font: 20px dinRegular;
+  color: #1692ce;
+}
+.ui-trivia .body .subtitle {
+  font-size: 48px;
+  margin-bottom: 8px;
+  line-height: 48px;
+  padding: 20px;
+}
+.ui-trivia .body .description {
+  color: #8e8e8e;
+  font: 14px dinLight;
+  padding-bottom: 5px;
 }
 /* /Users/youzi/dev/directv-fl/src/components/shared/tweets/style.less */
 .ui-tweets {
@@ -3140,31 +3028,143 @@ body {
   background-image: url('assets/img/app/loader.png');
   background-size: 100% auto;
 }
-/* /Users/youzi/dev/directv-fl/src/components/switcher/style.less */
-body.hasTouch {
-  position: fixed;
-  top: 0;
-}
-body {
-  background-color: #181818;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-.app-switcher {
-  height: 100%;
-}
-.app-switcher > div {
-  position: absolute;
-}
-.passwordInput {
-  background-color: #181818 !important;
-  color: #ffffff !important;
+/* /Users/youzi/dev/directv-fl/src/components/inactive/search/style.less */
+.second-search {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 80px);
+  background-color: #181818;
+}
+.second-search .searchbox {
+  display: table;
+  background: #f8ab1b;
+  height: 220px;
+  width: 100%;
+}
+.second-search .searchbox > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+.second-search .message {
+  display: table;
+  width: 100%;
+  height: calc(100% - 220px);
+  font-size: 48px;
+}
+.second-search .message .container {
+  display: table-cell;
+  vertical-align: middle;
   text-align: center;
-  font-size: 24px !important;
-  padding: 0 !important;
+}
+.second-search .message .subtitle {
+  color: #8e8e8e;
+}
+.second-search .searchicon {
+  color: #8e8e8e;
+  font-size: 192px;
+  width: 220px;
+}
+.second-search .query {
+  font-family: dinRegular;
+  font-size: 128px;
+}
+.second-search .results {
+  border-spacing: 30px;
+  display: table;
+  width: 100%;
+  height: calc(100% - 220px);
+}
+.second-search .results > div {
+  vertical-align: top;
+  display: table-cell;
+}
+.second-search .list {
+  width: 570px;
+}
+.second-search .search-results {
+  margin-bottom: 30px;
+}
+.second-search .search-results > .title {
+  text-transform: capitalize;
+  font: 36px dinRegular;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #323232;
+}
+.second-search .search-result {
+  display: table;
+  border-spacing: 0;
+  margin-top: 30px;
+}
+.second-search .search-result > div {
+  vertical-align: top;
+  display: table-cell;
+}
+.second-search .search-result .body {
+  padding-left: 30px;
+  padding-top: 30px;
+}
+.second-search .search-result .title {
+  font: 26px/14px dinRegular;
+}
+.second-search .search-result .subtitle {
+  font: 24px dinLight;
+  color: #8e8e8e;
+}
+.second-search .search-result .poster > .container {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  width: 126px;
+  height: 186px;
+  background-size: contain;
+  border: 1px solid #323232;
+}
+.second-search .topresult .header {
+  text-transform: capitalize;
+  font: 36px dinRegular;
+  padding-bottom: 5px;
+}
+.second-search .topresult .body {
+  display: table;
+  border-spacing: 0;
+}
+.second-search .topresult .body > div {
+  display: table-cell;
+  vertical-align: top;
+}
+.second-search .topresult .container {
+  width: 876px;
+}
+.second-search .topresult .container .trailer {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  height: 486px;
+  border: 2px solid #323232;
+}
+.second-search .topresult .container .info {
+  margin-top: 30px;
+}
+.second-search .topresult .container .info .title {
+  font: 26px/14px dinRegular;
+}
+.second-search .topresult .container .info .subtitle {
+  font: 24px dinLight;
+  color: #8e8e8e;
+}
+.second-search .topresult .description {
+  font: 28px dinLight;
+  float: right;
+}
+.isTv .second-search .topresult .description {
+  padding-left: 30px;
+}
+.notIsTv .second-search .topresult .body {
+  width: 100%;
+  height: auto;
+}
+.notIsTv .second-search .topresult .trailer {
+  height: auto;
+}
+.notIsTv .second-search .topresult .description {
+  padding-top: 15px;
 }
