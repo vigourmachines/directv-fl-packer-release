@@ -32809,30 +32809,30 @@ if(app.cases.$isNative && device !== 'IFE'){
   })
 }
 
-// if(config.password){
-//   window.requestAnimationFrame(function(){
-//     app.set({
-//       passwordInput:{
-//         css:'password-input',
-//         node:'input',
-//         attr:{
-//           type:'password',
-//           placeholder:'enter password'
-//         },
-//         events:{
-//           change:function(e){
-//             if(this.node.value === config.password){
-//               this.remove()
-//               initApp()
-//             }
-//           }
-//         }
-//       }
-//     })
-//   })
-// }else{
+if(config.password){
+  window.requestAnimationFrame(function(){
+    app.set({
+      passwordInput:{
+        css:'password-input',
+        node:'input',
+        attr:{
+          type:'password',
+          placeholder:'enter password'
+        },
+        events:{
+          change:function(e){
+            if(this.node.value === config.password){
+              this.remove()
+              initApp()
+            }
+          }
+        }
+      }
+    })
+  })
+}else{
   initApp()
-// }
+}
 
 function initApp(){
   app.set({
