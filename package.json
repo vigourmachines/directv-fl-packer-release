@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.11",
+  "version": "1.0.10",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -49,6 +49,7 @@
       "assets": {
         "bundle.js": true,
         "build.js":true,
+        "build.css":true,
         "bundle.css": true,
         "index.html": true,
         "assets": "*",
@@ -103,6 +104,7 @@
         }
       },
       "ramon": {
+        "password":"ramondemo",
         "cloud":"http://54.173.192.57:80/",
         "nobrand":true,
         "pointers": {
