@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -46,7 +46,7 @@
       "assets": "http://devassets.vigour.io/"
     },
     "packer": {
-      "web": "index.html",
+      "web": "build.html",
       "assets": {
         "bundle.js": true,
         "build.js":true,
