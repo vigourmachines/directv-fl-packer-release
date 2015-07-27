@@ -46,7 +46,7 @@
       "assets": "http://devassets.vigour.io/"
     },
     "packer": {
-      "web": "build.html",
+      "web": "index.html",
       "assets": {
         "bundle.js": true,
         "build.js":true,
