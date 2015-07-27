@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.6",
+  "version": "1.0.12",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,7 @@
   "dependencies": {
     "lodash": "3.2.0",
     "monotonic-timestamp": "0.0.9",
-    "package-branch-config": "^1.0.0",
+    "package-branch-config": "^1.2.2",
     "promise": "^7.0.1",
     "through2": "*",
     "vigour-js": "git+ssh://git@github.com:vigour-io/vigour-js.git#directv"
@@ -38,7 +38,7 @@
     "gaston": "git+ssh://git@github.com:vigour-io/gaston.git"
   },
   "vigour": {
-    "cloud": "http://localhost:10001",
+    "cloud": "http://10.0.1.97:10001",
     "development": {
       "button": false
     },
@@ -49,7 +49,8 @@
       "web": "index.html",
       "assets": {
         "bundle.js": true,
-        "build.js": true,
+        "build.js":true,
+        "build.css":true,
         "bundle.css": true,
         "index.html": true,
         "assets": "*",
@@ -110,7 +111,9 @@
         }
       },
       "ramon": {
+        "password":"ramondemo",
         "cloud":"http://54.173.192.57:80/",
+        "nobrand":true,
         "pointers": {
           "assets": "http://dtv-us1assets.vigour.io/"
         }
@@ -145,7 +148,6 @@
         "strictMath": true
       }
     },
-    "remote-logging": true,
     "require-paths": {
       "dtv": "src",
       "shared": "src/components/shared",
