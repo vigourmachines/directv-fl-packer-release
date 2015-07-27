@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -23,10 +23,11 @@
   },
   "homepage": "https://github.com/vigour-io/directv-fl",
   "dependencies": {
-    "through2":"*",
     "lodash": "3.2.0",
     "monotonic-timestamp": "0.0.9",
+    "package-branch-config": "^1.2.2",
     "promise": "^7.0.1",
+    "through2": "*",
     "vigour-js": "git+ssh://git@github.com:vigour-io/vigour-js.git#directv"
   },
   "devDependencies": {
@@ -53,7 +54,7 @@
         "bundle.css": true,
         "index.html": true,
         "assets": "*",
-        "fonts.css":true
+        "fonts.css": true
       },
       "git": {
         "owner": "vigour-io",
@@ -74,14 +75,14 @@
           "organizationIdentifier": "io.vigour.directv-fl",
           "buildNumber": "1",
           "appIndexPath": "index.html",
-          "appUrlIdentifier":"com.directv-fl.org",
+          "appUrlIdentifier": "com.directv-fl.org",
           "appUrlScheme": "directv-fl"
         }
       }
     },
     "branches": {
-      "youzi-dev":{
-        "cloud":"http://Imac2014.local:10001",
+      "youzi-dev": {
+        "cloud": "http://Imac2014.local:10001",
         "pointers": {
           "img": "http://Imac2014.local/assets/",
           "assets": "http://Imac2014.local/assets/"
@@ -115,7 +116,7 @@
         "cloud": "http://directv-fl-demo.local:10001",
         "pointers": {
           "assets": "http://directv-fl-demo.local/"
-        }    
+        }
       }
     }
   },
@@ -136,9 +137,9 @@
         }
       ]
     },
-    "less":{
-      "options":{
-        "strictMath":true
+    "less": {
+      "options": {
+        "strictMath": true
       }
     },
     "require-paths": {
