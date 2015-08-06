@@ -176,9 +176,10 @@ select {
 body.hasTouch {
   position: fixed;
   top: 0;
+  background-color: #181818;
 }
 body {
-  background-color: #181818;
+  background-color: black;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -672,6 +673,82 @@ body {
 .second-statusbar.branded .weather {
   width: 240px;
 }
+/* /Users/youzi/dev/directv-fl/src/components/inactive/navigation/style.less */
+.second-navigation {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 460px;
+  bottom: 80px;
+  color: #ffffff;
+  overflow: hidden;
+}
+.second-navigation .container {
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  -o-transition: -o-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  margin-top: 40px;
+  height: 100%;
+  background: #181818;
+  border-top: 1px solid #000000;
+}
+.second-navigation .progress {
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -ms-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  margin-top: -40px;
+}
+.second-navigation .percentage {
+  padding: 0 5px;
+  font-family: dinRegular;
+  text-align: right;
+  margin-top: -40px;
+  font-size: 28px;
+}
+.second-navigation .bar {
+  padding: 15px 30px;
+}
+.second-navigation .bar > div {
+  vertical-align: middle;
+  display: inline-block;
+}
+.second-navigation .arrows .ui-icon {
+  font-size: 48px;
+}
+.second-navigation .bar .title {
+  font-family: dinRegular;
+  font-size: 36px;
+  width: 430px;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.second-navigation .bar .title > div {
+  position: absolute;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  -o-transition: -o-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+}
+.second-navigation .lists {
+  position: relative;
+  overflow: hidden;
+  height: calc(100% - 80px);
+}
+.second-navigation .lists > div {
+  position: absolute;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -ms-transition: -ms-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
 /* /Users/youzi/dev/directv-fl/src/components/inactive/player/style.less */
 .second-player {
   position: relative;
@@ -802,82 +879,6 @@ body {
   border: 2px solid #323232;
   width: 625px;
   height: 350px;
-}
-/* /Users/youzi/dev/directv-fl/src/components/inactive/navigation/style.less */
-.second-navigation {
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-  height: 460px;
-  bottom: 80px;
-  color: #ffffff;
-  overflow: hidden;
-}
-.second-navigation .container {
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  -moz-transition: -moz-transform 0.2s ease-out;
-  -ms-transition: -ms-transform 0.2s ease-out;
-  -o-transition: -o-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
-  margin-top: 40px;
-  height: 100%;
-  background: #181818;
-  border-top: 1px solid #000000;
-}
-.second-navigation .progress {
-  -webkit-transition: all 0.4s ease-out;
-  -moz-transition: all 0.4s ease-out;
-  -ms-transition: all 0.4s ease-out;
-  -o-transition: all 0.4s ease-out;
-  transition: all 0.4s ease-out;
-  margin-top: -40px;
-}
-.second-navigation .percentage {
-  padding: 0 5px;
-  font-family: dinRegular;
-  text-align: right;
-  margin-top: -40px;
-  font-size: 28px;
-}
-.second-navigation .bar {
-  padding: 15px 30px;
-}
-.second-navigation .bar > div {
-  vertical-align: middle;
-  display: inline-block;
-}
-.second-navigation .arrows .ui-icon {
-  font-size: 48px;
-}
-.second-navigation .bar .title {
-  font-family: dinRegular;
-  font-size: 36px;
-  width: 430px;
-  height: 40px;
-  line-height: 40px;
-  position: relative;
-  overflow: hidden;
-}
-.second-navigation .bar .title > div {
-  position: absolute;
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  -moz-transition: -moz-transform 0.2s ease-out;
-  -ms-transition: -ms-transform 0.2s ease-out;
-  -o-transition: -o-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
-}
-.second-navigation .lists {
-  position: relative;
-  overflow: hidden;
-  height: calc(100% - 80px);
-}
-.second-navigation .lists > div {
-  position: absolute;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  -moz-transition: -moz-transform 0.3s ease-out;
-  -ms-transition: -ms-transform 0.3s ease-out;
-  -o-transition: -o-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/profile/style.less */
 .second-profile {
@@ -1250,6 +1251,226 @@ input[type="number"] {
   position: absolute;
   top: 0;
   background-size: contain;
+}
+/* /Users/youzi/dev/directv-fl/src/components/shared/list/style.less */
+.base-list {
+  white-space: nowrap;
+  width: 100%;
+}
+.base-list > div {
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+}
+.base-list > div .img {
+  background-size: cover;
+  background-position: center;
+}
+.base-list > div {
+  background-color: #181818;
+}
+.spotlight-item {
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  position: relative;
+  width: 100%;
+  height: 210px;
+}
+.spotlight-item .lock {
+  font-size: 48px;
+  position: absolute;
+  right: 0;
+  bottom: 17px;
+}
+.info-item,
+.poster-item {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.info-item .lock,
+.poster-item .lock {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.info-item .info {
+  text-transform: capitalize;
+  padding: 3px 9px;
+}
+.info-item .subtitle {
+  font-family: dinLight;
+  color: #f2f2f2;
+}
+.info-item .logo {
+  background-size: cover;
+  position: absolute;
+}
+.poster-item .img {
+  height: 100%;
+}
+.poster-item {
+  display: inline-block;
+}
+.list-dots {
+  pointer-events: none;
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.list-dots .container {
+  margin-top: -24px;
+  height: 15px;
+  padding: 6px 9px 0px;
+  display: inline-block;
+  white-space: nowrap;
+}
+.list-dots .container > div {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: top;
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  opacity: 0.5;
+  margin-right: 5px;
+}
+.list-dots .container > div:last-child {
+  margin-right: 0;
+}
+.list-dots .container > div.focused {
+  opacity: 1;
+}
+.hasReceiver .base-list > div .img {
+  opacity: 0.6;
+}
+.isPhone.hasReceiver .focused .dots .container {
+  background-color: #f8ab1b;
+  opacity: 1;
+}
+.isPhone.hasReceiver .focused .info-item.focused,
+.isPhone.hasReceiver .focused .poster-item.focused {
+  margin: 0 -1px 0 14px;
+  border: 2px solid #f8ab1b;
+}
+.isPhone.hasReceiver .focused .info-item.focused .img,
+.isPhone.hasReceiver .focused .poster-item.focused .img {
+  opacity: 1;
+}
+.isPhone.hasReceiver .focused .spotlight-item {
+  opacity: 0.6;
+}
+.isPhone.hasReceiver .focused .spotlight-item.focused {
+  opacity: 1;
+}
+.isPhone .info-item {
+  width: 200px;
+  height: 150px;
+  position: relative;
+}
+.isPhone .info-item .img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.isPhone .info-item .logo {
+  width: 80px;
+  height: 30px;
+}
+.isPhone .info-item .bar {
+  position: absolute;
+  border-top: 6px solid #0081cf;
+  border-right: 3px solid transparent;
+  bottom: 42px;
+}
+.isPhone .info-item .info {
+  height: 33px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 6px 9px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.isPhone .info-item .title {
+  margin-top: 5px;
+  font: 14px/10px dinRegular;
+}
+.isPhone .info-item .subtitle {
+  font: 14px dinLight;
+  color: #8e8e8e;
+}
+.isPhone .info-item,
+.isPhone .poster-item {
+  border: 1px solid #323232;
+  margin: 1px 0px 1px 15px;
+}
+.isPhone .info-item:last-child,
+.isPhone .poster-item:last-child {
+  margin-right: 14px !important;
+}
+.isPhone .poster-item {
+  width: 93px;
+  height: 138px;
+}
+.isPhone .poster-item .img {
+  background-size: cover;
+}
+.notIsPhone .base-list .info-item,
+.notIsPhone .base-list .poster-item {
+  border: 2px solid #323232;
+  margin: 2px 0px 2px 30px;
+}
+.notIsPhone .base-list .info-item:last-child,
+.notIsPhone .base-list .poster-item:last-child {
+  margin-right: 28px !important;
+}
+.notIsPhone .base-list > div.focused {
+  border: 2px solid #f8ab1b;
+}
+.notIsPhone .base-list > div.focused .img {
+  opacity: 1;
+}
+.notIsPhone .focused .info-item.focused,
+.notIsPhone .focused .poster-item.focused {
+  margin: 0 -2px 0 28px;
+  border: 4px solid #f8ab1b;
+}
+.notIsPhone .info-item {
+  width: 400px;
+  height: 300px;
+}
+.notIsPhone .info-item .img {
+  height: 210px;
+}
+.notIsPhone .info-item .info {
+  padding: 25px 0px 0px 25px;
+}
+.notIsPhone .info-item .title {
+  font: 26px/14px dinRegular;
+}
+.notIsPhone .info-item .subtitle {
+  font: 24px dinLight;
+  color: #8e8e8e;
+}
+.notIsPhone .info-item .logo {
+  top: 0;
+  width: 160px;
+  height: 60px;
+}
+.notIsPhone .poster-item {
+  width: 186px;
+  height: 276px;
 }
 /* /Users/youzi/dev/directv-fl/src/components/inactive/progress/style.less */
 .second-progress {
@@ -1696,226 +1917,6 @@ input[type="number"] {
   height: 50px;
   width: 252px;
 }
-/* /Users/youzi/dev/directv-fl/src/components/shared/list/style.less */
-.base-list {
-  white-space: nowrap;
-  width: 100%;
-}
-.base-list > div {
-  display: inline-block;
-  background-size: cover;
-  background-position: center;
-}
-.base-list > div .img {
-  background-size: cover;
-  background-position: center;
-}
-.base-list > div {
-  background-color: #181818;
-}
-.spotlight-item {
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  position: relative;
-  width: 100%;
-  height: 210px;
-}
-.spotlight-item .lock {
-  font-size: 48px;
-  position: absolute;
-  right: 0;
-  bottom: 17px;
-}
-.info-item,
-.poster-item {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  position: relative;
-  overflow: hidden;
-  vertical-align: middle;
-}
-.info-item .lock,
-.poster-item .lock {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-.info-item .info {
-  text-transform: capitalize;
-  padding: 3px 9px;
-}
-.info-item .subtitle {
-  font-family: dinLight;
-  color: #f2f2f2;
-}
-.info-item .logo {
-  background-size: cover;
-  position: absolute;
-}
-.poster-item .img {
-  height: 100%;
-}
-.poster-item {
-  display: inline-block;
-}
-.list-dots {
-  pointer-events: none;
-  position: absolute;
-  bottom: 15px;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-.list-dots .container {
-  margin-top: -24px;
-  height: 15px;
-  padding: 6px 9px 0px;
-  display: inline-block;
-  white-space: nowrap;
-}
-.list-dots .container > div {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  display: inline-block;
-  vertical-align: top;
-  width: 8px;
-  height: 8px;
-  background-color: #ffffff;
-  opacity: 0.5;
-  margin-right: 5px;
-}
-.list-dots .container > div:last-child {
-  margin-right: 0;
-}
-.list-dots .container > div.focused {
-  opacity: 1;
-}
-.hasReceiver .base-list > div .img {
-  opacity: 0.6;
-}
-.isPhone.hasReceiver .focused .dots .container {
-  background-color: #f8ab1b;
-  opacity: 1;
-}
-.isPhone.hasReceiver .focused .info-item.focused,
-.isPhone.hasReceiver .focused .poster-item.focused {
-  margin: 0 -1px 0 14px;
-  border: 2px solid #f8ab1b;
-}
-.isPhone.hasReceiver .focused .info-item.focused .img,
-.isPhone.hasReceiver .focused .poster-item.focused .img {
-  opacity: 1;
-}
-.isPhone.hasReceiver .focused .spotlight-item {
-  opacity: 0.6;
-}
-.isPhone.hasReceiver .focused .spotlight-item.focused {
-  opacity: 1;
-}
-.isPhone .info-item {
-  width: 200px;
-  height: 150px;
-  position: relative;
-}
-.isPhone .info-item .img {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-.isPhone .info-item .logo {
-  width: 80px;
-  height: 30px;
-}
-.isPhone .info-item .bar {
-  position: absolute;
-  border-top: 6px solid #0081cf;
-  border-right: 3px solid transparent;
-  bottom: 42px;
-}
-.isPhone .info-item .info {
-  height: 33px;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  padding: 6px 9px;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.isPhone .info-item .title {
-  margin-top: 5px;
-  font: 14px/10px dinRegular;
-}
-.isPhone .info-item .subtitle {
-  font: 14px dinLight;
-  color: #8e8e8e;
-}
-.isPhone .info-item,
-.isPhone .poster-item {
-  border: 1px solid #323232;
-  margin: 1px 0px 1px 15px;
-}
-.isPhone .info-item:last-child,
-.isPhone .poster-item:last-child {
-  margin-right: 14px !important;
-}
-.isPhone .poster-item {
-  width: 93px;
-  height: 138px;
-}
-.isPhone .poster-item .img {
-  background-size: cover;
-}
-.notIsPhone .base-list .info-item,
-.notIsPhone .base-list .poster-item {
-  border: 2px solid #323232;
-  margin: 2px 0px 2px 30px;
-}
-.notIsPhone .base-list .info-item:last-child,
-.notIsPhone .base-list .poster-item:last-child {
-  margin-right: 28px !important;
-}
-.notIsPhone .base-list > div.focused {
-  border: 2px solid #f8ab1b;
-}
-.notIsPhone .base-list > div.focused .img {
-  opacity: 1;
-}
-.notIsPhone .focused .info-item.focused,
-.notIsPhone .focused .poster-item.focused {
-  margin: 0 -2px 0 28px;
-  border: 4px solid #f8ab1b;
-}
-.notIsPhone .info-item {
-  width: 400px;
-  height: 300px;
-}
-.notIsPhone .info-item .img {
-  height: 210px;
-}
-.notIsPhone .info-item .info {
-  padding: 25px 0px 0px 25px;
-}
-.notIsPhone .info-item .title {
-  font: 26px/14px dinRegular;
-}
-.notIsPhone .info-item .subtitle {
-  font: 24px dinLight;
-  color: #8e8e8e;
-}
-.notIsPhone .info-item .logo {
-  top: 0;
-  width: 160px;
-  height: 60px;
-}
-.notIsPhone .poster-item {
-  width: 186px;
-  height: 276px;
-}
 /* /Users/youzi/dev/directv-fl/src/components/active/discover/style.less */
 .first-discover .header {
   width: calc(100% - 15px);
@@ -2134,6 +2135,67 @@ input[type="number"] {
   margin-left: 15px;
   margin-bottom: 15px;
 }
+/* /Users/youzi/dev/directv-fl/src/components/active/popup/volume/style.less */
+.popup.volume {
+  z-index: 10;
+  background-image: url('../../../assets/img/app/volume.png');
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.volume .top {
+  text-align: center;
+  margin-top: 52px;
+  font-size: 18px;
+  font-family: dinRegular;
+  background-image: url('../../../assets/img/app/volume.png');
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.volume .top .ui-icon.volume {
+  margin-top: 8px;
+  font-size: 32px;
+}
+.volume .muted {
+  margin-top: 8px;
+  font-size: 32px;
+}
+.volume .slider {
+  overflow: hidden;
+}
+.volume .slider .block {
+  background-color: #0081cf;
+  width: calc(100% - 30px);
+  margin-left: 15px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  display: table;
+}
+.volume .slider .block .left {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  padding-left: 15px;
+  opacity: 0.2;
+}
+.volume .slider .block .middle {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 18px;
+  font-family: dinBold;
+}
+.volume .slider .block .right {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+  padding-right: 15px;
+  opacity: 0.2;
+}
 /* /Users/youzi/dev/directv-fl/src/components/active/popup/devices/style.less */
 .active.devices {
   margin-left: 15px;
@@ -2198,67 +2260,6 @@ input[type="number"] {
 }
 .active.devices .list .device .info .subtitle {
   color: #8e8e8e;
-}
-/* /Users/youzi/dev/directv-fl/src/components/active/popup/volume/style.less */
-.popup.volume {
-  z-index: 10;
-  background-image: url('../../../assets/img/app/volume.png');
-  width: 100%;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.volume .top {
-  text-align: center;
-  margin-top: 52px;
-  font-size: 18px;
-  font-family: dinRegular;
-  background-image: url('../../../assets/img/app/volume.png');
-  width: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.volume .top .ui-icon.volume {
-  margin-top: 8px;
-  font-size: 32px;
-}
-.volume .muted {
-  margin-top: 8px;
-  font-size: 32px;
-}
-.volume .slider {
-  overflow: hidden;
-}
-.volume .slider .block {
-  background-color: #0081cf;
-  width: calc(100% - 30px);
-  margin-left: 15px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  display: table;
-}
-.volume .slider .block .left {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: left;
-  padding-left: 15px;
-  opacity: 0.2;
-}
-.volume .slider .block .middle {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  font-size: 18px;
-  font-family: dinBold;
-}
-.volume .slider .block .right {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: right;
-  padding-right: 15px;
-  opacity: 0.2;
 }
 /* /Users/youzi/dev/directv-fl/src/components/active/popup/remote/style.less */
 .remote .carousel {
