@@ -109,7 +109,7 @@
         "cloud":"http://104.236.221.130:80",
         "nobrand":true,
         "pointers": {
-          "assets": "http://dtv-us1assets.vigour.io/"
+          "assets": "http://dtv-us2assets.vigour.io/"
         }
       },
       "livingroom": {
