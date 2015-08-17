@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.13",
+  "version": "1.0.11",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -23,11 +23,10 @@
   },
   "homepage": "https://github.com/vigour-io/directv-fl",
   "dependencies": {
+    "through2":"*",
     "lodash": "3.2.0",
     "monotonic-timestamp": "0.0.9",
-    "package-branch-config": "^1.2.2",
     "promise": "^7.0.1",
-    "through2": "*",
     "vigour-js": "git+ssh://git@github.com:vigour-io/vigour-js.git#directv"
   },
   "devDependencies": {
@@ -50,14 +49,13 @@
       "assets": {
         "bundle.js": true,
         "build.js":true,
-        "build.css":true,
         "bundle.css": true,
         "index.html": true,
         "assets": "*",
-        "fonts.css": true
+        "fonts.css":true
       },
       "git": {
-        "owner": "vigourmachines",
+        "owner": "vigour-io",
         "repo": "directv-fl"
       },
       "mail": {
@@ -75,18 +73,12 @@
           "organizationIdentifier": "io.vigour.directv-fl",
           "buildNumber": "1",
           "appIndexPath": "index.html",
-          "appUrlIdentifier": "com.directv-fl.org",
+          "appUrlIdentifier":"com.directv-fl.org",
           "appUrlScheme": "directv-fl"
         }
       }
     },
     "branches": {
-      "master": {
-        "pointers": {
-          "img": "http://jim.local/assets/",
-          "assets": "http://jim.local/assets/"
-        }
-      },
       "youzi-dev":{
         "cloud":"http://Imac2014.local:10001",
         "pointers": {
@@ -111,7 +103,6 @@
         }
       },
       "ramon": {
-        "password":"ramondemo",
         "cloud":"http://54.173.192.57:80/",
         "nobrand":true,
         "pointers": {
@@ -122,7 +113,7 @@
         "cloud": "http://directv-fl-demo.local:10001",
         "pointers": {
           "assets": "http://directv-fl-demo.local/"
-        }
+        }    
       }
     }
   },
@@ -143,9 +134,9 @@
         }
       ]
     },
-    "less": {
-      "options": {
-        "strictMath": true
+    "less":{
+      "options":{
+        "strictMath":true
       }
     },
     "require-paths": {
