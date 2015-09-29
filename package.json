@@ -4,14 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "startGaston": "./node_modules/.bin/gaston dev",
+    "startGaston": "./node_modules/.bin/gaston",
+    "startHub": "./node_modules/vigour-hub/bin/hub -d -c directv",
+    "prestart": "npm run startHub &",
     "start": "npm run startGaston",
     "test": "echo \"Error: no test specified\" && exit 1",
     "symlink": "mkdir -p node_modules; ln -sf $(pwd) $(pwd)/node_modules",
-    "startHub": "./node_modules/vigour-hub/bin/hub -d -c directv",
-    "prestart": "npm run startHub &",
-    "build": "vNative build",
+    "build": "./node_modules/.bin/gaston build",
+    "ios": "npm run build && ./node_modules/.bin/vNative build -p ios",
+    "android": "npm run build && ./node_modules/.bin/vNative build -p android",
+    "samsungtv": "npm run build && ./node_modules/.bin/vNative build -p samsungtv",
+    "all": "npm run build && ./node_modules/.bin/vNative build",
     "release": "packer -r -c package.json,.package.json"
+  },
+  "keywords": [
+
+  ],
+  "license": "",
+  "contributors": [
+
+  ],
+  "engines": {
+
   },
   "repository": {
     "type": "git",
@@ -34,7 +48,7 @@
     "vigour-native-statusBar": "git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git",
     "vigour-packer-server": "git+ssh://git@github.com:vigour-io/vigour-packer-server.git",
     "vigour-hub": "git+ssh://git@github.com:vigour-io/vigour-hub.git#directv",
-    "gaston": "git+ssh://git@github.com:vigour-io/gaston.git"
+    "gaston": "^0.14.0"
   },
   "vigour": {
     "cloud": "http://10.0.1.97:10001",
@@ -44,13 +58,21 @@
     "pointers": {
       "assets": "http://devassets.vigour.io/"
     },
-    "packer": {
-      "web": "index.html",
+    "wrapper": {
       "assets": {
-        "bundle.js": true,
         "build.js":true,
-        "bundle.css": true,
-        "index.html": true,
+        "build.css": true,
+        "build.html": true,
+        "assets": "*",
+        "fonts.css":true
+      }
+    },
+    "packer": {
+      "web": "build.html",
+      "assets": {
+        "build.js":true,
+        "build.css": true,
+        "build.html": true,
         "assets": "*",
         "fonts.css":true
       },
@@ -72,9 +94,38 @@
           "organizationName": "Vigour",
           "organizationIdentifier": "io.vigour.directv-fl",
           "buildNumber": "1",
-          "appIndexPath": "index.html",
+          "appIndexPath": "build.html",
           "appUrlIdentifier":"com.directv-fl.org",
-          "appUrlScheme": "directv-fl"
+          "appUrlScheme": "directv-fl",
+          "appIcon": "assets/img/180 - icon - home.png",
+          "splashScreen": "assets/img/app/native/splash - ipad - home.png"
+        },
+        "android": {
+          "productName": "Direct TV - Future Land",
+          "applicationId": "io.vigour.directv-fl",
+          "appIndexPath": "build.html",
+          "appIcon": "assets/img/app/native/180 - icon - home.png",
+          "splashScreen": "assets/img/app/native/splash - ipad - home.png",
+          "splashDuration": 1500,
+          "keystoreFile": "example.keystore",
+          "keystorePassword": "shmexample",
+          "keystoreAlias": "blabla"
+        },
+        "samsungtv": {
+          "productName": "Direct TV - Future Land",
+          "xmlConfig": {
+            "category": "video",
+            "name": "Direct TV - Future Land",
+            "author": "Vigour",
+            "description": "Future Direct TV VOD app",
+            "version": "1.0.0",
+            "icons": {
+              "ThumbIcon": "assets/img/app/native/180 - icon - home.png",
+              "BigThumbIcon": "assets/img/app/native/180 - icon - home.png",
+              "ListIcon": "assets/img/app/native/180 - icon - home.png",
+              "BigListIcon": "assets/img/app/native/180 - icon - home.png"
+            }
+          }
         }
       }
     },
@@ -113,7 +164,7 @@
         "cloud": "http://directv-fl-demo.local:10001",
         "pointers": {
           "assets": "http://directv-fl-demo.local/"
-        }    
+        }
       }
     }
   },
@@ -124,19 +175,9 @@
     "no-package": false,
     "bundle": "./",
     "build": "./",
-    "browserify": {
-      "transforms": [
-        {
-          "path": "package-branch-config",
-          "options": {
-            "section": "vigour"
-          }
-        }
-      ]
-    },
     "less":{
       "options":{
-        "strictMath":true
+        "strictMath": true
       }
     },
     "require-paths": {
