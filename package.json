@@ -39,7 +39,7 @@
     "gaston": "git+ssh://git@github.com:vigour-io/gaston.git"
   },
   "vigour": {
-    "cloud": "http://stv-demo-hub.vigour.io/",
+    "cloud": "http://adm-demo-hub.vigour.io/",
     "development": {
       "button": false
     },
