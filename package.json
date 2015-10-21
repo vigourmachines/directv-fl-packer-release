@@ -50,7 +50,7 @@
       "assets": {
         "build.js":true,
         "build.css": true,
-        "index.html": true,
+        "build.html": true,
         "assets": "*",
         "fonts.css":true
       }
@@ -60,7 +60,7 @@
       "assets": {
         "build.js":true,
         "build.css": true,
-        "index.html": true,
+        "build.html": true,
         "assets": "*",
         "fonts.css":true
       },
