@@ -56,7 +56,7 @@
       }
     },
     "packer": {
-      "web": "index.html",
+      "web": "build.html",
       "assets": {
         "build.js":true,
         "build.css": true,
