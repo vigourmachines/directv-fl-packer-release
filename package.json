@@ -39,12 +39,12 @@
     "gaston": "git+ssh://git@github.com:vigour-io/gaston.git"
   },
   "vigour": {
-    "cloud": "http://localhost:10001",
+    "cloud": "http://stv-demo-hub.vigour.io/",
     "development": {
       "button": false
     },
     "pointers": {
-      "assets": "http://sbs-assets.vigour.io/"
+      "assets": "http://dtv-assets.vigour.io/"
     },
     "wrapper": {
       "assets": {
@@ -109,6 +109,12 @@
       "sbs": {
         "cloud": "http://127.0.0.1:10001"
       },
+      "stv": {
+        "cloud": "http://stv-demo-hub.vigour.io/"
+      },
+      "adm": {
+        "cloud": "http://adm-demo-hub.vigour.io/"
+      },
       "airplane": {
         "cloud": "http://52.8.40.195:80",
         "pointers": {
@@ -120,12 +126,6 @@
         "nobrand":true,
         "pointers": {
           "assets": "http://dtv-us1assets.vigour.io/"
-        }
-      },
-      "livingroom": {
-        "cloud": "http://directv-fl-demo.local:10001",
-        "pointers": {
-          "assets": "http://directv-fl-demo.local/"
         }
       }
     }
@@ -141,7 +141,6 @@
         "section": "vigour"
       }
     },
-
     "aliasify": {
       "dtv": "src",
       "shared": "src/components/shared",
