@@ -10,8 +10,9 @@
     "symlink": "mkdir -p node_modules; ln -sf $(pwd) $(pwd)/node_modules",
     "startHub": "./node_modules/vigour-hub/bin/hub -d -c directv",
     "prestart": "npm run startHub &",
-    "build": "vNative build",
-    "release": "packer -r -c package.json,.package.json"
+    "build": "gaston build -s ./index.js -o . -i",
+    "release": "packer -r -c package.json,.package.json",
+    "ios": "npm run build && node_modules/.bin/vNative build -p ios"
   },
   "repository": {
     "type": "git",
@@ -77,13 +78,23 @@
     "native": {
       "platforms": {
         "ios": {
-          "productName": "Direct TV - Future Land",
+          "productName": "VIER+VIJF",
           "organizationName": "Vigour",
-          "organizationIdentifier": "io.vigour.directv-fl",
+          "organizationIdentifier": "io.vigour.sbs",
           "buildNumber": "1",
-          "appIndexPath": "index.html",
-          "appUrlIdentifier": "com.directv-fl.org",
-          "appUrlScheme": "directv-fl"
+          "appIndexPath": "build.html",
+          "appUrlIdentifier": "com.sbs.org",
+          "appUrlScheme": "sbs",
+          "appIcon": "icon.png",
+          "splashScreen": "splash.png",
+          "NSAllowsArbitraryLoads": true,
+          "assets": {
+            "build.js": true,
+            "build.css": true,
+            "build.html": true,
+            "assets": "*",
+            "fonts.css": true
+          }
         }
       }
     },
@@ -146,7 +157,8 @@
       "dtv-item": "src/components/active/content-item",
       "dtv-channel": "src/components/active/content-item/channel",
       "dtv-episode": "src/components/active/content-item/episode",
-      "dtv-movie": "src/components/active/content-item/movie"
+      "dtv-movie": "src/components/active/content-item/movie",
+      "vigour-js": "node_modules/vigour-js"
     }
   }
 }
