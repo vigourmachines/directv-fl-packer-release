@@ -1,31 +1,18 @@
 {
   "name": "directv-fl",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "startGaston": "./node_modules/.bin/gaston",
-    "startHub": "./node_modules/vigour-hub/bin/hub -d -c directv",
-    "prestart": "npm run startHub &",
+    "startGaston": "./node_modules/.bin/gaston dev",
     "start": "npm run startGaston",
     "test": "echo \"Error: no test specified\" && exit 1",
     "symlink": "mkdir -p node_modules; ln -sf $(pwd) $(pwd)/node_modules",
-    "build": "./node_modules/.bin/gaston build",
-    "ios": "npm run build && ./node_modules/.bin/vNative build -p ios",
-    "android": "npm run build && ./node_modules/.bin/vNative build -p android",
-    "samsungtv": "npm run build && ./node_modules/.bin/vNative build -p samsungtv",
-    "all": "npm run build && ./node_modules/.bin/vNative build",
-    "release": "packer -r -c package.json,.package.json"
-  },
-  "keywords": [
-
-  ],
-  "license": "",
-  "contributors": [
-
-  ],
-  "engines": {
-
+    "startHub": "./node_modules/vigour-hub/bin/hub -d -c directv",
+    "prestart": "npm run startHub &",
+    "build": "gaston build -s ./index.js -o . -i",
+    "release": "packer -r -c package.json,.package.json",
+    "ios": "npm run build && node_modules/.bin/vNative build -p ios"
   },
   "repository": {
     "type": "git",
@@ -37,26 +24,27 @@
   },
   "homepage": "https://github.com/vigour-io/directv-fl",
   "dependencies": {
-    "through2":"*",
     "lodash": "3.2.0",
     "monotonic-timestamp": "0.0.9",
+    "package-branch-config": "^1.2.2",
     "promise": "^7.0.1",
+    "through2": "*",
     "vigour-js": "git+ssh://git@github.com:vigour-io/vigour-js.git#directv"
   },
   "devDependencies": {
     "vigour-native": "git+ssh://git@github.com:vigour-io/vigour-native.git",
-    "vigour-native-statusBar": "git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git",
+    "status-bar": "git+ssh://git@github.com:vigour-io/status-bar.git",
     "vigour-packer-server": "git+ssh://git@github.com:vigour-io/vigour-packer-server.git",
     "vigour-hub": "git+ssh://git@github.com:vigour-io/vigour-hub.git#directv",
-    "gaston": "^0.14.0"
+    "gaston": "git+ssh://git@github.com:vigour-io/gaston.git"
   },
   "vigour": {
-    "cloud": "http://10.0.1.97:10001",
+    "cloud": "http://sbs-prototype-hub.vigour.io/",
     "development": {
       "button": false
     },
     "pointers": {
-      "assets": "http://devassets.vigour.io/"
+      "assets": "http://sbs-assets.vigour.io/"
     },
     "wrapper": {
       "assets": {
@@ -70,11 +58,11 @@
     "packer": {
       "web": "build.html",
       "assets": {
-        "build.js":true,
+        "build.js": true,
         "build.css": true,
         "build.html": true,
         "assets": "*",
-        "fonts.css":true
+        "fonts.css": true
       },
       "git": {
         "owner": "vigour-io",
@@ -90,48 +78,29 @@
     "native": {
       "platforms": {
         "ios": {
-          "productName": "Direct TV - Future Land",
+          "productName": "VIER+VIJF",
           "organizationName": "Vigour",
-          "organizationIdentifier": "io.vigour.directv-fl",
+          "organizationIdentifier": "io.vigour.sbs",
           "buildNumber": "1",
           "appIndexPath": "build.html",
-          "appUrlIdentifier":"com.directv-fl.org",
-          "appUrlScheme": "directv-fl",
-          "appIcon": "assets/img/180 - icon - home.png",
-          "splashScreen": "assets/img/app/native/splash - ipad - home.png"
-        },
-        "android": {
-          "productName": "Direct TV - Future Land",
-          "applicationId": "io.vigour.directv-fl",
-          "appIndexPath": "build.html",
-          "appIcon": "assets/img/app/native/180 - icon - home.png",
-          "splashScreen": "assets/img/app/native/splash - ipad - home.png",
-          "splashDuration": 1500,
-          "keystoreFile": "example.keystore",
-          "keystorePassword": "shmexample",
-          "keystoreAlias": "blabla"
-        },
-        "samsungtv": {
-          "productName": "Direct TV - Future Land",
-          "xmlConfig": {
-            "category": "video",
-            "name": "Direct TV - Future Land",
-            "author": "Vigour",
-            "description": "Future Direct TV VOD app",
-            "version": "1.0.0",
-            "icons": {
-              "ThumbIcon": "assets/img/app/native/180 - icon - home.png",
-              "BigThumbIcon": "assets/img/app/native/180 - icon - home.png",
-              "ListIcon": "assets/img/app/native/180 - icon - home.png",
-              "BigListIcon": "assets/img/app/native/180 - icon - home.png"
-            }
+          "appUrlIdentifier": "com.sbs.org",
+          "appUrlScheme": "sbs",
+          "appIcon": "icon.png",
+          "splashScreen": "splash.png",
+          "NSAllowsArbitraryLoads": true,
+          "assets": {
+            "build.js": true,
+            "build.css": true,
+            "build.html": true,
+            "assets": "*",
+            "fonts.css": true
           }
         }
       }
     },
     "branches": {
-      "youzi-dev":{
-        "cloud":"http://Imac2014.local:10001",
+      "youzi-dev": {
+        "cloud": "http://Imac2014.local:10001",
         "pointers": {
           "img": "http://Imac2014.local/assets/",
           "assets": "http://Imac2014.local/assets/"
@@ -154,8 +123,9 @@
         }
       },
       "ramon": {
-        "cloud":"http://54.173.192.57:80/",
-        "nobrand":true,
+        "password": "ramondemo",
+        "cloud": "http://54.173.192.57:80/",
+        "nobrand": true,
         "pointers": {
           "assets": "http://dtv-us1assets.vigour.io/"
         }
@@ -169,18 +139,17 @@
     }
   },
   "gaston": {
-    "port": 8080,
-    "socket-port": 9000,
-    "no-auto-reload": false,
-    "no-package": false,
-    "bundle": "./",
-    "build": "./",
-    "less":{
-      "options":{
-        "strictMath": true
+    "index-path": "index.html",
+    "package": true,
+    "less-options": {
+      "strictMath": true
+    },
+    "transforms": {
+      "package-branch-config": {
+        "section": "vigour"
       }
     },
-    "require-paths": {
+    "aliasify": {
       "dtv": "src",
       "shared": "src/components/shared",
       "dtv-components": "src/components",
@@ -188,7 +157,8 @@
       "dtv-item": "src/components/active/content-item",
       "dtv-channel": "src/components/active/content-item/channel",
       "dtv-episode": "src/components/active/content-item/episode",
-      "dtv-movie": "src/components/active/content-item/movie"
+      "dtv-movie": "src/components/active/content-item/movie",
+      "vigour-js": "node_modules/vigour-js"
     }
   }
 }
