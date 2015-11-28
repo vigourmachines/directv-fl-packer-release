@@ -4,18 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "startGaston": "./node_modules/.bin/gaston",
     "startHub": "./node_modules/vigour-hub/bin/hub -d -c directv",
-    "prestart": "npm run startHub &",
-    "start": "npm run startGaston",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "symlink": "mkdir -p node_modules; ln -sf $(pwd) $(pwd)/node_modules",
-    "build": "./node_modules/.bin/gaston build",
-    "ios": "npm run build && ./node_modules/.bin/vNative build -p ios",
-    "android": "npm run build && ./node_modules/.bin/vNative build -p android",
-    "samsungtv": "npm run build && ./node_modules/.bin/vNative build -p samsungtv",
-    "all": "npm run build && ./node_modules/.bin/vNative build",
-    "release": "packer -r -c package.json,.package.json"
+    "build": "gaston build -s ./index.js -o ./ -i",
+    "web": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms web",
+    "ios": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms ios",
+    "android": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms android",
+    "samsungtv": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms samsungtv",
+    "all": "npm run build && ./node_modules/.bin/wrapper build",
+    "release": "./node_modules/.bin/ferry --release true --mergeFiles '[\"./package.json\",\"./.package.json\"]'"
   },
   "keywords": [
 
@@ -41,14 +37,13 @@
     "lodash": "3.2.0",
     "monotonic-timestamp": "0.0.9",
     "promise": "^7.0.1",
-    "vigour-js": "git+ssh://git@github.com:vigour-io/vigour-js.git#directv"
+    "old-vigour-js": "git+ssh://git@github.com:vigour-io/vigour-js.git#directv"
   },
   "devDependencies": {
-    "vigour-native": "git+ssh://git@github.com:vigour-io/vigour-native.git",
-    "vigour-native-statusBar": "git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git",
-    "vigour-packer-server": "git+ssh://git@github.com:vigour-io/vigour-packer-server.git",
-    "vigour-hub": "git+ssh://git@github.com:vigour-io/vigour-hub.git#directv",
-    "gaston": "^0.14.0"
+    "vigour-wrapper": "^2.0.0",
+    "vigour-status-bar": "^1.0.4",
+    "vigour-ferry": "^3.0.0",
+    "vigour-hub": "git+ssh://git@github.com:vigour-io/vigour-hub.git#directv"
   },
   "vigour": {
     "cloud": "http://10.0.1.97:10001",
@@ -67,7 +62,16 @@
         "fonts.css":true
       }
     },
-    "packer": {
+    "git": {
+      "owner": "vigour-io",
+      "repo": "directv-fl"
+    },
+    "mail": {
+      "fromAddress": "shawn@vigour.io",
+      "to": "shawn@vigour.io"
+    },
+    "slack": {},
+    "ferry": {
       "web": "build.html",
       "assets": {
         "build.js":true,
@@ -76,19 +80,20 @@
         "assets": "*",
         "fonts.css":true
       },
-      "git": {
-        "owner": "vigour-io",
-        "repo": "directv-fl"
-      },
-      "mail": {
-        "fromAddress": "shawn@vigour.io",
-        "to": "shawn@vigour.io"
-      },
-      "slack": {},
       "server": {}
     },
     "native": {
       "platforms": {
+        "web": {
+          "appIndexPath": "build.html",
+          "assets": {
+            "build.js":true,
+            "build.css": true,
+            "build.html": true,
+            "assets": "*",
+            "fonts.css":true
+          }
+        },
         "ios": {
           "productName": "Direct TV - Future Land",
           "organizationName": "Vigour",
@@ -97,19 +102,33 @@
           "appIndexPath": "build.html",
           "appUrlIdentifier":"com.directv-fl.org",
           "appUrlScheme": "directv-fl",
-          "appIcon": "assets/img/180 - icon - home.png",
-          "splashScreen": "assets/img/app/native/splash - ipad - home.png"
+          "appIcon": "assets/img/app/native/180 - icon - home.png",
+          "splashScreen": "assets/img/app/native/splash - ipad - home .png",
+          "assets": {
+            "build.js":true,
+            "build.css": true,
+            "build.html": true,
+            "assets": "*",
+            "fonts.css":true
+          }
         },
         "android": {
           "productName": "Direct TV - Future Land",
-          "applicationId": "io.vigour.directv-fl",
+          "applicationId": "io.vigour.directvfl",
           "appIndexPath": "build.html",
           "appIcon": "assets/img/app/native/180 - icon - home.png",
-          "splashScreen": "assets/img/app/native/splash - ipad - home.png",
+          "splashScreen": "assets/img/app/native/splash - ipad - home .png",
           "splashDuration": 1500,
           "keystoreFile": "example.keystore",
           "keystorePassword": "shmexample",
-          "keystoreAlias": "blabla"
+          "keystoreAlias": "blabla",
+          "assets": {
+            "build.js":true,
+            "build.css": true,
+            "build.html": true,
+            "assets": "*",
+            "fonts.css":true
+          }
         },
         "samsungtv": {
           "productName": "Direct TV - Future Land",
@@ -125,6 +144,13 @@
               "ListIcon": "assets/img/app/native/180 - icon - home.png",
               "BigListIcon": "assets/img/app/native/180 - icon - home.png"
             }
+          },
+          "assets": {
+            "build.js":true,
+            "build.css": true,
+            "build.html": true,
+            "assets": "*",
+            "fonts.css":true
           }
         }
       }
@@ -169,18 +195,17 @@
     }
   },
   "gaston": {
-    "port": 8080,
-    "socket-port": 9000,
-    "no-auto-reload": false,
-    "no-package": false,
-    "bundle": "./",
-    "build": "./",
-    "less":{
-      "options":{
-        "strictMath": true
+    "index-path": "index.html",
+    "package": true,
+    "less-options": {
+      "strictMath": true
+    },
+    "transforms": {
+      "package-branch-config": {
+        "section": "vigour"
       }
     },
-    "require-paths": {
+    "aliasify": {
       "dtv": "src",
       "shared": "src/components/shared",
       "dtv-components": "src/components",
