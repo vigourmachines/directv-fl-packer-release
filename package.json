@@ -64,7 +64,8 @@
         "bundle.css": true,
         "index.html": true,
         "assets": "*",
-        "fonts.css": true
+        "fonts.css": true,
+        "build.html": true
       }
     },
     "ferry": {
@@ -76,7 +77,8 @@
         "bundle.css": true,
         "index.html": true,
         "assets": "*",
-        "fonts.css": true
+        "fonts.css": true,
+        "build.html": true
       },
       "server": {}
     },
