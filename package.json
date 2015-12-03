@@ -1,6 +1,6 @@
 {
   "name": "directv-fl",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,16 +13,10 @@
     "all": "npm run build && ./node_modules/.bin/wrapper build",
     "release": "./node_modules/.bin/ferry --release true --mergeFiles '[\"package.json\",\".package.json\"]'"
   },
-  "keywords": [
-
-  ],
+  "keywords": [],
   "license": "",
-  "contributors": [
-
-  ],
-  "engines": {
-
-  },
+  "contributors": [],
+  "engines": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/vigour-io/directv-fl.git"
@@ -59,8 +53,8 @@
       "web": "build.html",
       "assets": {
         "bundle.js": true,
-        "build.js":true,
-        "build.css":true,
+        "build.js": true,
+        "build.css": true,
         "bundle.css": true,
         "index.html": true,
         "assets": "*",
@@ -72,8 +66,8 @@
       "web": "build.html",
       "assets": {
         "bundle.js": true,
-        "build.js":true,
-        "build.css":true,
+        "build.js": true,
+        "build.css": true,
         "bundle.css": true,
         "index.html": true,
         "assets": "*",
@@ -114,8 +108,8 @@
           },
           "assets": {
             "bundle.js": true,
-            "build.js":true,
-            "build.css":true,
+            "build.js": true,
+            "build.css": true,
             "bundle.css": true,
             "index.html": true,
             "assets": "*",
@@ -150,15 +144,15 @@
         }
       },
       "ramon": {
-        "password":"ramondemo",
-        "cloud":"http://54.173.192.57:80/",
-        "nobrand":true,
+        "password": "ramondemo",
+        "cloud": "http://54.173.192.57:80/",
+        "nobrand": true,
         "pointers": {
           "assets": "http://dtv-us1assets.vigour.io/"
         }
       },
-      "cc":{
-        "cloud":"http://cc-demo-hub.dev.vigour.io/"
+      "cc": {
+        "cloud": "http://cc-demo-hub.dev.vigour.io/"
       },
       "livingroom": {
         "cloud": "http://directv-fl-demo.local:10001",
