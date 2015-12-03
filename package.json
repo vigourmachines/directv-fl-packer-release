@@ -94,13 +94,34 @@
     "native": {
       "platforms": {
         "ios": {
-          "productName": "Direct TV - Future Land",
+          "productName": "CC Demo",
           "organizationName": "Vigour",
-          "organizationIdentifier": "io.vigour.directv-fl",
+          "organizationIdentifier": "io.vigour.cc",
           "buildNumber": "1",
-          "appIndexPath": "index.html",
-          "appUrlIdentifier": "com.directv-fl.org",
-          "appUrlScheme": "directv-fl"
+          "appIndexPath": "build.html",
+          "appUrlIdentifier": "io.cc-demo.org",
+          "appUrlScheme": "cc",
+          "appIcon": "assets/img/icon.png",
+          "splashScreen": "assets/img/splash.png",
+          "interfaceOrientations": {
+            "iPhone": [
+              "Portrait"
+            ],
+            "iPad": [
+              "LandscapeLeft",
+              "LandscapeRight"
+            ]
+          },
+          "assets": {
+            "bundle.js": true,
+            "build.js":true,
+            "build.css":true,
+            "bundle.css": true,
+            "index.html": true,
+            "assets": "*",
+            "fonts.css": true,
+            "build.html": true
+          }
         }
       }
     },
