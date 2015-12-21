@@ -38,12 +38,12 @@
     "vigour-hub": "git+ssh://git@github.com:vigour-io/vigour-hub.git#sbs"
   },
   "vigour": {
-    "cloud": "http://stv-demo-hub.vigour.io/",
+    "cloud": "https://vv-hub.dev.vigour.io",
     "development": {
       "button": false
     },
     "pointers": {
-      "assets": "http://dtv-assets.vigour.io/"
+      "assets": "https://dtv-assets.vigour.io/"
     },
     "wrapper": {
       "assets": {
