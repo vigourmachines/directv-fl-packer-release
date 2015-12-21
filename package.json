@@ -86,6 +86,15 @@
           "appUrlScheme": "vanilla",
           "appIcon": "assets/img/appicon.png",
           "splashScreen": "assets/img/splash.png",
+          "interfaceOrientations": {
+            "iPhone": [
+              "Portrait"
+            ],
+            "iPad": [
+              "LandscapeLeft",
+              "LandscapeRight"
+            ]
+          },
           "assets": {
             "build.js": true,
             "build.css": true,
