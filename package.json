@@ -1,9 +1,10 @@
 {
   "name": "directv-fl",
-  "version": "1.0.12",
+  "version": "1.0.11",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "startHub": "./node_modules/vigour-hub/bin/hub -d -c directv",
     "build": "gaston build -s ./index.js -o . -i",
     "ios": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms ios",
     "android": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms android",
@@ -17,30 +18,32 @@
   "bugs": {
     "url": "https://github.com/vigour-io/directv-fl/issues"
   },
+  "keywords": [],
+  "license": "MIT",
+  "contributors": [],
+  "engines": {},
   "homepage": "https://github.com/vigour-io/directv-fl",
   "dependencies": {
-    "lodash": "3.10.1",
-    "monotonic-timestamp": "0.0.9",
-    "package-branch-config": "^1.2.2",
-    "promise": "^7.0.1",
     "through2": "*",
-    "old-vigour-js": "git+ssh://git@github.com:vigour-io/vigour-js.git#directv",
-    "vigour-status-bar": "^1.0.4"
+    "lodash": "3.2.0",
+    "monotonic-timestamp": "0.0.9",
+    "promise": "^7.0.1",
+    "old-vigour-js": "git+ssh://git@github.com:vigour-io/vigour-js.git#directv"
   },
   "devDependencies": {
-    "vigour-wrapper": "^2.1.3",
-    "vigour-status-bar": "^1.0.5",
-    "vigour-ferry": "^3.0.1",
-    "vigour-hub": "git+ssh://git@github.com:vigour-io/vigour-hub.git#directv",
-    "gaston": "^0.28.5"
+    "vigour-env": "^1.0.3",
+    "vigour-wrapper": "^2.0.1",
+    "vigour-statusbar": "^1.0.4",
+    "vigour-ferry": "^3.0.0",
+    "vigour-hub": "git+ssh://git@github.com:vigour-io/vigour-hub.git#sbs"
   },
   "vigour": {
-    "cloud": "http://sbs-prototype-hub{number}.dev.vigour.io/",
+    "cloud": "http://stv-demo-hub.vigour.io/",
     "development": {
       "button": false
     },
     "pointers": {
-      "assets": "http://sbs-assets.vigour.io/"
+      "assets": "http://dtv-assets.vigour.io/"
     },
     "wrapper": {
       "assets": {
@@ -59,7 +62,8 @@
         "build.html": true,
         "assets": "*",
         "fonts.css": true
-      }
+      },
+      "server": {}
     },
     "git": {
       "owner": "vigour-io",
@@ -70,44 +74,24 @@
       "to": "shawn@vigour.io"
     },
     "slack": {},
-    "server": {},
     "native": {
       "platforms": {
         "ios": {
-          "productName": "VIER+VIJF",
+          "productName": "vanilla",
           "organizationName": "Vigour",
-          "organizationIdentifier": "io.vigour.sbs",
+          "organizationIdentifier": "io.vigour.vanilla",
           "buildNumber": "1",
           "appIndexPath": "build.html",
-          "appUrlIdentifier": "com.sbs.org",
-          "appUrlScheme": "sbs",
-          "appIcon": "icon.png",
-          "splashScreen": "splash.png",
-          "NSAllowsArbitraryLoads": true,
+          "appUrlIdentifier": "io.vigour.vanilla",
+          "appUrlScheme": "vanilla",
+          "appIcon": "assets/img/appicon.png",
+          "splashScreen": "assets/img/splash.png",
           "assets": {
             "build.js": true,
             "build.css": true,
             "build.html": true,
             "assets": "*",
             "fonts.css": true
-          }
-        },
-        "android": {
-          "productName": "VIER+VIJF",
-          "applicationId": "io.vigour.sbs",
-          "appIndexPath": "build.html",
-          "appIcon": "icon.png",
-          "splashScreen": "splash.png",
-          "splashDuration": 1500,
-          "keystoreFile": "example.keystore",
-          "keystorePassword": "shmexample",
-          "keystoreAlias": "blabla",
-          "assets": {
-            "build.js":true,
-            "build.css": true,
-            "build.html": true,
-            "assets": "*",
-            "fonts.css":true
           }
         }
       }
@@ -130,6 +114,15 @@
       "production": {
         "cloud": "http://52.8.23.45:80"
       },
+      "sbs": {
+        "cloud": "http://127.0.0.1:10001"
+      },
+      "stv": {
+        "cloud": "http://stv-demo-hub.vigour.io/"
+      },
+      "adm": {
+        "cloud": "http://localhost:10001"
+      },
       "airplane": {
         "cloud": "http://52.8.40.195:80",
         "pointers": {
@@ -137,17 +130,16 @@
         }
       },
       "ramon": {
-        "password": "ramondemo",
         "cloud": "http://54.173.192.57:80/",
         "nobrand": true,
         "pointers": {
           "assets": "http://dtv-us1assets.vigour.io/"
         }
       },
-      "livingroom": {
-        "cloud": "http://directv-fl-demo.local:10001",
+      "vanilla-online": {
+        "cloud": "https://vv-hub.dev.vigour.io",
         "pointers": {
-          "assets": "http://directv-fl-demo.local/"
+          "assets": "https://dtv-assets.vigour.io/"
         }
       }
     }
