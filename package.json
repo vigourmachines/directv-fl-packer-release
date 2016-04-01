@@ -40,6 +40,15 @@
     "pointers": {
       "assets": "http://devassets.vigour.io/"
     },
+    "wrapper": {
+      "assets": {
+        "build.js": true,
+        "build.css": true,
+        "build.html": true,
+        "assets": "*",
+        "fonts.css": true
+      }
+    },
     "ferry": {
       "web": "build.html",
       "assets": {
