@@ -1,17 +1,13 @@
 {
   "name": "directv-fl",
-  "version": "1.0.4",
+  "version": "1.0.15",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "startGaston": "./node_modules/.bin/gaston dev",
-    "start": "npm run startGaston",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "symlink": "mkdir -p node_modules; ln -sf $(pwd) $(pwd)/node_modules",
     "startHub": "./node_modules/vigour-hub/bin/hub -d -c directv",
-    "prestart": "npm run startHub &",
-    "build": "vNative build",
-    "release": "packer -r -c package.json,.package.json"
+    "build": "gaston build -s ./index.js -o ./ -i",
+    "ios": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms ios",
+    "release": "./node_modules/.bin/ferry --release --mergeFiles '[\"package.json\",\".package.json\"]'"
   },
   "repository": {
     "type": "git",
@@ -23,47 +19,44 @@
   },
   "homepage": "https://github.com/vigour-io/directv-fl",
   "dependencies": {
-    "through2":"*",
     "lodash": "3.2.0",
     "monotonic-timestamp": "0.0.9",
+    "package-branch-config": "^1.2.2",
     "promise": "^7.0.1",
-    "vigour-js": "git+ssh://git@github.com:vigour-io/vigour-js.git#directv"
+    "through2": "*",
+    "old-vigour-js": "git+ssh://git@github.com:vigour-io/vigour-js.git#directv"
   },
   "devDependencies": {
-    "vigour-native": "git+ssh://git@github.com:vigour-io/vigour-native.git",
-    "vigour-native-statusBar": "git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git",
-    "vigour-packer-server": "git+ssh://git@github.com:vigour-io/vigour-packer-server.git",
+    "vigour-ferry": "^3.0.4",
     "vigour-hub": "git+ssh://git@github.com:vigour-io/vigour-hub.git#directv",
-    "gaston": "git+ssh://git@github.com:vigour-io/gaston.git"
+    "vigour-statusbar": "^1.0.4",
+    "vigour-wrapper": "^2.0.1"
   },
   "vigour": {
-    "cloud": "http://directv.dev.vigour.io:80",
-    "branches": {
-      "youzi-dev":{
-        "cloud": "http://10.0.1.2:10001"
-      },
-      "marcus-dev": {
-        "cloud": "http://10.0.1.199:10001"
-      },
-      "shawn-dev": {
-        "cloud": "http://192.168.2.18:10001"
-      }
-    },
+    "cloud": "http://10.0.1.97:10001",
     "development": {
       "button": false
     },
     "pointers": {
-      "img": "http://devassets.vigour.io/",
       "assets": "http://devassets.vigour.io/"
     },
-    "packer": {
-      "web": "index.html",
+    "wrapper": {
       "assets": {
-        "bundle.js": true,
-        "bundle.css": true,
-        "index.html": true,
+        "build.js": true,
+        "build.css": true,
+        "build.html": true,
         "assets": "*",
-        "fonts.css":true
+        "fonts.css": true
+      }
+    },
+    "ferry": {
+      "web": "build.html",
+      "assets": {
+        "build.js": true,
+        "build.css": true,
+        "build.html": true,
+        "assets": "*",
+        "fonts.css": true
       },
       "git": {
         "owner": "vigour-io",
@@ -78,28 +71,128 @@
     },
     "native": {
       "platforms": {
+        "web": {
+          "productName": "Direct TV - Future Land",
+          "appIndexPath": "build.html",
+          "assets": {
+            "build.js": true,
+            "build.css": true,
+            "build.html": true,
+            "assets": "*",
+            "fonts.css": true
+          }
+        },
         "ios": {
           "productName": "Direct TV - Future Land",
           "organizationName": "Vigour",
           "organizationIdentifier": "io.vigour.directv-fl",
           "buildNumber": "1",
-          "appIndexPath": "index.html",
-          "appUrlIdentifier":"com.directv-fl.org",
-          "appUrlScheme": "directv-fl"
+          "appIndexPath": "build.html",
+          "appUrlIdentifier": "com.directv-fl.org",
+          "appUrlScheme": "directv-fl",
+          "assets": {
+            "build.js": true,
+            "build.css": true,
+            "build.html": true,
+            "assets": "*",
+            "fonts.css": true
+          }
+        }
+      }
+    },
+    "branches": {
+      "youzi-dev": {
+        "cloud": "http://Imac2014.local:10001",
+        "pointers": {
+          "img": "http://Imac2014.local/assets/",
+          "assets": "http://Imac2014.local/assets/"
+        }
+      },
+      "marcus-dev": {
+        "cloud": "http://localhost:10001",
+        "uscloud": "http://54.173.192.57:10001"
+      },
+      "shawn-dev": {
+        "cloud": "http://192.168.2.18:10001"
+      },
+      "production": {
+        "cloud": "http://52.8.23.45:80"
+      },
+      "airplane": {
+        "cloud": "http://52.8.40.195:80",
+        "pointers": {
+          "assets": "http://dtv-us1assets.vigour.io/"
+        }
+      },
+      "ramon": {
+        "password": "ramondemo",
+        "cloud": "http://52.8.23.45:80/",
+        "nobrand": true,
+        "pointers": {
+          "assets": "http://dtv-assets.vigour.io/"
+        }
+      },
+      "adm": {
+        "cloud": "http://52.8.23.45:80/",
+        "nobrand": true,
+        "pointers": {
+          "assets": "http://dtv-assets.vigour.io/"
+        }
+      },
+      "mediaset": {
+        "cloud": "http://37.48.93.67:10010/",
+        "nobrand": true,
+        "pointers": {
+          "assets": "http://dtv-assets.vigour.io/"
+        }
+      },
+      "arte": {
+        "cloud": "http://52.8.23.45:80/",
+        "nobrand": true,
+        "pointers": {
+          "assets": "http://dtv-assets.vigour.io/"
+        }
+      },
+      "livingroom": {
+        "cloud": "http://directv-fl-demo.local:10001",
+        "pointers": {
+          "assets": "http://directv-fl-demo.local/"
         }
       }
     }
   },
   "gaston": {
-    "browserify-transforms": [
-      {
-        "path": "vigour-js/util/inform-transform",
-        "options": {
-          "global": "false"
-        }
+    "dist": {
+      "web": {
+        "root": "build/web",
+        "files": [
+          "**/*.*"
+        ]
+      },
+      "ios": {
+        "root": "build/ios/externalAssets",
+        "files": [
+          "**/*.*"
+        ]
+      },
+      "android": {
+        "root": "build/android/externalAssets",
+        "files": [
+          "**/*.*"
+        ]
       }
-    ],
-    "require-paths": {
+    },
+    "index-path": "index.html",
+    "package": true,
+    "transforms": {
+      "package-branch-config": {
+        "section": "vigour"
+      }
+    },
+    "less-options": {
+      "strictMath": true
+    },
+    "aliasify": {
       "dtv": "src",
       "shared": "src/components/shared",
       "dtv-components": "src/components",

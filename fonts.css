@@ -29,7 +29,7 @@
 /* Icons */
 @font-face {
   font-family:'dtvIcons';
-  src: url(http://directv.vigour.io/assets/fonts/dtvIcons.woff) format('woff');
+  src: url('assets/fonts/dtvIcons.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
