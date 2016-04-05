@@ -133,7 +133,7 @@
         }
       },
       "adm": {
-        "cloud": "http://52.8.23.45:80/",
+        "cloud": "http://54.93.196.95:9998/",
         "nobrand": true,
         "pointers": {
           "assets": "http://dtv-assets.vigour.io/"
