@@ -140,7 +140,7 @@
         }
       },
       "mediaset": {
-        "cloud": "http://54.93.196.95:10020/",
+        "cloud": "http://54.93.196.95:9999/",
         "nobrand": true,
         "pointers": {
           "assets": "http://dtv-assets.vigour.io/"
