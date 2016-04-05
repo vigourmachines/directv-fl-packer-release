@@ -133,22 +133,19 @@
         }
       },
       "adm": {
-        "cloud": "http://52.8.23.45:80/",
-        "nobrand": true,
+        "cloud": "http://54.93.196.95:9998/",
         "pointers": {
           "assets": "http://dtv-assets.vigour.io/"
         }
       },
       "mediaset": {
         "cloud": "http://54.93.196.95:9999/",
-        "nobrand": true,
         "pointers": {
           "assets": "http://dtv-assets.vigour.io/"
         }
       },
       "arte": {
         "cloud": "http://52.8.23.45:80/",
-        "nobrand": true,
         "pointers": {
           "assets": "http://dtv-assets.vigour.io/"
         }
