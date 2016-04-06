@@ -133,7 +133,7 @@
         }
       },
       "adm": {
-        "cloud": "http://54.93.196.95:9998/",
+        "cloud": "http://adm-demo-hub.vigour.io/",
         "pointers": {
           "assets": "http://dtv-assets.vigour.io/"
         }
