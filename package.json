@@ -133,19 +133,25 @@
         }
       },
       "adm": {
-        "cloud": "http://adm-demo-hub.vigour.io/",
+        "cloud": "http://54.93.196.95:9998/",
         "pointers": {
           "assets": "http://dtv-assets.vigour.io/"
         }
       },
       "mediaset": {
-        "cloud": "http://52.8.23.45:80/",
+        "cloud": "http://54.93.196.95:9999/",
+        "pointers": {
+          "assets": "http://dtv-assets.vigour.io/"
+        }
+      },
+      "foxtel": {
+        "cloud": "http://foxtel-demo-hub.vigour.io/",
         "pointers": {
           "assets": "http://dtv-assets.vigour.io/"
         }
       },
       "arte": {
-        "cloud": "http://52.8.23.45:80/",
+        "cloud": "http://arte-demo-hub.vigour.io/",
         "pointers": {
           "assets": "http://dtv-assets.vigour.io/"
         }
